@@ -67,7 +67,6 @@
         let player;
         let subtitles = [];
 
-        // 1. Initialize logic when YouTube API is ready
         function onYouTubeIframeAPIReady() {
             const urlParams = new URLSearchParams(window.location.search);
             const videoUrl = urlParams.get('videoUrl');
@@ -85,7 +84,6 @@
             }
         }
 
-        // 2. Create YouTube Player
         function createPlayer(id) {
             player = new YT.Player('player', {
                 videoId: id,
@@ -94,7 +92,9 @@
                     'playsinline': 1,
                     'controls': 1,
                     'rel': 0,
-                    'fs': 1
+                    'fs': 1,
+                    'cc_load_policy': 0, // 0 = Force Captions OFF by default
+                    'iv_load_policy': 3  // 3 = Force Annotations OFF
                 },
                 events: {
                     'onReady': onPlayerReady
@@ -105,31 +105,36 @@
         function onPlayerReady(event) {
             // Check for subtitle updates every 100ms
             setInterval(updateSubtitles, 100);
+
+            // Double measure: Try to programmatically unload the caption module
+            // This attempts to shut off the CC button immediately
+            try {
+                player.unloadModule("captions");
+                player.unloadModule("cc");
+            } catch (e) {
+                console.log("Could not force unload captions via API");
+            }
         }
 
-        // 3. Update the text on screen
         function updateSubtitles() {
             if (!player || typeof player.getCurrentTime !== 'function') return;
             try {
                 const currentTime = player.getCurrentTime();
-                // Find the SINGLE subtitle that matches the current time
                 const subtitle = subtitles.find(s => currentTime >= s.start && currentTime <= s.end);
                 
-                // Update text
                 const textSpan = document.querySelector('#subtitle span');
                 if (subtitle) {
                     textSpan.textContent = subtitle.text;
-                    textSpan.style.display = 'inline'; // Show box
+                    textSpan.style.display = 'inline'; 
                 } else {
                     textSpan.textContent = '';
-                    textSpan.style.display = 'none'; // Hide box completely when silence
+                    textSpan.style.display = 'none'; 
                 }
             } catch (error) {
                 // Ignore errors during loading
             }
         }
 
-        // 4. Fetch and Parse
         function fetchSubtitle(url) {
             fetch(url)
                 .then(r => r.text())
@@ -144,18 +149,15 @@
 
         function parseSRT(srtContent) {
             subtitles = [];
-            // Split by double newline to get blocks
             const blocks = srtContent.trim().split(/\n\s*\n/);
             
             blocks.forEach(block => {
                 const lines = block.split('\n');
                 if (lines.length >= 3) {
-                    // lines[0] is index, lines[1] is time, lines[2+] is text
                     const timeLine = lines[1];
                     const timeMatch = timeLine.match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
                     
                     if (timeMatch) {
-                        // Join multiple lines of text into one string with spaces
                         const textContent = lines.slice(2).join(' ');
                         subtitles.push({
                             start: timeToSeconds(timeMatch[1]),
