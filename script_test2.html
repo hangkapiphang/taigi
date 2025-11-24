@@ -323,7 +323,10 @@
             <input type="text" id="subtitleUrl" placeholder="Enter Subtitle URL (.srt or .txt)" />
             <button class="url-upload-button" onclick="loadSubtitleFromUrl()">Subtitle from URL</button>
         </div>
-
+   <!-- Add this inside <div id="controls"> -->
+        <div class="input-group" style="margin-top: 20px; border-top: 1px solid #ccc; padding-top: 20px;">
+        <button onclick="generateAndCopyLink()" style="width: 250px; background-color: #6f42c1;">Generate & Copy Link</button>
+        </div>
         <!-- Embedded URL Section (unchanged structure) -->
         <div id="embeddedUrlContainer">
             <div id="embeddedUrlTitleContainer">
@@ -982,7 +985,40 @@ and cover brand new companies on this
              //      loadFromUrlParams();
              // }
          });
+function generateAndCopyLink() {
+    // 1. Get the current values from the input boxes
+    const videoUrl = document.getElementById('youtubeUrl').value.trim();
+    const subtitleUrl = document.getElementById('subtitleUrl').value.trim();
 
+    // 2. Validation: Ensure at least a video is present
+    if (!videoUrl) {
+        alert("Please enter a YouTube URL first.");
+        return;
+    }
+
+    // 3. Get the current page's address (The Client's location)
+    // This grabs "https://github.com/.../script_test2.html" automatically
+    const baseUrl = window.location.href.split('?')[0];
+
+    // 4. Construct the parameters
+    // We use encodeURIComponent to ensure symbols like '?' and '&' inside the 
+    // video link don't confuse the browser.
+    let newUrl = `${baseUrl}?videoUrl=${encodeURIComponent(videoUrl)}`;
+    
+    if (subtitleUrl) {
+        newUrl += `&subtitleUrl=${encodeURIComponent(subtitleUrl)}`;
+    }
+
+    // 5. Copy to Clipboard
+    // This uses the Client's system API to write to the clipboard
+    navigator.clipboard.writeText(newUrl).then(() => {
+        alert("Link copied to clipboard!\n\nYou can now share this URL.");
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        // Fallback if clipboard fails: show the link in a prompt
+        prompt("Copy this link manually:", newUrl);
+    });
+}
     </script>
 </body>
 </html>
