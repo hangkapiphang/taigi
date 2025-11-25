@@ -1,14 +1,14 @@
 1
 00:00:59,000 --> 00:01:01,000
-Koh chi̍t tiám-cheng kòe--khì ah
+Koh chi̍t tiám-cheng kòe--ah
 
 2
 00:01:01,000 --> 00:01:05,000
-Koh ke chi̍t tiám-cheng kiōng-beh khí-siáu
+Koh ke chi̍t tiám-cheng kiōng-beh tòng-bē-tiâu
 
 3
 00:01:05,000 --> 00:01:11,000
-Iá-chháu tī lō͘ - -nih kap hoe-hn̂g seⁿ--chhut-lâi
+Iá-chháu tī lō͘--nih kap hoe-hn̂g seⁿ kah lò-lò-tn̂g
 
 4
 00:01:11,000 --> 00:01:15,000
@@ -16,7 +16,7 @@ Hong teh chhè-khùi
 
 5
 00:01:15,000 --> 00:01:18,000
-phah-khui thang-á-mn̂g
+phah-khui kha-tián
 
 6
 00:01:18,000 --> 00:01:23,000
@@ -28,11 +28,11 @@ Chhin-chhiūⁿ teh kiò
 
 8
 00:01:24,000 --> 00:01:28,000
-Tńg-lâi chhù, tńg-lâi chhù
+Tńg-lâi, pàng in tńg--lâi
 
 9
 00:01:28,000 --> 00:01:30,000
-Sî-kan kàu ah, tio̍h tńg-lâi
+Sî-kan kàu ah, tio̍h pàng in tńg-lâi
 
 10
 00:01:30,000 --> 00:01:33,000
@@ -40,11 +40,11 @@ Sî-kan kàu ah, tio̍h tńg-lâi
 
 11
 00:01:33,000 --> 00:01:37,000
-Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô siau-sit
+Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô in ê siau-sit
 
 12
 00:01:37,000 --> 00:01:41,000
-Tńg-lâi chhù, tńg-lâi chhù
+Tńg-lâi, pàng in tńg--lâi
 
 13
 00:01:41,000 --> 00:01:43,000
@@ -72,23 +72,23 @@ Góa thiaⁿ-tio̍h kha-pō͘-siaⁿ
 
 19
 00:02:03,000 --> 00:02:07,000
-Tńg-lâi chhù, tńg-lâi chhù
+Tńg-lâi, pàng in tńg--lâi
 
 20
 00:02:07,000 --> 00:02:10,000
-In-ūi iáu-bōe hō͘ lán
+In-ūi iáu-bōe hêng hō͘ goán
 
 21
 00:02:10,000 --> 00:02:15,000
-Chhin-chhiūⁿ chá-tī kóng-hōe--ê
+Chhin-chhiūⁿ chiâⁿ kú í-chêng lán só͘ iok-sok ê.
 
 22
 00:02:45,000 --> 00:02:49,000
-Tńg-lâi chhù-nih, tńg-lâi chhù-nih
+Tńg-lâi, pàng in tńg--lâi
 
 23
 00:02:49,000 --> 00:02:51,000
-Sî-kan kàu ah, tio̍h tńg-lâi
+Sî-kan kàu--ah, tio̍h tńg-lâi
 
 24
 00:02:51,000 --> 00:02:54,000
@@ -96,15 +96,15 @@ Sî-kan kàu ah, tio̍h tńg-lâi
 
 25
 00:02:54,000 --> 00:02:58,000
-Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô siau-sit
+Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô in ê siau-sit
 
 26
 00:02:58,000 --> 00:03:02,000
-Tńg-lâi chhù-nih, tńg-lâi chhù-nih
+Tńg-lâi, pàng in tńg--lâi
 
 27
 00:03:02,000 --> 00:03:05,000
-In-ūi iáu-bōe hō͘ lán
+In-ūi iáu-bōe hêng hō͘ goán
 
 28
 00:03:05,000 --> 00:03:10,000
@@ -112,7 +112,7 @@ Chhin-chhiūⁿ chiâⁿ kú í-chêng lán só͘ iok-sok ê.
 
 29
 00:03:15,000 --> 00:03:18,000
-Tńg-lâi chhù-nih, tńg-lâi chhù-nih
+Tńg-lâi, pàng in tńg--lâi
 
 30
 00:03:18,000 --> 00:03:21,000
@@ -124,15 +124,15 @@ Sî-kan kàu ah, tio̍h tńg-lâi
 
 32
 00:03:23,000 --> 00:03:28,000
-Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô siau-sit
+Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô in ê siau-sit
 
 33
 00:03:28,000 --> 00:03:31,000
-Tńg-lâi chhù-nih, tńg-lâi chhù-nih
+Tńg-lâi, pàng in tńg--lâi
 
 34
 00:03:31,000 --> 00:03:34,000
-In-ūi iáu-bōe hō͘ lán
+In-ūi iáu-bōe hêng hō͘ lán
 
 35
 00:03:34,000 --> 00:03:41,000
@@ -144,4 +144,4 @@ Chhin-chhiūⁿ chiâⁿ kú í-chêng lán só͘ iok-sok ê.
 
 37
 00:03:47,000 --> 00:03:50,000
-Tńg-lâi chhù-nih!
+Chit-má pàng in Tńg-lâi chhù-nih!
