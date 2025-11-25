@@ -52,19 +52,19 @@ khoàⁿ kiû hō͘ ji̍t-thâu-kng chiò kah kng-sih-sih, chiū hoaⁿ–hí ka
 
 14
 00:00:53,000 --> 00:00:56,000
-Chi̍t-ê sio-jo̍ah ê ē-po͘ sî-á, i teh sńg ê sî,
+Chi̍t-ê sio-jo̍ah ê ē-po͘ sî-á, i teh sńg kiû ê sî,
 
 15
 00:00:56,000 --> 00:00:58,000
-kiû sòa ùi i ê chhiú phah-ka-la̍uh,
+sòa kā kiû phah-ka-la̍uh,
 
 16
 00:00:58,000 --> 00:01:01,000
-tōaⁿ--khì chúi-chéⁿ-piⁿ,
+Kiû tōaⁿ--khì chúi-chéⁿ-piⁿ,
 
 17
 00:01:01,000 --> 00:01:04,000
-Tôm chi̍t-siaⁿ, kiû sòa lak-lo̍h-khì chúi-té, chéⁿ-chúi phùn--chhut-lâi.
+Tôm chi̍t-siaⁿ, kiû sòa lak-lo̍h-khì chúi-chéⁿ lāi-té, chéⁿ-chúi phùn--chhut-lâi.
 
 18
 00:01:05,000 --> 00:01:07,000
@@ -96,7 +96,7 @@ Sī góa ê kim-kiû, i lak-lo̍h-khì chúi-chéⁿ lāi-té ah,
 
 25
 00:01:35,000 --> 00:01:38,000
-góa éng-oán khoàⁿ-bōe-tio̍h i ah.
+góa éng-oán khoàⁿ-bōe-tio̍h ah.
 
 26
 00:01:41,000 --> 00:01:43,000
@@ -116,11 +116,11 @@ liân góa tì ê kim-ông–koan mā sàng hō͘ lí.
 
 30
 00:01:56,000 --> 00:01:59,000
-Góa bô ài lí ê kim gûn chu pó.
+Góa bô ài lí ê kim gûn, chu pó.
 
 31
 00:01:59,000 --> 00:02:03,000
-M̄-koh nā lí goān-ì hō͘ góa kap lí chò-pōaⁿ,
+M̄-koh nā lí goān-ì hō͘ góa kap lí chò-phōaⁿ,
 
 32
 00:02:03,000 --> 00:02:05,000
@@ -136,7 +136,7 @@ koh khùn tī lí ê bîn-chhn̂g-téng,
 
 35
 00:02:11,000 --> 00:02:14,000
-góa chiū chhàng-lo̍h-khì chúi-té kā lí ê kiû khioh--chhut-lâi.
+góa chiū chhàng-lo̍h-khì chúi-té kā kiû khioh--chhut-lâi.
 
 36
 00:02:14,000 --> 00:02:17,000
@@ -156,7 +156,7 @@ Hó, hó.
 
 40
 00:02:28,000 --> 00:02:31,000
-Góa èng–ún lí, lí beh sím-mi̍h lóng hó.
+Góa tah-èng lí, lí beh sím-mi̍h lóng hó.
 
 41
 00:02:31,000 --> 00:02:34,000
@@ -164,7 +164,7 @@ M̄-koh kong-chú kin-pún to̍h bô siūⁿ-beh siú-sìn-iōng.
 
 42
 00:02:35,000 --> 00:02:38,000
-Chúi-ke liâm–piⁿ to̍h chhàng-lo̍h chúi-lāi.
+Chúi-ke liâm–piⁿ to̍h chhàng-lo̍h khì chúi-ni̍h.
 
 43
 00:02:38,000 --> 00:02:42,000
@@ -176,7 +176,7 @@ Kong-chú the̍h-tio̍h kiû, hoaⁿ-hí kah,
 
 45
 00:02:44,000 --> 00:02:48,000
-sím-mi̍h mā bô siūⁿ, sûi–sî chiū cháu tńg-khì ông-kiong.
+sím-mi̍h mā bô siūⁿ, liâm-piⁿ chiū cháu tńg-khì ông-kiong.
 
 46
 00:02:48,000 --> 00:02:50,000
@@ -204,7 +204,7 @@ Kong-chú kiâⁿ khì khui-mn̂g,
 
 52
 00:03:16,000 --> 00:03:20,000
-khoàⁿ-tio̍h Chúi-ke chē tī mn̂g-kha-kháu.
+khoàⁿ-tio̍h Chúi-ke chē tī mn̂g-kha-kháu ê gám-á.
 
 53
 00:03:21,000 --> 00:03:23,000
