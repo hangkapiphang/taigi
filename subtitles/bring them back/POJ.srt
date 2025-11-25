@@ -20,7 +20,7 @@ phah-khui kha-tián
 
 6
 00:01:18,000 --> 00:01:23,000
-Tī kū-chhiûⁿ tōa-la̍t tûi
+tōa-la̍t tûi kó͘-chhiûⁿ ê piah
 
 7
 00:01:23,000 --> 00:01:24,000
@@ -32,7 +32,7 @@ Tńg-lâi, pàng in tńg--lâi
 
 9
 00:01:28,000 --> 00:01:30,000
-Sî-kan kàu ah, tio̍h pàng in tńg-lâi
+Sî í-keng kàu ah, tio̍h pàng in tńg-lâi
 
 10
 00:01:30,000 --> 00:01:33,000
@@ -40,7 +40,7 @@ Sî-kan kàu ah, tio̍h pàng in tńg-lâi
 
 11
 00:01:33,000 --> 00:01:37,000
-Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô in ê siau-sit
+Taⁿ ji̍t-thâu lo̍h-soaⁿ ah, sòa iáu bô in ê siau-sit
 
 12
 00:01:37,000 --> 00:01:41,000
@@ -80,7 +80,7 @@ In-ūi iáu-bōe hêng hō͘ goán
 
 21
 00:02:10,000 --> 00:02:15,000
-Chhin-chhiūⁿ chiâⁿ kú í-chêng lán só͘ iok-sok ê.
+Chhin-chhiūⁿ chiâⁿ kú í-chêng só͘ iok-sok ê.
 
 22
 00:02:45,000 --> 00:02:49,000
@@ -88,7 +88,7 @@ Tńg-lâi, pàng in tńg--lâi
 
 23
 00:02:49,000 --> 00:02:51,000
-Sî-kan kàu--ah, tio̍h tńg-lâi
+Sî í-keng kàu--ah, tio̍h tńg-lâi
 
 24
 00:02:51,000 --> 00:02:54,000
@@ -96,7 +96,7 @@ Sî-kan kàu--ah, tio̍h tńg-lâi
 
 25
 00:02:54,000 --> 00:02:58,000
-Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô in ê siau-sit
+Taⁿ ji̍t-thâu lo̍h-soaⁿ ah, sòa iáu bô in ê siau-sit
 
 26
 00:02:58,000 --> 00:03:02,000
@@ -108,7 +108,7 @@ In-ūi iáu-bōe hêng hō͘ goán
 
 28
 00:03:05,000 --> 00:03:10,000
-Chhin-chhiūⁿ chiâⁿ kú í-chêng lán só͘ iok-sok ê.
+Chhin-chhiūⁿ chiâⁿ kú í-chêng só͘ iok-sok ê.
 
 29
 00:03:15,000 --> 00:03:18,000
@@ -116,7 +116,7 @@ Tńg-lâi, pàng in tńg--lâi
 
 30
 00:03:18,000 --> 00:03:21,000
-Sî-kan kàu ah, tio̍h tńg-lâi
+Sî í-keng kàu ah, tio̍h tńg-lâi
 
 31
 00:03:21,000 --> 00:03:23,000
@@ -124,7 +124,7 @@ Sî-kan kàu ah, tio̍h tńg-lâi
 
 32
 00:03:23,000 --> 00:03:28,000
-Ji̍t-thâu to̍h lo̍h-soaⁿ ah, iáu bô in ê siau-sit
+Taⁿ ji̍t-thâu lo̍h-soaⁿ ah, sòa iáu bô in ê siau-sit
 
 33
 00:03:28,000 --> 00:03:31,000
@@ -132,15 +132,15 @@ Tńg-lâi, pàng in tńg--lâi
 
 34
 00:03:31,000 --> 00:03:34,000
-In-ūi iáu-bōe hêng hō͘ lán
+In-ūi iáu-bōe hêng hō͘ goán
 
 35
 00:03:34,000 --> 00:03:41,000
-Chhin-chhiūⁿ chiâⁿ kú í-chêng lán só͘ iok-sok ê.
+Chhin-chhiūⁿ chiâⁿ kú í-chêng só͘ iok-sok ê.
 
 36
 00:03:41,000 --> 00:03:47,000
-Chhin-chhiūⁿ chiâⁿ kú í-chêng lán só͘ iok-sok ê.
+Chhin-chhiūⁿ chiâⁿ kú í-chêng só͘ iok-sok ê.
 
 37
 00:03:47,000 --> 00:03:50,000
