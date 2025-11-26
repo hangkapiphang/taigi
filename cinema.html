@@ -32,7 +32,7 @@
         /* Subtitle Styling */
         #subtitle {
             position: absolute;
-            bottom: 90%; /* Lifts it up slightly from the bottom edge */
+            top: 10%; /* Lifts it up slightly from the bottom edge */
             left: 50%;
             transform: translateX(-50%);
             width: 98%;
@@ -83,7 +83,7 @@
                 console.log("Device detected: iOS. Using Times New Roman.");
             } else {
                 // If PC/Android: Use Taigi Unicode first
-                subtitleSpan.style.fontFamily = "'Taigi Unicode', 'Times New Roman', serif";
+                subtitleSpan.style.fontFamily = "'Taigi Unicode', serif";
                 console.log("Device detected: PC/Other. Using Taigi Unicode.");
             }
         }
