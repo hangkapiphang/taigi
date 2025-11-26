@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinema Mode</title>
-<!-- IMPORT GOOGLE FONTS FOR POJ SUPPORT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Times New Roman&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Times New Roman&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -48,12 +44,7 @@
         #subtitle span {
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black box */
             color: #fff;
-         /* --- FONT FIX FOR IOS --- */
-            /* 1. Try 'Taigi Unicode' (Your PC) */
-            /* 2. Try 'Gentium Book Plus' (The best web font for POJ) */
-            /* 3. Fallback to generic serif */
-            font-family: 'Taigi Unicode', 'Gentium Book Plus', 'Noto Sans', serif;
-    /* ---font-family: 'taigi unicode', sans-serif; */
+            font-family: 'taigi unicode', 'Times New Roman', sans-serif; 
             font-size: clamp(20px, 3.5vw, 32px); /* Slightly refined size */
             padding: 6px 14px;
             border-radius: 6px;
@@ -76,7 +67,31 @@
         let player;
         let subtitles = [];
 
+        // --- NEW FUNCTION: DETECT DEVICE AND SET FONT ---
+        function detectDeviceAndSetFont() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const subtitleSpan = document.querySelector('#subtitle span');
+            
+            // Check for iPhone, iPad, iPod
+            // Note: Modern iPads often identify as Macintosh, so we check for touch capability too
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent) || 
+                          (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+
+            if (isIOS) {
+                // If iPhone/iPad: Force Times New Roman
+                subtitleSpan.style.fontFamily = "'Times New Roman', serif";
+                console.log("Device detected: iOS. Using Times New Roman.");
+            } else {
+                // If PC/Android: Use Taigi Unicode first
+                subtitleSpan.style.fontFamily = "'Taigi Unicode', 'Times New Roman', serif";
+                console.log("Device detected: PC/Other. Using Taigi Unicode.");
+            }
+        }
+   
         function onYouTubeIframeAPIReady() {
+             // Run font detection immediately
+            detectDeviceAndSetFont();
+            
             const urlParams = new URLSearchParams(window.location.search);
             const videoUrl = urlParams.get('videoUrl');
             const subtitleUrl = urlParams.get('subtitleUrl');
