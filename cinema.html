@@ -103,6 +103,11 @@
         }
 
         function onPlayerReady(event) {
+            // --- NEW FUNCTIONALITY ---
+            // Explicitly force the video to jump to 0:00 and play.
+            // This ensures that even if the browser reloads, it doesn't "resume" from the middle.
+            event.target.seekTo(0);
+            event.target.playVideo();
             // Check for subtitle updates every 100ms
             setInterval(updateSubtitles, 100);
 
