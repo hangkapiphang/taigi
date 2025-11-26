@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinema Mode</title>
-    <link href="https://fonts.googleapis.com/css2?family=Times New Roman&display=swap" rel="stylesheet">
+<!-- IMPORT GOOGLE FONTS FOR POJ SUPPORT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Times New Roman&display=swap" rel="stylesheet"> -->
     <style>
         body {
             margin: 0;
@@ -44,7 +48,12 @@
         #subtitle span {
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black box */
             color: #fff;
-            font-family: 'taigi unicode', sans-serif;
+         /* --- FONT FIX FOR IOS --- */
+            /* 1. Try 'Taigi Unicode' (Your PC) */
+            /* 2. Try 'Gentium Book Plus' (The best web font for POJ) */
+            /* 3. Fallback to generic serif */
+            font-family: 'Taigi Unicode', 'Gentium Book Plus', 'Noto Sans', serif;
+    /* ---font-family: 'taigi unicode', sans-serif; */
             font-size: clamp(20px, 3.5vw, 32px); /* Slightly refined size */
             padding: 6px 14px;
             border-radius: 6px;
