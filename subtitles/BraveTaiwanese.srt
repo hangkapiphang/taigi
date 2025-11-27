@@ -12,11 +12,11 @@ Sui-jiân eng-hiông tāi-tāi pōe-chhut
 
 4
 00:00:17,040 --> 00:00:21,000
-Khó-sioh lóng pòaⁿ-tô͘ lâi hi-seng
+Khó-sioh lóng poàn-tô͘ lâi hi-seng
 
 5
 00:00:21,000 --> 00:00:25,000
-Khám-khia̍t lō͘-tô͘ chhiáⁿ hong-hō͘
+Khám-khia̍t lō͘-tô͘ koh hong-hō͘
 
 6
 00:00:25,000 --> 00:00:29,080
@@ -36,7 +36,7 @@ Pâi-tû bān-lân, chiân-tô͘ bô-hān
 
 10
 00:00:40,080 --> 00:00:44,040
-Thoân-kiat tiō ū ǹg-bāng
+Thoân-kiat chiū ū ǹg-bāng
 
 11
 00:00:44,040 --> 00:00:46,040
@@ -48,7 +48,7 @@ Bô-lūn jīm-hô chó͘-tòng
 
 13
 00:00:50,000 --> 00:00:54,000
-Pâi-tû bān-lân, hû-chhî sio-khan
+Pâi-tû bān-lân, hû-chhî saⁿ-khan
 
 14
 00:00:54,000 --> 00:00:59,000
@@ -68,11 +68,11 @@ Sui-jiân eng-hiông tāi-tāi pōe-chhut
 
 18
 00:01:14,040 --> 00:01:18,040
-Khó-sioh lóng pòaⁿ-tô͘ lâi hi-seng
+Khó-sioh lóng poàn-tô͘ lâi hi-seng
 
 19
 00:01:18,040 --> 00:01:22,040
-Khám-khia̍t lō͘-tô͘ chhiáⁿ hong-hō͘
+Khám-khia̍t lō͘-tô͘ koh hong-hō͘
 
 20
 00:01:22,040 --> 00:01:27,000
@@ -92,7 +92,7 @@ Pâi-tû bān-lân, chiân-tô͘ bô-hān
 
 24
 00:01:38,000 --> 00:01:42,000
-Thoân-kiat tiō ū ǹg-bāng
+Thoân-kiat chiū ū ǹg-bāng
 
 25
 00:01:42,000 --> 00:01:44,000
