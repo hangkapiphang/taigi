@@ -9,6 +9,10 @@ const movieLibrary = {
         video: "https://youtu.be/Fy_Lj_wEiLc",
         sub: "https://raw.githubusercontent.com/hangkapiphang/taigi/refs/heads/main/subtitles/BraveTaiwanese.srt"
     },
+     "Formosa": {
+        video: "https://youtu.be/FCKEK1DBKzA",
+        sub: "https://raw.githubusercontent.com/hangkapiphang/taigi/refs/heads/main/subtitles/Formosa.srt"
+    },
     "movie2": {
         video: "https://youtu.be/ANOTHER_LINK",
         sub: "https://link.to/another.srt"
