@@ -70,6 +70,9 @@
         <div id="subtitle"><span></span></div>
     </div>
 
+    <!-- LOAD THE DATABASE FILE HERE -->
+    <script src="movies.js"></script>
+
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         let player;
@@ -78,20 +81,46 @@
      function onYouTubeIframeAPIReady() {
              
             const urlParams = new URLSearchParams(window.location.search);
-            const videoUrl = urlParams.get('videoUrl');
-            const subtitleUrl = urlParams.get('subtitleUrl');
+            // 1. Get the simple ID from the URL (e.g., ?id=demo)
+            const movieId = urlParams.get('id');
 
-            if (videoUrl) {
-                const videoId = extractVideoId(videoUrl);
-                if (videoId) {
-                    createPlayer(videoId);
+            // 2. Check if the ID exists in your external "movieLibrary"
+            if (movieId && typeof movieLibrary !== 'undefined' && movieLibrary[movieId]) {
+                
+                const data = movieLibrary[movieId];
+                
+                // Load Video
+                if (data.video) {
+                    const videoId = extractVideoId(data.video);
+                    if (videoId) {
+                        createPlayer(videoId);
+                    }
                 }
-            }
 
-            if (subtitleUrl) {
-                fetchSubtitle(subtitleUrl);
+                // Load Subtitle
+                if (data.sub) {
+                    fetchSubtitle(data.sub);
+                }
+
+            } else {
+                console.error("Movie ID not found or movies.js not loaded.");
             }
-        }
+        }              
+        
+        //    const videoUrl = urlParams.get('videoUrl');
+        //    const subtitleUrl = urlParams.get('subtitleUrl');
+
+        //    if (videoUrl) {
+        //        const videoId = extractVideoId(videoUrl);
+        //        if (videoId) {
+        //            createPlayer(videoId);
+        //        }
+        //    }
+
+        //    if (subtitleUrl) {
+        //        fetchSubtitle(subtitleUrl);
+        //    }
+        // }
 
         function createPlayer(id) {
             player = new YT.Player('player', {
