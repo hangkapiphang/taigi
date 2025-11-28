@@ -70,58 +70,55 @@
         <div id="subtitle"><span></span></div>
     </div>
 
-    <!-- LOAD THE DATABASE FILE HERE -->
-    <script src="movies.js"></script>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
+   <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         let player;
         let subtitles = [];
 
      function onYouTubeIframeAPIReady() {
-             
-            const urlParams = new URLSearchParams(window.location.search);
-            // 1. Get the simple ID from the URL (e.g., ?id=demo)
-            const movieId = urlParams.get('id');
+          const urlParams = new URLSearchParams(window.location.search);
+          // [MODIFIED] We still get the ID, but we use it to find a file, not a JS object
+         const movieId = urlParams.get('id');
 
-            // 2. Check if the ID exists in your external "movieLibrary"
-            if (movieId && typeof movieLibrary !== 'undefined' && movieLibrary[movieId]) {
-                
-                const data = movieLibrary[movieId];
-                
-                // Load Video
-                if (data.video) {
-                    const videoId = extractVideoId(data.video);
-                    if (videoId) {
-                        createPlayer(videoId);
-                    }
-                }
-
-                // Load Subtitle
-                if (data.sub) {
-                    fetchSubtitle(data.sub);
-                }
-
-            } else {
-                console.error("Movie ID not found or movies.js not loaded.");
+         if (movieId) {
+         // [ADDED] Logic to fetch the specific JSON file from the 'data' folder
+                fetch(`data/${movieId}.json`)
+                    .then(r => { 
+                        if(!r.ok) throw new Error("Movie data not found"); 
+                        return r.json(); 
+                    })
+                    .then(data => {
+                        // 1. Load Video
+                        if (data.video) {
+                            const videoId = extractVideoId(data.video);
+                            if (videoId) createPlayer(videoId);
+                        }
+                        
+                        // 2. Load Hidden Subtitles
+                        // [MODIFIED] We look for 'hiddenSub' (scrambled text), NOT a URL.
+                        if (data.hiddenSub) {
+                            const plainText = decryptSubtitle(data.hiddenSub);
+                            parseSRT(plainText);
+                        } 
+                    })
+                    .catch(e => { 
+                        console.error(e); 
+                        // Optional: Alert user if file missing
+                        // alert("Movie not found."); 
+                    });
             }
         }              
-        
-        //    const videoUrl = urlParams.get('videoUrl');
-        //    const subtitleUrl = urlParams.get('subtitleUrl');
 
-        //    if (videoUrl) {
-        //        const videoId = extractVideoId(videoUrl);
-        //        if (videoId) {
-        //            createPlayer(videoId);
-        //        }
-        //    }
-
-        //    if (subtitleUrl) {
-        //        fetchSubtitle(subtitleUrl);
-        //    }
-        // }
-
+        // [ADDED] Function to unscramble the hidden text
+        function decryptSubtitle(scrambled) {
+            try {
+                let step1 = atob(scrambled);
+                let step2 = step1.split('').reverse().join('');
+                let step3 = decodeURIComponent(escape(atob(step2)));
+                return step3;
+            } catch (e) { return ""; }
+        }
+              
         function createPlayer(id) {
             player = new YT.Player('player', {
                 videoId: id,
@@ -178,18 +175,7 @@
             }
         }
 
-        function fetchSubtitle(url) {
-            fetch(url)
-                .then(r => r.text())
-                .then(content => {
-                    if (url.toLowerCase().endsWith('.txt')) {
-                        content = convertTxtToSrt(content);
-                    }
-                    parseSRT(content);
-                })
-                .catch(e => console.error("Subtitle Load Error", e));
-        }
-
+     // We are loading text directly from the JSON.
         function parseSRT(srtContent) {
             subtitles = [];
             const blocks = srtContent.trim().split(/\n\s*\n/);
