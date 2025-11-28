@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Mode</title>
+    <style>
+        /* --- 1. DEFINE THE FONT HERE --- */
+        @font-face {
+            font-family: 'Taigi unicode'; /* Must match the name used below exactly */
+            /* MAKE SURE you created a 'fonts' folder and uploaded the file! */
+            src: url('./font/Charis-Regular.woff2') format('woff2'); 
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* Force 16:9 aspect ratio max, but fit screen */
+            max-width: 177.78vh; /* 16/9 = 1.7778 */
+            max-height: 56.25vw; /* 9/16 = 0.5625 */
+            margin: auto;
+        }
+        #player {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Subtitle Styling */
+        #subtitle {
+            position: absolute;
+            bottom: 88%; /* Lifts it up slightly from the bottom edge */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 98%;
+            text-align: center;
+            pointer-events: none; /* Allows you to click "through" the text to pause video */
+            z-index: 100;
+        }
+        
+        #subtitle span {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black box */
+            color: #fff;
+            font-family: 'Taigi unicode', 'Times New Roman', serif; 
+            font-size: clamp(20px, 3.5vw, 32px); /* Slightly refined size */
+            padding: 6px 14px;
+            border-radius: 6px;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="video-container">
+        <div id="player"></div>
+        <div id="subtitle"><span></span></div>
+    </div>
+
+    <!-- LOAD THE DATABASE FILE HERE -->
+    <script src="movies.js"></script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        let subtitles = [];
+
+     function onYouTubeIframeAPIReady() {
+             
+            const urlParams = new URLSearchParams(window.location.search);
+            // 1. Get the simple ID from the URL (e.g., ?id=demo)
+            const movieId = urlParams.get('id');
+
+            // 2. Check if the ID exists in your external "movieLibrary"
+            if (movieId && typeof movieLibrary !== 'undefined' && movieLibrary[movieId]) {
+                
+                const data = movieLibrary[movieId];
+                
+                // Load Video
+                if (data.video) {
+                    const videoId = extractVideoId(data.video);
+                    if (videoId) {
+                        createPlayer(videoId);
+                    }
+                }
+
+                // Load Subtitle
+                if (data.sub) {
+                    fetchSubtitle(data.sub);
+                }
+
+            } else {
+                console.error("Movie ID not found or movies.js not loaded.");
+            }
+        }              
+        
+        //    const videoUrl = urlParams.get('videoUrl');
+        //    const subtitleUrl = urlParams.get('subtitleUrl');
+
+        //    if (videoUrl) {
+        //        const videoId = extractVideoId(videoUrl);
+        //        if (videoId) {
+        //            createPlayer(videoId);
+        //        }
+        //    }
+
+        //    if (subtitleUrl) {
+        //        fetchSubtitle(subtitleUrl);
+        //    }
+        // }
+
+        function createPlayer(id) {
+            player = new YT.Player('player', {
+                videoId: id,
+                playerVars: { 
+                    'autoplay': 1, 
+                    'playsinline': 1,
+                    'controls': 1,
+                    'rel': 0,
+                    'fs': 1,
+                    'cc_load_policy': 0, // 0 = Force Captions OFF by default
+                    'iv_load_policy': 3  // 3 = Force Annotations OFF
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // --- NEW FUNCTIONALITY ---
+            // Explicitly force the video to jump to 0:00 and play.
+            // This ensures that even if the browser reloads, it doesn't "resume" from the middle.
+            event.target.seekTo(0);
+            event.target.playVideo();
+            // Check for subtitle updates every 100ms
+            setInterval(updateSubtitles, 100);
+
+            // Double measure: Try to programmatically unload the caption module
+            // This attempts to shut off the CC button immediately
+            try {
+                player.unloadModule("captions");
+                player.unloadModule("cc");
+            } catch (e) {
+                console.log("Could not force unload captions via API");
+            }
+        }
+
+        function updateSubtitles() {
+            if (!player || typeof player.getCurrentTime !== 'function') return;
+            try {
+                const currentTime = player.getCurrentTime();
+                const subtitle = subtitles.find(s => currentTime >= s.start && currentTime <= s.end);
+                
+                const textSpan = document.querySelector('#subtitle span');
+                if (subtitle) {
+                    textSpan.textContent = subtitle.text;
+                    textSpan.style.display = 'inline'; 
+                } else {
+                    textSpan.textContent = '';
+                    textSpan.style.display = 'none'; 
+                }
+            } catch (error) {
+                // Ignore errors during loading
+            }
+        }
+
+        function fetchSubtitle(url) {
+            fetch(url)
+                .then(r => r.text())
+                .then(content => {
+                    if (url.toLowerCase().endsWith('.txt')) {
+                        content = convertTxtToSrt(content);
+                    }
+                    parseSRT(content);
+                })
+                .catch(e => console.error("Subtitle Load Error", e));
+        }
+
+        function parseSRT(srtContent) {
+            subtitles = [];
+            const blocks = srtContent.trim().split(/\n\s*\n/);
+            
+            blocks.forEach(block => {
+                const lines = block.split('\n');
+                if (lines.length >= 3) {
+                    const timeLine = lines[1];
+                    const timeMatch = timeLine.match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+                    
+                    if (timeMatch) {
+                        const textContent = lines.slice(2).join(' ');
+                        subtitles.push({
+                            start: timeToSeconds(timeMatch[1]),
+                            end: timeToSeconds(timeMatch[2]),
+                            text: textContent
+                        });
+                    }
+                }
+            });
+        }
+
+        function convertTxtToSrt(txtContent) {
+            const pattern = /\[(\d+):(\d+)\]\s*(.*)/g;
+            const matches = [...txtContent.matchAll(pattern)];
+            let srtContent = '';
+
+            for (let i = 0; i < matches.length; i++) {
+                const [_, minutes, seconds, text] = matches[i];
+                const startTime = `00:${minutes.padStart(2, '0')}:${seconds.padStart(2, '0')},000`;
+                
+                let endTime;
+                if (i < matches.length - 1) {
+                    const [nextFull, nextMin, nextSec] = matches[i + 1];
+                    endTime = `00:${nextMin.padStart(2, '0')}:${nextSec.padStart(2, '0')},000`;
+                } else {
+                    let endMin = parseInt(minutes);
+                    let endSec = parseInt(seconds) + 5;
+                    if (endSec >= 60) { endMin++; endSec %= 60; }
+                    endTime = `00:${endMin.toString().padStart(2, '0')}:${endSec.toString().padStart(2, '0')},000`;
+                }
+                srtContent += `${i + 1}\n${startTime} --> ${endTime}\n${text.trim()}\n\n`;
+            }
+            return srtContent.trim();
+        }
+
+        function timeToSeconds(time) {
+            const [hours, minutes, seconds] = time.replace(',', '.').split(':');
+            return parseInt(hours) * 3600 + parseInt(minutes) * 60 + parseFloat(seconds);
+        }
+
+        function extractVideoId(url) {
+            const youtubeRegex = /[?&]v=([^&#]*)/i;
+            const match = youtubeRegex.exec(url);
+            if (match && match[1]) return match[1];
+            
+            const shortRegex = /youtu\.be\/([^?&#]+)/i;
+            const shortMatch = shortRegex.exec(url);
+            if (shortMatch && shortMatch[1]) return shortMatch[1];
+            
+            return null;
+        }
+    </script>
+</body>
+</html>
