@@ -1,0 +1,112 @@
+1
+00:00:01,000 --> 00:00:06,000
+Hái-iûⁿ ê Kok-ka
+(Tâi-oân ‧ Formosa)
+
+2
+00:00:18,100 --> 00:00:25,500
+Sian-âng sī jia̍t-chêng, tan-sûn, thó͘-ti̍t, Tâi-oân-lâng ê sim-koaⁿ
+
+3
+00:00:25,500 --> 00:00:32,600
+Tâi-oân-lâng, kāng sim-koaⁿ, kāng-khoán ūn-miā
+
+4
+00:00:32,600 --> 00:00:41,200
+Phiau-phiat kiáⁿ-sun, phiau-phiat kiáⁿ-sun, tāi-tāi éng-oán teh seⁿ-thòaⁿ
+
+5
+00:00:41,200 --> 00:00:49,500
+Chhùi-le̍k ê pó-tó, bí-lē san-hô, lo̍h-thó͘ ta̍k-hāng lóng ē oa̍h
+
+6
+00:00:49,500 --> 00:00:56,300
+phōng-lâi-bí, gio̍k-lân-hoe, gia̍h-thâu khòaⁿ-māi
+
+7
+00:00:56,300 --> 00:01:04,500
+Koân-tōa khui-khoah, koân-tōa khui-khoah, thàu-thiⁿ thàu-thiⁿ ê Gio̍k-san
+
+8
+00:01:04,500 --> 00:01:12,600
+Sûn-pe̍h sī chū-iû, bîn-chú, kong-bêng, bû-hān ê tē-pêng-sòaⁿ
+
+9
+00:01:12,600 --> 00:01:20,000
+Ū chun-giâm, khiā théng-théng, Tâi-oân ê kiáⁿ-sun
+
+10
+00:01:20,000 --> 00:01:28,500
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+11
+00:01:40,500 --> 00:01:47,700
+Sian-âng sī jia̍t-chêng, tan-sûn, thó͘-ti̍t, Tâi-oân-lâng ê sim-koaⁿ
+
+12
+00:01:47,700 --> 00:01:54,600
+Tâi-oân-lâng, kāng sim-koaⁿ, kāng-khoán ūn-miā
+
+13
+00:01:54,600 --> 00:02:03,100
+Phiau-phiat kiáⁿ-sun, phiau-phiat kiáⁿ-sun, tāi-tāi éng-oán teh seⁿ-thòaⁿ
+
+14
+00:02:03,100 --> 00:02:11,500
+Chhùi-le̍k ê pó-tó, bí-lē san-hô, lo̍h-thó͘ ta̍k-hāng lóng ē oa̍h
+
+15
+00:02:11,500 --> 00:02:18,500
+phōng-lâi-bí, gio̍k-lân-hoe, gia̍h-thâu khòaⁿ-māi
+
+16
+00:02:18,500 --> 00:02:26,700
+Koân-tōa khui-khoah, koân-tōa khai-khoah, thàu-thiⁿ thàu-thiⁿ ê Gio̍k-san
+
+17
+00:02:26,700 --> 00:02:34,800
+Sûn-pe̍h sī chū-iû, bîn-chú, kong-bêng, bû-hān ê tē-pêng-sòaⁿ
+
+18
+00:02:34,800 --> 00:02:41,900
+Ū chun-giâm, khiā théng-théng, Tâi-oân ê kiáⁿ-sun
+
+19
+00:02:41,900 --> 00:02:49,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+20
+00:02:49,800 --> 00:02:57,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+21
+00:02:57,800 --> 00:03:05,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+22
+00:03:05,800 --> 00:03:13,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+23
+00:03:13,800 --> 00:03:21,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+24
+00:03:21,800 --> 00:03:29,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+25
+00:03:29,800 --> 00:03:37,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+26
+00:03:37,800 --> 00:03:45,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+27
+00:03:45,800 --> 00:03:53,800
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
+
+28
+00:03:53,800 --> 00:04:02,000
+Chhiong-boán hí-lo̍k, chhiong-boán hí-lo̍k, lán sī hái-iûⁿ ê kok-ka
