@@ -146,22 +146,22 @@
         let subtitles = [];
 
         // --- 1. DEVICE DETECTION (PC vs iPhone) ---
-        function detectDeviceAndSetFont() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const subtitleSpan = document.querySelector('#subtitle span');
+//        function detectDeviceAndSetFont() {
+  //          const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    //        const subtitleSpan = document.querySelector('#subtitle span');
             
             // Check for iPhone/iPad
-            const isIOS = /iPad|iPhone|iPod/.test(userAgent) || 
-                          (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+      //      const isIOS = /iPad|iPhone|iPod/.test(userAgent) || 
+        //                  (navigator.userAgent.includes("Mac") && "ontouchend" in document);
 
-            if (isIOS) {
+          //  if (isIOS) {
                 // Force Times New Roman on iOS to fix stacking diacritics
-                subtitleSpan.style.fontFamily = "'Times New Roman', serif";
-            } else {
+            //    subtitleSpan.style.fontFamily = "'Times New Roman', serif";
+          //  } else {
                 // Use Taigi Unicode on PC/Android
-                subtitleSpan.style.fontFamily = "'Taigi Unicode', 'Times New Roman', serif";
-            }
-        }
+            //    subtitleSpan.style.fontFamily = "'Taigi Unicode', 'Times New Roman', serif";
+           // }
+       // }
 
         // --- 2. FULLSCREEN LOGIC ---
         function toggleFullscreen() {
