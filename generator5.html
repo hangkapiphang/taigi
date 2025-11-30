@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Cinema Generator</title>
+    <style>
+        @font-face {
+            font-family: 'Taigi Unicode';
+            src: url('./font/Charis-Regular.woff2') format('woff2'); 
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            margin: 0; font-family: Arial, sans-serif;
+            display: flex; flex-direction: column; align-items: center;
+            background-color: #f0f0f0; min-height: 100vh; padding-bottom: 50px;
+        }
+        #video-container {
+            position: relative; width: 100vw; height: calc(100vw * 9 / 16);
+            max-height: 70vh; background: #000;
+        }
+        #player { width: 100%; height: 100%; }
+
+        #preview-mask {
+            position: absolute; bottom: 0; left: 0; 
+            width: 100%; height: 0%; background-color: #000;
+            z-index: 5; pointer-events: none;
+        }
+
+        #subtitle {
+            font-size: 32px; text-align: center; background: rgba(0, 0, 0, 0.7);
+            color: white; padding: 8px 16px; width: auto; max-width: 90%;
+            margin: -80px auto 0 auto; position: relative; z-index: 10;
+            border-radius: 6px; font-family: 'Taigi Unicode', 'Times New Roman', serif;
+            min-height: 1.5em; box-decoration-break: clone;
+            -webkit-box-decoration-break: clone; line-height: 1.6;
+            
+            /* [CHANGED] Stronger Shadow for preview */
+            text-shadow: 3px 3px 2px #000000;
+        }
+        #subtitle b { color: #fff; text-shadow: 0 0 2px white; }
+
+        #controls {
+            margin-top: 50px; display: flex; flex-direction: column;
+            align-items: center; gap: 15px; width: 95%; max-width: 640px;
+        }
+        .input-group, .srt-group, .url-group, .share-group {
+            display: flex; gap: 10px; align-items: center; width: 100%;
+            justify-content: center; flex-wrap: wrap;
+        }
+        .mask-panel {
+            background: #e9ecef; padding: 15px; border-radius: 8px;
+            width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px;
+            border: 1px solid #ccc;
+        }
+        .slider-row { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .slider-row label { width: 100px; font-weight: bold; }
+        .slider-row input { flex-grow: 1; margin: 0 10px; cursor: pointer; }
+        .slider-row span { width: 40px; text-align: right; font-family: monospace;}
+
+        input[type="text"] {
+            padding: 10px; font-size: 16px; border: 2px solid #ccc;
+            border-radius: 5px; flex-grow: 1; outline: none;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px; background-color: #007bff;
+            color: white; border: none; border-radius: 5px; cursor: pointer; white-space: nowrap;
+        }
+        button:hover { background-color: #0056b3; }
+        .custom-file-button, .url-upload-button { background-color: #28a745; }
+        .share-button { background-color: #6f42c1; width: 100%; font-weight: bold; border: 2px solid #563098; }
+        #srtFile { display: none; }
+        #srtFileName { padding: 10px; font-size: 14px; background: #fff; min-width: 150px; text-align: center; border-radius: 5px;}
+        #result-area {
+            display: none; width: 90%; max-width: 640px; background: #fff;
+            border: 2px solid #6f42c1; padding: 20px; margin-top: 20px;
+            border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        textarea { width: 100%; height: 80px; margin-bottom: 10px; padding: 5px; background: #f9f9f9; }
+        #rawContentStorage { display: none; }
+        .step-title { font-weight: bold; color: #6f42c1; margin-bottom: 5px; display: block;}
+    </style>
+</head>
+<body>
+
+    <div id="video-container">
+        <div id="preview-mask"></div>
+        <div id="player"></div>
+    </div>
+    <div id="subtitle"></div>
+    
+    <textarea id="rawContentStorage"></textarea>
+
+    <div id="controls">
+        <div class="input-group">
+            <input type="text" id="youtubeUrl" placeholder="Paste YouTube Link Here..." />
+            <button onclick="loadVideo()">1. Load Video</button>
+        </div>
+
+        <div class="srt-group">
+            <span id="srtFileName">No file chosen</span>
+            <input type="file" id="srtFile" accept=".srt" /> 
+            <button class="custom-file-button" onclick="document.getElementById('srtFile').click()">Load Local .srt</button>
+        </div>
+        
+        <div class="url-group">
+            <input type="text" id="subtitleUrl" placeholder="Or Paste GitHub Raw URL..." />
+            <button class="url-upload-button" onclick="fetchSubtitleFromUrl()">2. Fetch Text</button>
+        </div>
+
+        <div class="mask-panel">
+            <div style="text-align:center; margin-bottom:5px; color:#333;"><strong>Black Mask Settings</strong> (Hide original text)</div>
+            <div class="slider-row"><label>Height:</label><input type="range" id="mHeight" min="0" max="100" value="0" oninput="updateMask()"><span id="valHeight">0%</span></div>
+            <div class="slider-row"><label>Width:</label><input type="range" id="mWidth" min="0" max="100" value="100" oninput="updateMask()"><span id="valWidth">100%</span></div>
+            <div class="slider-row"><label>Bottom:</label><input type="range" id="mBottom" min="0" max="100" value="0" oninput="updateMask()"><span id="valBottom">0%</span></div>
+            <div class="slider-row"><label>Left:</label><input type="range" id="mLeft" min="0" max="100" value="0" oninput="updateMask()"><span id="valLeft">0%</span></div>
+        </div>
+        
+        <hr style="width:100%; border:0; border-top:1px solid #ccc; margin: 10px 0;">
+
+        <div class="share-group">
+            <button class="share-button" onclick="generateAndDownload()">★ GENERATE & DOWNLOAD JSON ★</button>
+        </div>
+    </div>
+
+    <div id="result-area">
+        <span class="step-title">STEP 1: Upload to 'data' folder:</span>
+        <input type="text" value="Upload to GitHub" readonly style="width: 100%; margin-bottom: 15px; background: #eee; padding: 10px;">
+        <span class="step-title">STEP 2: Share this link:</span>
+        <input type="text" id="finalLink" readonly style="width: 100%; background: #e9ecef; font-weight: bold; color: #333; padding: 10px;">
+        <details style="margin-top: 15px;">
+            <summary style="cursor:pointer; color:#666;">View Raw Code</summary>
+            <textarea id="codeSnippet" readonly></textarea>
+        </details>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        const CINEMA_FILENAME = "cinemad.html"; 
+
+        let player;
+        let subtitles = [];
+
+        function onYouTubeIframeAPIReady() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.get('videoUrl')) {
+                document.getElementById('youtubeUrl').value = urlParams.get('videoUrl');
+                loadVideo();
+            }
+        }
+
+        function loadVideo() {
+            const url = document.getElementById('youtubeUrl').value;
+            const videoId = extractVideoId(url);
+            if (!videoId) { alert('Invalid YouTube URL'); return; }
+            if (player) { player.loadVideoById(videoId); } else {
+                player = new YT.Player('player', {
+                    height: '100%', width: '100%', videoId: videoId,
+                    events: { 'onReady': onPlayerReady }
+                });
+            }
+        }
+
+        function extractVideoId(url) {
+            const match = url.match(/[?&]v=([^&#]*)/) || url.match(/youtu\.be\/([^?&#]+)/);
+            return match && match[1] ? match[1] : null;
+        }
+
+        function onPlayerReady(event) { setInterval(updateSubtitles, 100); }
+
+        function updateSubtitles() {
+            if (!player || typeof player.getCurrentTime !== 'function') return;
+            try {
+                const currentTime = player.getCurrentTime();
+                const subtitle = subtitles.find(s => currentTime >= s.start && currentTime <= s.end);
+                const subDiv = document.getElementById('subtitle');
+                if (subtitle) { 
+                    subDiv.innerHTML = subtitle.text; 
+                    subDiv.style.display = 'block'; 
+                } 
+                else { 
+                    subDiv.innerHTML = ''; 
+                    subDiv.style.display = 'none'; 
+                }
+            } catch (e) {}
+        }
+
+        function updateMask() {
+            const h = document.getElementById('mHeight').value;
+            const w = document.getElementById('mWidth').value;
+            const b = document.getElementById('mBottom').value;
+            const l = document.getElementById('mLeft').value;
+
+            document.getElementById('valHeight').textContent = h + "%";
+            document.getElementById('valWidth').textContent = w + "%";
+            document.getElementById('valBottom').textContent = b + "%";
+            document.getElementById('valLeft').textContent = l + "%";
+
+            const mask = document.getElementById('preview-mask');
+            mask.style.height = h + "%";
+            mask.style.width = w + "%";
+            mask.style.bottom = b + "%";
+            mask.style.left = l + "%";
+        }
+
+        document.getElementById('srtFile').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById('srtFileName').textContent = file.name;
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    document.getElementById('rawContentStorage').value = e.target.result;
+                    processSubtitle(e.target.result, file.name);
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        function fetchSubtitleFromUrl() {
+            const url = document.getElementById('subtitleUrl').value.trim();
+            if (!url) { alert('Please enter a URL'); return; }
+            fetch(url)
+                .then(r => { if(!r.ok) throw new Error(r.status); return r.text(); })
+                .then(txt => {
+                    document.getElementById('srtFileName').textContent = "Loaded from URL";
+                    document.getElementById('rawContentStorage').value = txt;
+                    processSubtitle(txt, url);
+                })
+                .catch(e => alert("Error loading subtitle: " + e.message));
+        }
+
+        function processSubtitle(content, filenameOrUrl) {
+            try {
+                let processedContent = content;
+                if (filenameOrUrl.toLowerCase().endsWith('.txt')) {
+                    processedContent = convertTxtToSrt(content);
+                }
+                document.getElementById('rawContentStorage').value = processedContent;
+                parseSRT(processedContent);
+                alert("Subtitle loaded!");
+            } catch (e) { alert("Error parsing subtitle: " + e.message); }
+        }
+
+        function parseSRT(srtContent) {
+            subtitles = [];
+            const blocks = srtContent.trim().split(/\n\s*\n/);
+            blocks.forEach(block => {
+                const lines = block.split('\n');
+                if (lines.length >= 3) {
+                    const timeMatch = lines[1].match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+                    if (timeMatch) {
+                        subtitles.push({
+                            start: timeToSeconds(timeMatch[1]),
+                            end: timeToSeconds(timeMatch[2]),
+                            text: lines.slice(2).join('<br>')
+                        });
+                    }
+                }
+            });
+        }
+
+        function scrambleText(text) {
+            try {
+                let step1 = btoa(unescape(encodeURIComponent(text)));
+                let step2 = step1.split('').reverse().join('');
+                return btoa(step2);
+            } catch (e) { return ""; }
+        }
+
+        function convertTxtToSrt(txt) {
+            if(txt.indexOf('-->') !== -1) return txt;
+            const matches = [...txt.matchAll(/\[(\d+):(\d+)\]\s*(.*)/g)];
+            let srt = '';
+            matches.forEach((m, i) => {
+                const [_, min, sec, text] = m;
+                const start = `00:${min.padStart(2,'0')}:${sec.padStart(2,'0')},000`;
+                let nextMin = min, nextSec = parseInt(sec) + 5;
+                if(i < matches.length - 1) { nextMin = matches[i+1][1]; nextSec = matches[i+1][2]; } 
+                else { if(nextSec>=60) { nextMin = parseInt(nextMin)+1; nextSec%=60; } }
+                const end = `00:${nextMin.toString().padStart(2,'0')}:${nextSec.toString().padStart(2,'0')},000`;
+                srt += `${i+1}\n${start} --> ${end}\n${text.trim()}\n\n`;
+            });
+            return srt;
+        }
+
+        function timeToSeconds(t) {
+            const [h, m, s] = t.replace(',', '.').split(':');
+            return parseInt(h)*3600 + parseInt(m)*60 + parseFloat(s);
+        }
+
+        function generateAndDownload() {
+            const videoUrl = document.getElementById('youtubeUrl').value.trim();
+            const rawContent = document.getElementById('rawContentStorage').value;
+
+            if (!videoUrl) { alert("Please load a Video URL first."); return; }
+            if (!rawContent) { alert("Please Load or Fetch a subtitle first."); return; }
+
+            const id = prompt("Create a filename ID (e.g. 'ironman'):");
+            if (!id) return; 
+
+            const maskData = {
+                h: document.getElementById('mHeight').value,
+                w: document.getElementById('mWidth').value,
+                b: document.getElementById('mBottom').value,
+                l: document.getElementById('mLeft').value
+            };
+
+            const jsonObject = {
+                "video": videoUrl,
+                "hiddenSub": scrambleText(rawContent),
+                "mask": maskData
+            };
+            const jsonString = JSON.stringify(jsonObject, null, 0);
+
+            const blob = new Blob([jsonString], {type: "application/json"});
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = id + ".json"; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            document.getElementById('result-area').style.display = 'block';
+            document.getElementById('codeSnippet').value = jsonString; 
+
+            let path = window.location.pathname;
+            let directory = path.substring(0, path.lastIndexOf('/'));
+            const fullLink = `${window.location.origin}${directory}/${CINEMA_FILENAME}?id=${id}`;
+            document.getElementById('finalLink').value = fullLink;
+
+            alert("File '" + id + ".json' downloaded!");
+        }
+    </script>
+</body>
+</html>
