@@ -59,6 +59,17 @@
         #fs-btn { position: absolute; bottom: 10px; right: 20px; z-index: 101; background: rgba(0,0,0,0.6); border: 2px solid rgba(255,255,255,0.3); border-radius: 4px; color: white; padding: 5px 10px; cursor: pointer; font-size: 14px; transition: all 0.3s; display: flex; align-items: center; gap: 5px; }
         #fs-btn:hover { background: rgba(255,255,255,0.2); border-color: white; }
         #fs-btn svg { width: 20px; height: 20px; fill: white; }
+  /* Force subtitle position up */
+.subtitle-container, #subtitle-layer {
+    bottom: 10% !important; /* Adjust this % to move it up or down */
+    text-align: center !important;
+}
+
+/* Ensure text is readable */
+.subtitle-text {
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 20px; /* Adds space at the bottom */
+}
     </style>
 </head>
 <body>
