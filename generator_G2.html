@@ -5,53 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinema Admin (GitHub API)</title>
     <style>
-        @font-face {
-            font-family: 'Taigi Font';
-            src: url('./font/Charis-Regular.woff2') format('woff2'); 
-            font-weight: normal; font-style: normal;
-        }
-        @font-face {
-            font-family: 'Taigi Font';
-            src: url('./font/Charis-Bold.woff2') format('woff2'); 
-            font-weight: bold; font-style: normal;
-        }
-
+        @font-face { font-family: 'Taigi Font'; src: url('./font/Charis-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: 'Taigi Font'; src: url('./font/Charis-Bold.woff2') format('woff2'); font-weight: bold; font-style: normal; }
         body { margin: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f0f0f0; min-height: 100vh; padding-bottom: 50px; }
         #video-container { position: relative; width: 100vw; height: calc(100vw * 9 / 16); max-height: 70vh; background: #000; }
         #player { width: 100%; height: 100%; }
-
         #preview-mask { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background-color: #000; z-index: 5; pointer-events: none; }
-        
-        #subtitle {
-            text-align: center; 
-            background: rgba(0, 0, 0, 0.4); color: white; padding: 8px 16px; width: auto; max-width: 90%;
-            position: absolute; top: 5%; left: 50%; transform: translateX(-50%);
-            z-index: 10; border-radius: 6px; 
-            font-family: 'Taigi Font', serif;
-            font-size: 32px; 
-            min-height: 1.5em; box-decoration-break: clone; -webkit-box-decoration-break: clone; line-height: 1.6; 
-            text-shadow: 2px 2px 3px #444; 
-        }
+        #subtitle { text-align: center; background: rgba(0, 0, 0, 0.4); color: white; padding: 8px 16px; width: auto; max-width: 90%; position: absolute; top: 5%; left: 50%; transform: translateX(-50%); z-index: 10; border-radius: 6px; font-family: 'Taigi Font', serif; font-size: 32px; min-height: 1.5em; box-decoration-break: clone; -webkit-box-decoration-break: clone; line-height: 1.6; text-shadow: 2px 2px 3px #444; }
         #subtitle b { color: #fff; text-shadow: 0 0 2px #ccc; }
-
         #controls { margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 15px; width: 95%; max-width: 640px; }
         .input-group, .srt-group, .url-group { display: flex; gap: 10px; align-items: center; width: 100%; justify-content: center; flex-wrap: wrap; }
-        
         .panel { background: #e9ecef; padding: 15px; border-radius: 8px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; border: 1px solid #ccc; }
         .gh-settings { background: #fff3cd; border: 1px solid #ffeeba; }
-        
         .slider-row { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
         .slider-row label { width: 100px; font-weight: bold; }
         .slider-row input, .slider-row select { flex-grow: 1; margin: 0 10px; cursor: pointer; }
         .slider-row span { width: 40px; text-align: right; font-family: monospace; }
-        
         input[type="text"], input[type="password"] { padding: 10px; font-size: 16px; border: 2px solid #ccc; border-radius: 5px; flex-grow: 1; outline: none; }
         button { padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; white-space: nowrap; }
         button:hover { background-color: #0056b3; }
         .custom-file-button, .url-upload-button { background-color: #28a745; }
         .share-button { background-color: #dc3545; width: 100%; font-weight: bold; border: 2px solid #a71d2a; }
         .share-button:hover { background-color: #c82333; }
-        
         #srtFile { display: none; }
         #srtFileName { padding: 10px; font-size: 14px; background: #fff; min-width: 150px; text-align: center; border-radius: 5px; }
         #result-area { display: none; width: 90%; max-width: 640px; background: #fff; border: 2px solid #28a745; padding: 20px; margin-top: 20px; border-radius: 8px; }
@@ -65,7 +40,6 @@
         <div id="player"></div>
         <div id="subtitle">Subtitle Preview</div>
     </div>
-    
     <textarea id="rawContentStorage"></textarea>
 
     <div id="controls">
@@ -141,33 +115,41 @@
         }
 
         async function uploadToGitHub() {
-            // 1. Get and Clean Credentials
             const user = document.getElementById('ghUsername').value.trim();
             const repo = document.getElementById('ghRepo').value.trim();
             const token = document.getElementById('ghToken').value.trim();
             const videoUrl = document.getElementById('youtubeUrl').value.trim();
             const rawContent = document.getElementById('rawContentStorage').value;
 
-            if (!user || !repo || !token) { alert("Please fill in GitHub Settings first."); return; }
-            if (!videoUrl || !rawContent) { alert("Please load Video and Subtitles first."); return; }
+            if (!user || !repo || !token) { alert("Please fill in GitHub Settings."); return; }
+            if (!videoUrl || !rawContent) { alert("Please load Video and Subtitles."); return; }
 
-            const id = prompt("Create a filename ID:");
+            const id = prompt("Create a filename ID (no spaces):");
             if (!id) return;
+
+            // 1. Connection Test
+            try {
+                const testUrl = `https://api.github.com/repos/${user}/${repo}`;
+                const testReq = await fetch(testUrl, { headers: { 'Authorization': `token ${token}` } });
+                if (!testReq.ok) {
+                    throw new Error(`Connection Failed (${testReq.status}).\n\nCheck Username, Repo Name, or Token.\n(Error: ${testReq.statusText})`);
+                }
+            } catch (e) {
+                alert(e.message);
+                return; // Stop here if connection fails
+            }
 
             // 2. Prepare Data
             const maskData = { h: document.getElementById('mHeight').value, w: document.getElementById('mWidth').value, b: document.getElementById('mBottom').value, l: document.getElementById('mLeft').value };
             const settingsData = { anchor: document.getElementById('subAnchor').value, offset: document.getElementById('subOffset').value, scale: document.getElementById('subSize').value / 100 };
             
             const jsonObject = { "video": videoUrl, "subtitle": rawContent, "mask": maskData, "settings": settingsData };
-            const jsonString = JSON.stringify(jsonObject, null, 2);
-            
-            // Base64 Encode (Unicode Safe)
-            const base64Content = btoa(unescape(encodeURIComponent(jsonString)));
+            const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(jsonObject, null, 2))));
             const path = `data/${id}.json`;
             const apiUrl = `https://api.github.com/repos/${user}/${repo}/contents/${path}`;
 
             try {
-                // 3. CHECK FILE EXISTENCE (Targeting gh-pages branch specifically)
+                // 3. Check File Existence (on gh-pages branch)
                 let sha = null;
                 const checkReq = await fetch(apiUrl + "?ref=gh-pages", { 
                     headers: { 'Authorization': `token ${token}` } 
@@ -176,18 +158,14 @@
                 if (checkReq.ok) {
                     const fileData = await checkReq.json();
                     sha = fileData.sha; 
-                    if(!confirm(`File '${id}.json' already exists on gh-pages. Overwrite?`)) return;
-                } else if (checkReq.status !== 404) {
-                    // Real error, not just "missing file"
-                    const errTxt = await checkReq.json();
-                    throw new Error(`GitHub Check Error: ${errTxt.message}`);
+                    if(!confirm(`File '${id}.json' already exists. Overwrite?`)) return;
                 }
 
-                // 4. UPLOAD / UPDATE (Targeting gh-pages branch specifically)
+                // 4. Upload to gh-pages branch
                 const putBody = {
-                    message: `Create/Update ${id}.json via Generator`,
+                    message: `Create/Update ${id}.json`,
                     content: base64Content,
-                    branch: "gh-pages" // <--- CRITICAL FIX
+                    branch: "gh-pages" // Ensure we target the correct branch
                 };
                 if (sha) putBody.sha = sha;
 
@@ -199,15 +177,15 @@
 
                 if (!uploadReq.ok) {
                     const err = await uploadReq.json();
-                    throw new Error(`Upload Failed: ${err.message}`);
+                    throw new Error(`GitHub Upload Error: ${err.message}`);
                 }
 
-                // 5. SUCCESS
+                // Success
                 document.getElementById('result-area').style.display = 'block';
                 let loc = window.location.pathname;
                 let dir = loc.substring(0, loc.lastIndexOf('/'));
                 document.getElementById('finalLink').value = `${window.location.origin}${dir}/${CINEMA_FILENAME}?id=${id}`;
-                alert("Success! File uploaded to gh-pages branch.");
+                alert("Success! File uploaded.");
 
             } catch (error) {
                 alert(error.message);
