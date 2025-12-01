@@ -166,12 +166,13 @@
             const jsonObject = { "video": videoUrl, "subtitle": rawContent, "mask": maskData, "settings": settingsData };
             const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(jsonObject, null, 2))));
 
-            //* fetch(`https://api.github.com/repos/${user}/${repo}/contents/data/${id}.json`, {
-        fetch(apiUrl,  {
+            fetch(`https://api.github.com/repos/${user}/${repo}/contents/data/${id}.json`, 
+                  {
             method: 'PUT',
             headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
-                message: `Create ${id}.json via Generator`,                       content: base64Content,
+                message: `Create ${id}.json via Generator`,                       
+                content: base64Content,
                 branch: "gh-pages"    
             })
             })
