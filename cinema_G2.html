@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Mode</title>
+    <style>
+        /* --- 1. FONTS --- */
+        @font-face {
+            font-family: 'Taigi Font';
+            src: url('./font/Charis-Regular.woff2') format('woff2'); 
+            font-weight: normal; font-style: normal;
+        }
+        @font-face {
+            font-family: 'Taigi Font';
+            src: url('./font/Charis-Bold.woff2') format('woff2'); 
+            font-weight: bold; font-style: normal;
+        }
+
+        /* --- 2. BASIC LAYOUT --- */
+        body { 
+            margin: 0; 
+            background-color: #000; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            overflow: hidden; 
+        }
+        #video-container { 
+            position: relative; 
+            width: 100%; 
+            height: 100%; 
+            max-width: 177.78vh; /* 16:9 Aspect Ratio constraint */
+            max-height: 56.25vw; 
+            margin: auto; 
+            background-color: #000; 
+        }
+        #player { width: 100%; height: 100%; border: none; }
+        
+        /* --- 3. MASK BAR (Controlled by JSON) --- */
+        #mask-bar { 
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; 
+            background-color: #000; z-index: 50; pointer-events: none; transition: all 0.5s ease; 
+        }
+        
+        /* --- 4. SUBTITLE CONTAINER --- */
+        /* CRITICAL: No 'top' or 'bottom' here. JSON controls vertical position. */
+        #subtitle { 
+            position: absolute; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 90%; 
+            text-align: center; 
+            pointer-events: none; 
+            z-index: 100; 
+        }
+        
+        /* --- 5. SUBTITLE TEXT STYLING --- */
+        #subtitle span { 
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            color: #fff; 
+            font-family: 'Taigi Font', serif; 
+            
+            /* Dynamic Font Sizing (Base) */
+            font-size: clamp(32px, 3vw, 55px); 
+            
+            line-height: 1.5; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            text-shadow: 1px 1px 2px #000; 
+            
+            /* Keeps background tight to text */
+            display: inline-block; 
+        }
+
+        /* Mobile Adjustments */
+        @media screen and (max-width: 768px) { 
+            #subtitle span { font-size: clamp(20px, 5vw, 36px); padding: 4px 8px; } 
+        }
+        
+        /* FULLSCREEN BUTTON */
+        #fs-btn { position: absolute; bottom: 10px; right: 20px; z-index: 101; background: rgba(0,0,0,0.6); border: 2px solid rgba(255,255,255,0.3); border-radius: 4px; color: white; padding: 5px 10px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 5px; opacity: 0; transition: opacity 0.3s; }
+        #video-container:hover #fs-btn { opacity: 1; }
+        #fs-btn:hover { background: rgba(255,255,255,0.2); border-color: white; }
+        #fs-btn svg { width: 20px; height: 20px; fill: white; }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <div id="mask-bar"></div>
+        <div id="player"></div>
+        <div id="subtitle"><span></span></div>
+        <button id="fs-btn" onclick="toggleFullscreen()">
+            <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+        </button>
+    </div>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player; let subtitles = [];
+        
+        // 1. Fullscreen Toggle
+        function toggleFullscreen() {
+            const c = document.getElementById('video-container');
+            if (!document.fullscreenElement) { if (c.requestFullscreen) c.requestFullscreen(); else if (c.webkitRequestFullscreen) c.webkitRequestFullscreen(); } 
+            else { if (document.exitFullscreen) document.exitFullscreen(); else if (document.webkitExitFullscreen) document.webkitExitFullscreen(); }
+        }
+        
+        // 2. Initialize
+        function onYouTubeIframeAPIReady() {
+            // Get ID from URL parameter (e.g., ?id=iakoansuntiunn)
+            const movieId = new URLSearchParams(window.location.search).get('id');
+            
+            // --- ERROR CHECK: If no ID, show instruction ---
+            if (!movieId) {
+                const err = document.getElementById('subtitle');
+                err.style.top = "50%"; // Center the error
+                err.innerHTML = "<span style='background:red; font-size:24px;'>Dark Screen?<br>Add <b>?id=iakoansuntiunn</b> to your URL.</span>";
+                return;
+            }
+
+            // Fetch Data
+            fetch(`data/${movieId}.json?t=${new Date().getTime()}`)
+                .then(r => {
+                    if (!r.ok) throw new Error("JSON file not found");
+                    return r.json();
+                })
+                .then(data => {
+                    // Load Video
+                    if (data.video) createPlayer(extractVideoId(data.video));
+                    
+                    // Parse Subtitles
+                    if (data.subtitle) parseSRT(data.subtitle);
+                    
+                    // Apply Mask
+                    const m = document.getElementById('mask-bar');
+                    if (data.mask) { 
+                        m.style.height = data.mask.h + "%"; 
+                        m.style.width = data.mask.w + "%"; 
+                        m.style.bottom = data.mask.b + "%"; 
+                        m.style.left = data.mask.l + "%"; 
+                    }
+                    
+                    // Apply Settings (Position & Scale)
+                    if (data.settings) {
+                        const set = data.settings;
+                        const sub = document.getElementById('subtitle');
+                        
+                        // APPLY POSITION FROM JSON
+                        if (set.anchor) {
+                            sub.style.top = 'auto'; sub.style.bottom = 'auto';
+                            if (set.anchor === 'top') {
+                                sub.style.top = set.offset + "%"; 
+                            } else {
+                                sub.style.bottom = set.offset + "%"; // Applies "5%" here
+                            }
+                        }
+                        // APPLY SCALE
+                        if (set.scale) applyFontScale(set.scale);
+                    }
+                })
+                .catch(e => {
+                    console.error(e);
+                    document.getElementById('subtitle').style.top = "50%";
+                    document.getElementById('subtitle').innerHTML = `<span style='background:red;'>Error loading data/${movieId}.json</span>`;
+                });
+        }
+        
+        // 3. Font Scaling Logic
+        function applyFontScale(ratio) {
+            const pc = `clamp(${32*ratio}px, ${3*ratio}vw, ${55*ratio}px)`;
+            const mob = `clamp(${24*ratio}px, ${6*ratio}vw, ${40*ratio}px)`;
+            const style = document.createElement('style');
+            style.innerHTML = `#subtitle span { font-size: ${pc} !important; } @media screen and (max-width: 768px) { #subtitle span { font-size: ${mob} !important; } }`;
+            document.head.appendChild(style);
+        }
+
+        // 4. Create Player
+        function createPlayer(id) {
+            player = new YT.Player('player', { 
+                videoId: id, 
+                playerVars: { 'autoplay': 1, 'playsinline': 1, 'controls': 1, 'rel': 0, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3 }, 
+                events: { 'onReady': onPlayerReady } 
+            });
+        }
+
+        function onPlayerReady(event) { 
+            event.target.playVideo(); 
+            setInterval(updateSubtitles, 100); 
+        }
+        
+        // 5. Subtitle Update Loop
+        function updateSubtitles() {
+            if (!player || typeof player.getCurrentTime !== 'function') return;
+            const ct = player.getCurrentTime();
+            const sub = subtitles.find(s => ct >= s.start && ct <= s.end);
+            const span = document.querySelector('#subtitle span');
+            if (sub) { 
+                span.innerHTML = sub.text; 
+                span.style.display = 'inline-block'; 
+            } else { 
+                span.innerHTML = ''; 
+                span.style.display = 'none'; 
+            }
+        }
+        
+        function parseSRT(srt) {
+            subtitles = [];
+            srt.trim().split(/\n\s*\n/).forEach(block => {
+                const lines = block.split('\n');
+                if (lines.length >= 3) {
+                    const m = lines[1].match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+                    if (m) subtitles.push({ start: timeToSeconds(m[1]), end: timeToSeconds(m[2]), text: lines.slice(2).join('<br>') });
+                }
+            });
+        }
+        
+        function timeToSeconds(t) { const [h, m, s] = t.replace(',', '.').split(':'); return parseInt(h)*3600 + parseInt(m)*60 + parseFloat(s); }
+        function extractVideoId(url) { 
+            // Handles full URLs, short URLs, and URLs with ?list= parameters
+            const m = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+            return m && m[1] ? m[1] : null; 
+        }
+    </script>
+</body>
+</html>
