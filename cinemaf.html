@@ -66,11 +66,12 @@
         }
         
         #subtitle span {
-            background-color: rgba(0, 0, 0, 0.3); 
+            background-color: rgba(0, 0, 0, 0.4); 
             color: #fff;
             
             /* Font Family is controlled by JS below (PC vs iPhone) */
-            font-family: 'Taigi Unicode', 'Times New Roman', serif;
+            /* font-family: 'Taigi Unicode', 'Times New Roman', serif;
+            font-family: 'Taigi Unicode', serif;
             
             /* --- PC FONT SIZE --- */
             font-size: clamp(32px, 3vw, 55px); 
@@ -84,7 +85,7 @@
             
             border-radius: 6px;
             /* [MODIFIED] Grey Shadow */
-            text-shadow: 2px 2px 4px #444444;
+            text-shadow: 3px 3px 2px #444444;
         }
        /* [NEW] Support for Bold tags */
         #subtitle span b { color: #fff; font-weight: bold; text-shadow: 0 0 2px #ccc; }
@@ -152,23 +153,6 @@
         let player;
         let subtitles = [];
 
-        // --- 1. DEVICE DETECTION (PC vs iPhone) ---
-        function detectDeviceAndSetFont() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const subtitleSpan = document.querySelector('#subtitle span');
-            
-            // Check for iPhone/iPad
-            const isIOS = /iPad|iPhone|iPod/.test(userAgent) || 
-                          (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-
-            if (isIOS) {
-                // FIXED: Force Times New Roman on iOS to fix stacking diacritics
-                subtitleSpan.style.fontFamily = "'Times New Roman', serif";
-            } else {
-                // Use Taigi Unicode on PC/Android
-                subtitleSpan.style.fontFamily = "'Taigi Unicode', 'Times New Roman', serif";
-            }
-        }
 
         // --- 2. FULLSCREEN LOGIC ---
         function toggleFullscreen() {
