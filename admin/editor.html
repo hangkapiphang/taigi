@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+    // Simple Gatekeeper
+    if (localStorage.getItem('is_admin') !== 'true') {
+        const pass = prompt("Restricted Area. Enter Admin Password:");
+        if (pass === "taigibun") { // <--- CHANGE "1234" TO YOUR PASSWORD
+            localStorage.setItem('is_admin', 'true');
+        } else {
+            alert("Access Denied");
+            window.location.href = "../index.html"; // Send them back to safety
+        }
+    }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinema 4-Window Editor</title>
