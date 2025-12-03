@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backstage Control</title>
+    <!-- Library to create ZIP files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #2c3e50; color: white; display: flex; flex-direction: column; align-items: center; padding-top: 50px; }
+        h1 { margin-bottom: 30px; letter-spacing: 1px; }
+        
+        .container { width: 90%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        
+        /* CARD STYLE FOR LINKS */
+        .card { 
+            background: #34495e; padding: 20px; border-radius: 10px; 
+            text-decoration: none; color: white; font-size: 18px; 
+            border-left: 5px solid #34495e; transition: all 0.2s;
+            display: flex; align-items: center; justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer;
+        }
+        .card:hover { background: #3e5871; transform: translateX(5px); }
+        
+        .card.edit { border-left-color: #3498db; }
+        .card.gen { border-left-color: #f1c40f; }
+        .card.rec { border-left-color: #e74c3c; }
+        
+        /* BACKUP SECTION */
+        .backup-area { margin-top: 30px; border-top: 1px solid #555; padding-top: 20px; text-align: center; }
+        .card.back { border-left-color: #2ecc71; background: #27ae60; justify-content: center; font-weight: bold; }
+        .card.back:hover { background: #2ecc71; }
+        
+        #status { font-size: 13px; color: #bdc3c7; margin-top: 10px; min-height: 20px; font-family: monospace; white-space: pre-wrap;}
+        
+        .footer-link { margin-top: 30px; color: #95a5a6; text-decoration: none; font-size: 14px; }
+        .footer-link:hover { color: white; text-decoration: underline; }
+    </style>
+    <script>
+        // Simple Gatekeeper to keep students out
+        if (localStorage.getItem('is_admin') !== 'true') {
+            if(prompt("Enter Admin Password:") === "1234") localStorage.setItem('is_admin', 'true');
+            else window.location.href = "../index.html";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>⚙️ Backstage Control</h1>
+
+    <div class="container">
+        <a href="editor.html" class="card edit">
+            <span>📝 Subtitle Editor</span>
+            <span>→</span>
+        </a>
+        <a href="generator.html" class="card gen">
+            <span>✨ New Generator</span>
+            <span>→</span>
+        </a>
+        <a href="siongtaigi.html" class="card rec">
+            <span>🔴 Class Recorder</span>
+            <span>→</span>
+        </a>
+
+        <!-- BACKUP SECTION -->
+        <div class="backup-area">
+            <div class="card back" onclick="backupFullProject()">
+                <span>📦 Pack & Download All Data</span>
+            </div>
+            <div id="status"></div>
+        </div>
+    </div>
+
+    <a href="../index.html" class="footer-link">← Back to Public Site</a>
+
+    <script>
+        async function backupFullProject() {
+            const status = document.getElementById('status');
+            
+            // 1. Get Credentials from LocalStorage (Saved by Generator)
+            const user = localStorage.getItem('gh_user');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+
+            if (!user || !repo || !token) {
+                status.style.color = '#e74c3c';
+                status.innerText = "Error: Credentials missing.\nGo to 'New Generator' and click 'Save Credentials' first.";
+                return;
+            }
+
+            try {
+                status.style.color = '#f1c40f';
+                status.innerText = "Connecting to GitHub...";
+
+                // 2. Get the 'gh-pages' branch info
+                const branchUrl = `https://api.github.com/repos/${user}/${repo}/branches/gh-pages`;
+                const branchReq = await fetch(branchUrl, { headers: { 'Authorization': `token ${token}` } });
+                
+                if (!branchReq.ok) throw new Error("Could not connect to repository.\nCheck your token or repo name.");
+                const branchData = await branchReq.json();
+                const treeSha = branchData.commit.sha;
+
+                // 3. Get the Full File Tree (Recursive)
+                status.innerText = "Scanning files...";
+                const treeUrl = `https://api.github.com/repos/${user}/${repo}/git/trees/${treeSha}?recursive=1`;
+                const treeReq = await fetch(treeUrl, { headers: { 'Authorization': `token ${token}` } });
+                const treeData = await treeReq.json();
+
+                const zip = new JSZip();
+                let count = 0;
+                
+                // Filter: Only get files (blobs), ignore folders
+                const files = treeData.tree.filter(item => item.type === 'blob');
+
+                // 4. Download Loop
+                for (const file of files) {
+                    status.innerText = `Downloading ${count + 1}/${files.length}:\n${file.path}`;
+                    
+                    // Request the RAW content (handles images/fonts correctly)
+                    const contentReq = await fetch(file.url, { 
+                        headers: { 
+                            'Authorization': `token ${token}`,
+                            'Accept': 'application/vnd.github.v3.raw' 
+                        } 
+                    });
+
+                    if (contentReq.ok) {
+                        const blob = await contentReq.blob();
+                        zip.file(file.path, blob); // Add to ZIP with correct folder structure
+                        count++;
+                    }
+                }
+
+                // 5. Generate & Save Zip
+                status.innerText = "Compressing ZIP file...";
+                const zipContent = await zip.generateAsync({type:"blob"});
+                
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(zipContent);
+                const date = new Date().toISOString().slice(0,10);
+                link.download = `taigi_backup_${date}.zip`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                status.style.color = '#2ecc71';
+                status.innerText = `✅ Complete! ${count} files backed up.`;
+
+            } catch (err) {
+                console.error(err);
+                status.style.color = '#e74c3c';
+                status.innerText = "Backup Failed: " + err.message;
+            }
+        }
+    </script>
+</body>
+</html>
