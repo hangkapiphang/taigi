@@ -40,6 +40,15 @@
             <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>Fullscreen
         </button>
     </div>
+    <!-- [NEW] COMMENT SECTION BELOW VIDEO -->
+    <div style="text-align: center; margin-top: 15px;">
+        <button onclick="sendFeedback()" style="
+            background: #555; color: white; border: none; 
+            padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+            💬 Send Comment to Teacher
+        </button>
+    </div>
+
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         let player; let subtitles = [];
@@ -141,6 +150,20 @@
         }
         function timeToSeconds(t) { const [h, m, s] = t.replace(',', '.').split(':'); return parseInt(h)*3600 + parseInt(m)*60 + parseFloat(s); }
         function extractVideoId(url) { const m = url.match(/[?&]v=([^&#]*)/) || url.match(/youtu\.be\/([^?&#]+)/); return m && m[1] ? m[1] : null; }
+        // [NEW] FEEDBACK FUNCTION
+        function sendFeedback() {
+            // 1. Get the Movie ID
+            const movieId = new URLSearchParams(window.location.search).get('id') || "Unknown Video";
+            
+            // 2. Create the Subject Line
+            const subject = `Taigi Cinema Feedback: ${movieId}`;
+            
+            // 3. Create the Body
+            const body = `Teacher, I have a comment about the video "${movieId}":%0D%0A%0D%0A(Type your comment here...)`;
+            
+            // 4. Open Email Client (Replace with your email)
+            window.location.href = `mailto:YOUR_EMAIL@gmail.com?subject=${subject}&body=${body}`;
+        }
     </script>
 </body>
 </html>
