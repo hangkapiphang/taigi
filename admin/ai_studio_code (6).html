@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema JSON Editor</title>
+    <style>
+        /* FONTS */
+        @font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: bold; font-style: normal; }
+
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f9; height: 100vh; display: flex; flex-direction: column; }
+        
+        #top-section { width: 100%; background: #000; display: flex; justify-content: center; padding: 10px 0; flex-shrink: 0; }
+        #video-wrapper { position: relative; width: 60vw; aspect-ratio: 16/9; background: #000; }
+        #player { width: 100%; height: 100%; }
+        #preview-mask { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background-color: #000; z-index: 5; pointer-events: none; }
+        
+        #subtitle {
+            text-align: center; background: rgba(0, 0, 0, 0.4); color: white; padding: 4px 8px; width: auto; max-width: 90%;
+            position: absolute; top: 5%; left: 50%; transform: translateX(-50%); z-index: 10; border-radius: 4px; 
+            font-family: 'Taigi Font', serif; font-size: 32px; 
+            min-height: 1.2em; box-decoration-break: clone; -webkit-box-decoration-break: clone; line-height: 1.5; 
+            text-shadow: 2px 2px 3px #444; 
+        }
+        #subtitle b { color: #fff; text-shadow: 0 0 2px #ccc; }
+
+        #editor-section { display: flex; flex-grow: 1; overflow: hidden; border-top: 2px solid #ccc; }
+        
+        /* LEFT SIDE - TABS */
+        #left-panel { width: 60%; display: flex; flex-direction: column; border-right: 1px solid #ddd; background: white; }
+        
+        .tab-bar { display: flex; background: #e9ecef; border-bottom: 1px solid #ccc; }
+        .tab-btn { flex: 1; padding: 10px; border: none; background: none; cursor: pointer; font-weight: bold; color: #555; }
+        .tab-btn.active { background: white; border-bottom: 3px solid #007bff; color: #007bff; }
+        
+        .tab-content { flex-grow: 1; overflow-y: auto; padding: 10px; display: none; }
+        .tab-content.active { display: block; }
+
+        /* SUBTITLE ROWS */
+        .sub-row { display: flex; gap: 5px; align-items: center; margin-bottom: 5px; padding: 5px; border-bottom: 1px solid #eee; background: #fdfdfd; }
+        .sub-idx { width: 30px; font-size: 12px; color: #999; }
+        .time-input { width: 80px; font-family: monospace; font-size: 13px; padding: 4px; border: 1px solid #ccc; }
+        .text-input { flex-grow: 1; padding: 6px; font-size: 15px; border: 1px solid #ccc; font-family: 'Taigi Font'; }
+        
+        /* VOCAB ROWS */
+        .vocab-row { display: flex; gap: 5px; align-items: center; margin-bottom: 5px; padding: 10px; background: #f8f9fa; border: 1px solid #eee; border-radius: 5px; }
+        .v-input { padding: 5px; border: 1px solid #ccc; border-radius: 3px; }
+        
+        .btn-icon { cursor: pointer; border: none; background: none; font-size: 16px; opacity: 0.6; }
+        .btn-icon:hover { opacity: 1; scale: 1.2; }
+
+        /* RIGHT: Settings */
+        #settings-container { width: 40%; padding: 15px; overflow-y: auto; background: #f8f9fa; }
+        .panel { background: #fff; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-bottom: 10px; font-size: 13px; }
+        .slider-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+        .slider-row label { width: 70px; font-weight: bold; font-size: 12px; }
+        .slider-row input[type=range] { flex-grow: 1; margin: 0 8px; }
+        input[type="color"] { border: none; width: 30px; height: 20px; cursor: pointer; padding: 0; background: none; }
+        
+        .io-bar { display: flex; gap: 10px; padding: 10px; background: #343a40; color: white; align-items: center; }
+        .io-btn { padding: 5px 10px; cursor: pointer; border-radius: 3px; border: none; font-weight: bold; color:white; }
+        #hidden-file { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="io-bar">
+        <span><strong>Cinema Editor</strong></span>
+        <button class="io-btn" style="background:#17a2b8" onclick="document.getElementById('hidden-file').click()">📂 Load JSON</button>
+        <input type="file" id="hidden-file" accept=".json" onchange="loadLocalJson(this)">
+        <span style="flex-grow:1"></span>
+        <button class="io-btn" style="background:#28a745" onclick="downloadJson()">💾 Download</button>
+        <button class="io-btn" style="background:#dc3545" onclick="uploadToGithub()">☁ GitHub</button>
+    </div>
+
+    <div id="top-section">
+        <div id="video-wrapper">
+            <div id="preview-mask"></div>
+            <div id="player"></div>
+            <div id="subtitle">Subtitle Preview</div>
+        </div>
+    </div>
+
+    <div id="editor-section">
+        <!-- LEFT PANEL (TABS) -->
+        <div id="left-panel">
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab('sub')">📝 Subtitles</button>
+                <button class="tab-btn" onclick="switchTab('vocab')">📖 Vocabulary</button>
+            </div>
+
+            <!-- TAB 1: SUBTITLES -->
+            <div id="tab-sub" class="tab-content active">
+                <button onclick="addSubtitleLine()" style="width:100%; padding:8px; margin-bottom:10px;">+ Add Subtitle Line</button>
+                <div id="sub-rows-area"></div>
+            </div>
+
+            <!-- TAB 2: VOCABULARY -->
+            <div id="tab-vocab" class="tab-content">
+                <div style="display:flex; gap:5px; margin-bottom:10px;">
+                    <button onclick="addVocabLine()" style="flex:1; padding:8px; background:#e1bee7; border:1px solid #ccc; cursor:pointer;">+ Add Manually</button>
+                    <!-- [NEW] AI IMPORT BUTTON -->
+                    <button onclick="importAiVocab()" style="flex:1; padding:8px; background:#ffeb3b; border:1px solid #ccc; cursor:pointer;">⚡ Import AI JSON</button>
+                </div>
+                <div id="vocab-rows-area"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL (SETTINGS) -->
+        <div id="settings-container">
+            <div class="panel">
+                <h4>Video Source</h4>
+                <input type="text" id="videoUrl" placeholder="YouTube URL" style="width:95%; padding:5px;" onchange="loadVideo(this.value)">
+            </div>
+            
+            <div class="panel">
+                <h4>Appearance</h4>
+                <div class="slider-row"><label>Text Color:</label><input type="color" id="subColor" value="#ffffff" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Box Color:</label><input type="color" id="subBoxColor" value="#000000" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Box Opacity:</label><input type="range" id="subBoxOp" min="0" max="100" value="40" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Shadow:</label><input type="color" id="subShadowColor" value="#444444" oninput="updatePreview()"><input type="range" id="subShadow" min="0" max="10" value="2" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Size:</label><input type="range" id="subSize" min="50" max="200" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Pos:</label><select id="subAnchor" onchange="updatePreview()"><option value="top">Top</option><option value="bottom">Bottom</option></select></div>
+                <div class="slider-row"><label>Offset:</label><input type="range" id="subOffset" min="5" max="90" value="5" oninput="updatePreview()"></div>
+            </div>
+            
+            <div class="panel">
+                <h4>Mask</h4>
+                <div class="slider-row"><label>Color:</label><input type="color" id="mColor" value="#000000" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Opacity:</label><input type="range" id="mOpacity" min="0" max="100" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Height:</label><input type="range" id="mHeight" min="0" max="100" value="0" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Width:</label><input type="range" id="mWidth" min="0" max="100" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Bottom:</label><input type="range" id="mBottom" min="0" max="100" value="0" oninput="updatePreview()"></div>
+                <div class="slider-row"><label>Left:</label><input type="range" id="mLeft" min="0" max="100" value="0" oninput="updatePreview()"></div>
+            </div>
+
+            <div class="panel" style="background:#fff3cd;">
+                <h4>GitHub Config</h4>
+                <input type="text" id="ghUser" placeholder="User" style="width:45%">
+                <input type="text" id="ghRepo" placeholder="Repo" style="width:45%">
+                <input type="password" id="ghToken" placeholder="Token" style="width:95%; margin-top:5px;">
+                <button onclick="saveGh()" style="margin-top:5px;">Save Config</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        let subtitleData = []; 
+        let vocabData = []; 
+
+        window.onload = function() {
+            if(localStorage.getItem('gh_user')) document.getElementById('ghUser').value = localStorage.getItem('gh_user');
+            if(localStorage.getItem('gh_repo')) document.getElementById('ghRepo').value = localStorage.getItem('gh_repo');
+            if(localStorage.getItem('gh_token')) document.getElementById('ghToken').value = localStorage.getItem('gh_token');
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(d => d.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`tab-${tab}`).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function onYouTubeIframeAPIReady() {}
+        function loadVideo(url) {
+            const id = extractVideoId(url);
+            if(!id) return;
+            if(player) player.loadVideoById(id);
+            else player = new YT.Player('player', { height: '100%', width: '100%', videoId: id, events: {'onReady': e=>setInterval(checkTime, 100)} });
+        }
+        function extractVideoId(url) { const m = url.match(/[?&]v=([^&#]*)/) || url.match(/youtu\.be\/([^?&#]+)/); return m && m[1] ? m[1] : null; }
+        
+        function checkTime() {
+            if(!player || !player.getCurrentTime) return;
+            const ct = player.getCurrentTime();
+            // Highlight active row in editor
+            document.querySelectorAll('.sub-row').forEach(row => row.classList.remove('active-row'));
+            
+            const sub = subtitleData.find((s, idx) => {
+                const match = ct >= s.start && ct <= s.end;
+                if(match) {
+                    const row = document.getElementById(`row-${idx}`);
+                    if(row) row.classList.add('active-row');
+                }
+                return match;
+            });
+            
+            const div = document.getElementById('subtitle');
+            if(sub) { div.innerHTML = sub.text; div.style.display = 'block'; }
+            else { div.innerHTML = ''; div.style.display = 'none'; }
+        }
+
+        // --- SUBTITLE EDITOR ---
+        function renderEditor() {
+            const container = document.getElementById('sub-rows-area');
+            container.innerHTML = '';
+            subtitleData.forEach((sub, index) => {
+                const row = document.createElement('div');
+                row.className = 'sub-row';
+                row.id = `row-${index}`;
+                row.innerHTML = `
+                    <span class="sub-idx">${index+1}</span>
+                    <button class="btn-icon" style="color:green" onclick="seekTo(${sub.start})">▶</button>
+                    <input type="text" class="time-input" value="${secToTime(sub.start)}" onchange="updateData(${index}, 'start', this.value)">
+                    <input type="text" class="time-input" value="${secToTime(sub.end)}" onchange="updateData(${index}, 'end', this.value)">
+                    <input type="text" class="text-input" value="${sub.text.replace(/<br>/g, ' ')}" onchange="updateData(${index}, 'text', this.value)">
+                    <button class="btn-icon" style="color:red" onclick="deleteLine(${index})">✖</button>
+                `;
+                container.appendChild(row);
+            });
+        }
+        function updateData(index, field, value) {
+            if (field === 'text') subtitleData[index].text = value;
+            else subtitleData[index][field] = timeToSec(value);
+            if(field === 'start') { subtitleData.sort((a,b) => a.start - b.start); renderEditor(); }
+        }
+        function addSubtitleLine() {
+            const ct = player ? player.getCurrentTime() : 0;
+            subtitleData.push({ start: ct, end: ct + 3, text: "New Subtitle" });
+            subtitleData.sort((a,b) => a.start - b.start);
+            renderEditor();
+        }
+        function deleteLine(index) { if(confirm("Delete?")) { subtitleData.splice(index, 1); renderEditor(); } }
+
+        // --- VOCAB EDITOR ---
+        function renderVocabEditor() {
+            const container = document.getElementById('vocab-rows-area');
+            container.innerHTML = '';
+            vocabData.forEach((v, index) => {
+                const row = document.createElement('div');
+                row.className = 'vocab-row';
+                row.innerHTML = `
+                    <button class="btn-icon" style="color:green" onclick="seekTo(${v.time})">▶</button>
+                    <input type="number" class="v-input" style="width:50px" value="${v.time.toFixed(1)}" onchange="updateVocab(${index}, 'time', this.value)">
+                    <input type="text" class="v-input" style="flex:1; font-weight:bold;" value="${v.word}" placeholder="Word" onchange="updateVocab(${index}, 'word', this.value)">
+                    <input type="text" class="v-input" style="flex:2" value="${v.def}" placeholder="Definition" onchange="updateVocab(${index}, 'def', this.value)">
+                    <button class="btn-icon" style="color:red" onclick="deleteVocab(${index})">✖</button>
+                `;
+                container.appendChild(row);
+            });
+        }
+        function addVocabLine() {
+            const ct = player ? player.getCurrentTime() : 0;
+            vocabData.push({ time: ct, word: "", def: "" });
+            vocabData.sort((a,b) => a.time - b.time);
+            renderVocabEditor();
+        }
+        
+        // --- [NEW] AI IMPORT FUNCTION ---
+        function importAiVocab() {
+            const input = prompt("Paste the JSON array from ChatGPT here:\nFormat: [{'time':10, 'word':'...', 'def':'...'}]");
+            if(!input) return;
+            try {
+                const parsed = JSON.parse(input);
+                if(Array.isArray(parsed)) {
+                    // Merge new words with existing words
+                    vocabData = vocabData.concat(parsed);
+                    vocabData.sort((a,b) => a.time - b.time);
+                    renderVocabEditor();
+                    alert(`Imported ${parsed.length} words!`);
+                } else {
+                    alert("Error: Input was not an Array.");
+                }
+            } catch(e) {
+                alert("Invalid JSON format. Check your syntax.");
+            }
+        }
+
+        function updateVocab(index, field, value) {
+            vocabData[index][field] = field === 'time' ? parseFloat(value) : value;
+            if(field === 'time') { vocabData.sort((a,b) => a.time - b.time); renderVocabEditor(); }
+        }
+        function deleteVocab(index) { if(confirm("Delete word?")) { vocabData.splice(index, 1); renderVocabEditor(); } }
+
+        function seekTo(sec) { if(player) player.seekTo(sec, true); }
+
+        function updatePreview() {
+            const s = document.getElementById('subtitle');
+            s.style.color = document.getElementById('subColor').value;
+            const rgb = hexToRgb(document.getElementById('subBoxColor').value);
+            s.style.backgroundColor = `rgba(${rgb.r},${rgb.g},${rgb.b},${document.getElementById('subBoxOp').value/100})`;
+            const shadowVal = document.getElementById('subShadow').value;
+            const shadowCol = document.getElementById('subShadowColor').value;
+            s.style.textShadow = shadowVal == 0 ? 'none' : `${shadowVal}px ${shadowVal}px ${shadowVal}px ${shadowCol}`;
+            const size = document.getElementById('subSize').value;
+            s.style.fontSize = (32 * (size/100)) + "px";
+            const anchor = document.getElementById('subAnchor').value;
+            const offset = document.getElementById('subOffset').value;
+            s.style.top = 'auto'; s.style.bottom = 'auto';
+            if(anchor === 'top') s.style.top = offset + "%"; else s.style.bottom = offset + "%";
+
+            const m = document.getElementById('preview-mask');
+            m.style.height = document.getElementById('mHeight').value + "%";
+            m.style.width = document.getElementById('mWidth').value + "%";
+            m.style.bottom = document.getElementById('mBottom').value + "%";
+            m.style.left = document.getElementById('mLeft').value + "%";
+            m.style.backgroundColor = document.getElementById('mColor').value;
+            m.style.opacity = document.getElementById('mOpacity').value / 100;
+        }
+
+        // --- FILE I/O ---
+        function loadLocalJson(input) {
+            const file = input.files[0];
+            if(!file) return;
+            const r = new FileReader();
+            r.onload = e => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    populateUI(data);
+                } catch(err) { alert("Invalid JSON"); }
+            };
+            r.readAsText(file);
+        }
+
+        function populateUI(data) {
+            if(data.video) { document.getElementById('videoUrl').value = data.video; loadVideo(data.video); }
+            if(data.subtitle) { parseSRTtoData(data.subtitle); renderEditor(); }
+            else if (data.hiddenSub) { 
+                let txt = decodeURIComponent(escape(atob(atob(data.hiddenSub).split('').reverse().join(''))));
+                parseSRTtoData(txt); renderEditor();
+            }
+
+            if(data.vocab) { vocabData = data.vocab; renderVocabEditor(); }
+
+            if(data.mask) {
+                document.getElementById('mHeight').value = data.mask.h;
+                document.getElementById('mWidth').value = data.mask.w;
+                document.getElementById('mBottom').value = data.mask.b;
+                document.getElementById('mLeft').value = data.mask.l;
+                if(data.mask.c) document.getElementById('mColor').value = data.mask.c;
+                if(data.mask.o) document.getElementById('mOpacity').value = data.mask.o * 100;
+            }
+            
+            if(data.settings) {
+                document.getElementById('subAnchor').value = data.settings.anchor;
+                document.getElementById('subOffset').value = data.settings.offset;
+                document.getElementById('subSize').value = data.settings.scale * 100;
+                if(data.settings.color) document.getElementById('subColor').value = data.settings.color;
+                if(data.settings.boxColor) document.getElementById('subBoxColor').value = data.settings.boxColor;
+                if(data.settings.boxOp) document.getElementById('subBoxOp').value = data.settings.boxOp * 100;
+                if(data.settings.shadow) document.getElementById('subShadow').value = data.settings.shadow;
+                if(data.settings.shadowColor) document.getElementById('subShadowColor').value = data.settings.shadowColor;
+            }
+            updatePreview();
+        }
+
+        function buildJson() {
+            let srtOutput = "";
+            subtitleData.forEach((s, i) => {
+                srtOutput += `${i+1}\n${secToTime(s.start)} --> ${secToTime(s.end)}\n${s.text.replace(/-/g, '‑')}\n\n`;
+            });
+
+            return JSON.stringify({
+                video: document.getElementById('videoUrl').value,
+                subtitle: srtOutput,
+                vocab: vocabData,
+                mask: {
+                    h: document.getElementById('mHeight').value, w: document.getElementById('mWidth').value,
+                    b: document.getElementById('mBottom').value, l: document.getElementById('mLeft').value,
+                    c: document.getElementById('mColor').value, o: document.getElementById('mOpacity').value / 100
+                },
+                settings: {
+                    anchor: document.getElementById('subAnchor').value, offset: document.getElementById('subOffset').value,
+                    scale: document.getElementById('subSize').value / 100, color: document.getElementById('subColor').value,
+                    boxColor: document.getElementById('subBoxColor').value, boxOp: document.getElementById('subBoxOp').value / 100,
+                    shadow: document.getElementById('subShadow').value, shadowColor: document.getElementById('subShadowColor').value
+                }
+            }, null, 2);
+        }
+
+        function downloadJson() {
+            const json = buildJson();
+            const id = prompt("Filename ID:"); if(!id) return;
+            const blob = new Blob([json], {type: "application/json"});
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob); a.download = id + ".json";
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        }
+
+        async function uploadToGithub() {
+            const user = document.getElementById('ghUser').value;
+            const repo = document.getElementById('ghRepo').value;
+            const token = document.getElementById('ghToken').value;
+            if(!user || !repo || !token) { alert("Check Footer Config"); return; }
+            const id = prompt("Filename ID:"); if(!id) return;
+
+            const content = btoa(unescape(encodeURIComponent(buildJson())));
+            const url = `https://api.github.com/repos/${user}/${repo}/contents/data/${id}.json`;
+
+            fetch(url + "?ref=gh-pages", { headers: {'Authorization':`token ${token}`} })
+            .then(r => {
+                let sha = null;
+                if(r.ok) return r.json().then(d => { if(confirm("Overwrite?")) upload(url, token, content, d.sha); });
+                if(r.status===404) upload(url, token, content, null);
+            });
+        }
+
+        function upload(url, token, content, sha) {
+            const body = { message: "Update via Editor", content: content, branch: "gh-pages" };
+            if(sha) body.sha = sha;
+            fetch(url, { method: 'PUT', headers: {'Authorization':`token ${token}`}, body: JSON.stringify(body) })
+            .then(r => { if(r.ok) alert("Uploaded!"); else alert("Error"); });
+        }
+
+        // --- HELPERS ---
+        function parseSRTtoData(srt) {
+            subtitleData = [];
+            srt.trim().split(/\n\s*\n/).forEach(block => {
+                const lines = block.split('\n');
+                if (lines.length >= 3) {
+                    const m = lines[1].match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+                    if (m) subtitleData.push({ start: timeToSec(m[1]), end: timeToSec(m[2]), text: lines.slice(2).join('<br>') });
+                }
+            });
+        }
+        function timeToSec(t) { const [h, m, s] = t.replace(',', '.').split(':'); return parseInt(h)*3600 + parseInt(m)*60 + parseFloat(s); }
+        function secToTime(sec) {
+            const date = new Date(sec * 1000);
+            return date.toISOString().substr(11, 8) + "," + (sec % 1).toFixed(3).substring(2);
+        }
+        function saveGh() {
+            localStorage.setItem('gh_user', document.getElementById('ghUser').value);
+            localStorage.setItem('gh_repo', document.getElementById('ghRepo').value);
+            localStorage.setItem('gh_token', document.getElementById('ghToken').value);
+            alert("Config Saved");
+        }
+        function hexToRgb(hex) {
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) } : null;
+        }
+    </script>
+</body>
+</html>
