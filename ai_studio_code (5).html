@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taigi Shadowing Lab</title>
+    <style>
+        @font-face { font-family: 'Taigi Font'; src: url('./font/Charis-Regular.woff2') format('woff2'); }
+        
+        body { margin: 0; font-family: Arial, sans-serif; background: #2c3e50; color: white; display: flex; flex-direction: column; height: 100vh; }
+        
+        /* TOP: VIDEO (Small) */
+        #video-section { 
+            height: 35vh; background: #000; position: relative; 
+            display: flex; justify-content: center; 
+        }
+        #player { height: 100%; aspect-ratio: 16/9; }
+        #mask-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background: #000; z-index: 10; pointer-events: none; }
+
+        /* MIDDLE: CURRENT SENTENCE */
+        #text-section {
+            height: 25vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 20px; text-align: center; background: #34495e; border-bottom: 1px solid #455a64;
+        }
+        #current-text { 
+            font-family: 'Taigi Font', serif; font-size: 32px; line-height: 1.4; margin-bottom: 10px;
+            text-shadow: 1px 1px 2px black;
+        }
+        .nav-controls { display: flex; gap: 20px; align-items: center; }
+        .nav-btn { background: none; border: 1px solid #95a5a6; color: #ecf0f1; padding: 5px 15px; cursor: pointer; border-radius: 20px; }
+        .nav-btn:hover { background: #fff; color: #333; }
+
+        /* BOTTOM: RECORDING CONTROLS */
+        #rec-section { 
+            flex-grow: 1; background: #ecf0f1; color: #333; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; 
+        }
+        
+        .btn-large { 
+            width: 80px; height: 80px; border-radius: 50%; border: none; 
+            font-size: 30px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.1s;
+        }
+        .btn-large:active { transform: scale(0.95); }
+        
+        #btn-mic { background: #e74c3c; color: white; }
+        #btn-mic.recording { background: #c0392b; animation: pulse 1.5s infinite; }
+        
+        #btn-play-user { background: #3498db; color: white; display: none; }
+        #btn-play-ref { background: #f1c40f; color: #333; }
+
+        .control-row { display: flex; gap: 30px; align-items: center; }
+        .label { font-size: 14px; font-weight: bold; color: #7f8c8d; margin-top: 5px; }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); } 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); } }
+        
+        /* BACK BUTTON */
+        .back-link { position: absolute; top: 10px; left: 10px; color: white; text-decoration: none; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 4px; z-index: 100;}
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Menu</a>
+
+    <div id="video-section">
+        <div id="mask-bar"></div>
+        <div id="player"></div>
+    </div>
+
+    <div id="text-section">
+        <div id="current-text">Loading...</div>
+        <div class="nav-controls">
+            <button class="nav-btn" onclick="prevLine()">PREV</button>
+            <span id="progress" style="font-size:12px; color:#bdc3c7;">0 / 0</span>
+            <button class="nav-btn" onclick="nextLine()">NEXT</button>
+        </div>
+    </div>
+
+    <div id="rec-section">
+        <div class="control-row">
+            <div style="text-align:center">
+                <button id="btn-play-ref" class="btn-large" onclick="playRef()">👂</button>
+                <div class="label">Listen</div>
+            </div>
+
+            <div style="text-align:center">
+                <button id="btn-mic" class="btn-large" onclick="toggleRecord()">🎙</button>
+                <div class="label" id="mic-label">Record</div>
+            </div>
+
+            <div style="text-align:center">
+                <button id="btn-play-user" class="btn-large" onclick="playUser()">▶</button>
+                <div class="label" id="play-label" style="display:none">Check</div>
+            </div>
+        </div>
+        <audio id="user-audio"></audio>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        let subtitles = [];
+        let currentIndex = 0;
+        let mediaRecorder;
+        let audioChunks = [];
+        let userAudioUrl = null;
+
+        function onYouTubeIframeAPIReady() {
+            const id = new URLSearchParams(window.location.search).get('id');
+            if(id) loadData(id);
+        }
+
+        function loadData(id) {
+            fetch(`data/${id}.json?t=${Date.now()}`).then(r=>r.json()).then(data => {
+                const vidId = extractVideoId(data.video);
+                
+                // Setup Player
+                player = new YT.Player('player', {
+                    videoId: vidId,
+                    playerVars: { 'controls': 0, 'fs': 0, 'rel': 0 },
+                    events: { 'onReady': () => {
+                        if(data.subtitle) parseSRT(data.subtitle);
+                        else if(data.hiddenSub) parseSRT(decrypt(data.hiddenSub));
+                        
+                        // Apply Mask
+                        if(data.mask) {
+                            const m = document.getElementById('mask-bar');
+                            m.style.height = data.mask.h + "%";
+                            m.style.width = data.mask.w + "%";
+                            m.style.bottom = data.mask.b + "%";
+                            m.style.left = data.mask.l + "%";
+                            if(data.mask.c) m.style.backgroundColor = data.mask.c;
+                            if(data.mask.o) m.style.opacity = data.mask.o;
+                        }
+                        updateUI();
+                    }}
+                });
+            });
+        }
+
+        // --- NAVIGATION ---
+        function updateUI() {
+            if(subtitles.length === 0) return;
+            const sub = subtitles[currentIndex];
+            document.getElementById('current-text').innerHTML = sub.text;
+            document.getElementById('progress').innerText = `${currentIndex + 1} / ${subtitles.length}`;
+        }
+
+        function nextLine() {
+            if(currentIndex < subtitles.length - 1) {
+                currentIndex++;
+                updateUI();
+                playRef();
+            }
+        }
+
+        function prevLine() {
+            if(currentIndex > 0) {
+                currentIndex--;
+                updateUI();
+                playRef();
+            }
+        }
+
+        // --- PLAYBACK LOGIC ---
+        let stopTimer;
+        function playRef() {
+            if(subtitles.length === 0) return;
+            const sub = subtitles[currentIndex];
+            
+            // 1. Seek to start
+            player.seekTo(sub.start, true);
+            player.playVideo();
+            
+            // 2. Clear previous timer
+            clearTimeout(stopTimer);
+            
+            // 3. Set timer to stop at end of sentence
+            const duration = (sub.end - sub.start) * 1000;
+            stopTimer = setTimeout(() => {
+                player.pauseVideo();
+            }, duration + 200); // Small buffer
+        }
+
+        // --- RECORDING LOGIC ---
+        async function toggleRecord() {
+            const btn = document.getElementById('btn-mic');
+            
+            if (btn.classList.contains('recording')) {
+                // STOP
+                mediaRecorder.stop();
+                btn.classList.remove('recording');
+                document.getElementById('mic-label').innerText = "Record";
+            } else {
+                // START
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+                    
+                    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+                    
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                        userAudioUrl = URL.createObjectURL(blob);
+                        document.getElementById('user-audio').src = userAudioUrl;
+                        document.getElementById('btn-play-user').style.display = 'block';
+                        document.getElementById('play-label').style.display = 'block';
+                    };
+
+                    mediaRecorder.start();
+                    btn.classList.add('recording');
+                    document.getElementById('mic-label').innerText = "Stop";
+                    
+                } catch (err) {
+                    alert("Microphone access denied. Please allow audio permissions.");
+                }
+            }
+        }
+
+        function playUser() {
+            const audio = document.getElementById('user-audio');
+            if(userAudioUrl) audio.play();
+        }
+
+        // --- UTILS ---
+        function extractVideoId(url) { const m = url.match(/[?&]v=([^&#]*)/) || url.match(/youtu\.be\/([^?&#]+)/); return m && m[1] ? m[1] : null; }
+        function decrypt(s) { try { return decodeURIComponent(escape(atob(atob(s).split('').reverse().join('')))); } catch(e){return"";} }
+        function timeToSec(t) { const [h,m,s] = t.replace(',','.').split(':'); return parseInt(h)*3600 + parseInt(m)*60 + parseFloat(s); }
+        
+        function parseSRT(srt) {
+            subtitles = [];
+            srt.trim().split(/\n\s*\n/).forEach(block => {
+                const lines = block.split('\n');
+                if (lines.length >= 3) {
+                    const m = lines[1].match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+                    if (m) subtitles.push({ start: timeToSec(m[1]), end: timeToSec(m[2]), text: lines.slice(2).join('<br>') });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
