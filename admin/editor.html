@@ -355,30 +355,38 @@
             document.body.appendChild(a); a.click(); document.body.removeChild(a);
         }
 
-        async function uploadToGithub() {
-            const user = document.getElementById('ghUser').value;
-            const repo = document.getElementById('ghRepo').value;
-            const token = document.getElementById('ghToken').value;
-            if(!user || !repo || !token) { alert("Check Footer Config"); return; }
-            const id = prompt("Filename ID:"); if(!id) return;
-
-            const content = btoa(unescape(encodeURIComponent(buildJson())));
+    async function uploadToGithub() {
+            // ... (Your existing variable setup) ...
+            
+            // 1. THIS PART IS CORRECT (API PATH)
+            // Do NOT change this to ../data
             const url = `https://api.github.com/repos/${user}/${repo}/contents/data/${id}.json`;
 
             try {
-                let sha = null;
-                const checkReq = await fetch(url + "?ref=gh-pages", { headers: {'Authorization':`token ${token}`} });
-                if(checkReq.ok) {
-                    sha = (await checkReq.json()).sha;
-                    if(!confirm("Overwrite?")) return;
+                // ... (Your existing check/upload logic) ...
+
+                // IF UPLOAD IS SUCCESSFUL:
+                if (uploadReq.ok) {
+                    document.getElementById('result-area').style.display = 'block';
+                    
+                    // 2. THIS PART NEEDS THE FIX (SHARE LINK)
+                    // We are in /admin/editor.html, but we want the link to be /cinema.html (Root)
+                    
+                    let loc = window.location.pathname; 
+                    // Remove '/admin' from the end of the path
+                    let dir = loc.substring(0, loc.lastIndexOf('/admin')); 
+                    
+                    // Final Link: https://user.github.io/repo/cinema.html?id=...
+                    document.getElementById('finalLink').value = `${window.location.origin}${dir}/cinema.html?id=${id}`;
+                    
+                    alert("Success! File uploaded.");
+                } else {
+                    // ... error handling ...
                 }
-                const res = await fetch(url, {
-                    method: 'PUT',
-                    headers: {'Authorization':`token ${token}`, 'Content-Type': 'application/json'},
-                    body: JSON.stringify({ message: "Update via Editor", content: content, branch: "gh-pages", sha: sha })
-                });
-                if(res.ok) alert("Uploaded!"); else throw new Error((await res.json()).message);
-            } catch(e) { alert("Error: " + e.message); }
+
+            } catch (error) { 
+                // ... error handling ... 
+            }
         }
 
         // --- HELPERS ---
