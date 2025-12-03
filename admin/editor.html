@@ -235,8 +235,8 @@
                 row.innerHTML = `
                     <button class="btn-icon" style="color:green" onclick="seekTo(${v.time})">▶</button>
                     <input type="number" class="v-input" style="width:50px" value="${v.time.toFixed(1)}" onchange="updateVocab(${index}, 'time', this.value)">
-                    <input type="text" class="v-input" style="flex:1; font-weight:bold;" value="${v.word}" placeholder="Word" onchange="updateVocab(${index}, 'word', this.value)">
-                    <input type="text" class="v-input" style="flex:2" value="${v.def}" placeholder="Definition" onchange="updateVocab(${index}, 'def', this.value)">
+                    <input type="text" class="v-input" style="flex:1; font-weight:bold;" value="${v.word}" placeholder="POJ (e.g. Ta̍k-ke)" onchange="updateVocab(${index}, 'word', this.value)">
+                    <input type="text" class="v-input" style="flex:2" value="${v.def}" placeholder="English Meaning" onchange="updateVocab(${index}, 'def', this.value)">
                     <button class="btn-icon" style="color:red" onclick="deleteVocab(${index})">✖</button>
                 `;
                 container.appendChild(row);
