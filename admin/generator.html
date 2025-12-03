@@ -247,7 +247,7 @@
 
                 document.getElementById('result-area').style.display = 'block';
                 let loc = window.location.pathname;
-                let dir = loc.substring(0, loc.lastIndexOf('/'));
+                let dir = loc.substring(0, loc.lastIndexOf('/admin'));
                 document.getElementById('finalLink').value = `${window.location.origin}${dir}/${CINEMA_FILENAME}?id=${id}`;
                 alert("Uploaded!");
 
