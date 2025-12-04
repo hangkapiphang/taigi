@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Player</title>
+    <style>
+        /* --- FONTS (Root Path: font/) --- */
+        
+        /* 1. Regular & Italic (Weight: 400) */
+        @font-face { font-family: 'Taigi Font'; src: url('font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'Taigi Font'; src: url('font/Charis-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+        
+        /* 2. Medium & Medium Italic (Weight: 500) */
+        @font-face { font-family: 'Taigi Font'; src: url('font/Charis-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; }
+        @font-face { font-family: 'Taigi Font'; src: url('font/Charis-MediumItalic.woff2') format('woff2'); font-weight: 500; font-style: italic; }
+        
+        /* 3. SemiBold Italic (Weight: 600) - Note: You didn't provide SemiBold Normal, so only Italic is mapped */
+        @font-face { font-family: 'Taigi Font'; src: url('font/Charis-SemiBoldItalic.woff2') format('woff2'); font-weight: 600; font-style: italic; }
+
+        /* 4. Bold & Bold Italic (Weight: 700) */
+        @font-face { font-family: 'Taigi Font'; src: url('font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+        @font-face { font-family: 'Taigi Font'; src: url('font/Charis-BoldItalic.woff2') format('woff2'); font-weight: 700; font-style: italic; }
+
+        body { margin: 0; background-color: #111; font-family: Arial, sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+        #main-container { display: flex; flex-grow: 1; height: 100%; }
+        #video-section { flex: 1; position: relative; background: black; display: flex; align-items: center; justify-content: center; }
+        #video-wrapper { width: 100%; height: 100%; position: relative; }
+        #player { width: 100%; height: 100%; border: none; }
+        #cinematic-mask { position: absolute; pointer-events: none; z-index: 10; background: black; opacity: 1; height: 0; width: 0; bottom: 0; left: 0; }
+
+        #subtitle-overlay {
+            position: absolute; left: 50%; transform: translateX(-50%); z-index: 20;
+            text-align: center; pointer-events: none;
+            /* Uses the specific font family defined above */
+            font-family: 'Taigi Font', serif; 
+            line-height: 1.5; white-space: pre-wrap; transition: opacity 0.2s;
+            padding: 2px 8px; border-radius: 4px;
+        }
+        
+        #vocab-section { width: 300px; background: #1a1a1a; border-left: 1px solid #333; display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s ease; }
+        #vocab-header { padding: 10px; background: #222; color: #fff; font-weight: bold; border-bottom: 1px solid #444; display:flex; justify-content:space-between; }
+        #vocab-list { flex-grow: 1; overflow-y: auto; padding: 10px; }
+        .vocab-item { background: #2a2a2a; color: #ccc; padding: 10px; margin-bottom: 8px; border-radius: 4px; cursor: pointer; border-left: 3px solid transparent; }
+        .vocab-item:hover { background: #333; }
+        .vocab-item.active { border-left-color: #00bcd4; background: #333; color: white; }
+        .v-word { font-family: 'Taigi Font'; font-size: 18px; color: #00bcd4; font-weight: bold; }
+        .v-def { font-size: 14px; margin-top: 2px; }
+
+        @media (max-width: 768px) {
+            #main-container { flex-direction: column; }
+            #video-section { height: 40vh; flex: none; }
+            #vocab-section { width: 100%; flex: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="video-section">
+            <div id="video-wrapper">
+                <div id="cinematic-mask"></div>
+                <div id="player"></div>
+                <div id="subtitle-overlay"></div>
+            </div>
+        </div>
+        <div id="vocab-section">
+            <div id="vocab-header"><span>📖 Vocabulary</span><button onclick="toggleVocab()" style="background:none; border:none; color:#999; cursor:pointer;">✖</button></div>
+            <div id="vocab-list"></div>
+        </div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        let subtitleData = [];
+        let vocabData = [];
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            // Update these with your real Github details
+            const user = "YOUR_GITHUB_USER"; 
+            const repo = "YOUR_GITHUB_REPO"; 
+            
+            if(id) {
+                fetch(`data/${id}.json`)
+                    .then(r => r.ok ? r.json() : fetch(`https://raw.githubusercontent.com/${user}/${repo}/gh-pages/data/${id}.json`).then(r=>r.json()))
+                    .then(data => initCinema(data))
+                    .catch(e => alert("Could not load data."));
+            }
+        };
+
+        function initCinema(data) {
+            if(data.video) {
+                const vid = (data.video.match(/[?&]v=([^&#]*)/) || data.video.match(/youtu\.be\/([^?&#]+)/))?.[1];
+                if(vid) player = new YT.Player('player', { videoId: vid, events: {'onReady': onPlayerReady} });
+            }
+            if(data.subtitle) parseSRT(data.subtitle);
+            else if (data.hiddenSub) parseSRT(decodeURIComponent(escape(atob(atob(data.hiddenSub).split('').reverse().join('')))));
+            if(data.vocab) { vocabData = data.vocab; renderVocab(); }
+            applyVisuals(data.mask, data.settings);
+        }
+
+        function applyVisuals(mask, settings) {
+            const m = document.getElementById('cinematic-mask');
+            if(mask) {
+                m.style.height = (mask.h || 0) + "%"; m.style.width = (mask.w || 0) + "%";
+                m.style.bottom = (mask.b || 0) + "%"; m.style.left = (mask.l || 0) + "%";
+                m.style.backgroundColor = mask.c || "#000000"; m.style.opacity = mask.o !== undefined ? mask.o : 1;
+            }
+            const s = document.getElementById('subtitle-overlay');
+            if(settings) {
+                const scale = settings.scale || 1;
+                s.style.fontSize = (window.innerWidth < 768 ? 18 * scale : 28 * scale) + "px";
+                s.style.color = settings.color || "#ffffff";
+                s.style.top = 'auto'; s.style.bottom = 'auto';
+                s.style[settings.anchor || 'bottom'] = (settings.offset || 5) + "%";
+                if(settings.boxColor) {
+                    const rgb = hexToRgb(settings.boxColor);
+                    s.style.backgroundColor = `rgba(${rgb.r},${rgb.g},${rgb.b},${settings.boxOp !== undefined ? settings.boxOp : 0.5})`;
+                }
+                const sh = settings.shadow || 0;
+                if(sh > 0) s.style.textShadow = `${sh}px ${sh}px ${sh}px #000`;
+            }
+        }
+
+        function onPlayerReady() { setInterval(updateLoop, 100); }
+        function updateLoop() {
+            if(!player || !player.getCurrentTime) return;
+            const t = player.getCurrentTime();
+            const sub = subtitleData.find(s => t >= s.start && t <= s.end);
+            const subDiv = document.getElementById('subtitle-overlay');
+            subDiv.style.opacity = sub ? 1 : 0;
+            if(sub) subDiv.innerHTML = sub.text.replace(/\n/g, '<br>');
+
+            document.querySelectorAll('.vocab-item').forEach(el => el.classList.remove('active'));
+            const activeVocab = vocabData.slice().reverse().find(v => t >= v.time);
+            if(activeVocab) {
+                const idx = vocabData.indexOf(activeVocab);
+                document.getElementById(`v-${idx}`)?.classList.add('active');
+            }
+        }
+
+        function renderVocab() {
+            const c = document.getElementById('vocab-list'); c.innerHTML = '';
+            vocabData.sort((a,b) => a.time - b.time).forEach((v, i) => {
+                const div = document.createElement('div');
+                div.className = 'vocab-item'; div.id = `v-${i}`;
+                div.onclick = () => player.seekTo(v.time, true);
+                div.innerHTML = `<div class="v-word">${v.word}</div><div class="v-def">${v.def}</div>`;
+                c.appendChild(div);
+            });
+        }
+
+        function parseSRT(srt) {
+            subtitleData = [];
+            srt.trim().split(/\n\s*\n/).forEach(b => {
+                const lines = b.split('\n');
+                if(lines.length >= 3) {
+                    const m = lines[1].match(/(\d+:\d+:\d+[,.]\d+)\s*-->\s*(\d+:\d+:\d+[,.]\d+)/);
+                    if(m) subtitleData.push({start:timeToSec(m[1]), end:timeToSec(m[2]), text:lines.slice(2).join('\n')});
+                }
+            });
+        }
+        function timeToSec(t) { const p=t.replace(',','.').split(':'); return p.length===3 ? (+p[0])*3600+(+p[1])*60+(+p[2]) : 0; }
+        function hexToRgb(hex) { var r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex); return r ? { r: parseInt(r[1], 16), g: parseInt(r[2], 16), b: parseInt(r[3], 16) } : {r:0,g:0,b:0}; }
+        function toggleVocab() { const v = document.getElementById('vocab-section'); v.style.display = v.style.display === 'none' ? 'flex' : 'none'; }
+    </script>
+</body>
+</html>
