@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backstage Control</title>
+    <!-- Library to create ZIP files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #2c3e50; color: white; display: flex; flex-direction: column; align-items: center; padding-top: 30px; }
+        h1 { margin-bottom: 20px; letter-spacing: 1px; }
+        
+        .container { width: 90%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        
+        /* CARD STYLE */
+        .card { 
+            background: #34495e; padding: 20px; border-radius: 10px; 
+            text-decoration: none; color: white; font-size: 18px; 
+            border-left: 5px solid #34495e; transition: all 0.2s;
+            display: flex; align-items: center; justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer;
+        }
+        .card:hover { background: #3e5871; transform: translateX(5px); }
+        
+        /* COLORS */
+        .card.edit { border-left-color: #3498db; } /* Blue */
+        .card.menu { border-left-color: #9b59b6; } /* Purple (NEW) */
+        .card.auto { border-left-color: #f1c40f; } /* Yellow */
+        .card.man  { border-left-color: #17a2b8; } /* Cyan */
+        .card.rec  { border-left-color: #e74c3c; } /* Red */
+        
+        /* BACKUP SECTION */
+        .backup-area { margin-top: 20px; border-top: 1px solid #555; padding-top: 20px; text-align: center; }
+        .card.back { border-left-color: #2ecc71; background: #27ae60; justify-content: center; font-weight: bold; }
+        .card.back:hover { background: #219150; }
+        
+        #status { font-size: 13px; color: #bdc3c7; margin-top: 10px; min-height: 20px; font-family: monospace; white-space: pre-wrap;}
+        
+        .footer-link { margin-top: 30px; color: #95a5a6; text-decoration: none; font-size: 14px; }
+        .footer-link:hover { color: white; text-decoration: underline; }
+    </style>
+    <script>
+        // Gatekeeper
+        if (localStorage.getItem('is_admin') !== 'true') {
+            if(prompt("Enter Admin Password:") === "Taigibun") localStorage.setItem('is_admin', 'true');
+            else window.location.href = "../index.html";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>⚙️ Backstage Control</h1>
+
+    <div class="container">
+        <!-- 1. LIBRARY MENU EDITOR (NEW) -->
+        <a href="library_editor.html" class="card menu">
+            <span>📚 Library Menu (Edit Homepage)</span>
+            <span>→</span>
+        </a>
+
+        <!-- 2. EDIT EXISTING -->
+        <a href="editor.html" class="card edit">
+            <span>📝 Subtitle Editor (Load & Edit)</span>
+            <span>→</span>
+        </a>
+
+        <!-- 3. AUTO GENERATOR (API) -->
+        <a href="generator.html" class="card auto">
+            <span>⚡ Auto Generator (Color/Mask/Upload)</span>
+            <span>→</span>
+        </a>
+
+        <!-- 4. MANUAL GENERATOR (Download) -->
+        <a href="manual_generator.html" class="card man">
+            <span>💾 Manual Generator (Download Only)</span>
+            <span>→</span>
+        </a>
+
+        <!-- 5. CLASS RECORDER -->
+        <a href="siongtaigi.html" class="card rec">
+            <span>🔴 Class Recorder (SiongTaigi)</span>
+            <span>→</span>
+        </a>
+
+        <!-- 6. BACKUP -->
+        <div class="backup-area">
+            <div class="card back" onclick="backupFullProject()">
+                <span>📦 Pack & Download All Data</span>
+            </div>
+            <div id="status"></div>
+        </div>
+    </div>
+
+    <a href="../index.html" class="footer-link">← Back to Public Site</a>
+
+    <script>
+        async function backupFullProject() {
+            const status = document.getElementById('status');
+            
+            // Get Credentials
+            const user = localStorage.getItem('gh_user');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+
+            if (!user || !repo || !token) {
+                status.style.color = '#e74c3c';
+                status.innerText = "Error: Credentials missing.\nGo to 'Auto Generator' and click 'Save Credentials' first.";
+                return;
+            }
+
+            try {
+                status.style.color = '#f1c40f';
+                status.innerText = "Connecting to GitHub...";
+
+                // Get Branch SHA
+                const branchUrl = `https://api.github.com/repos/${user}/${repo}/branches/gh-pages`;
+                const branchReq = await fetch(branchUrl, { headers: { 'Authorization': `token ${token}` } });
+                
+                if (!branchReq.ok) throw new Error("Could not connect. Check token/repo.");
+                const branchData = await branchReq.json();
+                const treeSha = branchData.commit.sha;
+
+                // Get File Tree
+                status.innerText = "Scanning files...";
+                const treeUrl = `https://api.github.com/repos/${user}/${repo}/git/trees/${treeSha}?recursive=1`;
+                const treeReq = await fetch(treeUrl, { headers: { 'Authorization': `token ${token}` } });
+                const treeData = await treeReq.json();
+
+                const zip = new JSZip();
+                let count = 0;
+                const f
