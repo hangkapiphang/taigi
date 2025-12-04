@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Editor - Auto Fix</title>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f4f4f4; }
+        
+        /* Debug Console */
+        .console { background: #222; color: #0f0; padding: 15px; font-family: monospace; height: 150px; overflow-y: scroll; border-radius: 5px; margin-bottom: 20px; border: 2px solid #555; }
+        .log-err { color: #ff5555; }
+        .log-succ { color: #55ff55; }
+        .log-info { color: #aaa; }
+
+        /* UI */
+        .toolbar { display: flex; gap: 10px; margin-bottom: 20px; }
+        input { padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+        button { padding: 8px 15px; cursor: pointer; border: none; border-radius: 4px; font-weight: bold; color: white; }
+        .btn-green { background: #28a745; }
+        .btn-blue { background: #007bff; }
+        .btn-red { background: #dc3545; }
+
+        /* List Items */
+        .row { background: white; padding: 10px; margin-bottom: 10px; border-radius: 5px; display: flex; gap: 10px; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .thumb { width: 80px; height: 45px; object-fit: cover; background: #eee; }
+        .inputs { display: flex; flex-direction: column; gap: 5px; flex-grow: 1; }
+        .inputs input { width: 100%; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+
+    <h1>🎬 Library Editor (Smart Mode)</h1>
+    
+    <!-- DEBUG CONSOLE -->
+    <div id="console" class="console">Waiting to start...</div>
+
+    <!-- CONTROLS -->
+    <div class="toolbar">
+        <button onclick="startAutoLoad()" class="btn-blue">🔄 Auto-Connect & Load</button>
+        <button onclick="addItem()" class="btn-green">+ Add Movie</button>
+        <button onclick="saveToGitHub()" class="btn-green">💾 Save Changes</button>
+        <button onclick="clearCreds()" class="btn-red">Reset Credentials</button>
+    </div>
+
+    <!-- MOVIE LIST -->
+    <div id="list-area"></div>
+
+    <script>
+        let libraryData = [];
+        let currentSHA = null;
+        let detectedBranch = "main"; // Will be updated automatically
+
+        // --- LOGGER ---
+        function log(msg, type="") {
+            const c = document.getElementById('console');
+            const colorClass = type === 'err' ? 'log-err' : (type === 'succ' ? 'log-succ' : 'log-info');
+            c.innerHTML += `<div class="${colorClass}">> ${msg}</div>`;
+            c.scrollTop = c.scrollHeight;
+        }
+
+        // --- 1. SMART CONNECT ---
+        async function startAutoLoad() {
+            const user = localStorage.getItem('gh_user');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+
+            if(!user || !repo || !token) {
+                log("❌ Credentials missing. Please run the Generator first.", "err");
+                if(confirm("Credentials missing. Go to Generator?")) window.location.href = "generator.html";
+                return;
+            }
+
+            log(`🔍 Connecting to ${user}/${repo}...`);
+
+            // STEP A: Detect the correct Branch
+            try {
+                const repoUrl = `https://api.github.com/repos/${user}/${repo}`;
+                const repoReq = await fetch(repoUrl, { headers: { 'Authorization': `token ${token}` } });
+                
+                if(repoReq.status === 404) {
+                    throw new Error("Repository not found. Check Username and Repo name.");
+                }
+                if(repoReq.status === 401) {
+                    throw new Error("Unauthorized. Your Token is wrong.");
+                }
+
+                const repoData = await repoReq.json();
+                detectedBranch = repoData.default_branch; // Auto-detect!
+                log(`✅ Connected! Default branch is: '${detectedBranch}'`, "succ");
+
+            } catch(e) {
+                log(`❌ Connection Failed: ${e.message}`, "err");
+                return;
+            }
+
+            // STEP B: Load the File
+            log(`📂 Looking for 'data/library.json' on '${detectedBranch}'...`);
+            const fileUrl = `https://api.github.com/repos/${user}/${repo}/contents/data/library.json?ref=${detectedBranch}`;
+            
+            try {
+                const fileReq = await fetch(fileUrl, { headers: { 'Authorization': `token ${token}`, 'Cache-Control': 'no-cache' } });
+                
+                if(fileReq.status === 404) {
+                    log("⚠️ 'data/library.json' does not exist yet.", "err");
+                    log("💡 Created a new empty library list for you.", "succ");
+                    libraryData = [];
+                    currentSHA = null;
+                } else {
+                    const fileData = await fileReq.json();
+                    currentSHA = fileData.sha;
+                    const jsonString = decodeURIComponent(escape(atob(fileData.content)));
+                    libraryData = JSON.parse(jsonString);
+                    log(`✅ Loaded ${libraryData.length} movies successfully!`, "succ");
+                }
+                renderList();
+
+            } catch(e) {
+                log(`❌ File Load Error: ${e.message}`, "err");
+            }
+        }
+
+        // --- 2. RENDER UI ---
+        function renderList() {
+            const container = document.getElementById('list-area');
+            container.innerHTML = "";
+            
+            if(libraryData.length === 0) {
+                container.innerHTML = "<div style='padding:20px; text-align:center; background:white;'>Library is empty. Click <b>+ Add Movie</b> to start.</div>";
+                return;
+            }
+
+            libraryData.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'row';
+                div.innerHTML = `
+                    <img src="https://img.youtube.com/vi/${item.yt}/default.jpg" class="thumb" onerror="this.src='https://via.placeholder.com/80?text=?'">
+                    <div class="inputs">
+                        <input type="text" placeholder="Title" value="${item.title}" onchange="update(${index}, 'title', this.value)" style="font-weight:bold;">
+                        <input type="text" placeholder="YouTube ID" value="${item.yt}" onchange="update(${index}, 'yt', this.value)">
+                        <input type="text" placeholder="ID (e.g. frozen)" value="${item.id}" onchange="update(${index}, 'id', this.value)">
+                    </div>
+                    <button class="btn-red" onclick="del(${index})">X</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function update(i, key, val) { libraryData[i][key] = val; renderList(); }
+        function addItem() { 
+            libraryData.push({id: "new", title: "New Movie", yt: "", cat: "cartoon", desc: "", date: ""}); 
+            renderList(); 
+        }
+        function del(i) { libraryData.splice(i,1); renderList(); }
+        
+        function clearCreds() {
+            if(confirm("Clear all settings?")) {
+                localStorage.clear();
+                window.location.reload();
+            }
+        }
+
+        // --- 3. SAVE ---
+        async function saveToGitHub() {
+            const user = localStorage.getItem('gh_user');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+            
+            if(!confirm(`Save to branch '${detectedBranch}'?`)) return;
+            log("💾 Saving...", "info");
+
+            const url = `https://api.github.com/repos/${user}/${repo}/contents/data/library.json`;
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(libraryData, null, 2))));
+            
+            const body = {
+                message: "Update Library",
+                content: content,
+                branch: detectedBranch
+            };
+            if(currentSHA) body.sha = currentSHA;
+
+            try {
+                const req = await fetch(url, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+
+                if(!req.ok) {
+                    const err = await req.json();
+                    log(`❌ Save Failed: ${err.message}`, "err");
+                } else {
+                    const res = await req.json();
+                    currentSHA = res.content.sha;
+                    log("✅ Saved Successfully!", "succ");
+                    alert("Saved!");
+                }
+            } catch(e) {
+                log(`❌ Error: ${e.message}`, "err");
+            }
+        }
+
+        // Auto-start on load
+        window.onload = startAutoLoad;
+    </script>
+</body>
+</html>
