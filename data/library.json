@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ironman",
+    "title": "Iron Man Trailer",
+    "desc": "Learn action vocabulary with Tony Stark. Good for beginners.",
+    "cat": "cartoon",
+    "yt": "8ugaeA-nMTc",
+    "date": "2023-10-27"
+  },
+  {
+    "id": "frozen",
+    "title": "Let It Go (Taigi Ver.)",
+    "desc": "Sing along practice. Great for learning tones and flow.",
+    "cat": "song",
+    "yt": "L0MK7qz13bU",
+    "date": "2023-10-28"
+  },
+  {
+    "id": "news_sample",
+    "title": "PTS Daily News",
+    "desc": "Formal speech practice. Advanced vocabulary.",
+    "cat": "speech",
+    "yt": "3JjKq7q8j7s",
+    "date": "2023-11-01"
+  }
+]
