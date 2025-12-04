@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taigi Learning Cinema</title>
+    <style>
+        /* FONTS */
+        @font-face { font-family: 'Taigi Font'; src: url('./font/Charis-Regular.woff2') format('woff2'); }
+        
+        :root {
+            --primary: #2c3e50;
+            --accent: #e74c3c;
+            --bg: #f4f6f8;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            margin: 0; font-family: 'Taigi Font', Arial, sans-serif;
+            background-color: var(--bg); color: #333;
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+
+        /* HERO HEADER */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white; padding: 40px 20px;
+            text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-size: 1.1em; }
+
+        /* NAVIGATION / FILTER */
+        #nav-bar {
+            display: flex; justify-content: center; gap: 10px; padding: 20px;
+            flex-wrap: wrap; background: white; border-bottom: 1px solid #ddd;
+            position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .filter-btn {
+            padding: 10px 20px; border: 1px solid #ddd; background: white;
+            border-radius: 25px; cursor: pointer; transition: all 0.2s;
+            font-size: 15px; color: #555; font-weight: bold;
+        }
+        .filter-btn:hover { background: #f1f1f1; transform: translateY(-2px); }
+        .filter-btn.active {
+            background: var(--primary); color: white; border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(44, 62, 80, 0.3);
+        }
+        .req-btn {
+            background: #27ae60; color: white; border-color: #27ae60; text-decoration: none;
+        }
+        .req-btn:hover { background: #219150; }
+
+        /* GRID LAYOUT */
+        #gallery {
+            max-width: 1200px; margin: 30px auto; padding: 0 20px; width: 100%; box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px; flex-grow: 1;
+        }
+
+        /* MOVIE CARD */
+        .card {
+            background: var(--card-bg); border-radius: 12px; overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; flex-direction: column; border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+
+        .thumbnail-link { display: block; position: relative; overflow: hidden; }
+        .thumbnail {
+            width: 100%; aspect-ratio: 16/9; object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .card:hover .thumbnail { transform: scale(1.05); }
+        
+        /* Play Icon Overlay */
+        .play-icon {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 50px; color: white; opacity: 0.8; text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            transition: opacity 0.3s;
+        }
+        .card:hover .play-icon { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+
+        .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        
+        .card-tag {
+            font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--accent); font-weight: bold; margin-bottom: 8px;
+        }
+        .card-title { margin: 0 0 10px; font-size: 20px; font-weight: bold; line-height: 1.3; color: #2c3e50; }
+        .card-desc { font-size: 14px; color: #7f8c8d; margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
+        
+        /* ACTION BUTTONS */
+        .action-row { display: flex; gap: 8px; margin-top: auto; }
+        .action-btn {
+            flex: 1; text-align: center; padding: 10px 0; border-radius: 6px;
+            font-size: 13px; font-weight: bold; text-decoration: none; color: white;
+            transition: opacity 0.2s;
+        }
+        .action-btn:hover { opacity: 0.9; }
+        
+        .btn-watch { background: #34495e; }
+        .btn-shadow { background: #8e44ad; }
+        .btn-vocab { background: #2980b9; }
+
+        /* FOOTER */
+        footer { 
+            background: #2c3e50; color: #bdc3c7; text-align: center; 
+            padding: 30px; margin-top: 50px; font-size: 13px; 
+        }
+        footer a { color: #bdc3c7; text-decoration: none; border-bottom: 1px dotted #7f8c8d; }
+        footer a:hover { color: white; border-bottom-style: solid; }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8em; }
+            #gallery { grid-template-columns: 1fr; padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎬 Taigi Cinema</h1>
+        <p>Learn Taiwanese Hokkien through Movies & Songs</p>
+    </header>
+
+    <!-- MENU TABS -->
+    <div id="nav-bar">
+        <button class="filter-btn active" onclick="filterData('all')">All</button>
+        <button class="filter-btn" onclick="filterData('song')">🎵 Songs</button>
+        <button class="filter-btn" onclick="filterData('cartoon')">🧸 Cartoon</button>
+        <button class="filter-btn" onclick="filterData('speech')">🎤 Speech</button>
+        <button class="filter-btn" onclick="filterData('drama')">🎭 Drama</button>
+        
+        <div style="flex-grow:1"></div> <!-- Spacer -->
+        
+        <a href="recommend.html" class="filter-btn req-btn">+ Request Song</a>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <div id="gallery">
+        <div style="text-align:center; padding:50px; color:#999;">Loading Library...</div>
+    </div>
+
+    <footer>
+        <p>© 2024 Taigi Learning Project</p>
+        <p>
+            <a href="admin/index.html">Teacher Login</a>
+        </p>
+    </footer>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const btns = document.querySelectorAll('.filter-btn');
+        let fullLibrary = [];
+
+        // 1. Fetch the Database
+        async function loadLibrary() {
+            try {
+                // ?t= timestamp prevents caching old data
+                const response = await fetch(`data/library.json?t=${Date.now()}`);
+                if (!response.ok) throw new Error("Library file missing");
+                
+                fullLibrary = await response.json();
+                
+                // Sort: Newest first (assuming you add new items to end of JSON)
+                fullLibrary.reverse(); 
+                
+                render(fullLibrary);
+            } catch (error) {
+                console.error(error);
+                gallery.innerHTML = `
+                    <div style="text-align:center; padding:40px; color:#e74c3c;">
+                        <h3>Unable to load library</h3>
+                        <p>Please check if <code>data/library.json</code> exists.</p>
+                    </div>`;
+            }
+        }
+
+        // 2. Filter Logic
+        window.filterData = function(category) {
+            // Update Active Button
+            btns.forEach(b => {
+                if(!b.classList.contains('req-btn')) b.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter
+            const filtered = category === 'all' 
+                ? fullLibrary 
+                : fullLibrary.filter(item => item.cat === category);
+
+            render(filtered);
+        }
+
+        // 3. Render Cards
+        function render(data) {
+            gallery.innerHTML = '';
+            
+            if(data.length === 0) {
+                gallery.innerHTML = '<div style="text-align:center; padding:40px; color:#999; grid-column:1/-1;">No videos found in this category.</div>';
+                return;
+            }
+
+            data.forEach(item => {
+                // Get High Res Thumbnail
+                const thumb = `https://img.youtube.com/vi/${item.yt}/hqdefault.jpg`;
+                
+                // Format Tag
+                let tagName = item.cat.toUpperCase();
+                if(item.cat === 'song') tagName = '🎵 SONG';
+                else if(item.cat === 'cartoon') tagName = '🧸 CARTOON';
+                else if(item.cat === 'speech') tagName = '🎤 SPEECH';
+                else if(item.cat === 'drama') tagName = '🎭 DRAMA';
+
+                const html = `
+                    <div class="card">
+                        <a href="cinema.html?id=${item.id}" class="thumbnail-link">
+                            <img src="${thumb}" class="thumbnail" alt="${item.title}">
+                            <div class="play-icon">▶</div>
+                        </a>
+                        <div class="card-body">
+                            <div class="card-tag">${tagName}</div>
+                            <div class="card-title">${item.title}</div>
+                            <div class="card-desc">${item.desc}</div>
+                            
+                            <div class="action-row">
+                                <a href="cinema.html?id=${item.id}" class="action-btn btn-watch" title="Watch Video">▶ Watch</a>
+                                <a href="shadow.html?id=${item.id}" class="action-btn btn-shadow" title="Speaking Practice">🎙 Shadow</a>
+                                <a href="vocab.html?id=${item.id}" class="action-btn btn-vocab" title="Vocabulary Cards">📖 Vocab</a>
+                                <a href="arcade.html?id=${item.id}" class="action-btn" style="background:#e67e22" title="Quiz Game">🎮 Quiz</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                gallery.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+        // Start
+        loadLibrary();
+    </script>
+</body>
+</html>
