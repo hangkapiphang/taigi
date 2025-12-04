@@ -1,10 +1,16 @@
 [
   {
-    "id": "suntiunn",
-    "title": "Iā Koan Sûn Tiûⁿ",
-    "desc": "228",
-    "cat": "song",
-    "yt": "oIxzTwt6sZg",
-    "date": "2025-12-04"
+    "id": "new",
+    "title": "suntiunn",
+    "yt": "",
+    "cat": "cartoon",
+    "desc": ""
+  },
+  {
+    "id": "new",
+    "title": "New Video",
+    "yt": "",
+    "cat": "cartoon",
+    "desc": ""
   }
 ]
