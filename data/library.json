@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": "baby-shark",
+    "title": "Baby Shark Dance",
+    "desc": "The most popular dance song for kids to move along to!",
+    "cat": "song",
+    "yt": "XqZsoesa55w",
+    "date": "2023-10-01"
+  },
+  {
+    "id": "masha-jam",
+    "title": "Masha and The Bear - Jam Day",
+    "desc": "Masha decides to make jam from every fruit in the garden.",
+    "cat": "cartoon",
+    "yt": "i-T1h8h5Cuo",
+    "date": "2023-10-05"
+  },
+  {
+    "id": "never-give-up",
+    "title": "Never Give Up - Motivation",
+    "desc": "A short motivational speech about keeping going.",
+    "cat": "speech",
+    "yt": "KxGRhd_iWuE",
+    "date": "2023-10-10"
+  },
+  {
+    "id": "lion-king-circle",
+    "title": "Circle of Life",
+    "desc": "The opening scene from The Lion King.",
+    "cat": "drama",
+    "yt": "GibiNy4d4gc",
+    "date": "2023-10-12"
+  }
+]
