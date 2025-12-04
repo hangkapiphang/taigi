@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Editor - Debug Mode</title>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f0f0f0; color: #333; }
+        
+        /* CREDENTIALS PANEL */
+        .config-box { background: #333; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .config-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+        .config-box label { font-size: 12px; color: #aaa; display: block; margin-bottom: 5px; }
+        .config-box input { width: 100%; padding: 5px; background: #555; border: 1px solid #777; color: white; border-radius: 4px; box-sizing: border-box; }
+        .btn-connect { width: 100%; padding: 10px; background: #ff9800; border: none; color: white; font-weight: bold; cursor: pointer; border-radius: 4px; }
+        .btn-connect:hover { background: #e68900; }
+
+        /* LOG PANEL */
+        #log { background: white; padding: 10px; border: 1px solid #ccc; height: 100px; overflow-y: scroll; font-family: monospace; font-size: 12px; margin-bottom: 20px; display: none; }
+        .err { color: red; } .succ { color: green; } .info { color: blue; }
+
+        /* EDITOR UI */
+        #editor-ui { display: none; }
+        .card { background: white; padding: 15px; border-radius: 5px; margin-bottom: 10px; display: flex; gap: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .thumb { width: 120px; height: 68px; background: #ddd; object-fit: cover; }
+        .inputs { flex-grow: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        input, select { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; }
+        .full { grid-column: span 2; }
+        
+        .toolbar { margin-top: 20px; padding-top: 20px; border-top: 1px solid #ccc; display: flex; gap: 10px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; }
+        .btn-green { background: #28a745; }
+        .btn-blue { background: #007bff; }
+        .btn-red { background: #dc3545; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. SETTINGS PANEL (Visible Immediately) -->
+    <div class="config-box">
+        <h3>1. Check Settings</h3>
+        <div class="config-grid">
+            <div>
+                <label>GitHub Username</label>
+                <input type="text" id="cfg-user">
+            </div>
+            <div>
+                <label>Repository Name</label>
+                <input type="text" id="cfg-repo">
+            </div>
+            <div>
+                <label>Branch</label>
+                <input type="text" id="cfg-branch" value="gh-pages">
+            </div>
+        </div>
+        <div>
+            <label>Token (Hidden)</label>
+            <input type="password" id="cfg-token">
+        </div>
+        <br>
+        <button class="btn-connect" onclick="connect()">2. Test Connection & Load</button>
+    </div>
+
+    <!-- 2. LOG PANEL -->
+    <div id="log"></div>
+
+    <!-- 3. EDITOR (Hidden until connected) -->
+    <div id="editor-ui">
+        <h3>3. Library Editor</h3>
+        <div id="list-area"></div>
+        <div class="toolbar">
+            <button class="btn btn-green" onclick="addItem()">+ Add Item</button>
+            <div style="flex-grow:1;"></div>
+            <button class="btn btn-blue" onclick="saveData()">💾 Save to GitHub</button>
+        </div>
+    </div>
+
+    <script>
+        let libraryData = [];
+        let currentSHA = null;
+
+        // --- 1. LOAD SAVED SETTINGS ---
+        window.onload = function() {
+            document.getElementById('cfg-user').value = localStorage.getItem('gh_user') || '';
+            document.getElementById('cfg-repo').value = localStorage.getItem('gh_repo') || '';
+            document.getElementById('cfg-token').value = localStorage.getItem('gh_token') || '';
+        }
+
+        function logger(msg, type="info") {
+            const logBox = document.getElementById('log');
+            logBox.style.display = 'block';
+            logBox.innerHTML += `<div class="${type}">> ${msg}</div>`;
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+
+        // --- 2. CONNECT SEQUENCE ---
+        async function connect() {
+            // Get values from input boxes (in case user changed them)
+            const user = document.getElementById('cfg-user').value.trim();
+            const repo = document.getElementById('cfg-repo').value.trim();
+            const branch = document.getElementById('cfg-branch').value.trim();
+            const token = document.getElementById('cfg-token').value.trim();
+
+            if(!user || !repo || !token) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Update localStorage with fixed values
+            localStorage.setItem('gh_user', user);
+            localStorage.setItem('gh_repo', repo);
+            localStorage.setItem('gh_token', token);
+
+            document.getElementById('log').innerHTML = ""; // Clear log
+            logger(`Connecting to: ${user}/${repo} on '${branch}'...`);
+
+            try {
+                // STEP A: Check User/Token
+                const uReq = await fetch('https://api.github.com/user', { headers: { 'Authorization': `token ${token}` } });
+                if(!uReq.ok) throw new Error(`Token Error: ${uReq.status} (Unauthorized)`);
+                logger("✅ Token is valid.", "succ");
+
+                // STEP B: Check Repo
+                const rReq = await fetch(`https://api.github.com/repos/${user}/${repo}`, { headers: { 'Authorization': `token ${token}` } });
+                if(rReq.status === 404) throw new Error(`Repo '${user}/${repo}' not found. Check spelling.`);
+                logger("✅ Repository found.", "succ");
+
+                // STEP C: Check File
+                const fileUrl = `https://api.github.com/repos/${user}/${repo}/contents/data/library.json?ref=${branch}&t=${Date.now()}`;
+                const fReq = await fetch(fileUrl, { headers: { 'Authorization': `token ${token}`, 'Cache-Control': 'no-cache' } });
+
+                if(fReq.status === 404) {
+                    logger("⚠️ data/library.json not found.", "err");
+                    logger("ℹ️ Starting with NEW empty library.", "info");
+                    libraryData = [];
+                    currentSHA = null;
+                } else if (!fReq.ok) {
+                    // Check if branch missing
+                    if(fReq.status === 409) throw new Error("Git Conflict (409).");
+                    // Try to detect missing branch via specific API message if needed, 
+                    // but usually 404 on file also implies branch issue if repo exists.
+                    // Let's assume OK for now and try to create on save.
+                    throw new Error(`File Error: ${fReq.status}`);
+                } else {
+                    const data = await fReq.json();
+                    currentSHA = data.sha;
+                    libraryData = JSON.parse(decodeURIComponent(escape(atob(data.content))));
+                    logger(`✅ Loaded ${libraryData.length} items.`, "succ");
+                }
+
+                // Show Editor
+                document.getElementById('editor-ui').style.display = 'block';
+                render();
+
+            } catch(e) {
+                logger(`❌ FATAL ERROR: ${e.message}`, "err");
+                alert(`Connection Failed:\n${e.message}\n\nCheck the log box for details.`);
+            }
+        }
+
+        // --- 3. EDITOR FUNCTIONS ---
+        function render() {
+            const list = document.getElementById('list-area');
+            list.innerHTML = "";
+            if(libraryData.length===0) list.innerHTML = "<div style='padding:20px; text-align:center;'>No items. Add one!</div>";
+
+            libraryData.forEach((item, i) => {
+                list.innerHTML += `
+                    <div class="card">
+                        <img src="https://img.youtube.com/vi/${item.yt}/mqdefault.jpg" class="thumb" onerror="this.src='https://via.placeholder.com/120?text=No+Img'">
+                        <div class="inputs">
+                            <input type="text" placeholder="Title" value="${item.title}" onchange="up(${i}, 'title', this.value)">
+                            <input type="text" placeholder="YouTube ID" value="${item.yt}" onchange="up(${i}, 'yt', this.value)">
+                            <input type="text" placeholder="Unique ID" value="${item.id}" onchange="up(${i}, 'id', this.value)">
+                            <select onchange="up(${i}, 'cat', this.value)">
+                                <option value="cartoon" ${item.cat==='cartoon'?'selected':''}>Cartoon</option>
+                                <option value="song" ${item.cat==='song'?'selected':''}>Song</option>
+                                <option value="speech" ${item.cat==='speech'?'selected':''}>Speech</option>
+                                <option value="drama" ${item.cat==='drama'?'selected':''}>Drama</option>
+                            </select>
+                            <input type="text" class="full" placeholder="Description" value="${item.desc}" onchange="up(${i}, 'desc', this.value)">
+                            <input type="date" value="${item.date}" onchange="up(${i}, 'date', this.value)">
+                        </div>
+                        <button class="btn btn-red" style="height:fit-content;" onclick="del(${i})">X</button>
+                    </div>
+                `;
+            });
+        }
+
+        function up(i, k, v) { libraryData[i][k] = v; if(k==='yt') render(); }
+        function del(i) { libraryData.splice(i,1); render(); }
+        function addItem() { 
+            libraryData.push({ id:"new", title:"New Item", yt:"", cat:"cartoon", desc:"", date: new Date().toISOString().split('T')[0] }); 
+            render(); 
+        }
+
+        // --- 4. SAVE ---
+        async function saveData() {
+            const user = document.getElementById('cfg-user').value;
+            const repo = document.getElementById('cfg-repo').value;
+            const branch = document.getElementById('cfg-branch').value;
+            const token = document.getElementById('cfg-token').value;
+
+            if(!confirm(`Save to branch '${branch}'?`)) return;
+
+            // PREPARE
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(libraryData, null, 2))));
+            const body = { message: "Update Library", content: content, branch: branch };
+            if(currentSHA) body.sha = currentSHA;
+
+            logger("Saving...", "info");
+
+            try {
+                // Try to create/update file
+                const url = `https://api.github.com/repos/${user}/${repo}/contents/data/library.json`;
+                const req = await fetch(url, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+
+                if(!req.ok) {
+                    // Detect missing branch error specifically
+                    const err = await req.json();
+                    if(req.status === 422 || err.message.includes("Reference does not exist")) {
+                        throw new Error(`Branch '${branch}' does not exist! You must create it first.`);
+                    }
+                    throw new Error(err.message);
+                }
+
+                const res = await req.json();
+                currentSHA = res.content.sha;
+                logger("✅ Saved Successfully!", "succ");
+                alert("Saved!");
+            } catch(e) {
+                logger(`❌ Save Failed: ${e.message}`, "err");
+                
+                // If branch missing, offer fix
+                if(e.message.includes("Branch")) {
+                    if(confirm("Branch missing. Try to create 'gh-pages' from 'main' now?")) {
+                        createBranch(user, repo, token, branch);
+                    }
+                } else {
+                    alert("Error: " + e.message);
+                }
+            }
+        }
+
+        async function createBranch(u, r, t, b) {
+            try {
+                const m = await fetch(`https://api.github.com/repos/${u}/${r}/git/ref/heads/main`, { headers: { 'Authorization': `token ${t}` } });
+                const md = await m.json();
+                await fetch(`https://api.github.com/repos/${u}/${r}/git/refs`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `token ${t}` },
+                    body: JSON.stringify({ ref: `refs/heads/${b}`, sha: md.object.sha })
+                });
+                alert("Branch created! Click Save again.");
+            } catch(e) { alert("Failed to create branch."); }
+        }
+    </script>
+</body>
+</html>
