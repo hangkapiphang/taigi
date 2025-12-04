@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Editor</title>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f4f4f4; color: #333; }
+        
+        /* DIAGNOSTIC HEADER */
+        .status-bar { background: #333; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; display:flex; justify-content:space-between; align-items:center;}
+        .status-ok { color: #4caf50; font-weight: bold; }
+        .status-err { color: #ff5252; font-weight: bold; }
+
+        /* EDITOR CARD */
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-start; }
+        
+        /* THUMBNAIL */
+        .preview-area { width: 150px; text-align: center; }
+        .thumb { width: 100%; height: 84px; background: #eee; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+        .date-badge { font-size: 11px; background: #eee; padding: 2px 6px; border-radius: 4px; margin-top: 5px; display: inline-block; }
+
+        /* INPUTS GRID */
+        .input-area { flex-grow: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .full-width { grid-column: span 2; }
+        
+        label { font-size: 12px; font-weight: bold; color: #666; display: block; margin-bottom: 4px; }
+        input, select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        
+        /* BUTTONS */
+        .toolbar { display: flex; gap: 10px; margin-top: 20px; padding-top: 20px; border-top: 2px solid #ddd; }
+        .btn { padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; color: white; }
+        .btn-green { background: #28a745; }
+        .btn-blue { background: #007bff; }
+        .btn-red { background: #dc3545; }
+        .btn-del { background: #ffcccc; color: #cc0000; padding: 5px 10px; border:none; cursor: pointer; border-radius: 4px; margin-top: 10px;}
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. CONNECTION STATUS -->
+    <div class="status-bar">
+        <div id="status-text">Connecting...</div>
+        <button id="fix-btn" class="btn btn-red" style="display:none;" onclick="createBranch()">🛠 Fix Missing Branch</button>
+    </div>
+
+    <!-- 2. EDITOR UI -->
+    <div id="editor-container" style="display:none;">
+        <div id="list-area"></div>
+
+        <div class="toolbar">
+            <button class="btn btn-green" onclick="addItem()">+ Add New Item</button>
+            <div style="flex-grow:1;"></div>
+            <button class="btn btn-blue" onclick="saveToGitHub()">💾 Save Changes to GitHub</button>
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIG ---
+        const BRANCH = "gh-pages";
+        const FILE_PATH = "data/library.json";
+        
+        const user = localStorage.getItem('gh_user');
+        const repo = localStorage.getItem('gh_repo');
+        const token = localStorage.getItem('gh_token');
+
+        let libraryData = [];
+        let currentSHA = null;
+
+        // --- 1. INITIALIZE & CHECK ---
+        window.onload = async function() {
+            if(!user || !repo || !token) {
+                document.getElementById('status-text').innerText = "❌ No Credentials. Go to Generator.";
+                return;
+            }
+
+            // Verify Branch Exists
+            try {
+                const branchCheck = await fetch(`https://api.github.com/repos/${user}/${repo}/branches/${BRANCH}`, {
+                    headers: { Authorization: `token ${token}` }
+                });
+
+                if(branchCheck.status === 404) {
+                    document.getElementById('status-text').innerHTML = "<span class='status-err'>⚠️ Branch 'gh-pages' Missing!</span>";
+                    document.getElementById('fix-btn').style.display = "block";
+                } else if (branchCheck.ok) {
+                    document.getElementById('status-text').innerHTML = "<span class='status-ok'>✅ Connected to 'gh-pages'</span>";
+                    loadData();
+                } else {
+                    throw new Error("Connection Error");
+                }
+            } catch(e) {
+                document.getElementById('status-text').innerText = "Error: " + e.message;
+            }
+        };
+
+        // --- 2. LOAD DATA ---
+        async function loadData() {
+            const url = `https://api.github.com/repos/${user}/${repo}/contents/${FILE_PATH}?ref=${BRANCH}&t=${Date.now()}`;
+            try {
+                const req = await fetch(url, { headers: { Authorization: `token ${token}`, 'Cache-Control': 'no-cache' } });
+                
+                if(req.status === 404) {
+                    libraryData = []; // Start fresh
+                    currentSHA = null;
+                } else {
+                    const data = await req.json();
+                    currentSHA = data.sha;
+                    libraryData = JSON.parse(decodeURIComponent(escape(atob(data.content))));
+                }
+                
+                document.getElementById('editor-container').style.display = "block";
+                render();
+            } catch(e) {
+                alert("Load failed: " + e.message);
+            }
+        }
+
+        // --- 3. RENDER UI ---
+        function render() {
+            const list = document.getElementById('list-area');
+            list.innerHTML = "";
+
+            if(libraryData.length === 0) {
+                list.innerHTML = "<div style='text-align:center; padding:20px; color:#777;'>Library is empty. Click '+ Add New Item'</div>";
+                return;
+            }
+
+            libraryData.forEach((item, i) => {
+                list.innerHTML += `
+                <div class="card">
+                    <!-- PREVIEW -->
+                    <div class="preview-area">
+                        <img src="https://img.youtube.com/vi/${item.yt}/mqdefault.jpg" class="thumb" onerror="this.src='https://via.placeholder.com/120x68?text=No+Img'">
+                        <div class="date-badge">${item.date || 'No Date'}</div>
+                        <button class="btn-del" onclick="removeItem(${i})">Remove</button>
+                    </div>
+
+                    <!-- INPUTS -->
+                    <div class="input-area">
+                        <!-- Row 1 -->
+                        <div>
+                            <label>Title</label>
+                            <input type="text" value="${item.title}" onchange="update(${i}, 'title', this.value)">
+                        </div>
+                        <div>
+                            <label>YouTube ID</label>
+                            <input type="text" value="${item.yt}" onchange="update(${i}, 'yt', this.value)" placeholder="e.g. dQw4w9WgXcQ">
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div>
+                            <label>Unique ID (File Name)</label>
+                            <input type="text" value="${item.id}" onchange="update(${i}, 'id', this.value)">
+                        </div>
+                        <div>
+                            <label>Category</label>
+                            <select onchange="update(${i}, 'cat', this.value)">
+                                <option value="cartoon" ${item.cat==='cartoon'?'selected':''}>Cartoon</option>
+                                <option value="song" ${item.cat==='song'?'selected':''}>Song</option>
+                                <option value="speech" ${item.cat==='speech'?'selected':''}>Speech</option>
+                                <option value="drama" ${item.cat==='drama'?'selected':''}>Drama</option>
+                            </select>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div>
+                            <label>Date Added</label>
+                            <input type="date" value="${item.date}" onchange="update(${i}, 'date', this.value)">
+                        </div>
+                         <div></div> <!-- Empty spacer -->
+
+                        <!-- Row 4 -->
+                        <div class="full-width">
+                            <label>Description</label>
+                            <input type="text" value="${item.desc}" onchange="update(${i}, 'desc', this.value)">
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+        }
+
+        // --- 4. CRUD ACTIONS ---
+        function update(i, field, val) {
+            libraryData[i][field] = val;
+            if(field === 'yt') render(); // Refresh thumbnail
+        }
+
+        function addItem() {
+            libraryData.push({
+                id: "new-item",
+                title: "New Video Title",
+                desc: "Description...",
+                cat: "cartoon",
+                yt: "",
+                date: new Date().toISOString().split('T')[0]
+            });
+            render();
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        function removeItem(i) {
+            if(confirm("Delete this item?")) {
+                libraryData.splice(i, 1);
+                render();
+            }
+        }
+
+        // --- 5. SAVE ---
+        async function saveToGitHub() {
+            const btn = document.querySelector('.btn-blue');
+            btn.innerText = "Saving...";
+            
+            // 1. Double check SHA
+            try {
+                const check = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${FILE_PATH}?ref=${BRANCH}`, { headers: { Authorization: `token ${token}`, 'Cache-Control': 'no-cache' } });
+                if(check.ok) currentSHA = (await check.json()).sha;
+                else currentSHA = null;
+            } catch(e) {}
+
+            // 2. Prepare Payload
+            const body = {
+                message: "Update Library",
+                content: btoa(unescape(encodeURIComponent(JSON.stringify(libraryData, null, 2)))),
+                branch: BRANCH
+            };
+            if(currentSHA) body.sha = currentSHA;
+
+            // 3. Send
+            try {
+                const req = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${FILE_PATH}`, {
+                    method: 'PUT',
+                    headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+
+                if(req.ok) {
+                    const res = await req.json();
+                    currentSHA = res.content.sha;
+                    alert("✅ Saved Successfully!");
+                } else {
+                    const err = await req.json();
+                    alert("Error: " + err.message);
+                }
+            } catch(e) {
+                alert("Network Error: " + e.message);
+            }
+            btn.innerText = "💾 Save Changes to GitHub";
+        }
+
+        // --- 6. FIXER (If Branch Missing) ---
+        async function createBranch() {
+            try {
+                // Get main SHA
+                const m = await fetch(`https://api.github.com/repos/${user}/${repo}/git/ref/heads/main`, { headers: { Authorization: `token ${token}` } });
+                const md = await m.json();
+                
+                // Create gh-pages
+                const c = await fetch(`https://api.github.com/repos/${user}/${repo}/git/refs`, {
+                    method: 'POST',
+                    headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ref: `refs/heads/${BRANCH}`, sha: md.object.sha })
+                });
+
+                if(c.ok) {
+                    alert("Branch Created! Reloading...");
+                    window.location.reload();
+                } else {
+                    alert("Failed. Do you have a 'main' branch?");
+                }
+            } catch(e) { alert(e.message); }
+        }
+    </script>
+</body>
+</html>
