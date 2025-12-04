@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Editor - Visuals</title>
+    <script>
+        if (localStorage.getItem('is_admin') !== 'true') {
+            if (prompt("Enter Admin Password:") === "1234") localStorage.setItem('is_admin', 'true');
+            else { alert("Access Denied"); window.location.href = "../index.html"; }
+        }
+    </script>
+    <style>
+        @font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); }
+        body { margin: 0; font-family: Arial, sans-serif; background: #e0f7fa; height: 100vh; display: flex; flex-direction: column; }
+        
+        nav { background: #333; padding: 10px; display: flex; gap: 10px; }
+        nav a { color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 4px; }
+        nav a.active { background: #00bcd4; font-weight: bold; }
+
+        #main-split { display: flex; flex-grow: 1; overflow: hidden; }
+        
+        /* PREVIEW AREA */
+        #left-col { width: 70%; background: #000; position: relative; display: flex; align-items: center; justify-content: center; }
+        #video-wrapper { width: 90%; aspect-ratio: 16/9; position: relative; background: #111; }
+        #player { width: 100%; height: 100%; }
+        #preview-mask { position: absolute; bottom: 0; left: 0; pointer-events: none; z-index: 5; }
+        #subtitle-preview { 
+            position: absolute; left: 50%; transform: translateX(-50%); z-index: 10;
+            padding: 4px 8px; border-radius: 4px; font-family: 'Taigi Font'; text-align: center;
+            /* Default styles */
+            color: white; background: rgba(0,0,0,0.5); top: 80%;
+        }
+
+        /* CONTROLS AREA */
+        #right-col { width: 30%; background: #fff; padding: 20px; overflow-y: auto; border-left: 1px solid #ccc; }
+        .control-group { margin-bottom: 20px; border: 1px solid #eee; padding: 10px; border-radius: 8px; background: #f9f9f9; }
+        h4 { margin: 0 0 10px 0; border-bottom: 2px solid #00bcd4; display: inline-block; }
+        .slider-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 13px; }
+        .slider-row input[type=range] { flex-grow: 1; margin: 0 10px; }
+
+        .io-bar { padding: 10px; background: #b2ebf2; display: flex; gap: 10px; align-items: center; border-top: 1px solid #ccc; }
+        button { cursor: pointer; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="subtitle_editor.html">📝 Subtitles</a>
+        <a href="vocab_editor.html">📖 Vocabulary</a>
+        <a href="visual_editor.html" class="active">🎨 Visuals & Mask</a>
+    </nav>
+
+    <div id="main-split">
+        <div id="left-col">
+            <div id="video-wrapper">
+                <div id="preview-mask"></div>
+                <div id="player"></div>
+                <div id="subtitle-preview">SAMPLE SUBTITLE TEXT</div>
+            </div>
+        </div>
+        <div id="right-col">
+            <div class="control-group">
+                <h4>Black Mask</h4>
+                <div class="slider-row">H: <input type="range" id="mHeight" min="0" max="100" value="15" oninput="updatePreview()"></div>
+                <div class="slider-row">W: <input type="range" id="mWidth" min="0" max="100" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row">B: <input type="range" id="mBottom" min="0" max="100" value="0" oninput="updatePreview()"></div>
+                <div class="slider-row">L: <input type="range" id="mLeft" min="0" max="100" value="0" oninput="updatePreview()"></div>
+                <div class="slider-row">Op: <input type="range" id="mOpacity" min="0" max="100" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row">Color: <input type="color" id="mColor" value="#000000" oninput="updatePreview()"></div>
+            </div>
+
+            <div class="control-group">
+                <h4>Subtitle Appearance</h4>
+                <div class="slider-row">Size: <input type="range" id="subSize" min="50" max="200" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row">Offset: <input type="range" id="subOffset" min="0" max="100" value="5" oninput="updatePreview()"></div>
+                <div class="slider-row">Anchor: <select id="subAnchor" onchange="updatePreview()"><option value="bottom">Bottom</option><option value="top">Top</option></select></div>
+                <hr>
+                <div class="slider-row">Text Color: <input type="color" id="subColor" value="#ffffff" oninput="updatePreview()"></div>
+                <div class="slider-row">Box Color: <input type="color" id="subBoxColor" value="#000000" oninput="updatePreview()"></div>
+                <div class="slider-row">Box Opacity: <input type="range" id="subBoxOp" min="0" max="100" value="50" oninput="updatePreview()"></div>
+                <div class="slider-row">Shadow: <input type="range" id="subShadow" min="0" max="10" value="2" oninput="updatePreview()"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="io-bar">
+        <input type="text" id="videoUrl" placeholder="YouTube URL" style="padding:5px; width: 200px;" onchange="loadVideo(this.value)">
+        <div style="border-left:1px solid #999; height:20px; margin:0 10px;"></div>
+        
+        <input type="file" id="hidden-file" accept=".json" style="display:none" onchange="loadLocalJson(this)">
+        <button onclick="document.getElementById('hidden-file').click()">📂 Load JSON</button>
+        <button onclick="downloadJson()">💾 Download</button>
+
+        <div style="flex-grow:1"></div>
+        <input type="text" id="ghUser" placeholder="User" style="padding:5px; width:80px">
+        <input type="text" id="ghRepo" placeholder="Repo" style="padding:5px; width:80px">
+        <input type="password" id="ghToken" placeholder="Token" style="padding:5px; width:80px">
+        <button onclick="uploadToGithub()" style="background:#24292e; color:white;">☁ Upload</button>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        let globalData = { subtitle: "", vocab: [] }; // Preserves other data
+
+        window.onload = function() {
+            ['ghUser', 'ghRepo', 'ghToken'].forEach(k => { if(localStorage.getItem(k)) document.getElementById(k).value = localStorage.getItem(k); });
+            updatePreview();
+        }
+
+        function onYouTubeIframeAPIReady() {}
+        function loadVideo(url) {
+            const id = (url.match(/[?&]v=([^&#]*)/) || url.match(/youtu\.be\/([^?&#]+)/))?.[1];
+            if(!id) return;
+            globalData.video = url;
+            if(player) player.loadVideoById(id);
+            else player = new YT.Player('player', { videoId: id });
+        }
+
+        function updatePreview() {
+            // Mask
+            const m = document.getElementById('preview-mask');
+            m.style.height = document.getElementById('mHeight').value + "%";
+            m.style.width = document.getElementById('mWidth').value + "%";
+            m.style.bottom = document.getElementById('mBottom').value + "%";
+            m.style.left = document.getElementById('mLeft').value + "%";
+            m.style.backgroundColor = document.getElementById('mColor').value;
+            m.style.opacity = document.getElementById('mOpacity').value / 100;
+
+            // Subtitle
+            const s = document.getElementById('subtitle-preview');
+            s.style.fontSize = (24 * (document.getElementById('subSize').value/100)) + "px";
+            s.style.color = document.getElementById('subColor').value;
+            
+            const rgb = hexToRgb(document.getElementById('subBoxColor').value);
+            s.style.background = `rgba(${rgb.r},${rgb.g},${rgb.b},${document.getElementById('subBoxOp').value/100})`;
+            
+            const sh = document.getElementById('subShadow').value;
+            s.style.textShadow = sh > 0 ? `${sh}px ${sh}px ${sh}px #000` : 'none';
+
+            const anchor = document.getElementById('subAnchor').value;
+            const off = document.getElementById('subOffset').value;
+            s.style.top = 'auto'; s.style.bottom = 'auto';
+            s.style[anchor] = off + "%";
+        }
+
+        function loadLocalJson(input) {
+            const r = new FileReader();
+            r.onload = e => {
+                try {
+                    const d = JSON.parse(e.target.result);
+                    globalData = d;
+                    if(d.video) { document.getElementById('videoUrl').value = d.video; loadVideo(d.video); }
+                    
+                    if(d.mask) {
+                        ['Height','Width','Bottom','Left'].forEach(k => document.getElementById('m'+k).value = d.mask[k[0].toLowerCase()]);
+                        if(d.mask.c) document.getElementById('mColor').value = d.mask.c;
+                        if(d.mask.o) document.getElementById('mOpacity').value = d.mask.o * 100;
+                    }
+                    if(d.settings) {
+                        document.getElementById('subSize').value = d.settings.scale * 100;
+                        document.getElementById('subAnchor').value = d.settings.anchor;
+                        document.getElementById('subOffset').value = d.settings.offset;
+                        if(d.settings.color) document.getElementById('subColor').value = d.settings.color;
+                        if(d.settings.boxColor) document.getElementById('subBoxColor').value = d.settings.boxColor;
+                        if(d.settings.boxOp) document.getElementById('subBoxOp').value = d.settings.boxOp * 100;
+                        if(d.settings.shadow) document.getElementById('subShadow').value = d.settings.shadow;
+                    }
+                    updatePreview();
+                } catch(e) { alert("Error parsing"); }
+            };
+            r.readAsText(input.files[0]);
+        }
+
+        function buildJson() {
+            globalData.video = document.getElementById('videoUrl').value;
+            globalData.mask = {
+                h: document.getElementById('mHeight').value, w: document.getElementById('mWidth').value,
+                b: document.getElementById('mBottom').value, l: document.getElementById('mLeft').value,
+                c: document.getElementById('mColor').value, o: document.getElementById('mOpacity').value / 100
+            };
+            globalData.settings = {
+                scale: document.getElementById('subSize').value / 100,
+                anchor: document.getElementById('subAnchor').value, offset: document.getElementById('subOffset').value,
+                color: document.getElementById('subColor').value,
+                boxColor: document.getElementById('subBoxColor').value, boxOp: document.getElementById('subBoxOp').value / 100,
+                shadow: document.getElementById('subShadow').value
+            };
+            return JSON.stringify(globalData, null, 2);
+        }
+
+        function downloadJson() {
+            const b = new Blob([buildJson()], {type:"application/json"});
+            const a = document.createElement("a"); a.href=URL.createObjectURL(b); a.download="cinema_visual.json"; a.click();
+        }
+
+        function uploadToGithub() {
+            const u=document.getElementById('ghUser').value, r=document.getElementById('ghRepo').value, t=document.getElementById('ghToken').value;
+            localStorage.setItem('ghUser', u); localStorage.setItem('ghRepo', r); localStorage.setItem('ghToken', t);
+            const id = prompt("Filename ID:"); if(!id) return;
+            const url = `https://api.github.com/repos/${u}/${r}/contents/data/${id}.json`;
+            const content = btoa(unescape(encodeURIComponent(buildJson())));
+            fetch(url+"?ref=gh-pages",{headers:{'Authorization':`token ${t}`}}).then(res=>{
+                res.json().then(d => {
+                    fetch(url, {method:'PUT', headers:{'Authorization':`token ${t}`}, body:JSON.stringify({
+                        message:"Upd Visuals", content:content, branch:"gh-pages", sha:d.sha
+                    })}).then(x=>alert(x.ok?"Saved!":"Error"));
+                });
+            });
+        }
+
+        function hexToRgb(hex) { var r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex); return r ? { r: parseInt(r[1], 16), g: parseInt(r[2], 16), b: parseInt(r[3], 16) } : null; }
+    </script>
+</body>
+</html>
