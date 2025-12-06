@@ -121,14 +121,22 @@
                 </div>
 
                 <!-- SAVE ACTIONS -->
-                <div class="control-group">
-                    <div style="display:flex; gap:5px; margin-bottom:5px;">
-                        <button class="btn" style="background:#28a745; width:100%" onclick="downloadJson()">💾 Download JSON</button>
-                    </div>
-                    <button class="btn" style="background:#343a40; width:100%;" onclick="uploadToGithub()">☁ Update GitHub</button>
-                </div>
+                 <div class="control-group">
+                   // <div style="display:flex; gap:5px; margin-bottom:5px;">
+                       // <button class="btn" style="background:#28a745; width:100%" onclick="downloadJson()">💾 Download JSON</button>
+                   // </div>
+                   // <button class="btn" style="background:#343a40; width:100%;" onclick="uploadToGithub()">☁ Update GitHub</button>
+               // </div>
+    <div style="font-size:12px; font-weight:bold; color:#555; margin-bottom:5px;">💾 Save Actions</div>
+    <div style="display:flex; gap:5px; margin-bottom:5px;">
+        <button class="btn" style="background:#28a745; flex:1;" onclick="downloadJson()">💾 JSON</button>
+        <!-- NEW BUTTON ADDED HERE: -->
+        <button class="btn" style="background:#17a2b8; flex:1;" onclick="downloadSrt()">📄 SRT</button>
+    </div>
+    <button class="btn" style="background:#343a40; width:100%;" onclick="uploadToGithub()">☁ Update GitHub</button>
+</div>
 
-            </div>
+        
         </div>
         <div id="right-panel">
             <div id="toolbar"><button class="btn" style="background:#007bff; width:100%" onclick="addSubtitleLine()">+ Add New Line</button></div>
@@ -328,11 +336,29 @@
         function secToTime(s) { return new Date(s*1000).toISOString().substr(11,8)+","+(s%1).toFixed(3).substr(2); }
         
         function downloadJson() { 
-            const b = new Blob([buildJson()], {type:"application/json"}); 
-            const a = document.createElement("a"); 
-            a.href=URL.createObjectURL(b); 
-            a.download = (document.getElementById('targetFilename').value || "cinema_sub") + ".json"; 
-            a.click(); 
+            //const b = new Blob([buildJson()], {type:"application/json"}); 
+            //const a = document.createElement("a"); 
+            //a.href=URL.createObjectURL(b); 
+            //a.download = (document.getElementById('targetFilename').value || "cinema_sub") + ".json"; 
+            //a.click(); 
+    let content = "";
+    subtitleData.forEach((s, i) => {
+        // SRT format: Index, Newline, Time --> Time, Newline, Text, Double Newline
+        content += `${i + 1}\r\n`;
+        content += `${secToTime(s.start)} --> ${secToTime(s.end)}\r\n`;
+        // Use raw text without HTML tags for SRT
+        content += `${s.text.replace(/<br>/g, '\n').replace(/<[^>]*>/g, '')}\r\n\r\n`;
+    });
+
+    const b = new Blob([content], {type:"text/plain"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(b);
+    // Use targetFilename if available, otherwise default name
+    let name = document.getElementById('targetFilename').value || "cinema_sub";
+    name = name.replace('.json', ''); // Remove .json extension if present
+    a.download = name + ".srt";
+    a.click();
+}
         }
         
         function uploadToGithub() {
