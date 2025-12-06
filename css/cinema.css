@@ -1,0 +1,41 @@
+/* --- FONTS (Root Path: font/) --- */
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-MediumItalic.woff2') format('woff2'); font-weight: 500; font-style: italic; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-SemiBoldItalic.woff2') format('woff2'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-BoldItalic.woff2') format('woff2'); font-weight: 700; font-style: italic; }
+
+body { margin: 0; background-color: #111; font-family: Arial, sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+/* --- LAYOUT 1: Default with Vocab List --- */
+#main-container { display: flex; flex-grow: 1; height: 100%; }
+#video-section { flex: 1; position: relative; background: black; display: flex; align-items: center; justify-content: center; }
+#video-wrapper { width: 100%; height: 100%; position: relative; }
+#player { width: 100%; height: 100%; border: none; }
+#cinematic-mask { position: absolute; pointer-events: none; z-index: 10; background: black; opacity: 1; height: 0; width: 0; bottom: 0; left: 0; }
+#subtitle-overlay { position: absolute; left: 50%; transform: translateX(-50%); z-index: 20; text-align: center; pointer-events: none; font-family: 'Taigi Font', serif; line-height: 1.5; white-space: pre-wrap; transition: opacity 0.2s; padding: 2px 8px; border-radius: 4px; }
+#vocab-section { width: 300px; background: #1a1a1a; border-left: 1px solid #333; display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s ease; }
+#vocab-header { padding: 10px; background: #222; color: #fff; font-weight: bold; border-bottom: 1px solid #444; display:flex; justify-content:space-between; }
+#vocab-list { flex-grow: 1; overflow-y: auto; padding: 10px; }
+.vocab-item { background: #2a2a2a; color: #ccc; padding: 10px; margin-bottom: 8px; border-radius: 4px; cursor: pointer; border-left: 3px solid transparent; }
+.vocab-item:hover { background: #333; }
+.vocab-item.active { border-left-color: #00bcd4; background: #333; color: white; }
+.v-word { font-family: 'Taigi Font'; font-size: 18px; color: #00bcd4; font-weight: bold; }
+.v-def { font-size: 14px; margin-top: 2px; }
+
+/* --- LAYOUT 2: Fullscreen Cinema --- */
+#video-container-fs { display: none; justify-content: center; align-items: center; width: 100%; height: 100%; }
+#video-wrapper-fs { position: relative; width: 100%; height: 100%; max-width: 177.78vh; max-height: 56.25vw; margin: auto; background-color: #000; }
+#player-fs { width: 100%; height: 100%; border: none; }
+#subtitle-fs { position: absolute; top: 5%; left: 50%; transform: translateX(-50%); width: 98%; text-align: center; pointer-events: none; z-index: 100; }
+#subtitle-fs span { background-color: rgba(0, 0, 0, 0.4); color: #fff; font-family: 'Taigi Font', serif; font-size: clamp(32px, 3vw, 55px); line-height: 1.6; padding: 8px 16px; box-decoration-break: clone; -webkit-box-decoration-break: clone; border-radius: 6px; text-shadow: 2px 2px 3px #444; }
+#fs-btn { position: absolute; bottom: 10px; right: 20px; z-index: 101; background: rgba(0,0,0,0.6); border: 2px solid rgba(255,255,255,0.3); border-radius: 4px; color: white; padding: 5px 10px; cursor: pointer; font-size: 14px; }
+
+@media (max-width: 768px) {
+    #main-container { flex-direction: column; }
+    #video-section { height: 40vh; flex: none; }
+    #vocab-section { width: 100%; flex: 1; }
+    #subtitle-fs span { font-size: clamp(24px, 6vw, 40px); }
+}

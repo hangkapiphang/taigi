@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Generator</title>
+    <link rel="stylesheet" href="../css/generator.css">
+</head>
+<body>
+    <div id="video-container">
+        <div id="preview-mask"></div><div id="player"></div><div id="subtitle">Subtitle Preview</div>
+    </div>
+    <textarea id="rawContentStorage"></textarea>
+    <div id="controls">
+        <div class="panel">
+            <h4>Subtitle Appearance</h4>
+            <div class="slider-row"><label>Size:</label><input type="range" id="subSize" min="50" max="200" value="100" oninput="updateSubtitleStyle()"><span id="valSize">100%</span></div>
+            <div class="slider-row"><label>Pos:</label><select id="subAnchor" onchange="updateSubtitleStyle()"><option value="top">Top</option><option value="bottom" selected>Bottom</option></select></div>
+            <div class="slider-row"><label>Offset:</label><input type="range" id="subOffset" min="5" max="90" value="5" oninput="updateSubtitleStyle()"><span id="valOffset">5%</span></div>
+        </div>
+        <div class="panel">
+            <h4>Mask Settings</h4>
+            <div class="slider-row"><label>Height:</label><input type="range" id="mHeight" min="0" max="100" value="0" oninput="updateMask()"></div>
+            <div class="slider-row"><label>Width:</label><input type="range" id="mWidth" min="0" max="100" value="100" oninput="updateMask()"></div>
+            <div class="slider-row"><label>Bottom:</label><input type="range" id="mBottom" min="0" max="100" value="0" oninput="updateMask()"></div>
+            <div class="slider-row"><label>Left:</label><input type="range" id="mLeft" min="0" max="100" value="0" oninput="updateMask()"></div>
+        </div>
+        <div class="panel gh-settings">
+            <h4>GitHub Settings</h4>
+            <input type="text" id="ghUsername" placeholder="Username" /><input type="text" id="ghRepo" placeholder="Repo" />
+            <input type="password" id="ghToken" placeholder="Token (ghp_...)" /><button onclick="saveSettings()">Save Credentials</button>
+        </div>
+        <div class="panel">
+            <h4>Content Loader</h4>
+            <div class="loader-row"><input type="text" id="youtubeUrl" placeholder="YouTube URL" /><button onclick="loadVideo()">Load Video</button></div>
+            <div class="loader-row"><button onclick="document.getElementById('srtFile').click()" style="width:100%;">Load Local .SRT</button><input type="file" id="srtFile" accept=".srt" /></div>
+            <div class="loader-row"><input type="text" id="subtitleUrl" placeholder="GitHub Raw URL..." /><button onclick="fetchSubtitleFromUrl()">Fetch</button></div>
+        </div>
+        <button class="upload-btn" onclick="uploadToGitHub()">UPLOAD TO GITHUB</button>
+        <div id="result-area">
+            <h4>Success!</h4><input type="text" id="finalLink" readonly>
+        </div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/generator.js"></script>
+</body>
+</html>
