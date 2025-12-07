@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Generator & Dashboard</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../../css/editor.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎬 Cinema Admin</h1>
+        
+        <!-- Buttons link to editors. IDs are added dynamically via JS -->
+        <div class="btn-group">
+            <a href="subtitle_editor.html" id="link-sub" class="btn btn-sub disabled">📝 Subtitles</a>
+            <a href="vocab_editor.html" id="link-vocab" class="btn btn-vocab disabled">📖 Vocabulary</a>
+            <a href="visual_editor.html" id="link-vis" class="btn btn-vis disabled" style="grid-column: span 2">🎨 Visuals & Mask</a>
+        </div>
+
+        <div class="url-gen">
+            <label>Select Cinema ID from GitHub</label>
+            <div id="loading" class="loading-text">Fetching data from GitHub...</div>
+            
+            <!-- Dropdown for IDs -->
+            <select id="repo-files" onchange="selectFile()">
+                <option value="">-- Select a File ID --</option>
+            </select>
+
+            <label>Or Enter ID Manually</label>
+            <div class="input-row">
+                <input type="text" id="fileId" placeholder="e.g. movie_01" oninput="updateButtons()">
+                <button class="btn-go" onclick="openPlayer()">▶ Play</button>
+            </div>
+            <div id="link-output" class="link-output"></div>
+        </div>
+
+        <div class="footer">
+            Data source: hangkapiphang/taigi/data
+        </div>
+    </div>
+
+    <!-- Link to external JS -->
+    <script src="../../js/editor.js"></script>
+
+</body>
+</html>
