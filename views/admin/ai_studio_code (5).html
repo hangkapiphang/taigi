@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Editor - Visuals</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../../css/visual_editor.css">
+</head>
+<body>
+    <nav>
+        <a href="subtitle_editor.html">📝 Subtitles</a>
+        <a href="vocab_editor.html">📖 Vocabulary</a>
+        <a href="visual_editor.html" class="active">🎨 Visuals & Mask</a>
+        <button onclick="toggleConfig()" class="config-btn">⚙️ Config</button>
+    </nav>
+
+    <div id="main-split">
+        <!-- LEFT: Preview Area -->
+        <div id="left-col">
+            <div id="video-wrapper">
+                <div id="preview-mask"></div>
+                <div id="player"></div>
+                <div id="subtitle-preview">SAMPLE SUBTITLE TEXT</div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Controls Area -->
+        <div id="right-col">
+            
+            <!-- 1. GITHUB CONFIG (Hidden by default or separate) -->
+            <div class="control-group" id="gh-config-group">
+                <div class="group-title">GitHub Configuration</div>
+                <input id="ghUser" placeholder="User" style="width:48%;" value="hangkapiphang">
+                <input id="ghRepo" placeholder="Repo" style="width:48%;" value="taigi">
+                <input type="password" id="ghToken" placeholder="GitHub Token" style="width:100%; margin-top:5px;">
+            </div>
+
+            <!-- 2. LOAD FILE (From Screenshot) -->
+            <div class="control-group load-group">
+                <div class="group-title blue-text">📂 Load File</div>
+                
+                <div style="display:flex; gap:5px; margin-bottom:8px;">
+                    <button class="btn btn-orange" onclick="fetchFileList()">🔄 Get File List</button>
+                    <select id="fileSelectDropdown" style="flex-grow:1; max-width:180px;" onchange="selectFileFromList(this.value)">
+                        <option value="">(Click Get List)</option>
+                    </select>
+                </div>
+
+                <div style="display:flex; gap:5px;">
+                    <input id="targetFilename" type="text" style="flex-grow:1;" placeholder="Filename (e.g. suntiunn)">
+                    <button class="btn btn-blue" onclick="fetchFromGithub()">⬇ Fetch</button>
+                </div>
+                
+                <div style="text-align:center; margin:5px 0; font-size:11px; color:#666;">- OR -</div>
+                
+                <button class="btn btn-grey" style="width:100%;" onclick="document.getElementById('hidden-file').click()">📂 Open Local File</button>
+                <input type="file" id="hidden-file" accept=".json" style="display:none" onchange="loadLocalJson(this)">
+            </div>
+
+            <!-- 3. VIDEO SOURCE -->
+            <div class="control-group">
+                <input type="text" id="videoUrl" style="width:100%; box-sizing:border-box;" placeholder="YouTube URL" onchange="loadVideo(this.value)">
+            </div>
+
+            <!-- 4. VISUAL CONTROLS -->
+            <div class="control-group">
+                <h4>Black Mask</h4>
+                <div class="slider-row">H: <input type="range" id="mHeight" min="0" max="100" value="15" oninput="updatePreview()"></div>
+                <div class="slider-row">W: <input type="range" id="mWidth" min="0" max="100" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row">B: <input type="range" id="mBottom" min="0" max="100" value="0" oninput="updatePreview()"></div>
+                <div class="slider-row">L: <input type="range" id="mLeft" min="0" max="100" value="0" oninput="updatePreview()"></div>
+                <div class="slider-row">Op: <input type="range" id="mOpacity" min="0" max="100" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row">Color: <input type="color" id="mColor" value="#000000" oninput="updatePreview()"></div>
+            </div>
+
+            <div class="control-group">
+                <h4>Subtitle Appearance</h4>
+                <div class="slider-row">Size: <input type="range" id="subSize" min="50" max="200" value="100" oninput="updatePreview()"></div>
+                <div class="slider-row">Offset: <input type="range" id="subOffset" min="0" max="100" value="5" oninput="updatePreview()"></div>
+                <div class="slider-row">Anchor: <select id="subAnchor" onchange="updatePreview()"><option value="bottom">Bottom</option><option value="top">Top</option></select></div>
+                <hr>
+                <div class="slider-row">Text Color: <input type="color" id="subColor" value="#ffffff" oninput="updatePreview()"></div>
+                <div class="slider-row">Box Color: <input type="color" id="subBoxColor" value="#000000" oninput="updatePreview()"></div>
+                <div class="slider-row">Box Opacity: <input type="range" id="subBoxOp" min="0" max="100" value="50" oninput="updatePreview()"></div>
+                <div class="slider-row">Shadow: <input type="range" id="subShadow" min="0" max="10" value="2" oninput="updatePreview()"></div>
+            </div>
+
+            <!-- 5. SAVE ACTIONS -->
+            <div class="control-group">
+                <div class="group-title">💾 Save Actions</div>
+                <div style="display:flex; gap:5px; margin-bottom:5px;">
+                    <button class="btn btn-green" style="flex:1;" onclick="downloadJson()">💾 JSON</button>
+                </div>
+                <button class="btn btn-dark" style="width:100%;" onclick="uploadToGithub()">☁ Update GitHub</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- External JS -->
+    <script src="../../js/visual_editor.js"></script>
+</body>
+</html>
