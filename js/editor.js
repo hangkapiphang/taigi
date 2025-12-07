@@ -1,4 +1,5 @@
-const REPO_API_URL = "https://api.github.com/repos/hangkapiphang/taigi/contents/data";
+// explicitly fetch from 'gh-pages' branch where the site and data live
+const REPO_API_URL = "https://api.github.com/repos/hangkapiphang/taigi/contents/data?ref=gh-pages";
 
 /**
  * Initialize: Fetch file list from GitHub when DOM is loaded
@@ -11,13 +12,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         const response = await fetch(REPO_API_URL);
-        if (!response.ok) throw new Error("Failed to fetch data");
+        
+        if (!response.ok) {
+            // Fallback: If gh-pages fails, try default branch (remove query param)
+            if (REPO_API_URL.includes("?ref=")) {
+                console.warn("gh-pages branch not found or accessible, trying default branch...");
+                const fallbackUrl = REPO_API_URL.split("?")[0];
+                const fallbackResponse = await fetch(fallbackUrl);
+                if (fallbackResponse.ok) {
+                   processData(await fallbackResponse.json(), select);
+                   return;
+                }
+            }
+            throw new Error(`Failed to fetch data: ${response.status}`);
+        }
         
         const data = await response.json();
-        
-        // Extract unique IDs (filenames without extensions)
-        const ids = new Set();
-        
+        processData(data, select);
+
+    } catch (error) {
+        console.error("Error details:", error);
+        const option = document.createElement('option');
+        option.text = "Error loading files (See Console)";
+        select.appendChild(option);
+    } finally {
+        loading.style.display = 'none';
+    }
+});
+
+/**
+ * Helper to process the JSON response and populate the dropdown
+ */
+function processData(data, selectElement) {
+    // Extract unique IDs (filenames without extensions)
+    const ids = new Set();
+    
+    if (Array.isArray(data)) {
         data.forEach(file => {
             // Filter mainly for files, exclude hidden files
             if (file.type === "file" && !file.name.startsWith('.')) {
@@ -26,24 +56,22 @@ document.addEventListener('DOMContentLoaded', async () => {
                 ids.add(id);
             }
         });
-
-        // Populate Select Option
-        ids.forEach(id => {
-            const option = document.createElement('option');
-            option.value = id;
-            option.textContent = id;
-            select.appendChild(option);
-        });
-
-    } catch (error) {
-        console.error(error);
-        const option = document.createElement('option');
-        option.text = "Error loading files (Check Network)";
-        select.appendChild(option);
-    } finally {
-        loading.style.display = 'none';
     }
-});
+
+    // Populate Select Option
+    ids.forEach(id => {
+        const option = document.createElement('option');
+        option.value = id;
+        option.textContent = id;
+        selectElement.appendChild(option);
+    });
+    
+    if (ids.size === 0) {
+         const option = document.createElement('option');
+         option.text = "No data files found";
+         selectElement.appendChild(option);
+    }
+}
 
 /**
  * Handle Dropdown Selection
@@ -94,11 +122,9 @@ function openPlayer() {
     
     // Construct Link
     // Removes 'views/admin/editor.html' and points to root 'cinema.html'
-    // Logic: Current path "views/admin/" -> go up two levels to root -> cinema.html
     const currentPath = window.location.pathname;
     
-    // Simple replace strategy assuming standard folder structure
-    // If hosted at /taigi/views/admin/editor.html -> /taigi/cinema.html
+    // Logic: Current path "views/admin/" -> go up two levels to root -> cinema.html
     let newPath = currentPath.replace('views/admin/editor.html', 'cinema.html');
     
     // Fallback if structure is flat locally
