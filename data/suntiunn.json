@@ -10,13 +10,13 @@
     "o": 1
   },
   "settings": {
+    "fontFamily": "'Taigi Font', serif",
+    "scale": 1.06,
     "anchor": "bottom",
-    "offset": "5",
-    "scale": 1,
+    "offset": "2",
     "color": "#eeff00",
-    "boxColor": "#000000",
-    "boxOp": 0,
-    "shadow": "3",
-    "shadowColor": "#444444"
+    "boxColor": "#ea1a1a",
+    "boxOp": 0.48,
+    "shadow": "4"
   }
 }
