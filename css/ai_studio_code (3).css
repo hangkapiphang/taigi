@@ -1,0 +1,128 @@
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: #f4f6f9; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    margin: 0; 
+}
+
+.container { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    width: 400px; 
+    text-align: center; 
+}
+
+h1 { 
+    margin-bottom: 20px; 
+    color: #333; 
+}
+
+.btn-group { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+.btn { 
+    padding: 15px; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    color: white; 
+    text-decoration: none; 
+    display: block;
+}
+
+.btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+}
+
+.btn.disabled { 
+    opacity: 0.6; 
+    pointer-events: none; 
+    cursor: not-allowed; 
+    filter: grayscale(0.5);
+}
+
+.btn-sub { background: linear-gradient(135deg, #007bff, #0056b3); }
+.btn-vocab { background: linear-gradient(135deg, #ff9800, #f57c00); }
+.btn-vis { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+.btn-play { background: linear-gradient(135deg, #28a745, #1e7e34); grid-column: span 2; }
+
+.url-gen { 
+    background: #e9ecef; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-top: 20px; 
+    text-align: left; 
+}
+
+.url-gen label { 
+    display: block; 
+    font-size: 12px; 
+    font-weight: bold; 
+    color: #555; 
+    margin-bottom: 5px; 
+}
+
+.input-row { 
+    display: flex; 
+    gap: 5px; 
+    flex-wrap: wrap;
+}
+
+select { 
+    width: 100%; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    margin-bottom: 10px; 
+    background: white;
+}
+
+input { 
+    flex-grow: 1; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.btn-go { 
+    padding: 8px 15px; 
+    background: #333; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+.link-output {
+    margin-top: 10px; 
+    font-size: 12px; 
+    word-break: break-all; 
+    color: #007bff; 
+    display: none;
+}
+
+.footer { 
+    margin-top: 20px; 
+    font-size: 12px; 
+    color: #888; 
+}
+
+.loading-text { 
+    font-size: 12px; 
+    color: #007bff; 
+    margin-bottom: 5px; 
+    display: none; 
+}
