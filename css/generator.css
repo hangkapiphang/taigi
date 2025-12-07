@@ -1,0 +1,56 @@
+@font-face { 
+    font-family: 'Taigi Font'; 
+    src: url('../font/Charis-Regular.woff2') format('woff2'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+@font-face { 
+    font-family: 'Taigi Font'; 
+    src: url('../font/Charis-Bold.woff2') format('woff2'); 
+    font-weight: bold; 
+    font-style: normal; 
+}
+
+body { margin: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f0f0f0; min-height: 100vh; padding-bottom: 20px; }
+
+#video-container { 
+    position: relative; width: 100vw; height: calc(100vw * 9 / 16); 
+    max-height: 60vh; background: #000; overflow: hidden; 
+}
+#player { width: 100%; height: 100%; }
+#preview-mask { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background-color: #000; z-index: 5; pointer-events: none; }
+
+#subtitle {
+    text-align: center; 
+    background: rgba(0, 0, 0, 0.4); 
+    color: white; padding: 4px 8px; width: auto; max-width: 90%;
+    position: absolute; top: 5%; left: 50%; transform: translateX(-50%); z-index: 10; border-radius: 4px; 
+    font-family: 'Taigi Font', serif; font-size: 32px; 
+    min-height: 1.2em; box-decoration-break: clone; -webkit-box-decoration-break: clone; line-height: 1.5; 
+    text-shadow: 2px 2px 3px #444; 
+}
+#subtitle b { color: #fff; text-shadow: 0 0 2px #ccc; }
+
+#controls { margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; width: 98%; max-width: 900px; }
+
+.panel { background: #fff; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 13px; display: flex; flex-direction: column; justify-content: center; }
+.panel h4 { margin: 0 0 8px 0; text-align: center; color: #333; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 4px;}
+
+.slider-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.slider-row label { width: 70px; font-weight: bold; font-size: 12px; }
+.slider-row input[type=range] { flex-grow: 1; margin: 0 8px; cursor: pointer; height: 10px; }
+.slider-row span { width: 35px; text-align: right; font-family: monospace; font-size: 11px; }
+.slider-row select { font-size: 12px; padding: 2px; }
+
+input[type="color"] { border: none; width: 30px; height: 20px; cursor: pointer; padding: 0; background: none; }
+input[type="text"], input[type="password"] { padding: 4px; font-size: 12px; border: 1px solid #bbb; border-radius: 3px; width: 100%; box-sizing: border-box; margin-bottom: 4px; }
+button { padding: 4px 8px; font-size: 12px; background-color: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer; white-space: nowrap; }
+button:hover { background-color: #0056b3; }
+.loader-row { display: flex; gap: 5px; margin-bottom: 4px; align-items: center; }
+.loader-row input { flex-grow: 1; }
+.gh-settings { background: #fff8d6; border-color: #ffeeba; }
+.upload-btn { grid-column: 1 / -1; background-color: #dc3545; color: white; font-weight: bold; font-size: 14px; padding: 10px; width: 50%; margin: 0 auto; border-radius: 5px; }
+.upload-btn:hover { background-color: #c82333; }
+#srtFile, #rawContentStorage { display: none; }
+#result-area { grid-column: 1 / -1; display: none; background: #e8f5e9; border: 1px solid #28a745; padding: 10px; margin-top: 10px; text-align: center; border-radius: 5px; }
+#finalLink { width: 80%; padding: 5px; font-size: 12px; }
