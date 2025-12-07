@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Manager</title>
+    
+    <!-- Link to external CSS (Up 2 levels) -->
+    <link rel="stylesheet" href="../../css/library_editor.css">
+</head>
+<body>
+
+    <!-- 1. DIAGNOSTIC PANEL -->
+    <div class="status-box">
+        <div style="display:flex; justify-content:space-between;">
+            <h3 style="margin-top:0;">🚀 Connection Status</h3>
+            <a href="generator.html" style="font-size:12px; color:#555;">Go to Generator</a>
+        </div>
+        
+        <div id="logs"></div>
+        
+        <button id="btn-create-branch" class="fix-btn" onclick="createBranch()">🛠 Branch 'gh-pages' Missing! Click to Create</button>
+        <button id="btn-reset" class="fix-btn" style="background:#dc3545;" onclick="resetCreds()">🔄 Reset Credentials</button>
+    </div>
+
+    <!-- 2. EDITOR UI -->
+    <div id="editor-ui">
+        <div class="toolbar">
+            <button class="btn btn-add" onclick="addItem()">+ Add Movie</button>
+            <button class="btn btn-save" onclick="saveToGitHub()">💾 Save Changes</button>
+        </div>
+        <div id="list-area"></div>
+    </div>
+
+    <!-- Link to external JS (Up 2 levels) -->
+    <script src="../../js/library_editor.js"></script>
+
+</body>
+</html>
