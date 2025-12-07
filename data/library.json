@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": "intro_taigi",
+    "title": "Introduction to Taigi",
+    "desc": "A basic introduction video for beginners.",
+    "cat": "speech",
+    "yt": "M7lc1UVf-VE",
+    "date": "2023-01-01"
+  },
+  {
+    "id": "kids_song_1",
+    "title": "Little White Rabbit",
+    "desc": "A popular nursery rhyme for children.",
+    "cat": "song",
+    "yt": "8ugaeA-nMTc",
+    "date": "2023-05-20"
+  },
+  {
+    "id": "folktale_tiger",
+    "title": "Auntie Tiger",
+    "desc": "The classic Taiwanese folktale.",
+    "cat": "cartoon",
+    "yt": "dQw4w9WgXcQ",
+    "date": "2023-08-15"
+  },
+  {
+    "id": "drama_ep1",
+    "title": "Local Drama Ep. 1",
+    "desc": "Clip from a popular soap opera.",
+    "cat": "drama",
+    "yt": "jNQXAC9IVRw",
+    "date": "2023-12-10"
+  }
+]
