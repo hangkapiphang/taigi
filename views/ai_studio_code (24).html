@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taigi Arcade</title>
+    
+    <!-- Link to external CSS in the ../css/ folder -->
+    <link rel="stylesheet" href="../css/arcade.css">
+</head>
+<body>
+
+    <header>
+        <div>🎮 Listening Quiz</div>
+        <div class="score-board">Score: <span id="score">0</span></div>
+    </header>
+
+    <!-- GAME PLAY AREA -->
+    <div id="game-container">
+        <!-- Video Wrapper -->
+        <div id="video-wrapper">
+            <div id="player"></div>
+        </div>
+        
+        <!-- Question Card -->
+        <div class="card">
+            <div class="question-text" id="question">Loading...</div>
+            <div class="options-grid" id="options"></div>
+            
+            <div class="controls">
+                <button class="ctrl-btn replay" onclick="window.gameLogic.replayClip()">🔊 Replay Audio</button>
+                <button class="ctrl-btn next" id="nextBtn" onclick="window.gameLogic.nextQuestion()">Next Question ➡</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME OVER AREA -->
+    <div id="end-screen">
+        <h1>Great Job!</h1>
+        <h2>Final Score: <span id="final-score">0</span></h2>
+        <!-- Adjusted link assuming index is in the root or same views folder -->
+        <a href="index.html" class="home-btn">Return to Menu</a>
+        <button class="home-btn" onclick="location.reload()" style="background:#27ae60; border:none;">Play Again</button>
+    </div>
+
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Link to external JS in the ../js/ folder -->
+    <script src="../js/arcade.js"></script>
+</body>
+</html>
