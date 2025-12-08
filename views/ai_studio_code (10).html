@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taigi Shadowing Lab</title>
+    <style>
+        /* Assumes 'font' folder is at the root level (sibling to 'views') */
+        @font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); }
+        
+        body { margin: 0; font-family: Arial, sans-serif; background: #2c3e50; color: white; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        
+        /* TOP: VIDEO (Fixed Height) */
+        #video-section { 
+            height: 35vh; flex-shrink: 0; background: #000; position: relative; 
+            display: flex; justify-content: center; 
+        }
+        #player { height: 100%; aspect-ratio: 16/9; }
+        #mask-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background: #000; z-index: 10; pointer-events: none; }
+
+        /* MIDDLE: TEXT & VOCAB (Flexible Height, Scrollable) */
+        #text-section {
+            flex-grow: 1; 
+            display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+            padding: 15px 20px; text-align: center; background: #34495e; border-bottom: 1px solid #455a64;
+            overflow-y: auto; /* Enable scrolling if content is too long */
+        }
+        
+        #current-text { 
+            font-family: 'Taigi Font', serif; font-size: 28px; line-height: 1.4; 
+            margin-bottom: 15px; margin-top: 10px;
+            text-shadow: 1px 1px 2px black; font-weight: bold;
+        }
+
+        .nav-controls { display: flex; gap: 20px; align-items: center; margin-bottom: 15px; flex-shrink: 0; }
+        .nav-btn { background: none; border: 1px solid #95a5a6; color: #ecf0f1; padding: 5px 15px; cursor: pointer; border-radius: 20px; font-size: 14px; }
+        .nav-btn:hover { background: #fff; color: #333; }
+
+        /* VOCABULARY CARD STYLES */
+        #vocab-display {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; max-width: 800px;
+        }
+        .vocab-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #546e7a;
+            border-radius: 8px;
+            padding: 8px 12px;
+            text-align: left;
+            min-width: 120px;
+            max-width: 100%;
+        }
+        .v-word { color: #f1c40f; font-weight: bold; font-family: 'Taigi Font'; font-size: 18px; margin-bottom: 2px; }
+        .v-def { color: #bdc3c7; font-size: 14px; line-height: 1.2; }
+
+        /* BOTTOM: RECORDING CONTROLS (Fixed Height) */
+        #rec-section { 
+            height: 25vh; flex-shrink: 0; min-height: 180px;
+            background: #ecf0f1; color: #333; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; 
+            padding-bottom: 10px;
+            border-top: 1px solid #bdc3c7;
+        }
+        
+        .btn-large { 
+            width: 70px; height: 70px; border-radius: 50%; border: none; 
+            font-size: 26px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.1s; display: flex; align-items: center; justify-content: center;
+        }
+        .btn-large:active { transform: scale(0.95); }
+        
+        #btn-mic { background: #e74c3c; color: white; }
+        #btn-mic.recording { background: #c0392b; animation: pulse 1.5s infinite; }
+        
+        #btn-play-user { background: #3498db; color: white; display: none; }
+        #btn-play-ref { background: #f1c40f; color: #333; }
+
+        .control-row { display: flex; gap: 25px; align-items: center; }
+        .label { font-size: 13px; font-weight: bold; color: #7f8c8d; margin-top: 5px; }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); } 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); } }
+        
+        /* BACK BUTTON */
+        .back-link { position: absolute; top: 10px; left: 10px; color: white; text-decoration: none; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 4px; z-index: 100;}
+    </style>
+</head>
+<body>
+
+    <!-- Link is now relative to current folder (views/index.html) -->
+    <a href="index.html" class="back-link">← Menu</a>
+
+    <!-- 1. Video Player -->
+    <div id="video-section">
+        <div id="mask-bar"></div>
+        <div id="player"></div>
+    </div>
+
+    <!-- 2. Text & Vocabulary -->
+    <div id="text-section">
+        <div id="current-text">Loading...</div>
+        
+        <div class="nav-controls">
+            <button class="nav-btn" onclick="prevLine()">PREV</button>
+            <span id="progress" style="font-size:12px; color:#bdc3c7;">0 / 0</span>
+            <button class="nav-btn" onclick="nextLine()">NEXT</button>
+        </div>
+
+        <div id="vocab-display">
+            <!-- Vocabulary cards will be injected here -->
+        </div>
+    </div>
+
+    <!-- 3. Controls -->
+    <div id="rec-section">
+        <div class="control-row">
+            <div style="text-align:center">
+                <button id="btn-play-ref" class="btn-large" onclick="playRef()">👂</button>
+                <div class="label">Listen</div>
+            </div>
+
+            <div style="text-align:center">
+                <button id="btn-mic" class="btn-large" onclick="toggleRecord()">🎙</button>
+                <div class="label" id="mic-label">Record</div>
+            </div>
+
+            <div style="text-align:center">
+                <button id="btn-play-user" class="btn-large" onclick="playUser()">▶</button>
+                <div class="label" id="play-label" style="display:none">Check</div>
+            </div>
+        </div>
+        <audio id="user-audio"></audio>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        let subtitles = [];
+        let vocabList = [];
+        let currentIndex = 0;
+        let mediaRecorder;
+        let audioChunks = [];
+        let userAudioUrl = null;
+
+        function onYouTubeIframeAPIReady() {
+            const id = new URLSearchParams(window.location.search).get('id');
+            if(id) loadData(id);
+        }
+
+        function loadData(id) {
+            // Updated to fetch from '../data/' because shadow.html is in 'views/'
+            fetch(`../data/${id}.json?t=${Date.now()}`)
+            .then(r => {
+                if(!r.ok) throw new Error("HTTP error " + r.status);
+                return r.json();
+            })
+            .then(data => {
+                const vidId = extractVideoId(data.video);
+                
+                // Store Vocabulary if present
+                if(data.vocab && Array.isArray(data.vocab)) {
+                    vocabList = data.vocab;
+                }
+
+                // Setup YouTube Player
+                player = new YT.Player('player', {
+                    videoId: vidId,
+                    playerVars: { 'controls': 0, 'fs': 0, 'rel': 0 },
+                    events: { 'onReady': () => {
+                        if(data.subtitle) parseSRT(data.subtitle);
+                        else if(data.hiddenSub) parseSRT(decrypt(data.hiddenSub));
+                        
+                        // Apply Mask if present
+                        if(data.mask) {
+                            const m = document.getElementById('mask-bar');
+                            m.style.height = data.mask.h + "%";
+                            m.style.width = data.mask.w + "%";
+                            m.style.bottom = data.mask.b + "%";
+                            m.style.left = data.mask.l + "%";
+                            if(data.mask.c) m.style.backgroundColor = data.mask.c;
+                            if(data.mask.o) m.style.opacity = data.mask.o;
+                        }
+                        updateUI();
+                    }}
+                });
+            })
+            .catch(err => {
+                document.getElementById('current-text').innerText = "Error loading data. Check console.";
+                console.error("Fetch error:", err);
+            });
+        }
+
+        // --- UI & LOGIC ---
+        function updateUI() {
+            if(subtitles.length === 0) return;
+            const sub = subtitles[currentIndex];
+            
+            // 1. Update Subtitle Text
+            document.getElementById('current-text').innerHTML = sub.text;
+            document.getElementById('progress').innerText = `${currentIndex + 1} / ${subtitles.length}`;
+
+            // 2. Update Vocabulary List
+            // Filter words that occur within the current sentence timeframe
+            const currentVocab = vocabList.filter(v => v.time >= sub.start && v.time < sub.end);
+            
+            const vocabContainer = document.getElementById('vocab-display');
+            if(currentVocab.length > 0) {
+                vocabContainer.innerHTML = currentVocab.map(v => `
+                    <div class="vocab-card">
+                        <div class="v-word">${v.word}</div>
+                        <div class="v-def">${v.def}</div>
+                    </div>
+                `).join('');
+            } else {
+                vocabContainer.innerHTML = '';
+            }
+        }
+
+        function nextLine() {
+            if(currentIndex < subtitles.length - 1) {
+                currentIndex++;
+                updateUI();
+                playRef();
+            }
+        }
+
+        function prevLine() {
+            if(currentIndex > 0) {
+                currentIndex--;
+                updateUI();
+                playRef();
+            }
+        }
+
+        // --- PLAYBACK ---
+        let stopTimer;
+        function playRef() {
+            if(subtitles.length === 0) return;
+            const sub = subtitles[currentIndex];
+            
+            // 1. Seek to start
+            player.seekTo(sub.start, true);
+            player.playVideo();
+            
+            // 2. Clear previous timer
+            clearTimeout(stopTimer);
+            
+            // 3. Set timer to stop at end of sentence
+            const duration = (sub.end - sub.start) * 1000;
+            stopTimer = setTimeout(() => {
+                player.pauseVideo();
+            }, duration + 200); // Small buffer
+        }
+
+        // --- RECORDING ---
+        async function toggleRecord() {
+            const btn = document.getElementById('btn-mic');
+            
+            if (btn.classList.contains('recording')) {
+                // STOP RECORDING
+                if (mediaRecorder && mediaRecorder.state !== "inactive") {
+                    mediaRecorder.stop();
+                }
+                btn.classList.remove('recording');
+                document.getElementById('mic-label').innerText = "Record";
+            } else {
+                // START RECORDING
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+                    
+                    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+                    
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                        userAudioUrl = URL.createObjectURL(blob);
+                        document.getElementById('user-audio').src = userAudioUrl;
+                        
+                        document.getElementById('btn-play-user').style.display = 'flex';
+                        document.getElementById('play-label').style.display = 'block';
+                    };
+
+                    mediaRecorder.start();
+                    btn.classList.add('recording');
+                    document.getElementById('mic-label').innerText = "Stop";
+                    
+                } catch (err) {
+                    console.error("Mic Error:", err);
+                    alert("Microphone access denied. Check your browser permissions.");
+                }
+            }
+        }
+
+        function playUser() {
+            const audio = document.getElementById('user-audio');
+            if(userAudioUrl) audio.play();
+        }
+
+        // --- UTILS ---
+        function extractVideoId(url) { const m = url.match(/[?&]v=([^&#]*)/) || url.match(/youtu\.be\/([^?&#]+)/); return m && m[1] ? m[1] : null; }
+        function decrypt(s) { try { return decodeURIComponent(escape(atob(atob(s).split('').reverse().join('')))); } catch(e){return"";} }
+        function timeToSec(t) { const [h,m,s] = t.replace(',','.').split(':'); return parseInt(h)*3600 + parseInt(m)*60 + parseFloat(s); }
+        
+        function parseSRT(srt) {
+            subtitles = [];
+            srt.trim().split(/\n\s*\n/).forEach(block => {
+                const lines = block.split('\n');
+                if (lines.length >= 3) {
+                    const m = lines[1].match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+                    if (m) subtitles.push({ start: timeToSec(m[1]), end: timeToSec(m[2]), text: lines.slice(2).join('<br>') });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
