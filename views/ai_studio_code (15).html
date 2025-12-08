@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taigi Vocab Cards</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅ Menu</a>
+        <div class="title">Vocabulary Study</div>
+    </header>
+
+    <div id="main-container">
+        <!-- Video Section (Sticky on top) -->
+        <div id="video-section">
+            <div id="player"></div>
+        </div>
+
+        <!-- Cards Grid Section -->
+        <div id="cards-container">
+            <div class="loading">Loading Vocabulary...</div>
+        </div>
+    </div>
+
+    <!-- Logic Script (Loads data & Inject YouTube API) -->
+    <script src="../js/cards.js"></script>
+</body>
+</html>
