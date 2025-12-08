@@ -1,0 +1,78 @@
+/* --- FONTS --- */
+/* Paths assume font folder is sibling to css folder: ../font/ */
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+
+body { 
+    margin: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+    background: #fff8e1; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Navigation */
+nav { background: #2c3e50; padding: 10px; display: flex; gap: 10px; align-items: center; color: white; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
+nav a.active { background: #ff9800; color: black; font-weight: bold; }
+
+/* Workspace */
+#workspace { display: flex; flex-grow: 1; overflow: hidden; height: 100%; }
+
+/* LEFT PANEL */
+#left-panel { width: 400px; background: #fdfdfd; display: flex; flex-direction: column; border-right: 1px solid #ccc; z-index: 10; overflow-y: auto; }
+
+#video-container { width: 100%; aspect-ratio: 16/9; flex-shrink: 0; background:black; }
+#player { width: 100%; height: 100%; }
+
+#controls-area { padding: 15px; }
+
+/* Panels */
+.panel { border: 1px solid #b3d7ff; background: #e6f2ff; border-radius: 6px; padding: 10px; margin-bottom: 15px; }
+.panel-header { font-weight: bold; color: #0056b3; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; font-size: 14px; }
+.panel-white { background: white; border: 1px solid #ccc; padding: 10px; border-radius: 6px; margin-bottom: 15px; }
+
+/* Input Rows */
+.row-flex { display: flex; gap: 5px; margin-bottom: 5px; }
+.full-width { width: 100%; box-sizing: border-box; }
+
+/* Buttons */
+.btn { border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 13px; color: white; display:flex; align-items:center; justify-content:center; }
+.btn-orange { background-color: #ff9800; color: white; border: 1px solid #e68900; }
+.btn-blue { background-color: #007bff; border: 1px solid #0069d9; }
+.btn-grey { background-color: #6c757d; border: 1px solid #5a6268; }
+.btn-green { background-color: #28a745; border: 1px solid #218838; }
+.btn-teal { background-color: #17a2b8; border: 1px solid #138496; }
+.btn-dark { background-color: #343a40; border: 1px solid #23272b; width: 100%; margin-top: 5px; }
+.btn:hover { opacity: 0.9; }
+
+input, select { padding: 6px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }
+select { background: white; }
+
+/* RIGHT PANEL */
+#right-panel { flex-grow: 1; background: #fdfdfd; display: flex; flex-direction: column; }
+#toolbar { padding: 10px; background: #eee; border-bottom: 1px solid #ddd; display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+#rows-area { flex-grow: 1; overflow-y: auto; padding: 10px; scroll-behavior: smooth; }
+
+/* VOCAB CARDS */
+.vocab-card { background: white; border: 1px solid #ddd; border-left: 5px solid #ddd; border-radius: 6px; padding: 10px; margin-bottom: 10px; }
+.vocab-card.active { border-left-color: #ff9800; background-color: #fff8e1; }
+.v-header { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
+.v-inputs { display: flex; gap: 10px; }
+.time-display { font-family: monospace; font-size: 14px; background: #333; color: #0f0; padding: 4px 8px; border-radius: 4px; cursor: pointer; width: 60px; text-align: center; }
+.word-inp { flex: 1; font-family: 'Taigi Font'; font-size: 18px; font-weight: bold; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+.def-inp { flex: 2; font-family: 'Taigi Font'; font-size: 16px; padding: 8px; border: 1px solid #eee; border-radius: 4px; background: #f9f9f9; }
+
+/* Config Toggle */
+#config-area { display: none; background: #333; color: white; padding: 10px; font-size: 12px; position:absolute; top: 50px; right: 10px; z-index: 100; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+#config-area input { background: #555; color: white; border: 1px solid #777; width: 100%; margin-bottom: 5px; box-sizing: border-box; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #workspace { flex-direction: column; }
+    #left-panel { width: 100%; height: auto; max-height: 50vh; border-right: none; border-bottom: 1px solid #ccc; }
+    #video-container { width: 100%; }
+    .v-inputs { flex-direction: column; }
+    #config-area { width: 90%; left: 5%; right: auto; }
+}
