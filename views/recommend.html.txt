@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommend a Song</title>
+    <style>
+        @font-face { font-family: 'Taigi Font'; src: url('./font/Charis-Regular.woff2') format('woff2'); }
+        
+        body { margin: 0; font-family: 'Taigi Font', Arial, sans-serif; background-color: #f8f9fa; color: #333; }
+
+        /* HEADER */
+        header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+        .back-btn { display: inline-block; margin-bottom: 10px; color: #ddd; text-decoration: none; font-size: 14px; border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px; }
+        
+        /* CONTAINER */
+        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
+        
+        .info-box { 
+            background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            text-align: center; margin-bottom: 20px; border-left: 5px solid #27ae60;
+        }
+        .info-box h2 { margin-top: 0; color: #2c3e50; }
+        
+        /* RESPONSIVE IFRAME CONTAINER */
+        .form-wrapper {
+            position: relative;
+            padding-bottom: 120%; /* Tall enough for the form */
+            height: 0;
+            overflow: hidden;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">← Back to Cinema</a>
+        <h1>🎵 Song Request</h1>
+    </header>
+
+    <div class="container">
+        <div class="info-box">
+            <h2>Help us build the library!</h2>
+            <p>Recommend up to <strong>3 songs a day</strong>.</p>
+            <p>Paste the YouTube link below, and the teacher will turn it into a Taigi Cinema lesson.</p>
+        </div>
+
+        <div class="form-wrapper">
+            <!-- PASTE GOOGLE FORM IFRAME HERE -->
+            <!-- Example: <iframe src="https://docs.google.com/forms/..." width="640" height="800">Loading…</iframe> -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfhy2QSmEe32U8L0uNlpZl0MgB0hOj0iGA6HHHbPk8nngHMyQ/viewform?embedded=true" width="640" height="643" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                      
+        </div>
+    </div>
+
+</body>
+</html>
