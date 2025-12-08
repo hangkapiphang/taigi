@@ -19,5 +19,232 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#fefb41"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "A-hiaⁿ (阿兄)",
+      "def": "Older brother"
+    },
+    {
+      "time": 0,
+      "word": "Kiaⁿ (驚)",
+      "def": "To be afraid"
+    },
+    {
+      "time": 8,
+      "word": "Tú-tio̍h (拄著)",
+      "def": "To encounter; To meet"
+    },
+    {
+      "time": 8,
+      "word": "Tāi-chì (代誌)",
+      "def": "Matter; Issue"
+    },
+    {
+      "time": 8,
+      "word": "Ióng-kám (勇敢)",
+      "def": "Brave"
+    },
+    {
+      "time": 20,
+      "word": "Ji̍p-lâi (入來)",
+      "def": "To enter; To come in"
+    },
+    {
+      "time": 20,
+      "word": "Bāng (夢)",
+      "def": "Dream"
+    },
+    {
+      "time": 26,
+      "word": "Bē-kì-tit (袂記得)",
+      "def": "To forget"
+    },
+    {
+      "time": 26,
+      "word": "Hun-pia̍t (分別)",
+      "def": "To separate; To part"
+    },
+    {
+      "time": 35,
+      "word": "Ba̍k-kho͘ (目箍)",
+      "def": "Eye socket; Rim of the eye"
+    },
+    {
+      "time": 41,
+      "word": "Chhin-chhiūⁿ (親像)",
+      "def": "To seem like; Resembling"
+    },
+    {
+      "time": 41,
+      "word": "Chōe (濟)",
+      "def": "Many; Much"
+    },
+    {
+      "time": 41,
+      "word": "Káng (講)",
+      "def": "To speak"
+    },
+    {
+      "time": 49,
+      "word": "Kâng-khoán (同款)",
+      "def": "The same; Alike"
+    },
+    {
+      "time": 57,
+      "word": "Iok-sok (約束)",
+      "def": "Promise"
+    },
+    {
+      "time": 57,
+      "word": "Bô-chhái-kang (無彩工)",
+      "def": "In vain; Wasted effort"
+    },
+    {
+      "time": 71,
+      "word": "Thǹg (燙)",
+      "def": "To warm up (food); To scald"
+    },
+    {
+      "time": 71,
+      "word": "Phang (芳)",
+      "def": "Fragrant"
+    },
+    {
+      "time": 96,
+      "word": "Hong (風)",
+      "def": "Wind"
+    },
+    {
+      "time": 96,
+      "word": "Chhoe (吹)",
+      "def": "To blow (wind)"
+    },
+    {
+      "time": 103,
+      "word": "Tàu-tīn (鬥陣)",
+      "def": "Together"
+    },
+    {
+      "time": 103,
+      "word": "Poe (飛)",
+      "def": "To fly"
+    },
+    {
+      "time": 111,
+      "word": "Hō͘ (雨)",
+      "def": "Rain"
+    },
+    {
+      "time": 111,
+      "word": "Lo̍h (落)",
+      "def": "To fall; To descend"
+    },
+    {
+      "time": 118,
+      "word": "Ba̍k-chiu (目睭)",
+      "def": "Eyes"
+    },
+    {
+      "time": 118,
+      "word": "Ak (沃)",
+      "def": "To water; To drench"
+    },
+    {
+      "time": 118,
+      "word": "Tâm-kô-kô (澹糊糊)",
+      "def": "Soaking wet"
+    },
+    {
+      "time": 125,
+      "word": "Bū (霧)",
+      "def": "Fog; Mist"
+    },
+    {
+      "time": 125,
+      "word": "Sim (心)",
+      "def": "Heart"
+    },
+    {
+      "time": 125,
+      "word": "Khang-khang (空空)",
+      "def": "Empty"
+    },
+    {
+      "time": 132,
+      "word": "Phòa (破)",
+      "def": "Broken"
+    },
+    {
+      "time": 148,
+      "word": "Giú (搝)",
+      "def": "To pull; To tug"
+    },
+    {
+      "time": 148,
+      "word": "Hong-chhoe (風吹)",
+      "def": "Kite"
+    },
+    {
+      "time": 159,
+      "word": "Hong-kéng (風景)",
+      "def": "Scenery"
+    },
+    {
+      "time": 159,
+      "word": "Hûn (雲)",
+      "def": "Cloud"
+    },
+    {
+      "time": 166,
+      "word": "Chài (載)",
+      "def": "To transport; To carry"
+    },
+    {
+      "time": 166,
+      "word": "Chi̍t-sì-kè (一四界)",
+      "def": "Everywhere"
+    },
+    {
+      "time": 181,
+      "word": "Éng-oán (永遠)",
+      "def": "Forever"
+    },
+    {
+      "time": 181,
+      "word": "Chò-hóe (做伙)",
+      "def": "Together"
+    },
+    {
+      "time": 188,
+      "word": "Chài-hōe (再會)",
+      "def": "Goodbye"
+    },
+    {
+      "time": 195,
+      "word": "Ū-êng (有閒)",
+      "def": "To have free time"
+    },
+    {
+      "time": 195,
+      "word": "Sio-chhē (相揣)",
+      "def": "To look for each other; To visit"
+    },
+    {
+      "time": 211,
+      "word": "Ji̍t-thâu (日頭)",
+      "def": "Sun"
+    },
+    {
+      "time": 211,
+      "word": "Kng (光)",
+      "def": "Bright"
+    },
+    {
+      "time": 211,
+      "word": "Sòaⁿ (散)",
+      "def": "To disperse; To scatter"
+    }
+  ]
 }
