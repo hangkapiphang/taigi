@@ -75,7 +75,7 @@ function render(data) {
                     <div class="action-row">
                         <a href="cinema.html?id=${item.id}" class="action-btn btn-watch" title="Watch Video">▶ Watch</a>
                         <a href="shadow.html?id=${item.id}" class="action-btn btn-shadow" title="Speaking Practice">🎙 Shadow</a>
-                        <a href="vocab.html?id=${item.id}" class="action-btn btn-vocab" title="Vocabulary Cards">📖 Vocab</a>
+                        <a href="cards.html?id=${item.id}" class="action-btn btn-vocab" title="Vocabulary Cards">📖 Vocab</a>
                         <a href="arcade.html?id=${item.id}" class="action-btn" style="background:#e67e22" title="Quiz Game">🎮 Quiz</a>
                     </div>
                 </div>
