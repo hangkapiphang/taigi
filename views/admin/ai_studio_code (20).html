@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Editor - Vocab Pro</title>
+    
+    <!-- Load CSS from two levels up -->
+    <link rel="stylesheet" href="../../css/vocab_editor.css">
+</head>
+<body>
+    <nav>
+        <a href="subtitle_editor.html">📝 Subtitles</a>
+        <a href="vocab_editor.html" class="active">📖 Vocabulary</a>
+        <a href="visual_editor.html">🎨 Visuals</a>
+        <div style="flex-grow:1"></div>
+        <button class="btn btn-grey" onclick="toggleConfig()">⚙️ GitHub Config</button>
+    </nav>
+
+    <!-- HIDDEN CONFIG OVERLAY -->
+    <div id="config-area">
+        <strong>GitHub Settings</strong>
+        <input type="text" id="ghUser" placeholder="User">
+        <input type="text" id="ghRepo" placeholder="Repo">
+        <input type="password" id="ghToken" placeholder="Token">
+    </div>
+
+    <div id="workspace">
+        <!-- LEFT PANEL: Video & Controls -->
+        <div id="left-panel">
+            <div id="video-container"><div id="player"></div></div>
+            
+            <div id="controls-area">
+                
+                <!-- 1. LOAD FILE PANEL -->
+                <div class="panel">
+                    <div class="panel-header">📁 Load File (data/)</div>
+                    
+                    <div class="row-flex">
+                        <button class="btn btn-orange" onclick="listGithubFiles()">🔄 Get File List</button>
+                        <select id="file-select" class="full-width" onchange="fetchFromDropdown()">
+                            <option value="">(Click Get List)</option>
+                        </select>
+                    </div>
+
+                    <div class="row-flex">
+                        <input type="text" id="manual-filename" class="full-width" placeholder="Filename (e.g. suntiunn)">
+                        <button class="btn btn-blue" onclick="fetchManual()">⬇ Fetch</button>
+                    </div>
+
+                    <div style="text-align: center; margin: 5px 0; font-size: 11px; color: #666;">- OR -</div>
+
+                    <button class="btn btn-grey full-width" onclick="document.getElementById('hidden-file').click()">📂 Open Local File</button>
+                    <input type="file" id="hidden-file" accept=".json" style="display:none" onchange="loadLocalJson(this)">
+                </div>
+
+                <!-- 2. VIDEO URL PANEL -->
+                <div class="panel-white">
+                    <input type="text" id="videoUrl" class="full-width" placeholder="YouTube URL" onchange="loadVideo(this.value)">
+                </div>
+
+                <!-- 3. SAVE ACTIONS PANEL -->
+                <div class="panel-white">
+                    <div class="panel-header">💾 Save Actions</div>
+                    <div class="row-flex">
+                        <button class="btn btn-green full-width" onclick="downloadJson()">💾 JSON</button>
+                        <button class="btn btn-teal full-width" onclick="downloadCSV()">📄 CSV</button>
+                    </div>
+                    <button class="btn btn-dark" onclick="uploadToGithub()">☁ Update GitHub</button>
+                    <div id="current-filename" style="font-size:11px; color:#d32f2f; margin-top:5px; text-align:center; height:15px;"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: Editor List -->
+        <div id="right-panel">
+            <div id="toolbar">
+                <button class="btn btn-purple" style="background:#9c27b0; color:white" onclick="addVocabLine()">+ Add Word</button>
+                <button class="btn btn-yellow" style="background:#ffeb3b; color:black" onclick="importAiVocab()">⚡ Import AI</button>
+                <div style="flex-grow:1"></div>
+                <input type="text" placeholder="Search..." onkeyup="renderEditor(this.value)" style="width:120px; padding: 5px; border-radius: 4px; border:1px solid #ccc;">
+            </div>
+            <div id="rows-area"></div>
+        </div>
+    </div>
+
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Main Logic -->
+    <script src="../../js/vocab_editor.js"></script>
+</body>
+</html>
