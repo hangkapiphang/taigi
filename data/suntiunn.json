@@ -18,5 +18,207 @@
     "boxColor": "#01000a",
     "boxOp": 0.49,
     "shadow": "2"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "Chng-kha-lâng (庄跤人)",
+      "def": "Villager; Country folk"
+    },
+    {
+      "time": 0,
+      "word": "Sûn (巡)",
+      "def": "To patrol"
+    },
+    {
+      "time": 9,
+      "word": "Chai-iáⁿ (知影)",
+      "def": "To know"
+    },
+    {
+      "time": 9,
+      "word": "Tńg--lâi (轉來)",
+      "def": "To return; to come back"
+    },
+    {
+      "time": 16,
+      "word": "Khàu (哭)",
+      "def": "To cry"
+    },
+    {
+      "time": 16,
+      "word": "Kui-mî (歸暝)",
+      "def": "The whole night"
+    },
+    {
+      "time": 21,
+      "word": "Kui-sin-khu (歸身軀)",
+      "def": "Whole body"
+    },
+    {
+      "time": 21,
+      "word": "Hoeh (血)",
+      "def": "Blood"
+    },
+    {
+      "time": 25,
+      "word": "Heng-khám (胸坎)",
+      "def": "Chest"
+    },
+    {
+      "time": 25,
+      "word": "Kiaⁿ--lâng (驚人)",
+      "def": "Terrifying; scary"
+    },
+    {
+      "time": 30,
+      "word": "Phak (覆)",
+      "def": "To lie prone; to face down"
+    },
+    {
+      "time": 30,
+      "word": "Toh-á (桌仔)",
+      "def": "Table"
+    },
+    {
+      "time": 46,
+      "word": "Báng-tà (蚊罩)",
+      "def": "Mosquito net"
+    },
+    {
+      "time": 78,
+      "word": "Chheng-kng (清光)",
+      "def": "Bright; clear (usually referring to dawn)"
+    },
+    {
+      "time": 89,
+      "word": "Chio (招)",
+      "def": "To invite; to call someone along"
+    },
+    {
+      "time": 89,
+      "word": "Sòaⁿ-sim (散心)",
+      "def": "To relax one's mind; to relieve boredom"
+    },
+    {
+      "time": 96,
+      "word": "Siūⁿ-bô (想無)",
+      "def": "Cannot figure out; unable to understand"
+    },
+    {
+      "time": 96,
+      "word": "Tòe (綴)",
+      "def": "To follow"
+    },
+    {
+      "time": 113,
+      "word": "Kôaⁿ-thiⁿ (寒天)",
+      "def": "Cold weather; winter"
+    },
+    {
+      "time": 113,
+      "word": "Léng-chheng-chheng (冷清清)",
+      "def": "Desolate; lonely and cold"
+    },
+    {
+      "time": 135,
+      "word": "Bîn-chhn̂g (眠床)",
+      "def": "Bed"
+    },
+    {
+      "time": 139,
+      "word": "Sîn-bêng (神明)",
+      "def": "Deities; gods"
+    },
+    {
+      "time": 139,
+      "word": "Âng-chhiah-chhiah (紅赤赤)",
+      "def": "Deep red; glaring red"
+    },
+    {
+      "time": 157,
+      "word": "Khû (跍)",
+      "def": "To crouch; to curl up"
+    },
+    {
+      "time": 166,
+      "word": "M̄-goān (毋願)",
+      "def": "Unwilling"
+    },
+    {
+      "time": 166,
+      "word": "Khí-sin (起身)",
+      "def": "To get up; to rise"
+    },
+    {
+      "time": 179,
+      "word": "Se̍h (踅)",
+      "def": "To circle; to go around"
+    },
+    {
+      "time": 269,
+      "word": "Chhōe (揣)",
+      "def": "To search; to find"
+    },
+    {
+      "time": 299,
+      "word": "Pài-chhiáⁿ (拜請)",
+      "def": "To respectfully invite (a deity)"
+    },
+    {
+      "time": 383,
+      "word": "An-sim (安心)",
+      "def": "To feel at ease"
+    },
+    {
+      "time": 383,
+      "word": "Pàng-hā (放下)",
+      "def": "To let go"
+    },
+    {
+      "time": 387,
+      "word": "Pêng-chēng (平靜)",
+      "def": "Calm; quiet"
+    },
+    {
+      "time": 391,
+      "word": "Ba̍k-sái (目屎)",
+      "def": "Tears"
+    },
+    {
+      "time": 414,
+      "word": "Àm-sat (暗殺)",
+      "def": "Assassination"
+    },
+    {
+      "time": 423,
+      "word": "Hip-siòng (翕相)",
+      "def": "To take a photograph"
+    },
+    {
+      "time": 427,
+      "word": "Kong-gī (公義)",
+      "def": "Justice"
+    },
+    {
+      "time": 495,
+      "word": "Thè-kà (退駕)",
+      "def": "Deity leaving the medium's body (end of trance)"
+    },
+    {
+      "time": 538,
+      "word": "Tang-sî (當時)",
+      "def": "When; at what time"
+    },
+    {
+      "time": 538,
+      "word": "Ki-koan-chhéng (機關銃)",
+      "def": "Machine gun"
+    },
+    {
+      "time": 547,
+      "word": "Sam-seng (三牲)",
+      "def": "Three sacrificial offerings (usually pork, chicken, fish)"
+    }
+  ]
 }
