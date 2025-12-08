@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taigi Arcade</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../css/arcade.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅ Menu</a>
+        <div class="header-title">🎮 Listening Quiz</div>
+        <div class="score-board">Score: <span id="score">0</span></div>
+    </header>
+
+    <!-- GAME PLAY AREA -->
+    <div id="game-container">
+        
+        <!-- Video Wrapper -->
+        <div id="video-wrapper">
+            <div id="player"></div>
+        </div>
+        
+        <!-- Question Card -->
+        <div class="card">
+            <div class="status-bar">
+                <span id="progress-text">Loading...</span>
+            </div>
+
+            <!-- Question: Taigi Word -->
+            <div class="question-area">
+                <div class="instruction">Listen to the clip. What does this word mean?</div>
+                <h2 id="target-word" class="taigi-word">...</h2>
+            </div>
+
+            <!-- Options: Definitions -->
+            <div class="options-grid" id="options"></div>
+            
+            <!-- Controls -->
+            <div class="controls">
+                <button class="ctrl-btn replay" onclick="replayClip()">🔊 Replay Audio</button>
+                <button class="ctrl-btn next" id="nextBtn" onclick="nextQuestion()" disabled>Next ➡</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME OVER SCREEN (Hidden by default) -->
+    <div id="end-screen" class="hidden">
+        <div class="end-card">
+            <h1>Game Over!</h1>
+            <div class="final-score-box">
+                Score: <span id="final-score">0</span> / <span id="total-questions">0</span>
+            </div>
+            <div class="end-controls">
+                <a href="index.html" class="home-btn">Return to Menu</a>
+                <button class="home-btn play-again" onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic Script -->
+    <script src="../js/arcade.js"></script>
+</body>
+</html>
