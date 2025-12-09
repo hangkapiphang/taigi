@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÂI-GÍ LĀNG-HIÁM // LEARNER MODULE</title>
+    
+    <!-- Link to the Sci-Fi Theme -->
+    <link rel="stylesheet" href="../css/color_scifi.css">
+
+    <style>
+        /* --- LAYOUT OVERRIDES FOR GALLERY --- */
+        /* We need a grid layout that utilizes the sci-fi variables */
+        
+        #app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Filter Navigation Bar */
+        #nav-hud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-dim);
+            padding-bottom: 20px;
+        }
+
+        .filter-btn {
+            background: rgba(15, 20, 34, 0.9);
+            border: 1px solid var(--border-dim);
+            color: var(--neon-cyan);
+            font-family: 'Share Tech Mono', monospace;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(51, 197, 243, 0.2);
+            border-color: var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
+            color: #fff;
+        }
+
+        .req-btn {
+            border-color: var(--neon-orange);
+            color: var(--neon-orange);
+        }
+        .req-btn:hover {
+            background: rgba(255, 118, 54, 0.2);
+            box-shadow: var(--glow-orange);
+        }
+
+        /* Gallery Grid */
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Image styling within the Sci-Fi card */
+        .holo-thumb {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border: 1px solid var(--neon-cyan);
+            opacity: 0.8;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+        .signal-card:hover .holo-thumb {
+            opacity: 1;
+            box-shadow: var(--glow-cyan);
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid var(--border-dim);
+            padding-top: 20px;
+            text-align: center;
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--border-dim);
+        }
+        footer a { color: var(--neon-cyan); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div id="app-container">
+        <header>
+            <!-- Decorative Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+
+            <h1>TÂI-GÍ LĀNG-HIÁM <span style="font-size:0.5em; color:var(--neon-orange); vertical-align: middle;">// SYSTEM READY</span></h1>
+            
+            <div class="score-display">
+                SYS: ONLINE <br>
+                LOC: TAIWAN
+            </div>
+        </header>
+
+        <!-- HUD NAVIGATION -->
+        <div id="nav-hud">
+            <button class="filter-btn active" onclick="filterData('all')">All Data</button>
+            <button class="filter-btn" onclick="filterData('song')">🎵 Audio</button>
+            <button class="filter-btn" onclick="filterData('cartoon')">🧸 Visual</button>
+            <button class="filter-btn" onclick="filterData('speech')">🎤 Speech</button>
+            <button class="filter-btn" onclick="filterData('drama')">🎭 Drama</button>
+            
+            <a href="recommend.html" class="filter-btn req-btn" style="text-decoration:none">+ Upload Req</a>
+        </div>
+
+        <!-- MAIN DISPLAY GRID -->
+        <div id="gallery">
+            <div class="signal-card">
+                <div class="target-word" style="font-size:1.5rem">INITIALIZING DATA STREAM...</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>SYSTEM ARCHITECT: TAIGI LEARNING PROJECT</p>
+            <p><a href="admin/index.html">[ ADMIN LOGIN ]</a></p>
+        </footer>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
