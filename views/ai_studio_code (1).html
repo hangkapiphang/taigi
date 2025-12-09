@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taigi Learning Cinema</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- DECORATIVE BACKGROUND (Abstract Butterfly) -->
+    <div style="position: fixed; top: -50px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(168,200,52,0.1) 0%, rgba(255,255,255,0) 70%); z-index: -1; pointer-events: none;"></div>
+    <div style="position: fixed; bottom: 0; left: 0; font-size: 20rem; color: rgba(126, 124, 176, 0.03); font-family: serif; z-index: -1; line-height: 0.8; pointer-events: none;">Tâi-gí</div>
+
+    <header>
+        <h1>Tâi-gí Cinema</h1>
+        <p>Learn Taiwanese through Movies & Poetry</p>
+    </header>
+
+    <!-- MENU TABS -->
+    <div id="nav-bar">
+        <button class="filter-btn active" onclick="filterData('all')">All Works</button>
+        <button class="filter-btn" onclick="filterData('song')">🎵 Songs</button>
+        <button class="filter-btn" onclick="filterData('cartoon')">🧸 Cartoon</button>
+        <button class="filter-btn" onclick="filterData('speech')">🎤 Speech</button>
+        <button class="filter-btn" onclick="filterData('drama')">🎭 Drama</button>
+
+        <div style="flex-grow:1; min-width: 20px;"></div> <!-- Spacer -->
+
+        <a href="recommend.html" class="filter-btn req-btn">✎ Request</a>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <div id="gallery">
+        <div style="text-align:center; padding:50px; color:#BFA66F; font-style:italic;">
+            Loading Library...
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Taigi Learning Project</p>
+        <p>
+            <a href="admin/index.html">Teacher Login</a>
+        </p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
