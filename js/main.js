@@ -56,10 +56,10 @@ function render(data) {
 
         // Format Tag with emojis appropriate for the style
         let tagName = item.cat.toUpperCase();
-        if(item.cat === 'song') tagName = 'Music Poem 🎵';
-        else if(item.cat === 'cartoon') tagName = 'Animation 🧸';
-        else if(item.cat === 'speech') tagName = 'Oratory 🎤';
-        else if(item.cat === 'drama') tagName = 'Theater 🎭';
+        if(item.cat === 'song') tagName = 'Thiaⁿ Koa 🎵';
+        else if(item.cat === 'cartoon') tagName = 'Bàng-gà 🧸';
+        else if(item.cat === 'speech') tagName = 'Káng-ián 🎤';
+        else if(item.cat === 'drama') tagName = 'kio̍k-tiúⁿ 🎭';
 
         const html = `
             <div class="card">
