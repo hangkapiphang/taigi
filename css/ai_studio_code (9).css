@@ -1,0 +1,115 @@
+/* Font Definitions (pointing to ../font/) */
+@font-face { 
+    font-family: 'Taigi Font'; 
+    src: url('../font/Charis-Regular.woff2') format('woff2'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+body { 
+    font-family: 'Taigi Font', sans-serif; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background: #f4f4f4; 
+    color: #333; 
+}
+
+/* STATUS PANEL */
+.status-box { 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    margin-bottom: 20px; 
+}
+.log-line { margin: 5px 0; font-family: monospace; font-size: 14px; }
+.ok { color: #28a745; font-weight: bold; }
+.err { color: #dc3545; font-weight: bold; }
+.warn { color: #ffc107; font-weight: bold; }
+
+/* ACTION BUTTONS */
+.fix-btn { 
+    margin-top: 15px; 
+    padding: 12px 20px; 
+    background: #ff9800; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 16px; 
+    display: none; /* Hidden by default */
+}
+.fix-btn:hover { background: #e68900; }
+
+/* EDITOR UI */
+#editor-ui { display: none; }
+
+.toolbar { display: flex; gap: 10px; margin-bottom: 20px; position: sticky; top: 10px; z-index: 100; }
+
+.btn { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    color: white; 
+    cursor: pointer; 
+    font-weight: bold; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.btn-add { background: #28a745; }
+.btn-save { background: #007bff; }
+.btn-add:hover { background: #218838; }
+.btn-save:hover { background: #0056b3; }
+
+/* CARD LAYOUT */
+.card { 
+    background: white; 
+    padding: 15px; 
+    margin-bottom: 10px; 
+    border-radius: 5px; 
+    display: flex; 
+    gap: 10px; 
+    align-items: flex-start; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+    border-left: 4px solid #007bff;
+}
+
+.thumb { 
+    width: 120px; 
+    height: 68px; 
+    background: #ddd; 
+    object-fit: cover; 
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.inputs { 
+    flex-grow: 1; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 8px; 
+}
+
+input, select { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    border-radius: 3px; 
+    width: 100%; 
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.full { grid-column: span 3; }
+
+.btn-del {
+    background: #ffebee; 
+    color: #dc3545; 
+    border: 1px solid #ffc9d0; 
+    padding: 5px 10px; 
+    cursor: pointer;
+    border-radius: 4px;
+    height: 100%;
+    font-weight: bold;
+}
+.btn-del:hover { background: #dc3545; color: white; }
