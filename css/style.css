@@ -6,7 +6,7 @@
     --accent: #e74c3c;
   /*  --bg: #f4f6f8; */
     --bg-void: #05080F; 
-    --card-bg: #ffffff;
+/*    --card-bg: #ffffff; */
 }
 
 body {
@@ -19,7 +19,7 @@ body {
         linear-gradient(90deg, rgba(51, 197, 243, 0.05) 1px, transparent 1px);
     background-size: 40px 40px; /* Size of the grid squares */
     
-    display: flex; flex-direction: column; min-height: 100vh;
+/*    display: flex; flex-direction: column; min-height: 100vh; */
 }
 
 /* HERO HEADER */
