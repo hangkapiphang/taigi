@@ -18,5 +18,142 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "Sè-kài (世界)",
+      "def": "World"
+    },
+    {
+      "time": 0,
+      "word": "Tiām-chēng (恬靜)",
+      "def": "Quiet; silent"
+    },
+    {
+      "time": 35,
+      "word": "Su-liām (思念)",
+      "def": "To miss; to long for"
+    },
+    {
+      "time": 35,
+      "word": "Chhut-siaⁿ (出聲)",
+      "def": "To make a sound; to speak up"
+    },
+    {
+      "time": 41,
+      "word": "Thang-gōa (窗外)",
+      "def": "Outside the window"
+    },
+    {
+      "time": 41,
+      "word": "Hong (風)",
+      "def": "Wind"
+    },
+    {
+      "time": 44,
+      "word": "Háu (吼)",
+      "def": "To howl (wind); to cry"
+    },
+    {
+      "time": 48,
+      "word": "Thiⁿ-téng (天頂)",
+      "def": "Sky; overhead"
+    },
+    {
+      "time": 48,
+      "word": "Chhiⁿ (星)",
+      "def": "Star"
+    },
+    {
+      "time": 50,
+      "word": "Sih (爍)",
+      "def": "To twinkle; to flash"
+    },
+    {
+      "time": 89,
+      "word": "Séng (醒)",
+      "def": "To wake up; to sober up"
+    },
+    {
+      "time": 89,
+      "word": "Àm-mî (暗暝)",
+      "def": "Night"
+    },
+    {
+      "time": 93,
+      "word": "Siūⁿ-khí (想起)",
+      "def": "To remember; to think of"
+    },
+    {
+      "time": 102,
+      "word": "Khùn (睏)",
+      "def": "To sleep"
+    },
+    {
+      "time": 112,
+      "word": "Khan-chhiú (牽手)",
+      "def": "To hold hands"
+    },
+    {
+      "time": 115,
+      "word": "Kiâⁿ (行)",
+      "def": "To walk"
+    },
+    {
+      "time": 115,
+      "word": "Sió-lō͘ (小路)",
+      "def": "Small path; lane"
+    },
+    {
+      "time": 119,
+      "word": "Hóe-kim-ko͘ (火金姑)",
+      "def": "Firefly"
+    },
+    {
+      "time": 119,
+      "word": "The̍h (提)",
+      "def": "To carry; to hold"
+    },
+    {
+      "time": 119,
+      "word": "Teng (燈)",
+      "def": "Lamp; light"
+    },
+    {
+      "time": 122,
+      "word": "Chiò (照)",
+      "def": "To shine; to illuminate"
+    },
+    {
+      "time": 122,
+      "word": "Chhân-kîⁿ (田墘)",
+      "def": "Ridge of a field; edge of a farm field"
+    },
+    {
+      "time": 127,
+      "word": "Tek-nâ (竹林)",
+      "def": "Bamboo forest"
+    },
+    {
+      "time": 127,
+      "word": "Bông-bū (雺霧)",
+      "def": "Mist; fog"
+    },
+    {
+      "time": 127,
+      "word": "Soaⁿ-po͘ (山埔)",
+      "def": "Hillside; mountain slope"
+    },
+    {
+      "time": 133,
+      "word": "Khin-siaⁿ (輕聲)",
+      "def": "Soft voice; quiet sound"
+    },
+    {
+      "time": 135,
+      "word": "Khe-chúi (溪水)",
+      "def": "Stream water"
+    }
+  ]
 }
