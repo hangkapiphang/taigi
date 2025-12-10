@@ -127,7 +127,7 @@ body {
 .v-content { flex: 1; }
 
 .v-word { 
-    font-family: 'Taigi Font'; 
+    font-family: 'Taigi Font', serif; 
     font-size: 18px; 
     color: #ffeb3b; /* Light Yellow */
     font-weight: bold; 
