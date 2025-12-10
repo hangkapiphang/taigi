@@ -18,5 +18,207 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 26,
+      "word": "Tâi-gí",
+      "def": "Taiwanese language"
+    },
+    {
+      "time": 26,
+      "word": "siaⁿ-ūn",
+      "def": "Phonology; rhyme"
+    },
+    {
+      "time": 33,
+      "word": "ki-chhó͘",
+      "def": "Foundation; basic"
+    },
+    {
+      "time": 41,
+      "word": "siáⁿ-mih",
+      "def": "What"
+    },
+    {
+      "time": 54,
+      "word": "thoân-thóng",
+      "def": "Tradition; traditional"
+    },
+    {
+      "time": 66,
+      "word": "le̍k-sú",
+      "def": "History"
+    },
+    {
+      "time": 66,
+      "word": "chhiau-kòe",
+      "def": "To exceed; more than"
+    },
+    {
+      "time": 77,
+      "word": "jī",
+      "def": "Character; word"
+    },
+    {
+      "time": 77,
+      "word": "kong-lêng",
+      "def": "Function"
+    },
+    {
+      "time": 84,
+      "word": "tiān-náu",
+      "def": "Computer"
+    },
+    {
+      "time": 84,
+      "word": "chiūⁿ-bāng",
+      "def": "To go online"
+    },
+    {
+      "time": 93,
+      "word": "hoan-gêng",
+      "def": "Welcome"
+    },
+    {
+      "time": 93,
+      "word": "o̍h",
+      "def": "To learn"
+    },
+    {
+      "time": 93,
+      "word": "tha̍k",
+      "def": "To read"
+    },
+    {
+      "time": 93,
+      "word": "siá",
+      "def": "To write"
+    },
+    {
+      "time": 93,
+      "word": "kà",
+      "def": "To teach"
+    },
+    {
+      "time": 105,
+      "word": "hòng-khì",
+      "def": "To give up; to abandon"
+    },
+    {
+      "time": 105,
+      "word": "koan-liām",
+      "def": "Concept; idea"
+    },
+    {
+      "time": 124,
+      "word": "kāng-khoán",
+      "def": "Same; alike"
+    },
+    {
+      "time": 124,
+      "word": "ha̍k-si̍p",
+      "def": "Learning; study"
+    },
+    {
+      "time": 124,
+      "word": "pang-chān",
+      "def": "Help; assistance"
+    },
+    {
+      "time": 131,
+      "word": "bô-kāng",
+      "def": "Different"
+    },
+    {
+      "time": 131,
+      "word": "chó͘-gāi",
+      "def": "Obstacle; hindrance"
+    },
+    {
+      "time": 137,
+      "word": "chiām-sî",
+      "def": "Temporarily"
+    },
+    {
+      "time": 137,
+      "word": "khòaⁿ-hoat",
+      "def": "Viewpoint; opinion"
+    },
+    {
+      "time": 137,
+      "word": "khǹg",
+      "def": "To put; to place"
+    },
+    {
+      "time": 143,
+      "word": "tán",
+      "def": "To wait"
+    },
+    {
+      "time": 143,
+      "word": "liáu-āu",
+      "def": "Afterwards"
+    },
+    {
+      "time": 143,
+      "word": "pí-kàu",
+      "def": "To compare"
+    },
+    {
+      "time": 168,
+      "word": "hō-im",
+      "def": "Pronunciation"
+    },
+    {
+      "time": 176,
+      "word": "cho͘-ha̍p",
+      "def": "Combination; to combine"
+    },
+    {
+      "time": 176,
+      "word": "chhin-chhiūⁿ",
+      "def": "Like; to resemble"
+    },
+    {
+      "time": 232,
+      "word": "phīⁿ-im",
+      "def": "Nasal sound"
+    },
+    {
+      "time": 232,
+      "word": "piàn-tiāu",
+      "def": "Tone sandhi (tone change)"
+    },
+    {
+      "time": 244,
+      "word": "cheng-bi̍t",
+      "def": "Precise; intricate"
+    },
+    {
+      "time": 244,
+      "word": "pháiⁿ",
+      "def": "Difficult; bad"
+    },
+    {
+      "time": 254,
+      "word": "kńg-chi̍h-im",
+      "def": "Retroflex sound (curled tongue)"
+    },
+    {
+      "time": 259,
+      "word": "chin-chē",
+      "def": "Many; a lot"
+    },
+    {
+      "time": 259,
+      "word": "bô-hoat-tō͘",
+      "def": "Cannot; unable to"
+    },
+    {
+      "time": 259,
+      "word": "piáu-ta̍t",
+      "def": "To express"
+    }
+  ]
 }
