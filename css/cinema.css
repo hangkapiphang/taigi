@@ -1,5 +1,6 @@
 /* --- FONTS (Assumes fonts are in ../font/ relative to css/) --- */
 @font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Iansui-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
 @font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
 
 body { 
