@@ -10,7 +10,7 @@
     "o": 1
   },
   "settings": {
-   "fontFamily": "'Taigi Font', 'Taigi Unicode', 'Charis SIL', 'Times New Roman', serif",
+   "fontFamily": "'Taigi Font', serif",
     "scale": 1.11,
     "anchor": "bottom",
     "offset": "5",
