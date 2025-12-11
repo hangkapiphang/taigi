@@ -65,7 +65,7 @@ select { background: white; }
 .vocab-card.active { border-left-color: #ff9800; background-color: #fff8e1; }
 .v-header { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
 .v-inputs { display: flex; gap: 10px; }
-.time-display { font-family: monospace; font-size: 14px; background: #333; color: #0f0; padding: 4px 8px; border-radius: 4px; cursor: pointer; width: 60px; text-align: center; }
+.time-display { font-family: monospace; font-size: 14px; background: #333; color: #0f0; padding: 4px 8px; border-radius: 4px; cursor: pointer; width: 95px; text-align: center; }
 .word-inp { flex: 1; font-family: 'Taigi Font'; font-size: 18px; font-weight: bold; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
 .def-inp { flex: 2; font-family: 'Taigi Font'; font-size: 16px; padding: 8px; border: 1px solid #eee; border-radius: 4px; background: #f9f9f9; }
 
