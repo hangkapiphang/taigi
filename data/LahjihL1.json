@@ -21,54 +21,49 @@
   },
   "vocab": [
     {
-      "time": 26,
+      "time": 29.83525104256271,
       "word": "Tâi-gí",
       "def": "Taiwanese language"
     },
     {
-      "time": 26,
+      "time": 30.46332106144033,
       "word": "siaⁿ-ūn",
       "def": "Phonology; rhyme"
     },
     {
-      "time": 33,
+      "time": 37.22658564494745,
       "word": "ki-chhó͘",
       "def": "Foundation; basic"
     },
     {
-      "time": 41,
+      "time": 44.255313494721854,
       "word": "siáⁿ-mih",
       "def": "What"
     },
     {
-      "time": 54,
+      "time": 60.01471072758477,
       "word": "thoân-thóng",
       "def": "Tradition; traditional"
     },
     {
-      "time": 66,
+      "time": 68.0958652428754,
       "word": "le̍k-sú",
       "def": "History"
     },
     {
-      "time": 66,
+      "time": 71.74900137436425,
       "word": "chhiau-kòe",
       "def": "To exceed; more than"
     },
     {
-      "time": 77,
+      "time": 78.61699847421326,
       "word": "jī",
       "def": "Character; word"
     },
     {
-      "time": 77,
+      "time": 81.03274619789002,
       "word": "kong-lêng",
       "def": "Function"
-    },
-    {
-      "time": 84,
-      "word": "tiān-náu",
-      "def": "Computer"
     },
     {
       "time": 84,
@@ -76,14 +71,14 @@
       "def": "To go online"
     },
     {
-      "time": 93,
-      "word": "hoan-gêng",
-      "def": "Welcome"
+      "time": 91.64492916238011,
+      "word": "tiān-náu",
+      "def": "Computer"
     },
     {
       "time": 93,
-      "word": "o̍h",
-      "def": "To learn"
+      "word": "hoan-gêng",
+      "def": "Welcome"
     },
     {
       "time": 93,
@@ -99,6 +94,11 @@
       "time": 93,
       "word": "kà",
       "def": "To teach"
+    },
+    {
+      "time": 94.73001082388451,
+      "word": "o̍h",
+      "def": "To learn"
     },
     {
       "time": 105,
