@@ -1,0 +1,7286 @@
+[
+  {
+    "POJ": "a-lú-mih",
+    "Hanji": "a-lú-mih",
+    "en": "Aluminum.",
+    "cn": "鋁、輕銀。源自日語アルミ(arumi)。"
+  },
+  {
+    "POJ": "a-mó͘-ní-á",
+    "Hanji": "a-mó͘-ní-á",
+    "en": "Ammonia.",
+    "cn": "阿摩尼亞。源自日語アンモニア(ammonia)。"
+  },
+  {
+    "POJ": "a-ní-khih",
+    "Hanji": "a-ní-khih",
+    "en": "Big brother (informal).",
+    "cn": "老兄。源自日語あにき(aneki)，日語漢字為「兄貴」。"
+  },
+  {
+    "POJ": "a-sír-phí-lín",
+    "Hanji": "a-sír-phí-lín",
+    "en": "Aspirin.",
+    "cn": "阿斯匹林。源自日語アスピリン(asupirin)。"
+  },
+  {
+    "POJ": "a̍t-sá-lih",
+    "Hanji": "a̍t-sá-lih",
+    "en": "Frankly.",
+    "cn": "乾脆、阿莎力。源自日語あっさり(assari)。"
+  },
+  {
+    "POJ": "bai-ó͘-lín",
+    "Hanji": "bai-ó͘-lín",
+    "en": "Violin.",
+    "cn": "小提琴。源自日語バイオリン(baiorin)。"
+  },
+  {
+    "POJ": "bak-kuh",
+    "Hanji": "bak-kuh",
+    "en": "To reverse (a car).",
+    "cn": "倒車。源自日語バック(bakku)。"
+  },
+  {
+    "POJ": "bat-tah",
+    "Hanji": "bat-tah",
+    "en": "Batter (in baseball).",
+    "cn": "球棒。源自日語バッター(battaa)。"
+  },
+  {
+    "POJ": "ba̍t-té-lih",
+    "Hanji": "ba̍t-té-lih",
+    "en": "Battery.",
+    "cn": "蓄電池。源自日語バッテリー(batterii)。"
+  },
+  {
+    "POJ": "bi-tá-bín",
+    "Hanji": "bi-tá-bín",
+    "en": "Vitamin.",
+    "cn": "維他命、維生素。源自日語ビタミン(bitamin)。"
+  },
+  {
+    "POJ": "biat-to͘h",
+    "Hanji": "biat-to͘h",
+    "en": "Bed.",
+    "cn": "彈簧床。源自日語ベット(betto)。"
+  },
+  {
+    "POJ": "bo̍k-sìn-gù",
+    "Hanji": "bo̍k-sìn-gù",
+    "en": "Boxing.",
+    "cn": "拳擊。源自日語ボクシング(bokushengu)。"
+  },
+  {
+    "POJ": "bu-là-jià",
+    "Hanji": "bu-là-jià",
+    "en": "Bra.",
+    "cn": "胸罩。源自日語ブラジャー(burajaa)。"
+  },
+  {
+    "POJ": "bàn-bà",
+    "Hanji": "bàn-bà",
+    "en": "Bumper.",
+    "cn": "保險桿。源自日語バンバー"
+  },
+  {
+    "POJ": "bàng-gà",
+    "Hanji": "bàng-gà",
+    "en": "Comic.",
+    "cn": "漫畫、動畫片、卡通。源自日語まんが(manga)，日語漢字為「漫画」。"
+  },
+  {
+    "POJ": "bá-luh",
+    "Hanji": "bá-luh",
+    "en": "Crowbar.",
+    "cn": "拔釘子的器具。源自日語バール(baaru)。"
+  },
+  {
+    "POJ": "bá-suh",
+    "Hanji": "bá-suh",
+    "en": "Bus.",
+    "cn": "巴士、公共汽車。源自日語バス(basu)。"
+  },
+  {
+    "POJ": "bá-tah",
+    "Hanji": "bá-tah",
+    "en": "Butter.",
+    "cn": "奶油。源自日語バター(bataa)。"
+  },
+  {
+    "POJ": "bì-lù",
+    "Hanji": "bì-lù",
+    "en": "Beer.",
+    "cn": "啤酒。源自日語ビール(biiru)。"
+  },
+  {
+    "POJ": "bò͘-lù",
+    "Hanji": "bò͘-lù",
+    "en": "Ball (in baseball).",
+    "cn": "壞球。源自日語ボール(bo͘ru)。"
+  },
+  {
+    "POJ": "bò͘-tò͘",
+    "Hanji": "bò͘-tò͘",
+    "en": "Boat.",
+    "cn": "小船。源自日語ボート(bo͘to)。"
+  },
+  {
+    "POJ": "băi-khín",
+    "Hanji": "băi-khín",
+    "en": "Bacteria.",
+    "cn": "黴菌、細菌。源自日語ばいきん(baekin)，日語漢字為「黴菌」。"
+  },
+  {
+    "POJ": "chhiăn-pá-lah",
+    "Hanji": "chhiăn-pá-lah",
+    "en": "Sword fight play.",
+    "cn": "兒童模擬武打戲的、日本古裝武打戲。源自日語ちゃんばら(chambara)。"
+  },
+  {
+    "POJ": "chiok-kih",
+    "Hanji": "chiok-kih",
+    "en": "Vest.",
+    "cn": "剪刀。源自日語チョッキ(chokki)。"
+  },
+  {
+    "POJ": "chio͘-kó͘-lè-tò͘",
+    "Hanji": "chio͘-kó͘-lè-tò͘",
+    "en": "Chocolate.",
+    "cn": "巧克力。源自日語チョコレート(chokoreeto)。"
+  },
+  {
+    "POJ": "chit-puh",
+    "Hanji": "chit-puh",
+    "en": "Tip (gratuity).",
+    "cn": "小費。源自日語チップ(chippu)。"
+  },
+  {
+    "POJ": "e-pú-lóng",
+    "Hanji": "e-pú-lóng",
+    "en": "Apron.",
+    "cn": "圍裙。源自日語エプロン(epuron)。"
+  },
+  {
+    "POJ": "ga-só͘-lín",
+    "Hanji": "ga-só͘-lín",
+    "en": "Gasoline.",
+    "cn": "汽油。源自日語ガソリン(gasorin)。"
+  },
+  {
+    "POJ": "giāng",
+    "Hanji": "giāng",
+    "en": "Rock-paper-scissors.",
+    "cn": "猜拳。源自日語じゃんけん(janken)，日語漢字為「じゃん拳」。"
+  },
+  {
+    "POJ": "go͘-lú-huh",
+    "Hanji": "go͘-lú-huh",
+    "en": "Golf.",
+    "cn": "高爾夫球。源自日語ゴルフ(gorufu)。"
+  },
+  {
+    "POJ": "gá-lah",
+    "Hanji": "gá-lah",
+    "en": "Cinder.",
+    "cn": "焦炭。源自日語がら(gara)。"
+  },
+  {
+    "POJ": "gá-suh",
+    "Hanji": "gá-suh",
+    "en": "Gas.",
+    "cn": "瓦斯。源自日語ガス(gasu)。"
+  },
+  {
+    "POJ": "gì-tà",
+    "Hanji": "gì-tà",
+    "en": "Guitar.",
+    "cn": "吉他。源自日語ギター(gitaa)。"
+  },
+  {
+    "POJ": "gō͘-bō͘",
+    "Hanji": "gō͘-bō͘",
+    "en": "Burdock.",
+    "cn": "牛蒡。源自日語ごぼう(gobo͘)，日語漢字為「牛蒡」。"
+  },
+  {
+    "POJ": "ha-mó͘-ní-khah",
+    "Hanji": "ha-mó͘-ní-khah",
+    "en": "Harmonica.",
+    "cn": "口琴。源自日語ハーモニカ(haamoneka)。"
+  },
+  {
+    "POJ": "hi-nó͘-khih",
+    "Hanji": "hi-nó͘-khih",
+    "en": "Hinoki cypress.",
+    "cn": "檜木。源自日語ひのき(hinoki)，日語漢字為「檜」。"
+  },
+  {
+    "POJ": "ho͘-lú-bóng",
+    "Hanji": "ho͘-lú-bóng",
+    "en": "Hormone.",
+    "cn": "荷爾蒙。源自日語ホルモン(horumon)。"
+  },
+  {
+    "POJ": "ho͘-té-luh",
+    "Hanji": "ho͘-té-luh",
+    "en": "Hotel.",
+    "cn": "飯店、旅社。源自日語ホテル(hoteru)。"
+  },
+  {
+    "POJ": "hài-ià",
+    "Hanji": "hài-ià",
+    "en": "Hired car.",
+    "cn": "包租汽車、高級轎車。源自日語ハイヤ(haiya)。"
+  },
+  {
+    "POJ": "há-muh",
+    "Hanji": "há-muh",
+    "en": "Ham.",
+    "cn": "洋火腿。源自日語ハム(hamu)。"
+  },
+  {
+    "POJ": "hái-kat-lá",
+    "Hanji": "hái-kat-lá",
+    "en": "High-collar.",
+    "cn": "西裝頭。源自日語ハイカラ"
+  },
+  {
+    "POJ": "hú-lo͘h",
+    "Hanji": "hú-lo͘h",
+    "en": "Bath.",
+    "cn": "浴桶、風呂、洗澡。源自日語ふろ(furo)，日語漢字為「風呂」。"
+  },
+  {
+    "POJ": "hăi-khé-khá-kuh",
+    "Hanji": "hăi-khé-khá-kuh",
+    "en": "Tuberculosis.",
+    "cn": "肺結核。源自日語はいけっかく(haekekkaku)，日語漢字為「肺結核」。"
+  },
+  {
+    "POJ": "hăn-tó͘-luh",
+    "Hanji": "hăn-tó͘-luh",
+    "en": "Handle.",
+    "cn": "方向盤。源自日語ハンドル(handoru)。"
+  },
+  {
+    "POJ": "hăng-gó͘",
+    "Hanji": "hăng-gó͘",
+    "en": "Mess tin.",
+    "cn": "飯盒。源自日語はんごう(hango͘)，日語漢字為「飯盒」。"
+  },
+  {
+    "POJ": "iá-mih",
+    "Hanji": "iá-mih",
+    "en": "Black market.",
+    "cn": "黑市。源自日語やみ(yami)，日語漢字為「闇」。"
+  },
+  {
+    "POJ": "ió-bih",
+    "Hanji": "ió-bih",
+    "en": "Reserve.",
+    "cn": "預備。源自日語よび(yobi)，日語漢字為「予備」。"
+  },
+  {
+    "POJ": "iú-lih",
+    "Hanji": "iú-lih",
+    "en": "Lily.",
+    "cn": "百合花。源自日語ゆり(yuri)，日語漢字為「百合」。"
+  },
+  {
+    "POJ": "iăn-jín",
+    "Hanji": "iăn-jín",
+    "en": "Engine.",
+    "cn": "引擎。源自日語エンジン(enjin)。"
+  },
+  {
+    "POJ": "iŏ-káng",
+    "Hanji": "iŏ-káng",
+    "en": "Sweet bean jelly.",
+    "cn": "羊羹。源自日語ようかん(yo͘kan)，日語漢字為「羊羹」。"
+  },
+  {
+    "POJ": "ji-lú-bah",
+    "Hanji": "ji-lú-bah",
+    "en": "Jitterbug (dance).",
+    "cn": "吉魯巴。源自日語ジルバ(jiruba)。"
+  },
+  {
+    "POJ": "jiak-kuh",
+    "Hanji": "jiak-kuh",
+    "en": "Zipper.",
+    "cn": "拉鍊。源自日語チャック(chakku)。"
+  },
+  {
+    "POJ": "jiàn-bà",
+    "Hanji": "jiàn-bà",
+    "en": "Jumper.",
+    "cn": "夾克。源自日語ジャンパー(jampaa)。"
+  },
+  {
+    "POJ": "jió-toh",
+    "Hanji": "jió-toh",
+    "en": "Superior.",
+    "cn": "上等、高級。源自日語じょうとう(jo͘to͘)，日語漢字為「上等」。"
+  },
+  {
+    "POJ": "kha-báng",
+    "Hanji": "kha-báng",
+    "en": "Bag.",
+    "cn": "皮包、文件箱、手提包。源自日語かばん(kaban)，日語漢字為「鞄」。"
+  },
+  {
+    "POJ": "kha-lá-ó͘-khe",
+    "Hanji": "kha-lá-ó͘-khe",
+    "en": "Karaoke.",
+    "cn": "卡拉OK。源自日語カラオケ(karaoke)。"
+  },
+  {
+    "POJ": "kha-mé-lah",
+    "Hanji": "kha-mé-lah",
+    "en": "Camera.",
+    "cn": "照相機、開麥拉。源自日語カメラ(kamera)。"
+  },
+  {
+    "POJ": "kha-tián",
+    "Hanji": "kha-tián",
+    "en": "Curtain.",
+    "cn": "窗簾。源自日語カーテン(kaaten)。"
+  },
+  {
+    "POJ": "kha-tá-lok-guh",
+    "Hanji": "kha-tá-lok-guh",
+    "en": "Catalog.",
+    "cn": "目錄。源自日語カタログ(katarogu)。"
+  },
+  {
+    "POJ": "khe-chiap-puh",
+    "Hanji": "khe-chiap-puh",
+    "en": "Ketchup.",
+    "cn": "番茄醬。源自日語ケチャップ(kechappu)。"
+  },
+  {
+    "POJ": "khi-mó͘-chih",
+    "Hanji": "khi-mó͘-chih",
+    "en": "Feeling.",
+    "cn": "情緒、奇檬子、心情。源自日語きもち(kimochi)，日語漢字為「氣持ち」。"
+  },
+  {
+    "POJ": "khit-teh",
+    "Hanji": "khit-teh",
+    "en": "Postage stamp.",
+    "cn": "郵票。源自日語きって(kitte)，日語漢字為「切手」。"
+  },
+  {
+    "POJ": "khiā-hang",
+    "Hanji": "khiā-hang",
+    "en": "Leggings.",
+    "cn": "綁腿。源自日語きゃはん(kyahan)，日語漢字為「脚絆」。"
+  },
+  {
+    "POJ": "khiŭ-khé",
+    "Hanji": "khiŭ-khé",
+    "en": "Rest.",
+    "cn": "休息、色情幽會、休憩。源自日語きゅうけい(kyuukei)，日語漢字為「休憩」。"
+  },
+  {
+    "POJ": "khok-puh",
+    "Hanji": "khok-puh",
+    "en": "Cup.",
+    "cn": "杯子。源自日語コップ(koppu)。"
+  },
+  {
+    "POJ": "kho͘-lé-lah",
+    "Hanji": "kho͘-lé-lah",
+    "en": "Cholera.",
+    "cn": "霍亂。源自日語コレラ(korera)。"
+  },
+  {
+    "POJ": "kho͘-mí-sióng",
+    "Hanji": "kho͘-mí-sióng",
+    "en": "Commission.",
+    "cn": "賄賂、回扣。源自日語コミッション(komisshon)。"
+  },
+  {
+    "POJ": "khu-lá-chih",
+    "Hanji": "khu-lá-chih",
+    "en": "Clutch.",
+    "cn": "離合器、變速器。源自日語クラッチ(kuratchi)。"
+  },
+  {
+    "POJ": "khu-lì-mù",
+    "Hanji": "khu-lì-mù",
+    "en": "Cream.",
+    "cn": "面霜、克林姆、奶油。源自日語クリーム(kuriimu)。"
+  },
+  {
+    "POJ": "khà-chiàng",
+    "Hanji": "khà-chiàng",
+    "en": "Mom.",
+    "cn": "母親。源自日語かあちゃん(kaachan)，日語漢字為「母ちゃん」。"
+  },
+  {
+    "POJ": "khà-sàng",
+    "Hanji": "khà-sàng",
+    "en": "Mother.",
+    "cn": "母親。源自日語かあさん(kaasan)，日語漢字為「母さん」。"
+  },
+  {
+    "POJ": "khí-lo͘h",
+    "Hanji": "khí-lo͘h",
+    "en": "Kilometer.",
+    "cn": "公里。源自日語キロ(kiro)。"
+  },
+  {
+    "POJ": "khòng-buh",
+    "Hanji": "khòng-buh",
+    "en": "Kombu (kelp).",
+    "cn": "海帶、昆布。源自日語こんぶ(kombu)，日語漢字為「昆布」。"
+  },
+  {
+    "POJ": "khò͘-tò͘",
+    "Hanji": "khò͘-tò͘",
+    "en": "Coat.",
+    "cn": "大衣。源自日語コート(ko͘to)。"
+  },
+  {
+    "POJ": "khăn-jió͘",
+    "Hanji": "khăn-jió͘",
+    "en": "To pay the bill.",
+    "cn": "付款、算帳、結帳。源自日語かんじょう(kanjo͘)，日語漢字為「勘定」。"
+  },
+  {
+    "POJ": "khăng-páng",
+    "Hanji": "khăng-páng",
+    "en": "Signboard.",
+    "cn": "看板、招牌。源自日語かんばん(kampan)，日語漢字為「看板」。"
+  },
+  {
+    "POJ": "khōng-ku-lí",
+    "Hanji": "khōng-ku-lí",
+    "en": "Concrete.",
+    "cn": "控固力、混凝土。源自日語コンクリート(konkuriito)。"
+  },
+  {
+    "POJ": "la-jí-o͘h",
+    "Hanji": "la-jí-o͘h",
+    "en": "Radio.",
+    "cn": "收音機。源自日語ラジオ(rajio)。"
+  },
+  {
+    "POJ": "la-kiat-to͘h",
+    "Hanji": "la-kiat-to͘h",
+    "en": "Racket.",
+    "cn": "球拍。源自日語ラケット(raketto)。"
+  },
+  {
+    "POJ": "la-mú-neh",
+    "Hanji": "la-mú-neh",
+    "en": "A type of soda.",
+    "cn": "彈珠汽水。源自日語ラムネ(ramune)。"
+  },
+  {
+    "POJ": "li-á-khah",
+    "Hanji": "li-á-khah",
+    "en": "A rear car (hand-pulled cart).",
+    "cn": "自行車後面的兩輪拖車、台車、臺車。源自日語リヤカー(riyakaa)。"
+  },
+  {
+    "POJ": "liăn-táng",
+    "Hanji": "liăn-táng",
+    "en": "Coal briquette.",
+    "cn": "煤球。源自日語れんたん(rentan)，日語漢字為「練炭」。"
+  },
+  {
+    "POJ": "lo͘-lài-bà",
+    "Hanji": "lo͘-lài-bà",
+    "en": "Screwdriver.",
+    "cn": "螺絲起子。源自日語ドライバー(doraibaa)。"
+  },
+  {
+    "POJ": "lài-tah",
+    "Hanji": "lài-tah",
+    "en": "Lighter.",
+    "cn": "打火機。源自日語ライター(raitaa)。"
+  },
+  {
+    "POJ": "lè-sìr",
+    "Hanji": "lè-sìr",
+    "en": "Lace.",
+    "cn": "蕾絲花邊。源自日語レース(reesu)。"
+  },
+  {
+    "POJ": "lê-bóng",
+    "Hanji": "lê-bóng",
+    "en": "Lemon.",
+    "cn": "檸檬。源自日語レモン(remon)。"
+  },
+  {
+    "POJ": "lìn-gò͘",
+    "Hanji": "lìn-gò͘",
+    "en": "Apple.",
+    "cn": "蘋果。源自日語りんご(rengo)，日語漢字為「林檎」。"
+  },
+  {
+    "POJ": "lò͘-suh",
+    "Hanji": "lò͘-suh",
+    "en": "Loin (meat).",
+    "cn": "里脊肉。源自日語ロース(ro͘su)。"
+  },
+  {
+    "POJ": "ló͘-lí-á",
+    "Hanji": "ló͘-lí-á",
+    "en": "Rubber slippers.",
+    "cn": "橡膠拖鞋。源自日語ぞうり(zo͘ri)，日語漢字為「草履」。"
+  },
+  {
+    "POJ": "lăi-jiò͘-bù",
+    "Hanji": "lăi-jiò͘-bù",
+    "en": "Alright.",
+    "cn": "安全、放心、沒問題。源自日語だいじょうぶ(daijo͘bu)，日語漢字為「大丈夫」。"
+  },
+  {
+    "POJ": "lăi-lìn-gù",
+    "Hanji": "lăi-lìn-gù",
+    "en": "Running shirt.",
+    "cn": "無袖背心。源自日語ランニング(rannengu)。"
+  },
+  {
+    "POJ": "lĭn-jín",
+    "Hanji": "lĭn-jín",
+    "en": "Carrot.",
+    "cn": "紅蘿蔔。源自日語にんじん(ninjin)，日語漢字為「人参」。"
+  },
+  {
+    "POJ": "ma-lá-lí-á",
+    "Hanji": "ma-lá-lí-á",
+    "en": "Malaria.",
+    "cn": "瘧疾。源自日語マラリヤ(mararia)。"
+  },
+  {
+    "POJ": "ma-lá-sóng",
+    "Hanji": "ma-lá-sóng",
+    "en": "Marathon.",
+    "cn": "馬拉松。源自日語マラソン(marason)。"
+  },
+  {
+    "POJ": "ma-sà-chì",
+    "Hanji": "ma-sà-chì",
+    "en": "Massage.",
+    "cn": "馬殺雞、按摩、色情按摩。源自日語マッサージ(massaaji)。"
+  },
+  {
+    "POJ": "me-lí-á",
+    "Hanji": "me-lí-á",
+    "en": "Plywood.",
+    "cn": "三夾板。源自日語ベニヤ(beniya)。"
+  },
+  {
+    "POJ": "me-lóng",
+    "Hanji": "me-lóng",
+    "en": "Melon.",
+    "cn": "香瓜。源自日語メロン(meron)。"
+  },
+  {
+    "POJ": "mi-sín",
+    "Hanji": "mi-sín",
+    "en": "Sewing machine.",
+    "cn": "縫紉機、裁縫車。源自日語ミシン(mishin)。"
+  },
+  {
+    "POJ": "mài-kù",
+    "Hanji": "mài-kù",
+    "en": "Microphone.",
+    "cn": "麥克風。源自日語マイク(maeku)。"
+  },
+  {
+    "POJ": "mè-sì",
+    "Hanji": "mè-sì",
+    "en": "Business card.",
+    "cn": "名片。源自日語めいし(meishi)，日語漢字為「名刺」。"
+  },
+  {
+    "POJ": "mí-so͘h",
+    "Hanji": "mí-so͘h",
+    "en": "Miso.",
+    "cn": "味噌。源自日語みそ(miso)，日語漢字為「味噌」。"
+  },
+  {
+    "POJ": "mò͘-tà",
+    "Hanji": "mò͘-tà",
+    "en": "Motor.",
+    "cn": "馬達。源自日語モーター(mo͘taa)。"
+  },
+  {
+    "POJ": "ne-kut-tái",
+    "Hanji": "ne-kut-tái",
+    "en": "Necktie.",
+    "cn": "領帶。源自日語ネクタイ(nekutai)。"
+  },
+  {
+    "POJ": "nè-chiàng",
+    "Hanji": "nè-chiàng",
+    "en": "Waitress.",
+    "cn": "女中、飯店或旅館的女服務員。源自日語ねえちゃん(neechan)，日語漢字為「姉ちゃん」。"
+  },
+  {
+    "POJ": "nó͘-lih",
+    "Hanji": "nó͘-lih",
+    "en": "Nori (seaweed).",
+    "cn": "海苔。源自日語のり(nori)，日語漢字為「海苔」。"
+  },
+  {
+    "POJ": "năi-lóng",
+    "Hanji": "năi-lóng",
+    "en": "Nylon.",
+    "cn": "耐龍、尼龍。源自日語ナイロン(nairon)。"
+  },
+  {
+    "POJ": "nŏ͘-sín",
+    "Hanji": "nŏ͘-sín",
+    "en": "Brain concussion.",
+    "cn": "腦筋不正常。源自日語のうしんとう(no͘sinto͘)，日語漢字為「腦震盪」。"
+  },
+  {
+    "POJ": "oa-khá-mó͘-to͘h",
+    "Hanji": "oa-khá-mó͘-to͘h",
+    "en": "A brand of health supplement.",
+    "cn": "一種保健藥品。源自日語わかもと(wakamoto)。"
+  },
+  {
+    "POJ": "oa-lù-chuh",
+    "Hanji": "oa-lù-chuh",
+    "en": "Waltz (dance).",
+    "cn": "華爾茲。源自日語ワルツ(waruchu)。"
+  },
+  {
+    "POJ": "oa-sá-bih",
+    "Hanji": "oa-sá-bih",
+    "en": "Wasabi.",
+    "cn": "芥末、山葵醬。源自日語わさび(wasabi)，日語漢字為「山葵」。"
+  },
+  {
+    "POJ": "oăi-siat-chuh",
+    "Hanji": "oăi-siat-chuh",
+    "en": "White shirt.",
+    "cn": "白襯衫。源自日語ワイシャツ(waishachu)。"
+  },
+  {
+    "POJ": "o͘-bá-sáng",
+    "Hanji": "o͘-bá-sáng",
+    "en": "Auntie.",
+    "cn": "對不特定年長女性的稱呼、歐巴桑。源自日語おばさん(obasan)。"
+  },
+  {
+    "POJ": "o͘-jí-sáng",
+    "Hanji": "o͘-jí-sáng",
+    "en": "Uncle.",
+    "cn": "歐吉桑、對不特定年長男性的稱呼。源自日語おじさん(ojisan)，日語漢字為「小父さん」。"
+  },
+  {
+    "POJ": "o͘-lián",
+    "Hanji": "o͘-lián",
+    "en": "Oden (a Japanese dish).",
+    "cn": "黑輪。源自日語おでん(oden)，日語漢字為「お田」。"
+  },
+  {
+    "POJ": "o͘-lín-gió͘",
+    "Hanji": "o͘-lín-gió͘",
+    "en": "Doll.",
+    "cn": "洋娃娃、人偶。源自日語おにんぎょう(onengyo͘)，日語漢字為「人形、お人形」。"
+  },
+  {
+    "POJ": "o͘-nè-sàng",
+    "Hanji": "o͘-nè-sàng",
+    "en": "Elder sister.",
+    "cn": "大姐。源自日語おねえさん(oneesan)，日語漢字為「お姉さん」。"
+  },
+  {
+    "POJ": "o͘-tó͘-bái",
+    "Hanji": "o͘-tó͘-bái",
+    "en": "Motorcycle.",
+    "cn": "摩托車、機車。源自日語オートバイ(o͘tobai)。"
+  },
+  {
+    "POJ": "pha-chìn-kò͘",
+    "Hanji": "pha-chìn-kò͘",
+    "en": "Pachinko.",
+    "cn": "柏青哥。源自日語パチンコ(pachinko)。"
+  },
+  {
+    "POJ": "phi-á-no͘h",
+    "Hanji": "phi-á-no͘h",
+    "en": "Piano.",
+    "cn": "鋼琴。源自日語ピアノ(piano)。"
+  },
+  {
+    "POJ": "phiàn-chih",
+    "Hanji": "phiàn-chih",
+    "en": "Pliers.",
+    "cn": "鐵鉗。源自日語ペンチ(penchi)。"
+  },
+  {
+    "POJ": "phu-ló͘-phé-lá",
+    "Hanji": "phu-ló͘-phé-lá",
+    "en": "Propeller.",
+    "cn": "螺旋槳。源自日語プロペラ(puropera)。"
+  },
+  {
+    "POJ": "phàng-kù",
+    "Hanji": "phàng-kù",
+    "en": "Puncture.",
+    "cn": "爆胎。源自日語パンク(panku)。"
+  },
+  {
+    "POJ": "pháng",
+    "Hanji": "pháng",
+    "en": "Bread.",
+    "cn": "麵包。源自日語パン(pan)。"
+  },
+  {
+    "POJ": "phòng-phù",
+    "Hanji": "phòng-phù",
+    "en": "Pump.",
+    "cn": "幫浦、手動抽水機。源自日語ポンプ(pompu)。"
+  },
+  {
+    "POJ": "phă-siàn-tò͘",
+    "Hanji": "phă-siàn-tò͘",
+    "en": "Percent.",
+    "cn": "百分率、百分比。源自日語パーセント(paasento)。"
+  },
+  {
+    "POJ": "phĭn-phóng",
+    "Hanji": "phĭn-phóng",
+    "en": "Ping-pong.",
+    "cn": "桌球、乒乓球。源自日語ピンポン(pinpon)。"
+  },
+  {
+    "POJ": "pu-lù-sù",
+    "Hanji": "pu-lù-sù",
+    "en": "Blues (music).",
+    "cn": "布魯司。源自日語ブルース(buruusu)。"
+  },
+  {
+    "POJ": "sa-khá-lí-bah",
+    "Hanji": "sa-khá-lí-bah",
+    "en": "A bustling place.",
+    "cn": "鬧市、沙卡哩巴。源自日語さかりば(sakariba)，日語漢字為「盛リ場」。"
+  },
+  {
+    "POJ": "sa-khú-lah",
+    "Hanji": "sa-khú-lah",
+    "en": "Cherry blossom.",
+    "cn": "櫻花。源自日語さくら(sakura)，日語漢字為「櫻」。"
+  },
+  {
+    "POJ": "sa-sí-mih",
+    "Hanji": "sa-sí-mih",
+    "en": "Sashimi.",
+    "cn": "生魚片。源自日語さしみ(sashimi)，日語漢字為「刺身」。"
+  },
+  {
+    "POJ": "sak-khuh",
+    "Hanji": "sak-khuh",
+    "en": "Condom.",
+    "cn": "保險套。源自日語サック(sakku)。"
+  },
+  {
+    "POJ": "se-bí-lo͘h",
+    "Hanji": "se-bí-lo͘h",
+    "en": "A suit (Western-style).",
+    "cn": "西裝。源自日語せびろ(sebiro)，日語漢字為「背広」。"
+  },
+  {
+    "POJ": "si-á-geh",
+    "Hanji": "si-á-geh",
+    "en": "Finishing touch.",
+    "cn": "潤飾、修飾。源自日語しあげ(shiage)，日語漢字為「仕上げ」。"
+  },
+  {
+    "POJ": "sia-sín",
+    "Hanji": "sia-sín",
+    "en": "Photograph.",
+    "cn": "照片。源自日語しゃしん(shashin)，日語漢字為「寫真」。"
+  },
+  {
+    "POJ": "siat-chuh",
+    "Hanji": "siat-chuh",
+    "en": "Shirt.",
+    "cn": "襯衫。源自日語シャツ(shachu)。"
+  },
+  {
+    "POJ": "siat-to͘h",
+    "Hanji": "siat-to͘h",
+    "en": "To set (hair).",
+    "cn": "做頭髮、造型。源自日語セット(setto)。"
+  },
+  {
+    "POJ": "sio̍k-pháng",
+    "Hanji": "sio̍k-pháng",
+    "en": "Toast.",
+    "cn": "吐司、白麵包。源自日語しょくパン(shokupan)，日語漢字為「食パン」。"
+  },
+  {
+    "POJ": "sir-bé-lí-lái",
+    "Hanji": "sir-bé-lí-lái",
+    "en": "Slide (playground).",
+    "cn": "溜滑梯。源自日語すベりだい(suberidai)，日語漢字為「滑り台」。"
+  },
+  {
+    "POJ": "sir-tián-lè-sù",
+    "Hanji": "sir-tián-lè-sù",
+    "en": "Stainless steel.",
+    "cn": "不鏽鋼。源自日語ステンレス(sutenresu)。"
+  },
+  {
+    "POJ": "si̍p-pán-ná",
+    "Hanji": "si̍p-pán-ná",
+    "en": "Spanner.",
+    "cn": "板手。源自日語スパナ(supana)。"
+  },
+  {
+    "POJ": "su-khù-tà",
+    "Hanji": "su-khù-tà",
+    "en": "Scooter.",
+    "cn": "速可達、50cc輕型機車。源自日語スクーター(sukuutaa)。"
+  },
+  {
+    "POJ": "su-lit-pah",
+    "Hanji": "su-lit-pah",
+    "en": "Slippers.",
+    "cn": "拖鞋。源自日語スリッパ(surippa)。"
+  },
+  {
+    "POJ": "su-tó-lip-puh",
+    "Hanji": "su-tó-lip-puh",
+    "en": "Striptease.",
+    "cn": "脫衣舞。源自日語ストリップ(sutorippu)。"
+  },
+  {
+    "POJ": "sài-sù",
+    "Hanji": "sài-sù",
+    "en": "Size.",
+    "cn": "尺寸。源自日語サイズ(saizu)。"
+  },
+  {
+    "POJ": "sàn-bah",
+    "Hanji": "sàn-bah",
+    "en": "Pacific saury (fish).",
+    "cn": "秋刀魚。源自日語さんま(sanma)，日語漢字為「秋刀魚」。"
+  },
+  {
+    "POJ": "sè-hù",
+    "Hanji": "sè-hù",
+    "en": "Safe (in baseball).",
+    "cn": "安全。源自日語セーフ(seehu)。"
+  },
+  {
+    "POJ": "sò͘-sù",
+    "Hanji": "sò͘-sù",
+    "en": "Sauce.",
+    "cn": "烏醋、醬料。源自日語ソース(so͘su)。"
+  },
+  {
+    "POJ": "sú-sih",
+    "Hanji": "sú-sih",
+    "en": "Sushi.",
+    "cn": "壽司。源自日語すし(sushi)，日語漢字為「寿司」。"
+  },
+  {
+    "POJ": "să-bì-sù",
+    "Hanji": "să-bì-sù",
+    "en": "Service.",
+    "cn": "優惠、額外優待。源自日語サービス(saabisu)。"
+  },
+  {
+    "POJ": "săm-phú-luh",
+    "Hanji": "săm-phú-luh",
+    "en": "Sample.",
+    "cn": "樣本、樣品。源自日語サンプル(sampuru)。"
+  },
+  {
+    "POJ": "tha-khú-sih",
+    "Hanji": "tha-khú-sih",
+    "en": "Taxi.",
+    "cn": "計程車。源自日語タクシー(takushii)。"
+  },
+  {
+    "POJ": "tha-khú-áng",
+    "Hanji": "tha-khú-áng",
+    "en": "Pickled radish.",
+    "cn": "黃蘿蔔、黃色的醃漬蘿蔔。源自日語たくあん(takoan)，日語漢字為「沢庵」。"
+  },
+  {
+    "POJ": "tha-thá-mih",
+    "Hanji": "tha-thá-mih",
+    "en": "Tatami mat.",
+    "cn": "疊蓆、塌塌米。源自日語たたみ(tatami)，日語漢字為「疊」。"
+  },
+  {
+    "POJ": "thak-kho͘h",
+    "Hanji": "thak-kho͘h",
+    "en": "Octopus.",
+    "cn": "章魚。源自日語たこ(tako)，日語漢字為「蛸、章魚」。"
+  },
+  {
+    "POJ": "that-bí",
+    "Hanji": "that-bí",
+    "en": "A type of work shoe.",
+    "cn": "一種工作鞋。源自日語たび(tabi)，日語漢字為「足袋」。"
+  },
+  {
+    "POJ": "the-ní-suh",
+    "Hanji": "the-ní-suh",
+    "en": "Tennis.",
+    "cn": "網球。源自日語テニス(tenisu)。"
+  },
+  {
+    "POJ": "thiăn-pú-lah",
+    "Hanji": "thiăn-pú-lah",
+    "en": "Tempura.",
+    "cn": "甜不辣。源自日語テンプラ(tempura)，日語漢字為「天麩羅」。"
+  },
+  {
+    "POJ": "tho͘-lá-khuh",
+    "Hanji": "tho͘-lá-khuh",
+    "en": "Truck.",
+    "cn": "卡車。源自日語トラック(torakku)。"
+  },
+  {
+    "POJ": "tho͘-má-to͘h",
+    "Hanji": "tho͘-má-to͘h",
+    "en": "Tomato.",
+    "cn": "番茄、西紅柿。源自日語トマト(tomato)。"
+  },
+  {
+    "POJ": "thài-ià",
+    "Hanji": "thài-ià",
+    "en": "Tire.",
+    "cn": "輪胎。源自日語タイヤ(taiya)。"
+  },
+  {
+    "POJ": "thài-lù",
+    "Hanji": "thài-lù",
+    "en": "Tile.",
+    "cn": "瓷磚。源自日語タイル(tairu)。"
+  },
+  {
+    "POJ": "thàn-gò͘",
+    "Hanji": "thàn-gò͘",
+    "en": "Tango (dance).",
+    "cn": "探戈。源自日語タンゴ(tango)。"
+  },
+  {
+    "POJ": "thàng-sù",
+    "Hanji": "thàng-sù",
+    "en": "Wardrobe.",
+    "cn": "衣櫥。源自日語たんす(tansu)，日語漢字為「簞笥」。"
+  },
+  {
+    "POJ": "tò͘-sàng",
+    "Hanji": "tò͘-sàng",
+    "en": "Father.",
+    "cn": "多桑、父親。源自日語とうさん(to͘san)，日語漢字為「父さん」。"
+  },
+  {
+    "POJ": "u-lóng",
+    "Hanji": "u-lóng",
+    "en": "Udon noodles.",
+    "cn": "烏龍麵。源自日語うどん(udon)，日語漢字為「饂飩」。"
+  },
+  {
+    "POJ": "àn-nāi",
+    "Hanji": "àn-nāi",
+    "en": "To guide.",
+    "cn": "招待、引導。源自日語あんない(annai)，日語漢字為「案內」。"
+  },
+  {
+    "POJ": "àu-chuh",
+    "Hanji": "àu-chuh",
+    "en": "Out (in baseball).",
+    "cn": "出局。源自日語アウト(auto)。"
+  },
+  {
+    "POJ": "á-geh",
+    "Hanji": "á-geh",
+    "en": "Fried tofu.",
+    "cn": "阿給、油豆腐。源自日語あげ(age)，日語漢字為「揚げ」。"
+  },
+  {
+    "POJ": "ò͘-bà",
+    "Hanji": "ò͘-bà",
+    "en": "Overcoat.",
+    "cn": "長大衣、長外套。源自日語オーバーコート"
+  },
+  {
+    "POJ": "ùn-chiàng",
+    "Hanji": "ùn-chiàng",
+    "en": "Driver.",
+    "cn": "司機、運將。源自日語うんちゃん(unchan)，日語漢字為「運ちゃん」。"
+  },
+  {
+    "POJ": "ăi-sat-chuh",
+    "Hanji": "ăi-sat-chuh",
+    "en": "Greeting.",
+    "cn": "打招呼、問候。源自日語あいさつ(aisachu)，日語漢字為「挨拶」。"
+  },
+  {
+    "POJ": "ăi-sīr-khu-lìn-mù",
+    "Hanji": "ăi-sīr-khu-lìn-mù",
+    "en": "Ice cream.",
+    "cn": "冰淇淋。源自日語アイスクリーム(aisukuriimu)。"
+  },
+  {
+    "POJ": "chi̍t-ē",
+    "Hanji": "一下",
+    "en": "For a moment.",
+    "cn": "動詞後綴。表示極短的時間或是短時間的動作。"
+  },
+  {
+    "POJ": "chi̍t-sì-lâng",
+    "Hanji": "一世人",
+    "en": "A lifetime.",
+    "cn": "一輩子。"
+  },
+  {
+    "POJ": "it--lâi",
+    "Hanji": "一來",
+    "en": "Firstly.",
+    "cn": "首先。"
+  },
+  {
+    "POJ": "it-to-lióng-toān",
+    "Hanji": "一刀兩斷",
+    "en": "To make a clean break.",
+    "cn": "一刀斬成兩段，比喻斷絕關係。"
+  },
+  {
+    "POJ": "chi̍t-pòaⁿ",
+    "Hanji": "一半",
+    "en": "One half.",
+    "cn": "二分之一。"
+  },
+  {
+    "POJ": "chi̍t-pòaⁿ-ê-á",
+    "Hanji": "一半个仔",
+    "en": "A few.",
+    "cn": "幾個、一兩個、少數幾個。"
+  },
+  {
+    "POJ": "chi̍t-pòaⁿ-ji̍t-á/chi̍t-pòaⁿ-li̍t-á",
+    "Hanji": "一半日仔",
+    "en": "A day or two.",
+    "cn": "一兩天。"
+  },
+  {
+    "POJ": "chi̍t-sì-kè/chi̍t-sì-kòe",
+    "Hanji": "一四界",
+    "en": "Everywhere.",
+    "cn": "遍地、到處。"
+  },
+  {
+    "POJ": "chi̍t-pû-sái",
+    "Hanji": "一垺屎",
+    "en": "A pile of feces.",
+    "cn": "一坨屎、一坨大便。"
+  },
+  {
+    "POJ": "it-tēng",
+    "Hanji": "一定",
+    "en": "Certainly.",
+    "cn": "必定、必然。"
+  },
+  {
+    "POJ": "chi̍t-ke-hóe-á/chi̍t-ke-hé-á",
+    "Hanji": "一家伙仔",
+    "en": "The whole family.",
+    "cn": "一家子。全家人、同一家人。"
+  },
+  {
+    "POJ": "--chi̍t-kóa",
+    "Hanji": "一寡",
+    "en": "Some.",
+    "cn": "一些、少許，也可以單說「寡」(--kóa)。"
+  },
+  {
+    "POJ": "chi̍t-kóa-á",
+    "Hanji": "一寡仔",
+    "en": "A tiny bit.",
+    "cn": "一點點、一些些。"
+  },
+  {
+    "POJ": "chi̍t tùi-sî",
+    "Hanji": "一對時",
+    "en": "One day and night (24 hours).",
+    "cn": "一晝夜、二十四小時。"
+  },
+  {
+    "POJ": "chi̍t-sut-á",
+    "Hanji": "一屑仔",
+    "en": "A tiny bit.",
+    "cn": "一點點。形容體積很小或數量很少。"
+  },
+  {
+    "POJ": "it-lu̍t",
+    "Hanji": "一律",
+    "en": "All the same.",
+    "cn": "全部都一樣。"
+  },
+  {
+    "POJ": "chi̍t-ji̍t-kàu-àm/chi̍t-li̍t-kàu-àm",
+    "Hanji": "一日到暗",
+    "en": "All day long.",
+    "cn": "一天到晚、從早到晚，整天。"
+  },
+  {
+    "POJ": "it-tàn",
+    "Hanji": "一旦",
+    "en": "If one day.",
+    "cn": "假使有一天。"
+  },
+  {
+    "POJ": "chi̍t goe̍h-ji̍t/chi̍t ge̍h-li̍t",
+    "Hanji": "一月日",
+    "en": "One month.",
+    "cn": "一個月。"
+  },
+  {
+    "POJ": "it-khài",
+    "Hanji": "一概",
+    "en": "Entirely.",
+    "cn": "一律、完全。"
+  },
+  {
+    "POJ": "it-seng",
+    "Hanji": "一生",
+    "en": "A lifetime.",
+    "cn": "畢生、一輩子。"
+  },
+  {
+    "POJ": "chi̍t kah-chí",
+    "Hanji": "一甲子",
+    "en": "Sixty years.",
+    "cn": "六十年。由十二天干數和十地支數配合而形成的傳統計算年歲的方法，以六十年為一個輪迴。"
+  },
+  {
+    "POJ": "chi̍t-pah khòng-it",
+    "Hanji": "一百空一",
+    "en": "One hundred and one.",
+    "cn": "一百零一。"
+  },
+  {
+    "POJ": "chi̍t-ba̍k-nih-á",
+    "Hanji": "一目𥍉仔",
+    "en": "In an instant.",
+    "cn": "一瞬間、一眨眼。指很短暫的時間。"
+  },
+  {
+    "POJ": "it-ti̍t",
+    "Hanji": "一直",
+    "en": "Straight ahead.",
+    "cn": "朝同一個方向直行而去。"
+  },
+  {
+    "POJ": "chi̍t-khùn-á",
+    "Hanji": "一睏仔",
+    "en": "A little while.",
+    "cn": "一陣子、一會兒。"
+  },
+  {
+    "POJ": "chi̍t-ha̍k-sái",
+    "Hanji": "一礐屎",
+    "en": "A cesspool of feces.",
+    "cn": "一糞坑的大便。"
+  },
+  {
+    "POJ": "it-lia̍p-it",
+    "Hanji": "一粒一",
+    "en": "Top-notch.",
+    "cn": "最好的、第一流的。"
+  },
+  {
+    "POJ": "it-tì",
+    "Hanji": "一致",
+    "en": "Identical.",
+    "cn": "趨向相同。"
+  },
+  {
+    "POJ": "it-poaⁿ",
+    "Hanji": "一般",
+    "en": "General.",
+    "cn": "普遍性的、平常的。"
+  },
+  {
+    "POJ": "chi̍t-tak-kú-á",
+    "Hanji": "一觸久仔",
+    "en": "A moment.",
+    "cn": "一會兒、一下子。"
+  },
+  {
+    "POJ": "chi̍t-lō͘",
+    "Hanji": "一路",
+    "en": "Along the way.",
+    "cn": "沿途、路上。"
+  },
+  {
+    "POJ": "chi̍t-tiap-á-kú",
+    "Hanji": "一霎仔久",
+    "en": "In a flash.",
+    "cn": "一瞬間、一下子。形容很短的時間。"
+  },
+  {
+    "POJ": "chi̍t-bīn",
+    "Hanji": "一面",
+    "en": "One-sided.",
+    "cn": "片面的，單方面的。"
+  },
+  {
+    "POJ": "chi̍t-tiám-á",
+    "Hanji": "一點仔",
+    "en": "A tiny bit.",
+    "cn": "一點兒、一 點點。形容數量極少。"
+  },
+  {
+    "POJ": "chhit-sia̍h",
+    "Hanji": "七夕",
+    "en": "The 7th day of the 7th lunar month.",
+    "cn": "農曆七月初七夜晚。相傳天上的牛郎、織女會在當晚相會。對臺灣人來說，七月初七是「七娘媽生」(Chhit-niû-má-seⁿ)，臺南還有「做十六歲」(chò cha̍p-la̍k hòe)的習俗。"
+  },
+  {
+    "POJ": "Chhit-niû-má",
+    "Hanji": "七娘媽",
+    "en": "A goddess who protects children.",
+    "cn": "註生娘娘或是織女。女性神明，生日為農曆七月初七，當天會用油飯、花朵、胭脂水粉祭祀。"
+  },
+  {
+    "POJ": "Chhit-niû-má-seⁿ/Chhit-niû-má-siⁿ",
+    "Hanji": "七娘媽生",
+    "en": "The 7th day of the 7th lunar month (goddess's birthday).",
+    "cn": "農曆七月初七。七星娘娘誕辰。「七娘媽」就是七星娘娘，傳說是孩童的保護神。以前農業社會醫藥不發達，孩子常夭折或生病，所以人們會祈求「七娘媽」保佑小孩平安長大，因此等到孩童十六歲(舊時十六歲即成年)七月初七當天，便舉行祭祀以酬謝「七娘媽」。"
+  },
+  {
+    "POJ": "chhit-khóng",
+    "Hanji": "七孔",
+    "en": "The seven facial orifices.",
+    "cn": "七竅。指人臉部的七個孔穴，包括兩眼、兩耳、兩鼻孔和嘴巴。"
+  },
+  {
+    "POJ": "chhit-jī-á/chhit-lī-á",
+    "Hanji": "七字仔",
+    "en": "A seven-character verse.",
+    "cn": "七字調。歌仔戲使用率非常高的一種調，七個字為一句，每段有四句。"
+  },
+  {
+    "POJ": "chhit-chá-peh-chá/chhit-chá-poeh-chá",
+    "Hanji": "七早八早",
+    "en": "Very early in the morning.",
+    "cn": "一大清早。"
+  },
+  {
+    "POJ": "chhit-chheⁿ/chhit-chhiⁿ",
+    "Hanji": "七星",
+    "en": "The Big Dipper.",
+    "cn": "北斗星、北斗七星。星座名。由七顆星組合、排列在北方天空的星象，形狀像斗杓。是中國數術、宗教儀式中重要的星象，在西方星象學上屬於大熊星座。"
+  },
+  {
+    "POJ": "Chhit-iâ",
+    "Hanji": "七爺",
+    "en": "Seventh Lord (a deity).",
+    "cn": "神明的名稱。名字為謝必安，身材高大，和八爺范無救為好友，因為守信守義而死，死後被封入神界，是城隍爺出巡時的重要配祀神明。"
+  },
+  {
+    "POJ": "chhit-lāu-peh-lāu/chhit-lāu-poeh-lāu",
+    "Hanji": "七老八老",
+    "en": "Very old.",
+    "cn": "七老八十。形容年紀很老。"
+  },
+  {
+    "POJ": "tiūⁿ-lâng",
+    "Hanji": "丈人",
+    "en": "Father-in-law.",
+    "cn": "岳父。稱謂。男子稱妻子的父親。"
+  },
+  {
+    "POJ": "tiūⁿ-lâng-kong",
+    "Hanji": "丈人公",
+    "en": "Wife's grandfather.",
+    "cn": "稱謂。男性稱呼妻子的爺爺或外公。"
+  },
+  {
+    "POJ": "tiūⁿ-lâng-má",
+    "Hanji": "丈人媽",
+    "en": "Wife's grandmother.",
+    "cn": "稱謂。男性稱呼妻子的奶奶或外婆。"
+  },
+  {
+    "POJ": "tiūⁿ-lâng-pâ",
+    "Hanji": "丈人爸",
+    "en": "Father-in-law.",
+    "cn": "岳父。稱謂，男性稱呼妻子的父親。"
+  },
+  {
+    "POJ": "tiūⁿ-kong",
+    "Hanji": "丈公",
+    "en": "Husband of a grandaunt.",
+    "cn": "姑公、姨公。稱謂。稱呼姑婆或姨婆的先生。"
+  },
+  {
+    "POJ": "tiūⁿ-ḿ",
+    "Hanji": "丈姆",
+    "en": "Mother-in-law.",
+    "cn": "丈母娘、岳母。稱謂。男子稱妻子的母親。"
+  },
+  {
+    "POJ": "tiūⁿ-ḿ-pô",
+    "Hanji": "丈姆婆",
+    "en": "Mother-in-law.",
+    "cn": "丈母娘、岳母。稱謂。男子稱妻子的母親。"
+  },
+  {
+    "POJ": "sam-chhit-á",
+    "Hanji": "三七仔",
+    "en": "Pimp.",
+    "cn": "皮條客。為男女雙方媒介色情，拉攏不正當關係的牽合者。因為與妓女三七分帳，才有此稱呼。"
+  },
+  {
+    "POJ": "sam-put-gō͘-sî",
+    "Hanji": "三不五時",
+    "en": "Often.",
+    "cn": "不時、經常。"
+  },
+  {
+    "POJ": "sam-pat",
+    "Hanji": "三八",
+    "en": "Silly.",
+    "cn": "傻氣、不正經。形容女性有點傻氣、粗野或言行舉止違悖常理、不正經。"
+  },
+  {
+    "POJ": "sam-pat-khùi",
+    "Hanji": "三八氣",
+    "en": "Silliness.",
+    "cn": "傻氣、不正經。形容女性有點傻氣、粗野或言行舉止違悖常理、不正經。"
+  },
+  {
+    "POJ": "Sam-thài-chú",
+    "Hanji": "三太子",
+    "en": "The Third Prince (a deity).",
+    "cn": "即李哪吒，是封神榜中的人物之一。民間信仰中又稱為「三太子爺」、「中壇元帥」等，道教將其奉為五營神兵神將的統帥之一，道士施法時皆會請哪吒相助。"
+  },
+  {
+    "POJ": "sam-chân",
+    "Hanji": "三層",
+    "en": "Pork belly.",
+    "cn": "五花肉。指肥瘦夾雜的豬肉。"
+  },
+  {
+    "POJ": "sam-chân-bah",
+    "Hanji": "三層肉",
+    "en": "Pork belly.",
+    "cn": "五花肉。指肥瘦夾雜的豬肉。"
+  },
+  {
+    "POJ": "Sam-san-kok-ông",
+    "Hanji": "三山國王",
+    "en": "Three Mountain Kings (deities).",
+    "cn": "在臺灣各地都有祭祀的廟宇，香火鼎盛，是客家族群和潮州人的守護神。"
+  },
+  {
+    "POJ": "sam-sim-lióng-ì",
+    "Hanji": "三心兩意",
+    "en": "Indecisive.",
+    "cn": "形容猶豫不決，意志不堅。"
+  },
+  {
+    "POJ": "sàm-su",
+    "Hanji": "三思",
+    "en": "To think thrice.",
+    "cn": "謹慎、仔細的考慮。"
+  },
+  {
+    "POJ": "sam-bûn-hî/sam-bûn-hû",
+    "Hanji": "三文魚",
+    "en": "Salmon.",
+    "cn": "指鮭魚。過去常用來製成罐頭。借自英語salmon。"
+  },
+  {
+    "POJ": "saⁿ-keⁿ/saⁿ-kiⁿ",
+    "Hanji": "三更",
+    "en": "The third watch of the night (11 PM - 1 AM).",
+    "cn": "子時、中夜。指夜間十一時至隔天凌晨一時。"
+  },
+  {
+    "POJ": "saⁿ-keⁿ-pòaⁿ-mê/saⁿ-kiⁿ-pòaⁿ-mî",
+    "Hanji": "三更半暝",
+    "en": "In the middle of the night.",
+    "cn": "三更半夜；深夜。"
+  },
+  {
+    "POJ": "sam-seng",
+    "Hanji": "三牲",
+    "en": "Three kinds of sacrificial animals.",
+    "cn": "本指牛、羊、豬等三種祭品。今則多指雞、魚、豬等三種祭品。"
+  },
+  {
+    "POJ": "Sam-kài-kong",
+    "Hanji": "三界公",
+    "en": "The Three Great Emperor-Officials (deities).",
+    "cn": "三官大帝、三界爺。道教中地位僅次於玉皇大帝的天、地、水三官，分別掌管賜福、赦罪、解厄。"
+  },
+  {
+    "POJ": "sam-kài-niû-á",
+    "Hanji": "三界娘仔",
+    "en": "A type of small fish.",
+    "cn": "將魚、食蚊魚。魚名。是臺灣瀕臨絕種魚類之一，類似大肚魚，大多生長在清水溝及稻田內，可以食用。"
+  },
+  {
+    "POJ": "sam-hiân",
+    "Hanji": "三絃",
+    "en": "A three-stringed musical instrument.",
+    "cn": "樂器名。有三根絃的彈撥樂器，音色非常清脆，分為大三絃和小三絃，構造都相同，是說唱音樂和各種地方戲曲中的重要樂器。"
+  },
+  {
+    "POJ": "sam-sòaⁿ-lō͘",
+    "Hanji": "三線路",
+    "en": "A three-lane road.",
+    "cn": "日治時期將臺北府城拆除，興建由安全島分隔成3個分隔道的道路，約如今日之中山南路、愛國西路、中華路、忠孝西路。也指由樹木安全島分隔成的三線大道。"
+  },
+  {
+    "POJ": "saⁿ-ki-chhiú",
+    "Hanji": "三肢手",
+    "en": "Pickpocket.",
+    "cn": "扒手、三隻手。專門在公共場所偷取人家財物的小偷。"
+  },
+  {
+    "POJ": "saⁿ-kak",
+    "Hanji": "三角",
+    "en": "Triangle.",
+    "cn": "三角形。"
+  },
+  {
+    "POJ": "saⁿ-kak-thang",
+    "Hanji": "三角窗",
+    "en": "A corner house.",
+    "cn": "位於路口轉角處的房子。"
+  },
+  {
+    "POJ": "saⁿ-kak-khò͘",
+    "Hanji": "三角褲",
+    "en": "Briefs (underwear).",
+    "cn": "一種三角樣式的貼身內褲。"
+  },
+  {
+    "POJ": "saⁿ-kha-niau",
+    "Hanji": "三跤貓",
+    "en": "A jack of all trades, master of none.",
+    "cn": "三腳貓。形容技藝不精、不中用的人。"
+  },
+  {
+    "POJ": "saⁿ-kha-bé",
+    "Hanji": "三跤馬",
+    "en": "Tripod.",
+    "cn": "三腳架、三角架。用來安放、架設照相機及測量儀器的器具。有三個支柱的架子。"
+  },
+  {
+    "POJ": "saⁿ-lián-chhia",
+    "Hanji": "三輪車",
+    "en": "Tricycle.",
+    "cn": "車子的一種，前為一輪，後為兩輪的車子，可用來作交通工具，或是小孩的遊戲車。"
+  },
+  {
+    "POJ": "saⁿ-tn̂g-nn̄g-té",
+    "Hanji": "三長兩短",
+    "en": "Unexpected misfortune (often death).",
+    "cn": "指意外不測、變故，多指死亡。"
+  },
+  {
+    "POJ": "saⁿ-tû-sì-khàu",
+    "Hanji": "三除四扣",
+    "en": "With many deductions.",
+    "cn": "東扣西扣。指扣除的項目很多。"
+  },
+  {
+    "POJ": "saⁿ tǹg",
+    "Hanji": "三頓",
+    "en": "Three meals.",
+    "cn": "三餐。"
+  },
+  {
+    "POJ": "siōng-kú",
+    "Hanji": "上久",
+    "en": "The longest.",
+    "cn": "最久。"
+  },
+  {
+    "POJ": "chiūⁿ-jīm/chiūⁿ-līm",
+    "Hanji": "上任",
+    "en": "To take office.",
+    "cn": "就職。擔任職務。"
+  },
+  {
+    "POJ": "Siōng-goân",
+    "Hanji": "上元",
+    "en": "The Lantern Festival.",
+    "cn": "元宵節、上元節。我國傳統民俗節日之一。農曆正月十五日為天官大帝誕辰，清晨會祭拜三界公。"
+  },
+  {
+    "POJ": "Siōng-goân-mê/Siōng-goân-mî",
+    "Hanji": "上元暝",
+    "en": "The Lantern Festival night.",
+    "cn": "元宵節、上元節。我國傳統民俗節日之一。農曆正月十五日為天官大帝誕辰，清晨會祭拜三界公。"
+  },
+  {
+    "POJ": "siōng-ke",
+    "Hanji": "上加",
+    "en": "At most.",
+    "cn": "最多、頂多。"
+  },
+  {
+    "POJ": "chiūⁿ-pak",
+    "Hanji": "上北",
+    "en": "To go north.",
+    "cn": "北上。臺灣地理的觀念上，以北為上，南為下，所以向北出發即是「上北」。"
+  },
+  {
+    "POJ": "siōng-ngó͘",
+    "Hanji": "上午",
+    "en": "Morning.",
+    "cn": "清晨到中午之間。"
+  },
+  {
+    "POJ": "chiūⁿ-siap-bē-liap/chiūⁿ-siap-bōe-liap",
+    "Hanji": "上卌袂攝",
+    "en": "A saying about middle-age decline.",
+    "cn": "卌為四十的意思，上卌表示人到中年的意思。這句話表示人到中年萬事休，生理機能走下坡，心理也逐漸失去青年時期意氣風發的理想。"
+  },
+  {
+    "POJ": "siōng-thian",
+    "Hanji": "上天",
+    "en": "Heaven.",
+    "cn": "上蒼。對具有無窮力量的天或是天上神明的總稱。"
+  },
+  {
+    "POJ": "siōng hó",
+    "Hanji": "上好",
+    "en": "The best.",
+    "cn": "最好、最佳的表現。"
+  },
+  {
+    "POJ": "siāng-chhe-kong",
+    "Hanji": "上尺工",
+    "en": "Musical notes in the Gongche notation.",
+    "cn": "標示在工尺譜上的音階名。「上」表示首調唱名法中的Do，「尺」表示首調唱名法中的Re，「工」表示首調唱名法中的Mi。"
+  },
+  {
+    "POJ": "chiūⁿ-soaⁿ",
+    "Hanji": "上山",
+    "en": "To go up a mountain.",
+    "cn": "登山、爬山。"
+  },
+  {
+    "POJ": "chiūⁿ-kiā",
+    "Hanji": "上崎",
+    "en": "To go uphill.",
+    "cn": "上坡。"
+  },
+  {
+    "POJ": "chiūⁿ-chhī",
+    "Hanji": "上市",
+    "en": "To be listed on the market.",
+    "cn": "物品、股票等開始在市場上發售或買賣。"
+  },
+  {
+    "POJ": "Siōng-tè",
+    "Hanji": "上帝",
+    "en": "God.",
+    "cn": "傳說中創造萬物的神祇。"
+  },
+  {
+    "POJ": "Siōng-tè-kong",
+    "Hanji": "上帝公",
+    "en": "A supreme deity (Xuantian Shangdi).",
+    "cn": "玄天上帝、北極玄天上帝。又稱玄武文帝，腳踏龜蛇，右手執劍，左手印訣，民間俗傳玄天上帝生前以殺豬、販賣豬肉維生，後來放下屠刀，立地成佛。"
+  },
+  {
+    "POJ": "chiūⁿ-chhiú",
+    "Hanji": "上手",
+    "en": "To get the hang of it.",
+    "cn": "對技術或工作已掌握熟練，駕馭自如。"
+  },
+  {
+    "POJ": "chiūⁿ-toh",
+    "Hanji": "上桌",
+    "en": "To be seated at a banquet.",
+    "cn": "指客人赴宴就席。"
+  },
+  {
+    "POJ": "chhiūⁿ-phú",
+    "Hanji": "上殕",
+    "en": "To get moldy.",
+    "cn": "發霉。"
+  },
+  {
+    "POJ": "chhiūⁿ-chúi",
+    "Hanji": "上水",
+    "en": "To draw water from a well.",
+    "cn": "從水井裡取水上來。"
+  },
+  {
+    "POJ": "siōng chē/siōng chōe",
+    "Hanji": "上濟",
+    "en": "The most.",
+    "cn": "最多。指數量上的多寡。"
+  },
+  {
+    "POJ": "chiūⁿ-ba̍k",
+    "Hanji": "上目",
+    "en": "To look up to.",
+    "cn": "瞧得起；看得上眼。"
+  },
+  {
+    "POJ": "siōng-téng",
+    "Hanji": "上等",
+    "en": "Top grade.",
+    "cn": "最高等級或最優異的品等。"
+  },
+  {
+    "POJ": "siōng kín",
+    "Hanji": "上緊",
+    "en": "The fastest.",
+    "cn": "最快。"
+  },
+  {
+    "POJ": "sióng-siaⁿ",
+    "Hanji": "上聲",
+    "en": "The rising tone (in Chinese phonology).",
+    "cn": "漢語的調類之一。在現代國音音系中為第三聲，注音符號用「ˇ」來表示。臺羅音標系統中，調號為「2」的字音就是上聲調。"
+  },
+  {
+    "POJ": "siōng-kài",
+    "Hanji": "上蓋",
+    "en": "Extremely.",
+    "cn": "非常、最。"
+  },
+  {
+    "POJ": "siōng-sò͘",
+    "Hanji": "上訴",
+    "en": "To appeal (a legal case).",
+    "cn": "原意是指向神明、官府、上級陳述。現在多指法律上不服下級法院的判決，轉而向上一級法院提出訴訟，請求改判。"
+  },
+  {
+    "POJ": "siōng-khò",
+    "Hanji": "上課",
+    "en": "To teach a class.",
+    "cn": "授課、教課。老師教導學生。"
+  },
+  {
+    "POJ": "chhiūⁿ-chheⁿ-thî/chhiūⁿ-chhiⁿ-thî",
+    "Hanji": "上青苔",
+    "en": "To grow moss.",
+    "cn": "長青苔。"
+  },
+  {
+    "POJ": "siōng-thâu-á",
+    "Hanji": "上頭仔",
+    "en": "The very beginning.",
+    "cn": "最初、最前頭。"
+  },
+  {
+    "POJ": "Hā-goân",
+    "Hanji": "下元",
+    "en": "The 15th day of the 10th lunar month festival.",
+    "cn": "下元節。傳統民俗節日之一。農曆十月十五日為三官大帝的誕辰，通常在十月十四日晚間十一點開始祭拜，主要供品為甜湯圓、「麻粩」(môa-láu)、「米粩」(bí-láu)。"
+  },
+  {
+    "POJ": "ē-ûn",
+    "Hanji": "下勻",
+    "en": "Younger generation.",
+    "cn": "後輩、晚輩。"
+  },
+  {
+    "POJ": "hā-ngó͘",
+    "Hanji": "下午",
+    "en": "Afternoon.",
+    "cn": "中午過後的時間，指中午十二點到黃昏前的一段時間。"
+  },
+  {
+    "POJ": "ē-pòaⁿ-mê/ē-pòaⁿ-mî",
+    "Hanji": "下半暝",
+    "en": "The second half of the night.",
+    "cn": "下半夜、後半夜。夜晚十二點以後到天亮的時間。"
+  },
+  {
+    "POJ": "ē-si",
+    "Hanji": "下司",
+    "en": "Subordinate.",
+    "cn": "下屬、手下。"
+  },
+  {
+    "POJ": "hā-san",
+    "Hanji": "下山",
+    "en": "To leave a place of spiritual practice.",
+    "cn": "常用在戲曲的對白，指修行人要離開修行的地點。"
+  },
+  {
+    "POJ": "ē-té/ē-tóe",
+    "Hanji": "下底",
+    "en": "Below.",
+    "cn": "下面、底下。與「頂面」(téng-bīn)相對。"
+  },
+  {
+    "POJ": "hē-sèⁿ-miā/hē-sìⁿ-miā",
+    "Hanji": "下性命",
+    "en": "To risk one's life.",
+    "cn": "拚命。豁出性命，全力以赴。"
+  },
+  {
+    "POJ": "hē-chhiú",
+    "Hanji": "下手",
+    "en": "To start doing something.",
+    "cn": "動手去做。"
+  },
+  {
+    "POJ": "ē-chhiú",
+    "Hanji": "下手",
+    "en": "Buyer.",
+    "cn": "商業活動中買進貨物的人。"
+  },
+  {
+    "POJ": "ē-pái",
+    "Hanji": "下擺",
+    "en": "Next time.",
+    "cn": "下次、下回。"
+  },
+  {
+    "POJ": "e-chái-á",
+    "Hanji": "下早仔",
+    "en": "Morning.",
+    "cn": "早上。"
+  },
+  {
+    "POJ": "e-hng",
+    "Hanji": "下昏",
+    "en": "Evening.",
+    "cn": "晚上。"
+  },
+  {
+    "POJ": "e-hng-àm",
+    "Hanji": "下昏暗",
+    "en": "Tonight.",
+    "cn": "今晚、今天晚上。"
+  },
+  {
+    "POJ": "ē-tàu",
+    "Hanji": "下晝",
+    "en": "Afternoon.",
+    "cn": "下午。"
+  },
+  {
+    "POJ": "ē-po͘",
+    "Hanji": "下晡",
+    "en": "Afternoon.",
+    "cn": "下午。"
+  },
+  {
+    "POJ": "e-àm",
+    "Hanji": "下暗",
+    "en": "Tonight.",
+    "cn": "晚上、今晚。"
+  },
+  {
+    "POJ": "hē-pún",
+    "Hanji": "下本",
+    "en": "To invest capital.",
+    "cn": "投入本錢。"
+  },
+  {
+    "POJ": "hā-súi",
+    "Hanji": "下水",
+    "en": "Giblets.",
+    "cn": "內臟。雞、鴨等禽類動物的內臟。"
+  },
+  {
+    "POJ": "hā-súi-thng",
+    "Hanji": "下水湯",
+    "en": "Giblet soup.",
+    "cn": "用雞、鴨等禽類動物的內臟及佐料所做成的湯品。"
+  },
+  {
+    "POJ": "ē-káng",
+    "Hanji": "下港",
+    "en": "Southern Taiwan.",
+    "cn": "指臺灣南部地方。"
+  },
+  {
+    "POJ": "hā-siau",
+    "Hanji": "下痟",
+    "en": "A type of diabetes (TCM).",
+    "cn": "傳統中醫對消渴症的三種辨證法之一，又稱「腎消」，症狀為多尿且傷腎水。"
+  },
+  {
+    "POJ": "hē-lo̍h",
+    "Hanji": "下落",
+    "en": "Whereabouts.",
+    "cn": "去向、去處。"
+  },
+  {
+    "POJ": "ē-kha",
+    "Hanji": "下跤",
+    "en": "Below.",
+    "cn": "下面、底下。"
+  },
+  {
+    "POJ": "ē-kha-chhiú-lâng",
+    "Hanji": "下跤手人",
+    "en": "Subordinate.",
+    "cn": "手下、下屬。從事打雜工作的部屬。"
+  },
+  {
+    "POJ": "ē-pòe",
+    "Hanji": "下輩",
+    "en": "Younger generation.",
+    "cn": "晚輩、後輩。子姪輩或是輩分較低的人。"
+  },
+  {
+    "POJ": "ē-hâi",
+    "Hanji": "下頦",
+    "en": "Chin.",
+    "cn": "下巴。臉部嘴脣以下的部位。"
+  },
+  {
+    "POJ": "ē-kok",
+    "Hanji": "下顎",
+    "en": "Jaw.",
+    "cn": "下巴。一般稱「下巴」為「下頦」(ē-hâi)，「下顎」多在面相當中使用。"
+  },
+  {
+    "POJ": "hē-goān",
+    "Hanji": "下願",
+    "en": "To make a vow.",
+    "cn": "發願、許願。"
+  },
+  {
+    "POJ": "ē-ham",
+    "Hanji": "下𦜆",
+    "en": "Chin.",
+    "cn": "下巴、下顎。"
+  },
+  {
+    "POJ": "put-sam-put-sù",
+    "Hanji": "不三不四",
+    "en": "Improper.",
+    "cn": "不正經、不像樣、不倫不類。"
+  },
+  {
+    "POJ": "put-tiòng-iōng",
+    "Hanji": "不中用",
+    "en": "Not useful.",
+    "cn": "東西不合用、不好使用。"
+  },
+  {
+    "POJ": "put-jîn/put-lîn",
+    "Hanji": "不仁",
+    "en": "Unkind.",
+    "cn": "不厚道、不仁慈，沒有慈愛之心。"
+  },
+  {
+    "POJ": "put-tān",
+    "Hanji": "不但",
+    "en": "Not only.",
+    "cn": "不只。表示前一句話尚未完結，還有承接下面的語意。"
+  },
+  {
+    "POJ": "put-tōng-sán",
+    "Hanji": "不動產",
+    "en": "Real estate.",
+    "cn": "泛指土地及附著於土地上的定著物和改良物。"
+  },
+  {
+    "POJ": "put-hàu",
+    "Hanji": "不孝",
+    "en": "Unfilial.",
+    "cn": "對長輩不孝順。"
+  },
+  {
+    "POJ": "put-tek-liáu",
+    "Hanji": "不得了",
+    "en": "Terrible.",
+    "cn": "了不得。形容狀況嚴重。"
+  },
+  {
+    "POJ": "put-tek-í",
+    "Hanji": "不得已",
+    "en": "To have no alternative.",
+    "cn": "無可奈何、不得不如此。"
+  },
+  {
+    "POJ": "put-châi",
+    "Hanji": "不才",
+    "en": "I (humble).",
+    "cn": "第一人稱的自謙之詞。也就是「我」的意思。"
+  },
+  {
+    "POJ": "put-kám-tong",
+    "Hanji": "不敢當",
+    "en": "I don't deserve it (humble).",
+    "cn": "謙讓之詞，表示承受不起、不敢接受。"
+  },
+  {
+    "POJ": "put-sî",
+    "Hanji": "不時",
+    "en": "Frequently.",
+    "cn": "隨時、經常。無論什麼時候。"
+  },
+  {
+    "POJ": "put-ho̍k",
+    "Hanji": "不服",
+    "en": "Unconvinced.",
+    "cn": "心裡不服氣、不甘心。"
+  },
+  {
+    "POJ": "put-chí",
+    "Hanji": "不止",
+    "en": "More than.",
+    "cn": "超出某一特定的範圍或數目。"
+  },
+  {
+    "POJ": "put-chí-á",
+    "Hanji": "不止仔",
+    "en": "Extremely.",
+    "cn": "非常、相當的意思。"
+  },
+  {
+    "POJ": "put-sú-kúi",
+    "Hanji": "不死鬼",
+    "en": "A lecherous man.",
+    "cn": "形容男性好色，不要臉。"
+  },
+  {
+    "POJ": "put-kiû-jîn/put-kiû-lîn",
+    "Hanji": "不求人",
+    "en": "A back scratcher.",
+    "cn": "如意。搔癢的器具，又叫做「孫仔手」(sun-á-chhiú)、「阿孫手」(a-sun-chhiú)。"
+  },
+  {
+    "POJ": "put-hoat",
+    "Hanji": "不法",
+    "en": "Illegal.",
+    "cn": "不守法、違法。違反法律的意圖或者行為。"
+  },
+  {
+    "POJ": "put-boán",
+    "Hanji": "不滿",
+    "en": "Dissatisfied.",
+    "cn": "不符合心意。"
+  },
+  {
+    "POJ": "put-tap-put-chhit",
+    "Hanji": "不答不七",
+    "en": "Improper.",
+    "cn": "不三不四、不像樣。"
+  },
+  {
+    "POJ": "put-koán-sî",
+    "Hanji": "不管時",
+    "en": "Anytime.",
+    "cn": "隨時、任何時候。"
+  },
+  {
+    "POJ": "put-gī",
+    "Hanji": "不義",
+    "en": "Injustice.",
+    "cn": "不合道德的行為。"
+  },
+  {
+    "POJ": "put-jî-kò/put-lî-kò",
+    "Hanji": "不而過",
+    "en": "But.",
+    "cn": "但是、不過。"
+  },
+  {
+    "POJ": "thiú-á",
+    "Hanji": "丑仔",
+    "en": "A comical role.",
+    "cn": "滑稽的腳色。"
+  },
+  {
+    "POJ": "tiong-lâng",
+    "Hanji": "中人",
+    "en": "Mediator.",
+    "cn": "居中為人介紹或作證之人。"
+  },
+  {
+    "POJ": "tiòng-siong",
+    "Hanji": "中傷",
+    "en": "To slander.",
+    "cn": "惡意攻擊或陷害他人。"
+  },
+  {
+    "POJ": "Tiong-goân",
+    "Hanji": "中元",
+    "en": "The Ghost Festival.",
+    "cn": "中元節。我國傳統民俗節日之一。農曆七月十五日，在這一天除了要參加廟裡為孤魂野鬼所舉辦的普渡之外，也會準備豐盛的飯菜在自家門口祭拜好兄弟，俗稱「拜門口」(pài mn̂g-kháu)。傳說如果供品太少或飯菜不夠豐盛就會遭到好兄弟的報復，所以中元節是一年之中祭品最多的節日。"
+  },
+  {
+    "POJ": "tiong-kó͘",
+    "Hanji": "中古",
+    "en": "Second-hand.",
+    "cn": "半新不舊。"
+  },
+  {
+    "POJ": "tiong-hô",
+    "Hanji": "中和",
+    "en": "Fair and peaceful.",
+    "cn": "公正和平。"
+  },
+  {
+    "POJ": "tiong-ha̍k",
+    "Hanji": "中學",
+    "en": "Middle school.",
+    "cn": "指實施中等教育的學校，程度介於小學和大學之間，舊分初高兩級，期限各三年，今初級中學已經劃入國民中小學九年一貫的教育範疇內。"
+  },
+  {
+    "POJ": "tiong-sim",
+    "Hanji": "中心",
+    "en": "Center.",
+    "cn": "正中央的位置。"
+  },
+  {
+    "POJ": "tèng-ì",
+    "Hanji": "中意",
+    "en": "To one's liking.",
+    "cn": "合人心意。"
+  },
+  {
+    "POJ": "tiong-cháiⁿ",
+    "Hanji": "中指",
+    "en": "Middle finger.",
+    "cn": "第三根手指頭。"
+  },
+  {
+    "POJ": "tiong-sûn",
+    "Hanji": "中旬",
+    "en": "The middle ten days of a month.",
+    "cn": "每月當中的十一日至二十日。"
+  },
+  {
+    "POJ": "tiong-tàu",
+    "Hanji": "中晝",
+    "en": "Noon.",
+    "cn": "中午、午時。"
+  },
+  {
+    "POJ": "tiong-tàu-sî",
+    "Hanji": "中晝時",
+    "en": "Noon.",
+    "cn": "中午。"
+  },
+  {
+    "POJ": "tiong-tàu-tǹg",
+    "Hanji": "中晝頓",
+    "en": "Lunch.",
+    "cn": "午餐、午飯。"
+  },
+  {
+    "POJ": "tiong-tàu-pn̄g",
+    "Hanji": "中晝飯",
+    "en": "Lunch.",
+    "cn": "中餐、午飯。"
+  },
+  {
+    "POJ": "tiòng-to̍k",
+    "Hanji": "中毒",
+    "en": "To be poisoned.",
+    "cn": "有害的物質進入人體或動物體內，造成生物體機能障礙或死亡。"
+  },
+  {
+    "POJ": "tiòng-iōng",
+    "Hanji": "中用",
+    "en": "Useful.",
+    "cn": "物品很好使用，容易使用。"
+  },
+  {
+    "POJ": "Tiong-chhiu",
+    "Hanji": "中秋",
+    "en": "The Mid-Autumn Festival.",
+    "cn": "中秋節、八月節。我國傳統民俗節日之一。農曆八月十五日，與春節、端午節並列為民間三大傳統節日。通常這天全家會團聚在一起吃月餅、吃柚子、賞月。"
+  },
+  {
+    "POJ": "Tiong-chhiu-cheh/Tiong-chhiu-choeh",
+    "Hanji": "中秋節",
+    "en": "The Mid-Autumn Festival.",
+    "cn": "中秋節、八月節。我國傳統民俗節日之一。農曆八月十五日，與春節、端午節並列為民間三大傳統節日。通常這天全家會團聚在一起吃月餅、吃柚子、賞月。"
+  },
+  {
+    "POJ": "Tiong-chhiu-piáⁿ",
+    "Hanji": "中秋餅",
+    "en": "Mooncake.",
+    "cn": "月餅。一種包餡的糕餅點心，為中秋節應時的食品。"
+  },
+  {
+    "POJ": "tiong-li̍p",
+    "Hanji": "中立",
+    "en": "Neutral.",
+    "cn": "不偏袒。"
+  },
+  {
+    "POJ": "tiong-téng",
+    "Hanji": "中等",
+    "en": "Medium.",
+    "cn": "不高不低、普通的程度。"
+  },
+  {
+    "POJ": "tiong-chit",
+    "Hanji": "中脊",
+    "en": "Ridgepole.",
+    "cn": "屋頂上頭，最高的那一根橫樑。"
+  },
+  {
+    "POJ": "tiòng-kè",
+    "Hanji": "中計",
+    "en": "To fall into a trap.",
+    "cn": "中圈套。落入計謀、圈套；遭人暗算。"
+  },
+  {
+    "POJ": "tiong-tô͘",
+    "Hanji": "中途",
+    "en": "Halfway.",
+    "cn": "半路、半途。路途之中。"
+  },
+  {
+    "POJ": "tiong-i",
+    "Hanji": "中醫",
+    "en": "Traditional Chinese medicine.",
+    "cn": "中國傳統的醫學。"
+  },
+  {
+    "POJ": "tiong-kan",
+    "Hanji": "中間",
+    "en": "In the middle of.",
+    "cn": "指某一時間或事件發展的過程中的一部分。"
+  },
+  {
+    "POJ": "tiòng-hong",
+    "Hanji": "中風",
+    "en": "Stroke (medical).",
+    "cn": "腦溢血、腦中風。病名。因腦血管硬化、破裂，造成腦內出血，壓迫到腦神經。往往會使病人昏迷、死亡或肢體麻木、言語行動不便。"
+  },
+  {
+    "POJ": "oân-á",
+    "Hanji": "丸仔",
+    "en": "Ball.",
+    "cn": "丸子。團狀、丸狀的東西或食品。"
+  },
+  {
+    "POJ": "tan-to̍k",
+    "Hanji": "丹毒",
+    "en": "Erysipelas (a skin infection).",
+    "cn": "病名。一種散播性鏈球菌所引起的組織炎及淋巴管炎。患部皮膚紅腫、疼痛、易蔓延，多半引起高燒、淋巴腺腫及腦膜炎等併發症。"
+  },
+  {
+    "POJ": "tan-tiân",
+    "Hanji": "丹田",
+    "en": "A point below the navel (in qigong).",
+    "cn": "指人肚臍下面一寸半或三寸的地方。"
+  },
+  {
+    "POJ": "kú-kú",
+    "Hanji": "久久",
+    "en": "For a long time.",
+    "cn": "經過一段相當長久的時間。"
+  },
+  {
+    "POJ": "kiú-gióng",
+    "Hanji": "久仰",
+    "en": "I've heard so much about you.",
+    "cn": "非常仰慕、仰慕很久了。是人際交往時初次見面的客套話。"
+  },
+  {
+    "POJ": "kú--lâi",
+    "Hanji": "久來",
+    "en": "Over time.",
+    "cn": "久而久之。"
+  },
+  {
+    "POJ": "kiú-kiàn",
+    "Hanji": "久見",
+    "en": "Long time no see.",
+    "cn": "久違。好久不見，為久別重逢的寒暄語。"
+  },
+  {
+    "POJ": "kú-tn̂g",
+    "Hanji": "久長",
+    "en": "For a long time.",
+    "cn": "長久。時間長遠悠久。"
+  },
+  {
+    "POJ": "kú-tn̂g-pēⁿ/kú-tn̂g-pīⁿ",
+    "Hanji": "久長病",
+    "en": "Chronic illness.",
+    "cn": "久病、慢性病。"
+  },
+  {
+    "POJ": "káu-kháng",
+    "Hanji": "九孔",
+    "en": "Abalone.",
+    "cn": "貝類。貝葉為橢圓形，上面有九個上下的吸水孔，喜歡棲息在數公尺深的岩礁地形中。有野生採集和人工養殖兩種來源，可以做為海鮮食材，是臺灣東北角、東部海岸及澎湖縣等岩岸地區的著名水產養殖貝類。"
+  },
+  {
+    "POJ": "káu-chàn-thah",
+    "Hanji": "九層塔",
+    "en": "Basil.",
+    "cn": "草本植物，脣形科羅勒屬。花的顏色有白色、紫色等，因為花苞為九層狀，尖端排列成九行，所以稱為「九層塔」。其嫩莖跟葉子可食用，具有特殊香氣。"
+  },
+  {
+    "POJ": "kiú-kiong-á",
+    "Hanji": "九芎仔",
+    "en": "Subcostate crape myrtle tree.",
+    "cn": "九芎樹。木本植物。木質堅韌，可以拿來做手杖，根部可以拿來入藥，治瘧疾。"
+  },
+  {
+    "POJ": "khit--ê",
+    "Hanji": "乞的",
+    "en": "Adopted child.",
+    "cn": "養子女。"
+  },
+  {
+    "POJ": "khit-chia̍h",
+    "Hanji": "乞食",
+    "en": "Beggar.",
+    "cn": "乞丐、叫花子。靠要錢、要飯過活的人。"
+  },
+  {
+    "POJ": "khit-chia̍h-miā",
+    "Hanji": "乞食命",
+    "en": "A beggar's fate.",
+    "cn": "指生來就得靠要錢、要飯過日子的命運。"
+  },
+  {
+    "POJ": "khit-chia̍h-khîm",
+    "Hanji": "乞食琴",
+    "en": "A two-stringed lute (yueqin).",
+    "cn": "月琴。弦樂器。用木頭製成，琴身為扁圓形或八角形，有四絃或三絃，用撥子彈奏。臺灣的月琴只有兩絃，俗稱為「乞食琴」。"
+  },
+  {
+    "POJ": "khit-chia̍h-thâu",
+    "Hanji": "乞食頭",
+    "en": "The head of the beggars.",
+    "cn": "乞丐頭子。乞丐的首領。"
+  },
+  {
+    "POJ": "iā hó",
+    "Hanji": "也好",
+    "en": "That's fine too.",
+    "cn": "也好、也行。"
+  },
+  {
+    "POJ": "iā sī",
+    "Hanji": "也是",
+    "en": "Also.",
+    "cn": "還是、也是。"
+  },
+  {
+    "POJ": "liáu-liáu",
+    "Hanji": "了了",
+    "en": "All gone.",
+    "cn": "光光、窮盡、完全沒有了。當作動詞補語。"
+  },
+  {
+    "POJ": "--liáu-liáu",
+    "Hanji": "了了",
+    "en": "All of them.",
+    "cn": "全都是。表示數量多或加強語氣。"
+  },
+  {
+    "POJ": "liáu-kang",
+    "Hanji": "了工",
+    "en": "Wasted effort.",
+    "cn": "白費工夫。"
+  },
+  {
+    "POJ": "liáu-āu",
+    "Hanji": "了後",
+    "en": "Afterwards.",
+    "cn": "之後。"
+  },
+  {
+    "POJ": "liáu-pún",
+    "Hanji": "了本",
+    "en": "To lose capital.",
+    "cn": "蝕本、虧本。"
+  },
+  {
+    "POJ": "liáu-jiân/liáu-liân",
+    "Hanji": "了然",
+    "en": "In vain.",
+    "cn": "枉然、枉費。"
+  },
+  {
+    "POJ": "liáu-chîⁿ",
+    "Hanji": "了錢",
+    "en": "To lose money.",
+    "cn": "賠錢、虧本。"
+  },
+  {
+    "POJ": "hō͘ i",
+    "Hanji": "予伊",
+    "en": "Let him",
+    "cn": "讓；表祈使義的介詞。"
+  },
+  {
+    "POJ": "Jī-káu-mê/Lī-káu-mî",
+    "Hanji": "二九暝",
+    "en": "New Year's Eve.",
+    "cn": "除夕、大年夜。"
+  },
+  {
+    "POJ": "jī-pâng/lī-pâng",
+    "Hanji": "二房",
+    "en": "The second son's branch of a family.",
+    "cn": "家族中次男的支系。"
+  },
+  {
+    "POJ": "jī-chhiú/lī-chhiú",
+    "Hanji": "二手",
+    "en": "Assistant.",
+    "cn": "副手、助手、助理。技術工作中的助手、協助處理事務的人。"
+  },
+  {
+    "POJ": "jī-cháiⁿ/lī-cháiⁿ",
+    "Hanji": "二指",
+    "en": "Index finger.",
+    "cn": "食指。"
+  },
+  {
+    "POJ": "--jī-pō͘-chhit-á/--lī-pō͘-chhit-á",
+    "Hanji": "二步七仔",
+    "en": "Some skill.",
+    "cn": "本事、本領。形容人對事情有一點處理的本事、能力。"
+  },
+  {
+    "POJ": "ngó͘-jîn/ngó͘-lîn",
+    "Hanji": "五仁",
+    "en": "To clown around.",
+    "cn": "插科打諢。形容人行為滑稽、詼諧，逗人發笑。"
+  },
+  {
+    "POJ": "gō͘-hun-á-chhia",
+    "Hanji": "五分仔車",
+    "en": "A small train (for sugarcane).",
+    "cn": "五分車、小火車。早期用作載運甘蔗到糖廠的小火車，也可以當作短程客運使用。"
+  },
+  {
+    "POJ": "gō͘-hun-chhia",
+    "Hanji": "五分車",
+    "en": "A small train (for sugarcane).",
+    "cn": "小火車。早期用作載運甘蔗到糖廠的小火車，也可以當作短程客運使用。"
+  },
+  {
+    "POJ": "ngó͘-ka-pî",
+    "Hanji": "五加皮",
+    "en": "A type of medicinal liquor.",
+    "cn": "以五加樹的根部的樹皮所泡製而成的藥酒。藥性辛溫無毒，有袪風溼、強筋骨的功效，可治疝氣、腹病及陽痿。"
+  },
+  {
+    "POJ": "ngó͘-chhái",
+    "Hanji": "五彩",
+    "en": "Multicolor.",
+    "cn": "形容顏色眾多繽紛。"
+  },
+  {
+    "POJ": "Gō͘-ji̍t-cheh/Gō͘-li̍t-choeh",
+    "Hanji": "五日節",
+    "en": "The Dragon Boat Festival.",
+    "cn": "端午節。農曆五月初五。與春節、中秋節並列為民間三大傳統節日。有吃粽子和龍舟競渡等風俗，也會插蒲艾、喝雄黃酒、掛鍾馗像來除瘟辟邪。"
+  },
+  {
+    "POJ": "Gō͘-goe̍h-cheh/Gō͘-ge̍h-choeh",
+    "Hanji": "五月節",
+    "en": "The Dragon Boat Festival.",
+    "cn": "端午節。農曆五月初五。與春節、中秋節並列為民間三大傳統節日。有吃粽子和龍舟競渡等風俗，也會插蒲艾、喝雄黃酒、掛鍾馗像來除瘟辟邪。"
+  },
+  {
+    "POJ": "ngó͘-liú-ki/ngó͘-liú-ku",
+    "Hanji": "五柳居",
+    "en": "Sweet and sour fish.",
+    "cn": "糖醋魚。菜餚名稱，一種臺灣閩南菜系的糖醋魚烹調法。"
+  },
+  {
+    "POJ": "ngó͘-hok",
+    "Hanji": "五福",
+    "en": "The five blessings.",
+    "cn": "指壽、富、康寧、攸好德、考終命等五種福氣，也有指壽、富、貴、安樂、子孫眾多五種福氣。"
+  },
+  {
+    "POJ": "ngó͘-kok",
+    "Hanji": "五穀",
+    "en": "The five grains.",
+    "cn": "泛指各種主要的穀物。普通說法以稻、小米、高梁、大麥、豆類為五穀。"
+  },
+  {
+    "POJ": "gō͘-kin-kê/gō͘-kun-kôe",
+    "Hanji": "五筋膎",
+    "en": "Knuckles used for hitting.",
+    "cn": "手指併攏彎曲時，突出的指關節，通常用於擊人頭部。"
+  },
+  {
+    "POJ": "ngó͘-chōng",
+    "Hanji": "五臟",
+    "en": "The five internal organs.",
+    "cn": "指心、肝、脾、肺、腎等五大器官，也可泛指一切內臟。"
+  },
+  {
+    "POJ": "ngó͘-lō͘",
+    "Hanji": "五路",
+    "en": "All directions.",
+    "cn": "各路、各處。指東、西、南、北、中五個方向。"
+  },
+  {
+    "POJ": "ngó͘-kim",
+    "Hanji": "五金",
+    "en": "Hardware.",
+    "cn": "金、銀、銅、鐵、錫(或鉛)五種金屬；也用來泛指各種金屬製品。"
+  },
+  {
+    "POJ": "ngó͘-kim-hâng",
+    "Hanji": "五金行",
+    "en": "Hardware store.",
+    "cn": "販賣各種金屬用品的商店，可以分為家庭五金和機械五金。"
+  },
+  {
+    "POJ": "ngó͘-hiang",
+    "Hanji": "五香",
+    "en": "Five-spice powder.",
+    "cn": "指茴香、花椒、八角、桂皮、丁香五種香料，是烹調食物時所添加的佐料。"
+  },
+  {
+    "POJ": "chéⁿ-chúi/chíⁿ-chúi",
+    "Hanji": "井水",
+    "en": "Well water.",
+    "cn": "井中的水。"
+  },
+  {
+    "POJ": "bông-hûn",
+    "Hanji": "亡魂",
+    "en": "The soul of the deceased.",
+    "cn": "死者的靈魂。"
+  },
+  {
+    "POJ": "jîn-tiong/lîn-tiong",
+    "Hanji": "人中",
+    "en": "The groove below the nose.",
+    "cn": "人臉部鼻子下，嘴脣上方凹下部分。"
+  },
+  {
+    "POJ": "jîn-sū/lîn-sū",
+    "Hanji": "人事",
+    "en": "Personnel matters.",
+    "cn": "機關中的人員升調、獎懲、任免等事務。"
+  },
+  {
+    "POJ": "lâng-lâng",
+    "Hanji": "人人",
+    "en": "Everyone.",
+    "cn": "每一個人。"
+  },
+  {
+    "POJ": "jîn-lûn/lîn-lûn",
+    "Hanji": "人倫",
+    "en": "Human relationships.",
+    "cn": "人類的倫常，人類相處的各種關係。"
+  },
+  {
+    "POJ": "jîn-sim/lîn-sim",
+    "Hanji": "人參",
+    "en": "Ginseng.",
+    "cn": "草本植物。根和葉都可以做藥，是昂貴的中藥材。因為形狀像人，所以稱為「人參」。"
+  },
+  {
+    "POJ": "jîn-oân/lîn-oân",
+    "Hanji": "人員",
+    "en": "Personnel.",
+    "cn": "擔任某種職務的人。"
+  },
+  {
+    "POJ": "lâng-kheh",
+    "Hanji": "人客",
+    "en": "Guest.",
+    "cn": "客人、賓客、顧客。"
+  },
+  {
+    "POJ": "jîn-ke/lîn-ke",
+    "Hanji": "人家",
+    "en": "House.",
+    "cn": "住宅、民家。"
+  },
+  {
+    "POJ": "lâng-kang",
+    "Hanji": "人工",
+    "en": "Manpower.",
+    "cn": "人力、人手。人的勞動力或是指可以工作的人。"
+  },
+  {
+    "POJ": "lâng-iáⁿ",
+    "Hanji": "人影",
+    "en": "A person's shadow.",
+    "cn": "人的影子，也可以用來指人。"
+  },
+  {
+    "POJ": "jîn-chêng/lîn-chêng",
+    "Hanji": "人情",
+    "en": "A favor.",
+    "cn": "恩惠、恩情。"
+  },
+  {
+    "POJ": "lâng-châi",
+    "Hanji": "人才",
+    "en": "Appearance.",
+    "cn": "外表、儀容。"
+  },
+  {
+    "POJ": "jîn-bōng/lîn-bōng",
+    "Hanji": "人望",
+    "en": "Public gaze.",
+    "cn": "眾人矚目。"
+  },
+  {
+    "POJ": "jîn-keh/lîn-keh",
+    "Hanji": "人格",
+    "en": "Character.",
+    "cn": "品格、品性。"
+  },
+  {
+    "POJ": "jîn-khoân/lîn-khoân",
+    "Hanji": "人權",
+    "en": "Human rights.",
+    "cn": "人生來就有的權利或是指人民在法律上所享有的權利，包括自由、人身安全、工作、受教育、集會結社、宗教信仰、財產等一切的人身權及民主權利。"
+  },
+  {
+    "POJ": "jîn-bîn/lîn-bîn",
+    "Hanji": "人民",
+    "en": "The people.",
+    "cn": "百姓、國民。居住在一國家內具有應享權利與應盡義務的人。"
+  },
+  {
+    "POJ": "jîn-khì/lîn-khì",
+    "Hanji": "人氣",
+    "en": "Popularity.",
+    "cn": "人緣、人望。源自日語「人気（にんき）」。"
+  },
+  {
+    "POJ": "jîn-bu̍t/lîn-bu̍t",
+    "Hanji": "人物",
+    "en": "A person of character and talent.",
+    "cn": "有品格、才能出眾的人。"
+  },
+  {
+    "POJ": "jîn-seng/lîn-seng",
+    "Hanji": "人生",
+    "en": "A person's life.",
+    "cn": "人的一生、生命歷程。"
+  },
+  {
+    "POJ": "lâng-pān",
+    "Hanji": "人範",
+    "en": "Moral example.",
+    "cn": "人品。指人的外在面貌或儀表。"
+  },
+  {
+    "POJ": "lâng-iân",
+    "Hanji": "人緣",
+    "en": "Popularity.",
+    "cn": "與人相處時，其相貌、個性、舉止受人歡迎的狀況。"
+  },
+  {
+    "POJ": "jîn-chō/lîn-chō",
+    "Hanji": "人造",
+    "en": "Artificial.",
+    "cn": "由人工製造而成的。"
+  },
+  {
+    "POJ": "lâng-bīn",
+    "Hanji": "人面",
+    "en": "Connections.",
+    "cn": "人脈。"
+  },
+  {
+    "POJ": "lâng-thâu",
+    "Hanji": "人頭",
+    "en": "A person's head.",
+    "cn": "人的頭部。"
+  },
+  {
+    "POJ": "jîn-má/lîn-má",
+    "Hanji": "人馬",
+    "en": "Troops and horses.",
+    "cn": "兵馬。泛指軍隊和武力裝備，及有相當力量的聚合人群。"
+  },
+  {
+    "POJ": "jîn-tan/lîn-tan",
+    "Hanji": "仁丹",
+    "en": "A type of refreshing pellet.",
+    "cn": "一種含於口中的小藥丸，清涼提神。源自日語「仁丹（じんたん）」。"
+  },
+  {
+    "POJ": "jîn-ài/lîn-ài",
+    "Hanji": "仁愛",
+    "en": "Benevolence.",
+    "cn": "仁厚慈愛。"
+  },
+  {
+    "POJ": "jîn-chû/lîn-chû",
+    "Hanji": "仁慈",
+    "en": "Merciful.",
+    "cn": "和善、善良。慈悲，寬大慈善。"
+  },
+  {
+    "POJ": "jîn-gī/lîn-gī",
+    "Hanji": "仁義",
+    "en": "Benevolence and righteousness.",
+    "cn": "仁愛正義、寬厚正直。"
+  },
+  {
+    "POJ": "taⁿ-á",
+    "Hanji": "今仔",
+    "en": "Just now.",
+    "cn": "剛剛、剛才。"
+  },
+  {
+    "POJ": "kin-á-ji̍t/kin-á-li̍t",
+    "Hanji": "今仔日",
+    "en": "Today.",
+    "cn": "今天、今日。"
+  },
+  {
+    "POJ": "kin-nî",
+    "Hanji": "今年",
+    "en": "This year.",
+    "cn": "本年。說話時的這一年。"
+  },
+  {
+    "POJ": "kài-chāi",
+    "Hanji": "介在",
+    "en": "To lie in.",
+    "cn": "在於。"
+  },
+  {
+    "POJ": "kài-siāu",
+    "Hanji": "介紹",
+    "en": "To introduce.",
+    "cn": "引薦。居間接洽、牽合雙方認識。"
+  },
+  {
+    "POJ": "kē-chhù-á",
+    "Hanji": "低厝仔",
+    "en": "A low and humble house.",
+    "cn": "簡陋又低矮的房子。"
+  },
+  {
+    "POJ": "kē-kip",
+    "Hanji": "低級",
+    "en": "Low-grade.",
+    "cn": "比較低下的級別，相對於「高級」而言。"
+  },
+  {
+    "POJ": "kē-lō͘",
+    "Hanji": "低路",
+    "en": "Incompetent.",
+    "cn": "低能。指不中用。"
+  },
+  {
+    "POJ": "kē-im",
+    "Hanji": "低音",
+    "en": "Bass (in music).",
+    "cn": "樂譜中其音低於基礎音者。"
+  },
+  {
+    "POJ": "ín--lâng/ún--lâng",
+    "Hanji": "允人",
+    "en": "To promise someone.",
+    "cn": "答應別人。"
+  },
+  {
+    "POJ": "ín-chún/ún-chún",
+    "Hanji": "允准",
+    "en": "To approve.",
+    "cn": "允許、准許。"
+  },
+  {
+    "POJ": "Goân-siau",
+    "Hanji": "元宵",
+    "en": "The Lantern Festival.",
+    "cn": "元宵節、上元節。我國傳統民俗節日之一。農曆正月十五日為天官大帝誕辰，清晨會祭拜三界公。"
+  },
+  {
+    "POJ": "goân-khì",
+    "Hanji": "元氣",
+    "en": "Energy.",
+    "cn": "精神。指一個人的體力氣力。源自日語。"
+  },
+  {
+    "POJ": "goân-sîn",
+    "Hanji": "元神",
+    "en": "Spirit.",
+    "cn": "指人的精神、靈魂。"
+  },
+  {
+    "POJ": "goân-siú",
+    "Hanji": "元首",
+    "en": "Head of state.",
+    "cn": "一國最高的首長。在君主國家，大多為世襲的君主；在共和國家則稱作總統、主席等，大致由直接或間接選舉產生。"
+  },
+  {
+    "POJ": "ji̍p-chhù/li̍p-chhù",
+    "Hanji": "入厝",
+    "en": "To move into a new house.",
+    "cn": "新居落成，搬入新家。"
+  },
+  {
+    "POJ": "ji̍p-thó͘/li̍p-thó͘",
+    "Hanji": "入土",
+    "en": "Burial.",
+    "cn": "埋葬。將亡者的遺體葬入土中。"
+  },
+  {
+    "POJ": "ji̍p-tiûⁿ/li̍p-tiûⁿ",
+    "Hanji": "入場",
+    "en": "To enter a venue.",
+    "cn": "進場。進入會場、試場或戲院等特定場所。"
+  },
+  {
+    "POJ": "ji̍p-o̍h/li̍p-o̍h",
+    "Hanji": "入學",
+    "en": "To start school.",
+    "cn": "開始進入學校學習、求學。"
+  },
+  {
+    "POJ": "ji̍p-kàu/li̍p-kàu",
+    "Hanji": "入教",
+    "en": "To join a religion.",
+    "cn": "信教、皈依。"
+  },
+  {
+    "POJ": "ji̍p-bo̍k/li̍p-bo̍k",
+    "Hanji": "入木",
+    "en": "Encoffining.",
+    "cn": "入殮。把死者放進棺木中。"
+  },
+  {
+    "POJ": "ji̍p-liām/li̍p-liām",
+    "Hanji": "入殮",
+    "en": "To place a body in a coffin.",
+    "cn": "將亡者的遺體放入棺木中。"
+  },
+  {
+    "POJ": "ji̍p-ní/li̍p-ní",
+    "Hanji": "入耳",
+    "en": "To be heard.",
+    "cn": "聽進耳裡。"
+  },
+  {
+    "POJ": "ji̍p-siaⁿ/li̍p-siaⁿ",
+    "Hanji": "入聲",
+    "en": "The entering tone (in Taigi)",
+    "cn": "台語七聲八調的第四、八調，以塞音為韻尾的促音節。"
+  },
+  {
+    "POJ": "ji̍p-soán/li̍p-soán",
+    "Hanji": "入選",
+    "en": "To be selected.",
+    "cn": "中選。被選上、被選入。"
+  },
+  {
+    "POJ": "ji̍p-mn̂g/li̍p-mn̂g",
+    "Hanji": "入門",
+    "en": "To enter a door.",
+    "cn": "進門。"
+  },
+  {
+    "POJ": "ji̍p-īⁿ/li̍p-īⁿ",
+    "Hanji": "入院",
+    "en": "To be hospitalized.",
+    "cn": "住院。因為生病住進醫院就醫。"
+  },
+  {
+    "POJ": "lāi-kah-á",
+    "Hanji": "內䘥仔",
+    "en": "Sleeveless undershirt.",
+    "cn": "無袖內衣。"
+  },
+  {
+    "POJ": "lāi-siong",
+    "Hanji": "內傷",
+    "en": "Internal injury.",
+    "cn": "指身體內部器官所受的傷害。"
+  },
+  {
+    "POJ": "lāi-kong",
+    "Hanji": "內公",
+    "en": "Grandfather (paternal).",
+    "cn": "祖父、爺爺。此為敘述用法，一般當面稱為「阿公」(a-kong)。"
+  },
+  {
+    "POJ": "lāi-tē/lāi-tōe",
+    "Hanji": "內地",
+    "en": "Inland.",
+    "cn": "距離邊界、沿海或港埠較遠的內陸地區。"
+  },
+  {
+    "POJ": "lāi-tiûⁿ",
+    "Hanji": "內場",
+    "en": "The banker (in gambling).",
+    "cn": "賭博中，稱莊家為「內場」。"
+  },
+  {
+    "POJ": "lāi-gōa",
+    "Hanji": "內外",
+    "en": "Inside and outside.",
+    "cn": "裡面和外面。"
+  },
+  {
+    "POJ": "lāi-thò",
+    "Hanji": "內套",
+    "en": "A woman's inner blouse.",
+    "cn": "女用上身內襯。"
+  },
+  {
+    "POJ": "lāi-leng/lāi-ni",
+    "Hanji": "內奶",
+    "en": "Inner tube (of a tire).",
+    "cn": "內胎。指裝在輪胎裡，帶有氣嘴的環形橡膠胎。"
+  },
+  {
+    "POJ": "lāi-má",
+    "Hanji": "內媽",
+    "en": "Grandmother (paternal).",
+    "cn": "祖母、奶奶。稱謂。此為敘述用法，一般面稱為「阿媽」(a-má)。"
+  },
+  {
+    "POJ": "lāi-sun",
+    "Hanji": "內孫",
+    "en": "A son's son.",
+    "cn": "嫡孫。直系孫子，兒子所生的孩子。"
+  },
+  {
+    "POJ": "lōe-iông",
+    "Hanji": "內容",
+    "en": "Content.",
+    "cn": "事物內部所包含的實質或意義。"
+  },
+  {
+    "POJ": "lāi-soaⁿ",
+    "Hanji": "內山",
+    "en": "Deep in the mountains.",
+    "cn": "深山裡面。"
+  },
+  {
+    "POJ": "lāi-té/lāi-tóe",
+    "Hanji": "內底",
+    "en": "Inside.",
+    "cn": "裡面、內部。"
+  },
+  {
+    "POJ": "lōe-sim",
+    "Hanji": "內心",
+    "en": "In one's heart.",
+    "cn": "心裡、心中。"
+  },
+  {
+    "POJ": "lōe-chêng",
+    "Hanji": "內情",
+    "en": "The inside story.",
+    "cn": "實情。內部真實的情況。"
+  },
+  {
+    "POJ": "lāi-châi",
+    "Hanji": "內才",
+    "en": "Inner substance.",
+    "cn": "內涵。一個人的內在修為、學識、才華。"
+  },
+  {
+    "POJ": "lōe-chèng",
+    "Hanji": "內政",
+    "en": "Internal affairs.",
+    "cn": "國家內部的政事。"
+  },
+  {
+    "POJ": "lāi-kho",
+    "Hanji": "內科",
+    "en": "Internal medicine.",
+    "cn": "依照病人對症狀的敘述，以用藥、打針來治療身體內部的各種疾病，而不動外科手術。"
+  },
+  {
+    "POJ": "lāi-hâng",
+    "Hanji": "內行",
+    "en": "Expert.",
+    "cn": "對某種事或工作有豐富的知識和經驗。"
+  },
+  {
+    "POJ": "lāi-hâng--ê",
+    "Hanji": "內行的",
+    "en": "An expert.",
+    "cn": "行家、專家。"
+  },
+  {
+    "POJ": "lāi-saⁿ",
+    "Hanji": "內衫",
+    "en": "Undershirt.",
+    "cn": "內衣。貼身穿在上身的衣服，通常較薄。"
+  },
+  {
+    "POJ": "lāi-lí",
+    "Hanji": "內裡",
+    "en": "The lining of clothing.",
+    "cn": "衣物不露出在外的裡層。"
+  },
+  {
+    "POJ": "lōe-pō͘",
+    "Hanji": "內部",
+    "en": "Internal.",
+    "cn": "指人、事、物的裡面。"
+  },
+  {
+    "POJ": "lōe-koh",
+    "Hanji": "內閣",
+    "en": "Cabinet (government).",
+    "cn": "立憲國家的最高行政機構，設有閣揆一人，和閣員若干人。"
+  },
+  {
+    "POJ": "lāi-bīn",
+    "Hanji": "內面",
+    "en": "Inside.",
+    "cn": "裡面、內部。"
+  },
+  {
+    "POJ": "pat-sian",
+    "Hanji": "八仙",
+    "en": "The Eight Immortals.",
+    "cn": "神話傳說中的八位仙人，漢鍾離、張果老、韓湘子、鐵拐李、曹國舅、呂洞賓、藍采和、何仙姑八人。"
+  },
+  {
+    "POJ": "pat-sian-toh",
+    "Hanji": "八仙桌",
+    "en": "A square table for worship.",
+    "cn": "一種用來祭祀的方桌。通常置於大廳，祭祀時用來陳列祭品，與用來供奉神明或祖先牌位的「尪架桌」(ang-kè-toh)合稱「頂下桌」(téng-ē toh)。"
+  },
+  {
+    "POJ": "pat-sian-chhái",
+    "Hanji": "八仙綵",
+    "en": "A red banner for celebrations.",
+    "cn": "繡有八仙過海的紅色彩幔，在喜事節慶時懸掛在門楣上。"
+  },
+  {
+    "POJ": "pat-kòa",
+    "Hanji": "八卦",
+    "en": "The Eight Trigrams.",
+    "cn": "術數用語。易經中八個基本卦名的合稱。相傳為伏羲氏所作，由陽爻和陰爻組成。後來也用來指稱八角形物品。"
+  },
+  {
+    "POJ": "peh-jī/poeh-lī",
+    "Hanji": "八字",
+    "en": "The eight characters of a horoscope.",
+    "cn": "中國傳統命相學家，用人出生的年、月、日、時，以天干、地支配合成八個字，來推斷一生的命運。"
+  },
+  {
+    "POJ": "pat-jī-kha/pat-lī-kha",
+    "Hanji": "八字跤",
+    "en": "Pigeon-toed or splay-footed.",
+    "cn": "八字腳。走路內八字或外八字。"
+  },
+  {
+    "POJ": "pat-tin",
+    "Hanji": "八珍",
+    "en": "Eight Treasures (TCM formula).",
+    "cn": "漢方藥劑的名稱，包含：當歸、川芎、白芍、熟地、人參、白朮、茯苓、甘草。"
+  },
+  {
+    "POJ": "peh-kak/poeh-kak",
+    "Hanji": "八角",
+    "en": "Star anise.",
+    "cn": "八角茴香的果實。茶褐色，呈星狀排列，一般多用作食品的佐料。"
+  },
+  {
+    "POJ": "kong-sū",
+    "Hanji": "公事",
+    "en": "Public affairs.",
+    "cn": "公眾的事務。"
+  },
+  {
+    "POJ": "kong-chè",
+    "Hanji": "公債",
+    "en": "Government bond.",
+    "cn": "中央政府為了應付短時期的財政調度困難，或是某一特定政策，而國家財政收支不足支應時，發行債券向國民借款，稱為「公債」。"
+  },
+  {
+    "POJ": "kong-goân",
+    "Hanji": "公元",
+    "en": "The Christian era (AD).",
+    "cn": "西元。歐美諸國以耶穌基督誕生之年為紀元之始，世界各國多有採用者，故稱為「公元」。"
+  },
+  {
+    "POJ": "kong-kiōng",
+    "Hanji": "公共",
+    "en": "Public.",
+    "cn": "大眾所共有的。"
+  },
+  {
+    "POJ": "kong-pun",
+    "Hanji": "公分",
+    "en": "To divide equally.",
+    "cn": "平分。"
+  },
+  {
+    "POJ": "kong-hun",
+    "Hanji": "公分",
+    "en": "Centimeter.",
+    "cn": "用來計算長度的單位，等於百分之一公尺。"
+  },
+  {
+    "POJ": "kong-hn̂g",
+    "Hanji": "公園",
+    "en": "Park.",
+    "cn": "經過規劃處理或保留其自然狀態，以做為民眾戶外遊憩及享受大自然的特定場所。"
+  },
+  {
+    "POJ": "kong-pô",
+    "Hanji": "公婆",
+    "en": "Ancestral tablets.",
+    "cn": "祖先牌位。"
+  },
+  {
+    "POJ": "kong-má",
+    "Hanji": "公媽",
+    "en": "Ancestors.",
+    "cn": "祖先。"
+  },
+  {
+    "POJ": "kong-ha̍k-hāu",
+    "Hanji": "公學校",
+    "en": "Public school (Japanese era).",
+    "cn": "日治時期臺灣人就讀的基礎教育學校，相當於現在的小學。"
+  },
+  {
+    "POJ": "kong-ka",
+    "Hanji": "公家",
+    "en": "The state.",
+    "cn": "國家或公眾。"
+  },
+  {
+    "POJ": "kong-ke",
+    "Hanji": "公家",
+    "en": "Jointly owned.",
+    "cn": "大眾共有、合夥的。"
+  },
+  {
+    "POJ": "kong-gū",
+    "Hanji": "公寓",
+    "en": "Apartment building.",
+    "cn": "可以提供多戶人家居住的寓所，為多層或多排的住宅建築物。"
+  },
+  {
+    "POJ": "kong-pêⁿ/kong-pîⁿ",
+    "Hanji": "公平",
+    "en": "Fair.",
+    "cn": "公正。心存正道，沒有偏私。"
+  },
+  {
+    "POJ": "kong-só͘",
+    "Hanji": "公所",
+    "en": "A township office.",
+    "cn": "指鄉鎮市公所。"
+  },
+  {
+    "POJ": "kong-bûn",
+    "Hanji": "公文",
+    "en": "Official document.",
+    "cn": "機關行號或行政單位裡頭，處理或聯繫公務的文書。"
+  },
+  {
+    "POJ": "kong-kin/kong-kun",
+    "Hanji": "公斤",
+    "en": "Kilogram.",
+    "cn": "計算重量的公制單位。一公斤等於一千公克。"
+  },
+  {
+    "POJ": "kang-bó",
+    "Hanji": "公母",
+    "en": "Male and female (for animals",
+    "cn": "雄性和雌性或陽性和陰性之合稱。人不稱「公母」，用來指稱動物或物品。"
+  },
+  {
+    "POJ": "kong-bîn",
+    "Hanji": "公民",
+    "en": "Citizen.",
+    "cn": "凡年滿二十歲，在某一行政區域內連續居住六個月以上，沒有被褫奪公權，或受禁治產宣告的居民。"
+  },
+  {
+    "POJ": "kong-iōng",
+    "Hanji": "公用",
+    "en": "For public use.",
+    "cn": "公共使用的。"
+  },
+  {
+    "POJ": "kang--ê",
+    "Hanji": "公的",
+    "en": "Male (animal",
+    "cn": "雄性的動物、陽性的器物。"
+  },
+  {
+    "POJ": "kong-chiòng",
+    "Hanji": "公眾",
+    "en": "The public.",
+    "cn": "大眾。指一般人民、群眾。"
+  },
+  {
+    "POJ": "kong-chhin",
+    "Hanji": "公親",
+    "en": "Mediator.",
+    "cn": "中人。調解、勸和的人。"
+  },
+  {
+    "POJ": "kong-hùi",
+    "Hanji": "公費",
+    "en": "Public expense.",
+    "cn": "由公家所支付的經費。"
+  },
+  {
+    "POJ": "kong-lō͘",
+    "Hanji": "公路",
+    "en": "Highway.",
+    "cn": "由公家修建管理，人民可以自由通行的道路。"
+  },
+  {
+    "POJ": "kong-tō",
+    "Hanji": "公道",
+    "en": "Fair.",
+    "cn": "公平、公正。正直，沒有偏私。"
+  },
+  {
+    "POJ": "kong-lí",
+    "Hanji": "公里",
+    "en": "Kilometer.",
+    "cn": "計算長度的公制單位。一公里等於一千公尺。"
+  },
+  {
+    "POJ": "kong-khai",
+    "Hanji": "公開",
+    "en": "To make public.",
+    "cn": "揭露、不加掩飾。"
+  },
+  {
+    "POJ": "kong-khui",
+    "Hanji": "公開",
+    "en": "To share expenses.",
+    "cn": "眾人一起負擔金錢上的支出。"
+  },
+  {
+    "POJ": "kong-koán",
+    "Hanji": "公館",
+    "en": "Official residence.",
+    "cn": "敬稱他人的住所。"
+  },
+  {
+    "POJ": "lio̍k-ha̍p",
+    "Hanji": "六合",
+    "en": "The universe.",
+    "cn": "天地。上下和東西南北四方，泛指天下或宇宙。"
+  },
+  {
+    "POJ": "lio̍k-su",
+    "Hanji": "六書",
+    "en": "The six categories of Chinese characters.",
+    "cn": "漢字的六種造字的方法，包括象形、指事、會意、形聲、轉注、假借。"
+  },
+  {
+    "POJ": "la̍k-goe̍h-tang/la̍k-ge̍h-tang",
+    "Hanji": "六月冬",
+    "en": "Summer harvest.",
+    "cn": "夏稻、夏穫。夏季收穫的農作物、第一期稻作所收成的農作物。"
+  },
+  {
+    "POJ": "la̍k-goe̍h-thiⁿ/la̍k-ge̍h-thiⁿ",
+    "Hanji": "六月天",
+    "en": "The sixth lunar month (hottest time).",
+    "cn": "農曆六月，夏季天氣最熱的時候。"
+  },
+  {
+    "POJ": "Lio̍k-hoat-choân-su",
+    "Hanji": "六法全書",
+    "en": "The Six Codes of law.",
+    "cn": "蒐集我國現行法規近五百種，包含憲法、民法、民事訴訟法、刑法、刑事訴訟法、商事法及行政法等法律全文的書。"
+  },
+  {
+    "POJ": "lio̍k-thiok",
+    "Hanji": "六畜",
+    "en": "The six domestic animals.",
+    "cn": "指馬、牛、羊、雞、犬、豬六種牲畜。"
+  },
+  {
+    "POJ": "phàⁿ-chhiú",
+    "Hanji": "冇手",
+    "en": "Generous.",
+    "cn": "大方、慷慨。"
+  },
+  {
+    "POJ": "phàⁿ-siàu",
+    "Hanji": "冇數",
+    "en": "Bad debt.",
+    "cn": "呆賬、爛賬。"
+  },
+  {
+    "POJ": "phàⁿ-thòaⁿ",
+    "Hanji": "冇炭",
+    "en": "Used charcoal.",
+    "cn": "指燒過的炭。"
+  },
+  {
+    "POJ": "phàⁿ-chio̍h-á",
+    "Hanji": "冇石仔",
+    "en": "Pumice stone.",
+    "cn": "浮石。礦物名，是一種經由岩漿急速冷凝，氣體逸出後所形成的多孔狀岩石。顏色較淡，有氣泡狀孔穴，可漂浮在水面上，通常是流紋岩岩漿的產物，以前常用來搓洗鍋子。"
+  },
+  {
+    "POJ": "phàⁿ-chîm",
+    "Hanji": "冇蟳",
+    "en": "A crab without roe.",
+    "cn": "沒有蟹黃的蟳。"
+  },
+  {
+    "POJ": "liōng-siōng",
+    "Hanji": "冗剩",
+    "en": "Ample.",
+    "cn": "寬裕。"
+  },
+  {
+    "POJ": "liōng-chá",
+    "Hanji": "冗早",
+    "en": "Early.",
+    "cn": "趁早、及早、提早。"
+  },
+  {
+    "POJ": "tang-cheh/tang-choeh",
+    "Hanji": "冬節",
+    "en": "Winter Solstice (solar term).",
+    "cn": "亦為傳統民俗節日。約當國曆十二月二十二或二十三日。這一天黑夜最長，白天最短。在民間習俗上，這一天要搓湯圓，並祭祀祖先和神明。"
+  },
+  {
+    "POJ": "hoān-sè",
+    "Hanji": "凡勢",
+    "en": "Perhaps.",
+    "cn": "也許、可能。"
+  },
+  {
+    "POJ": "hiong-nî",
+    "Hanji": "凶年",
+    "en": "A year of famine.",
+    "cn": "農作物收成欠佳，鬧饑荒的年頭。"
+  },
+  {
+    "POJ": "hiong-soah",
+    "Hanji": "凶煞",
+    "en": "An evil spirit at a burial.",
+    "cn": "埋葬時的煞氣。"
+  },
+  {
+    "POJ": "to-á",
+    "Hanji": "刀仔",
+    "en": "Small knife.",
+    "cn": "小刀。"
+  },
+  {
+    "POJ": "to-chhùi",
+    "Hanji": "刀喙",
+    "en": "Blade edge.",
+    "cn": "刀口。"
+  },
+  {
+    "POJ": "to-pèⁿ/to-pìⁿ",
+    "Hanji": "刀柄",
+    "en": "Knife handle.",
+    "cn": "刀子的把手。"
+  },
+  {
+    "POJ": "to-chio̍h",
+    "Hanji": "刀石",
+    "en": "Whetstone.",
+    "cn": "磨刀石。"
+  },
+  {
+    "POJ": "to-tiam",
+    "Hanji": "刀砧",
+    "en": "Cutting board.",
+    "cn": "砧板。切割魚肉或蔬果時所墊的板子。"
+  },
+  {
+    "POJ": "to-bah",
+    "Hanji": "刀肉",
+    "en": "The main body of a knife.",
+    "cn": "指刀子的主體部位。"
+  },
+  {
+    "POJ": "to-kheng",
+    "Hanji": "刀銎",
+    "en": "The back of a knife.",
+    "cn": "刀背。指刀無刃的一邊。"
+  },
+  {
+    "POJ": "tiau-kó͘-tóng",
+    "Hanji": "刁古董",
+    "en": "To deliberately make things difficult.",
+    "cn": "刻意作弄、為難別人。"
+  },
+  {
+    "POJ": "thiau-kang",
+    "Hanji": "刁工",
+    "en": "Specially.",
+    "cn": "專程、特地。"
+  },
+  {
+    "POJ": "thiau-ì-kò͘",
+    "Hanji": "刁意故",
+    "en": "Intentionally.",
+    "cn": "故意、存心。"
+  },
+  {
+    "POJ": "tiau-tî",
+    "Hanji": "刁持",
+    "en": "Intentionally.",
+    "cn": "故意、存心。"
+  },
+  {
+    "POJ": "tiau-kò͘-ì",
+    "Hanji": "刁故意",
+    "en": "Intentionally.",
+    "cn": "存心、故意。"
+  },
+  {
+    "POJ": "thiau-lân",
+    "Hanji": "刁難",
+    "en": "To make things difficult.",
+    "cn": "故意為難。"
+  },
+  {
+    "POJ": "pun-pheⁿ",
+    "Hanji": "分伻",
+    "en": "To distribute.",
+    "cn": "分配。"
+  },
+  {
+    "POJ": "hun-pia̍t",
+    "Hanji": "分別",
+    "en": "To distinguish.",
+    "cn": "區分、辨別。"
+  },
+  {
+    "POJ": "hun-chhùn",
+    "Hanji": "分寸",
+    "en": "Proper limits in behavior.",
+    "cn": "人與人之間，行為動作或應對說話所應該有的限度。"
+  },
+  {
+    "POJ": "pun-tiuⁿ",
+    "Hanji": "分張",
+    "en": "To share (food).",
+    "cn": "通常指小孩子慷慨大方願意將食物分給他人。"
+  },
+  {
+    "POJ": "hun-thoaⁿ",
+    "Hanji": "分攤",
+    "en": "To share (expenses).",
+    "cn": "分別攤付。"
+  },
+  {
+    "POJ": "hun-sòaⁿ",
+    "Hanji": "分散",
+    "en": "To disperse.",
+    "cn": "分離散開。"
+  },
+  {
+    "POJ": "hun-sò͘",
+    "Hanji": "分數",
+    "en": "Score.",
+    "cn": "表示成績高低的數字。"
+  },
+  {
+    "POJ": "hun-bêng",
+    "Hanji": "分明",
+    "en": "Clearly.",
+    "cn": "明明。明顯、顯然。"
+  },
+  {
+    "POJ": "hun-phài",
+    "Hanji": "分派",
+    "en": "To assign.",
+    "cn": "分發派遣。"
+  },
+  {
+    "POJ": "hun-hoat",
+    "Hanji": "分發",
+    "en": "To distribute.",
+    "cn": "分配。"
+  },
+  {
+    "POJ": "pun--ê",
+    "Hanji": "分的",
+    "en": "An adopted child.",
+    "cn": "收養的小孩。"
+  },
+  {
+    "POJ": "hun-sin",
+    "Hanji": "分身",
+    "en": "To be in two places at once.",
+    "cn": "指一個人在同一段時間內要分出額外的心力來處理別的事務。"
+  },
+  {
+    "POJ": "hun-phòe/hun-phè",
+    "Hanji": "分配",
+    "en": "To distribute.",
+    "cn": "區分支配。"
+  },
+  {
+    "POJ": "pun-chîⁿ",
+    "Hanji": "分錢",
+    "en": "To beg for money.",
+    "cn": "乞丐向人要錢。"
+  },
+  {
+    "POJ": "hun-cheng",
+    "Hanji": "分鐘",
+    "en": "Minute (time).",
+    "cn": "計算時間的單位。六十分鐘為一小時。"
+  },
+  {
+    "POJ": "hun-khui",
+    "Hanji": "分開",
+    "en": "To separate.",
+    "cn": "分離、分散。"
+  },
+  {
+    "POJ": "hun-lūi",
+    "Hanji": "分類",
+    "en": "To classify.",
+    "cn": "依照事物的不同性質來做區隔。"
+  },
+  {
+    "POJ": "chhiat-chhiú",
+    "Hanji": "切手",
+    "en": "Postage stamp.",
+    "cn": "郵票。源自日語「切手（きって）」。"
+  },
+  {
+    "POJ": "le̍k-liōng",
+    "Hanji": "力量",
+    "en": "Strength.",
+    "cn": "力氣、能力。"
+  },
+  {
+    "POJ": "la̍t-thâu",
+    "Hanji": "力頭",
+    "en": "Strength.",
+    "cn": "力氣、力道。"
+  },
+  {
+    "POJ": "ûn-á-sī",
+    "Hanji": "勻仔是",
+    "en": "Take it easy.",
+    "cn": "慢慢來、不慌不忙。"
+  },
+  {
+    "POJ": "ûn-ûn-á",
+    "Hanji": "勻勻仔",
+    "en": "Slowly.",
+    "cn": "慢慢地、謹慎小心地。"
+  },
+  {
+    "POJ": "ûn-ûn-á-hóe/ûn-ûn-á-hé",
+    "Hanji": "勻勻仔火",
+    "en": "Low heat.",
+    "cn": "慢火、小火。"
+  },
+  {
+    "POJ": "kiu-chhiú",
+    "Hanji": "勼手",
+    "en": "To stop.",
+    "cn": "收手。結束正在進行的動作。"
+  },
+  {
+    "POJ": "kiu-chúi",
+    "Hanji": "勼水",
+    "en": "To shrink (of clothes).",
+    "cn": "縮水。形容衣物經水洗過後而縮小尺寸。"
+  },
+  {
+    "POJ": "kiu-kha",
+    "Hanji": "勼跤",
+    "en": "To back out.",
+    "cn": "抽腳、抽腿、退卻、裹足。因突發狀況而打消本來的意願。"
+  },
+  {
+    "POJ": "kau-ín",
+    "Hanji": "勾引",
+    "en": "To seduce.",
+    "cn": "引誘。"
+  },
+  {
+    "POJ": "kau-kiat",
+    "Hanji": "勾結",
+    "en": "To collude.",
+    "cn": "暗中串通，做不正當的事。"
+  },
+  {
+    "POJ": "hòa-ha̍k",
+    "Hanji": "化學",
+    "en": "Chemistry.",
+    "cn": "研究物質的結構、性質及變化反應的科學。"
+  },
+  {
+    "POJ": "hòa-iân",
+    "Hanji": "化緣",
+    "en": "To beg for alms (for monks).",
+    "cn": "和尚、尼姑等向人乞求布施，而施與者因此和仙佛結下善緣，所以稱為「化緣」。"
+  },
+  {
+    "POJ": "hòa-sin",
+    "Hanji": "化身",
+    "en": "Incarnation.",
+    "cn": "佛、菩薩為教化眾生而顯現的面目形態。"
+  },
+  {
+    "POJ": "cha̍p-it-ko",
+    "Hanji": "十一哥",
+    "en": "Bachelor.",
+    "cn": "單身漢。"
+  },
+  {
+    "POJ": "cha̍p-jī-hun/cha̍p-lī-hun",
+    "Hanji": "十二分",
+    "en": "Extremely.",
+    "cn": "非常、很。用來形容程度極深。"
+  },
+  {
+    "POJ": "cha̍p-jī seⁿ-siùⁿ/cha̍p-lī siⁿ-siùⁿ",
+    "Hanji": "十二生相",
+    "en": "The twelve zodiac animals.",
+    "cn": "十二生肖。即鼠、牛、虎、兔、龍、蛇、馬、羊、猴、雞、狗、豬。"
+  },
+  {
+    "POJ": "cha̍p-chn̂g",
+    "Hanji": "十全",
+    "en": "Perfect.",
+    "cn": "完滿、齊全。完美無缺憾。"
+  },
+  {
+    "POJ": "si̍p-choân",
+    "Hanji": "十全",
+    "en": "Perfect.",
+    "cn": "用於中醫藥名。"
+  },
+  {
+    "POJ": "cha̍p-peh-piàn/cha̍p-poeh-piàn",
+    "Hanji": "十八變",
+    "en": "Eighteen changes (unpredictable).",
+    "cn": "十八種變化。用來比喻或形容事物變化多端，或是借用佛家語，比喻本領高強。"
+  },
+  {
+    "POJ": "si̍p-pat-tâu-á",
+    "Hanji": "十八骰仔",
+    "en": "Dice.",
+    "cn": "骰子。一種遊戲或賭博用的小方塊。六面分別刻上一、二、三、四、五、六點，一、四漆紅色，其餘為黑色。"
+  },
+  {
+    "POJ": "si̍p-jī-kè/si̍p-lī-kè",
+    "Hanji": "十字架",
+    "en": "Cross.",
+    "cn": "西洋古代的一種刑具。由於耶穌基督為了救贖世人而被釘死在十字架上，所以後世就用十字架來代表基督本身或對基督教的信仰。"
+  },
+  {
+    "POJ": "si̍p-jī-lō͘/si̍p-lī-lō͘",
+    "Hanji": "十字路",
+    "en": "Crossroads.",
+    "cn": "縱橫兩條道路交接之處。"
+  },
+  {
+    "POJ": "cha̍p-hoe-gō͘-sek",
+    "Hanji": "十花五色",
+    "en": "Variegated.",
+    "cn": "五花八門、形形色色。"
+  },
+  {
+    "POJ": "cha̍p-chiok",
+    "Hanji": "十足",
+    "en": "Completely.",
+    "cn": "完全、充分。"
+  },
+  {
+    "POJ": "chhian-chhian-bān-bān",
+    "Hanji": "千千萬萬",
+    "en": "Thousands upon thousands.",
+    "cn": "成千上萬，形容數量很多。"
+  },
+  {
+    "POJ": "chhian-kin-chhìn/chhian-kun-chhìn",
+    "Hanji": "千斤秤",
+    "en": "Jack (lifting device).",
+    "cn": "千斤頂、起重機。利用螺旋、齒輪或油壓作用，將重物作小幅度抬高的機械裝置。常用於安裝或修理機器、汽車時使用。"
+  },
+  {
+    "POJ": "chhian-bān",
+    "Hanji": "千萬",
+    "en": "Be sure to.",
+    "cn": "務必、絕對。有再三叮嚀的意思。"
+  },
+  {
+    "POJ": "Chhian-lí-gán",
+    "Hanji": "千里眼",
+    "en": "Clairvoyant (a deity).",
+    "cn": "神話傳說中的天神，是媽祖座前的神將，雙眼大而暴突，能看到極遠、極細、極隱蔽的東西。"
+  },
+  {
+    "POJ": "chhian-lí-kiàⁿ",
+    "Hanji": "千里鏡",
+    "en": "Telescope.",
+    "cn": "望遠鏡。用來觀察天體或者是遠處物體的儀器。"
+  },
+  {
+    "POJ": "chhian-kim",
+    "Hanji": "千金",
+    "en": "A daughter (polite term).",
+    "cn": "禮貌性的稱呼別人的女兒。"
+  },
+  {
+    "POJ": "gō͘-sî",
+    "Hanji": "午時",
+    "en": "Noon.",
+    "cn": "上午十一點到下午一點的時段為午時。一般大多指中午十二時左右。"
+  },
+  {
+    "POJ": "gō͘-sî-chúi",
+    "Hanji": "午時水",
+    "en": "Water drawn at noon on the Dragon Boat Festival.",
+    "cn": "指端午節的中午由井裡打上來的水，據說飲用此水有益身體。"
+  },
+  {
+    "POJ": "pok-kòa",
+    "Hanji": "卜卦",
+    "en": "To divine.",
+    "cn": "占卜。推斷未來的吉凶禍福。"
+  },
+  {
+    "POJ": "iū-koh",
+    "Hanji": "又閣",
+    "en": "Again.",
+    "cn": "又、再，表示動作或現象的重複。"
+  },
+  {
+    "POJ": "ki̍p-sî",
+    "Hanji": "及時",
+    "en": "In time.",
+    "cn": "把握時機、正趕上需要、正趕上時機。"
+  },
+  {
+    "POJ": "ki̍p-keh",
+    "Hanji": "及格",
+    "en": "To pass (an exam).",
+    "cn": "合格。符合規定的標準或資格。"
+  },
+  {
+    "POJ": "iú--ê",
+    "Hanji": "友的",
+    "en": "A term for friends, especially among gang members.",
+    "cn": "原指互不認識的朋友彼此之間的稱呼。這本來是對「朋友」一詞比較戲謔、省略的說法，後來專指遊手好閒、無所事事的幫派份子的互稱。"
+  },
+  {
+    "POJ": "péng-lâi-péng-khì",
+    "Hanji": "反來反去",
+    "en": "To toss and turn.",
+    "cn": "指人輾轉難眠，睡不著覺。"
+  },
+  {
+    "POJ": "hoán-tò-tńg",
+    "Hanji": "反倒轉",
+    "en": "On the contrary.",
+    "cn": "反倒、反而。"
+  },
+  {
+    "POJ": "hoán-hiau",
+    "Hanji": "反僥",
+    "en": "To break a promise.",
+    "cn": "違約、反悔。"
+  },
+  {
+    "POJ": "hoán-thiⁿ",
+    "Hanji": "反天",
+    "en": "The weather is changing.",
+    "cn": "變天。天氣由晴轉變成陰或雨。"
+  },
+  {
+    "POJ": "hoán-tùi",
+    "Hanji": "反對",
+    "en": "To oppose.",
+    "cn": "不贊成。"
+  },
+  {
+    "POJ": "hoán-siông",
+    "Hanji": "反常",
+    "en": "Abnormal.",
+    "cn": "不同於平時或過去的行為習慣、態度。"
+  },
+  {
+    "POJ": "hoán-hóe",
+    "Hanji": "反悔",
+    "en": "To regret.",
+    "cn": "對已經約定、允諾的事情，中途改變心意，感到後悔。"
+  },
+  {
+    "POJ": "hoán-khòng",
+    "Hanji": "反抗",
+    "en": "To resist.",
+    "cn": "心中不服而予以抗拒。"
+  },
+  {
+    "POJ": "péng-toh",
+    "Hanji": "反桌",
+    "en": "To flip a table.",
+    "cn": "掀桌子、翻桌子。將餐桌或是工作桌掀翻開來，通常是尋隙挑釁的行為。"
+  },
+  {
+    "POJ": "hoâiⁿ-ti̍t",
+    "Hanji": "橫直",
+    "en": "Anyway.",
+    "cn": "無論如何。"
+  },
+  {
+    "POJ": "péng-pêng",
+    "Hanji": "反爿",
+    "en": "To turn over.",
+    "cn": "翻身、翻轉。"
+  },
+  {
+    "POJ": "hoán-chèng",
+    "Hanji": "反症",
+    "en": "Relapse.",
+    "cn": "指病情轉好又惡化的轉變。引申為事情變化得很快。"
+  },
+  {
+    "POJ": "péng-pe̍h-kâiⁿ",
+    "Hanji": "反白睚",
+    "en": "To roll one's eyes.",
+    "cn": "翻白眼。黑眼球往上吊，露出白眼球，表示不以為然、不滿的情緒或是快要死的樣子。"
+  },
+  {
+    "POJ": "hoán-bo̍k",
+    "Hanji": "反目",
+    "en": "To fall out with each other.",
+    "cn": "不和。通常指夫妻或朋友之間失和。"
+  },
+  {
+    "POJ": "hoán-séng",
+    "Hanji": "反省",
+    "en": "To reflect on oneself.",
+    "cn": "自我檢討過去言語、行為的是非好壞。"
+  },
+  {
+    "POJ": "péng-tō͘",
+    "Hanji": "反肚",
+    "en": "To turn belly up (like a dead fish).",
+    "cn": "肚皮朝天。魚死時都會翻白肚，所以多用來指魚死了。"
+  },
+  {
+    "POJ": "péng-tō͘-soa",
+    "Hanji": "反肚痧",
+    "en": "A type of acute gastroenteritis.",
+    "cn": "絞腸痧。病名。多因飲食不潔引起胃腸閉塞所造成，患者會有腹中絞痛，吐不出、瀉不出的症狀。"
+  },
+  {
+    "POJ": "hoán-pōe",
+    "Hanji": "反背",
+    "en": "To betray.",
+    "cn": "違背、反叛、辜負、背叛。"
+  },
+  {
+    "POJ": "péng-pak",
+    "Hanji": "反腹",
+    "en": "To feel nauseous.",
+    "cn": "反胃。有噁心、嘔吐的症狀。"
+  },
+  {
+    "POJ": "péng-chûn",
+    "Hanji": "反船",
+    "en": "To capsize.",
+    "cn": "翻船。"
+  },
+  {
+    "POJ": "péng-chhia",
+    "Hanji": "反車",
+    "en": "To overturn (a vehicle).",
+    "cn": "翻車。"
+  },
+  {
+    "POJ": "kháu-keng",
+    "Hanji": "口供",
+    "en": "Confession.",
+    "cn": "訴訟關係人在被審問的時候，對案情的相關陳述。"
+  },
+  {
+    "POJ": "kháu-chō",
+    "Hanji": "口座",
+    "en": "Bank account.",
+    "cn": "帳戶、戶頭。在金融機構開一個存提款戶。源自日語「口座（こうざ）」。"
+  },
+  {
+    "POJ": "kháu-khì",
+    "Hanji": "口氣",
+    "en": "Tone of voice.",
+    "cn": "說話的語氣。"
+  },
+  {
+    "POJ": "kháu-chàu",
+    "Hanji": "口灶",
+    "en": "Household.",
+    "cn": "戶、住戶。計算家庭的單位。"
+  },
+  {
+    "POJ": "kháu-khîm",
+    "Hanji": "口琴",
+    "en": "Harmonica.",
+    "cn": "樂器名。屬於簧片風琴的最小型樂器，上面有兩行並列的小孔，裡面裝有銅製的笛簧，用口吹吸，就能發出各種聲調。"
+  },
+  {
+    "POJ": "kháu-pe̍h",
+    "Hanji": "口白",
+    "en": "Aside.",
+    "cn": "旁白。戲曲中人物的內心獨白以及對話。"
+  },
+  {
+    "POJ": "kháu-chhì",
+    "Hanji": "口試",
+    "en": "Oral examination.",
+    "cn": "用口頭問答的方式，來觀察應考人的反應、言談內容等等的考試方法。"
+  },
+  {
+    "POJ": "kháu-bīn",
+    "Hanji": "口面",
+    "en": "Outside.",
+    "cn": "外面。外頭、外部。"
+  },
+  {
+    "POJ": "kháu-im",
+    "Hanji": "口音",
+    "en": "Accent.",
+    "cn": "各地方所特有的說話方式及腔調。"
+  },
+  {
+    "POJ": "kháu-thâu",
+    "Hanji": "口頭",
+    "en": "Oral.",
+    "cn": "指用言語表示，不是用文字或者行動來表明。"
+  },
+  {
+    "POJ": "thó͘-lâng",
+    "Hanji": "土人",
+    "en": "A rustic person.",
+    "cn": "比較粗魯、率直的人。"
+  },
+  {
+    "POJ": "thó͘-kong-á",
+    "Hanji": "土公仔",
+    "en": "Grave worker.",
+    "cn": "處理喪葬墓穴的工人。"
+  },
+  {
+    "POJ": "thó͘-pau-á",
+    "Hanji": "土包仔",
+    "en": "Country bumpkin.",
+    "cn": "土包子、鄉巴佬。形容缺乏見識、知識的人。"
+  },
+  {
+    "POJ": "thó͘-húi",
+    "Hanji": "土匪",
+    "en": "Bandit.",
+    "cn": "為非作歹、打家劫舍的匪徒。"
+  },
+  {
+    "POJ": "thó͘-tē/thó͘-tōe",
+    "Hanji": "土地",
+    "en": "Soil.",
+    "cn": "指土壤或者是地表上面的部分。"
+  },
+  {
+    "POJ": "Thó͘-tī-kong",
+    "Hanji": "土地公",
+    "en": "The Earth God.",
+    "cn": "民間信仰中守護地方的神，又叫做「福德正神」。"
+  },
+  {
+    "POJ": "thó͘-sai",
+    "Hanji": "土師",
+    "en": "A self-taught craftsman.",
+    "cn": "無師自通的技術工。"
+  },
+  {
+    "POJ": "thó͘-sèng",
+    "Hanji": "土性",
+    "en": "Rustic personality.",
+    "cn": "形容人的個性較粗魯、率直。"
+  },
+  {
+    "POJ": "thó͘-siūⁿ",
+    "Hanji": "土想",
+    "en": "To know without thinking.",
+    "cn": "指事情不需細想即可知道。"
+  },
+  {
+    "POJ": "thó͘-bo̍k",
+    "Hanji": "土木",
+    "en": "Civil engineering.",
+    "cn": "指道路、橋樑或建築物的興建、改建、維護等工作。"
+  },
+  {
+    "POJ": "thó͘-soāiⁿ-á",
+    "Hanji": "土檨仔",
+    "en": "A native variety of mango.",
+    "cn": "土芒果。還沒經過改良的芒果，味道比改良品種酸，果肉較少，纖維較粗，生芒果常用來醃製成蜜餞。"
+  },
+  {
+    "POJ": "thó͘-ti̍t",
+    "Hanji": "土直",
+    "en": "Straightforward.",
+    "cn": "形容一個人個性率真、剛直，不會深思熟慮，不會拐彎抹角。"
+  },
+  {
+    "POJ": "thó͘-poa̍t-á",
+    "Hanji": "土菝仔",
+    "en": "A native variety of guava.",
+    "cn": "土芭樂。瓜果類。番石榴的一種，臺灣土生種，果實形體小，晒乾後可以泡茶，中醫療效上可以治糖尿病。"
+  },
+  {
+    "POJ": "thó͘-ōe",
+    "Hanji": "土話",
+    "en": "Vulgar language.",
+    "cn": "粗俗不堪的話。"
+  },
+  {
+    "POJ": "thó͘-ke-á/thó͘-koe-á",
+    "Hanji": "土雞仔",
+    "en": "Free-range chicken.",
+    "cn": "土雞。不是人工圈養吃飼料的雞。"
+  },
+  {
+    "POJ": "hē-chì",
+    "Hanji": "夏至",
+    "en": "Summer Solstice (solar term).",
+    "cn": "約當國曆六月廿一日或廿二日。這天晝最長夜最短，也是最熱的時期。"
+  },
+  {
+    "POJ": "tāi-tiōng-hu",
+    "Hanji": "大丈夫",
+    "en": "A man of courage and principle.",
+    "cn": "有志氣而且勇敢剛毅的男子。"
+  },
+  {
+    "POJ": "tōa-ē",
+    "Hanji": "大下",
+    "en": "With great force.",
+    "cn": "指很用力。"
+  },
+  {
+    "POJ": "tāi-put-liáu",
+    "Hanji": "大不了",
+    "en": "At most.",
+    "cn": "頂多、充其量。至多也不過如此。"
+  },
+  {
+    "POJ": "tōa-chú-tōa-ì",
+    "Hanji": "大主大意",
+    "en": "To act on one's own authority.",
+    "cn": "擅作主張。指不聽從、不遵守上級或長輩的指示，擅自做決定。"
+  },
+  {
+    "POJ": "tāi-jîn/tāi-lîn",
+    "Hanji": "大人",
+    "en": "Police officer (Japanese-era term).",
+    "cn": "日治時代老百姓對警察的稱呼。源自日語。"
+  },
+  {
+    "POJ": "tōa-lâng",
+    "Hanji": "大人",
+    "en": "Adult.",
+    "cn": "成年人。"
+  },
+  {
+    "POJ": "tōa tāi-chì",
+    "Hanji": "大代誌",
+    "en": "A big matter.",
+    "cn": "大事情。"
+  },
+  {
+    "POJ": "tōa-peh",
+    "Hanji": "大伯",
+    "en": "Father's elder brother.",
+    "cn": "稱謂。對人尊稱父親的長兄。"
+  },
+  {
+    "POJ": "tōa-ūi",
+    "Hanji": "大位",
+    "en": "Seat of honor.",
+    "cn": "主位。宴會用餐時，最重要的席位，通常由德高望重者，或年長長輩入座。"
+  },
+  {
+    "POJ": "tāi-sài",
+    "Hanji": "大使",
+    "en": "Ambassador.",
+    "cn": "地位最高的外交官員。派駐在邦交國，代表著國家和國家元首。"
+  },
+  {
+    "POJ": "tāi-piān",
+    "Hanji": "大便",
+    "en": "To defecate.",
+    "cn": "排泄糞便。"
+  },
+  {
+    "POJ": "tōa-hiaⁿ",
+    "Hanji": "大兄",
+    "en": "Eldest brother.",
+    "cn": "大哥、長兄。"
+  },
+  {
+    "POJ": "tōa-chûn--nî",
+    "Hanji": "大前年",
+    "en": "The year before last year.",
+    "cn": "前年的前一年，即今年以前的第三年。"
+  },
+  {
+    "POJ": "tōa-la̍t",
+    "Hanji": "大力",
+    "en": "With great force.",
+    "cn": "形容很用力，或者出重力。"
+  },
+  {
+    "POJ": "tōa-chhù",
+    "Hanji": "大厝",
+    "en": "A large house.",
+    "cn": "大房子、廣廈。"
+  },
+  {
+    "POJ": "tāi-tông-á",
+    "Hanji": "大同仔",
+    "en": "Bell pepper.",
+    "cn": "青椒。瓜果類。主莖呈木質化，為低木狀，形狀像辣椒，可以食用。"
+  },
+  {
+    "POJ": "tōa-miâ",
+    "Hanji": "大名",
+    "en": "Your esteemed name.",
+    "cn": "用來尊稱別人的名字。"
+  },
+  {
+    "POJ": "tōa-ko",
+    "Hanji": "大哥",
+    "en": "Eldest brother.",
+    "cn": "稱謂。兄弟中排行最大的、最年長的。"
+  },
+  {
+    "POJ": "tōa-sì-kè/tōa-sì-kòe",
+    "Hanji": "大四界",
+    "en": "Everywhere.",
+    "cn": "到處、每個地方。"
+  },
+  {
+    "POJ": "tōa-kiáⁿ",
+    "Hanji": "大囝",
+    "en": "Eldest son.",
+    "cn": "長子、大兒子。稱謂。對長子的稱呼。"
+  },
+  {
+    "POJ": "tōa-siū",
+    "Hanji": "大壽",
+    "en": "A major birthday (50+).",
+    "cn": "指重要的生日，多用於五十歲以上逢十的生日。"
+  },
+  {
+    "POJ": "tōa-kīm",
+    "Hanji": "大妗",
+    "en": "Wife of the eldest maternal uncle.",
+    "cn": "大舅媽。稱謂。大舅的妻子。"
+  },
+  {
+    "POJ": "tōa-ḿ",
+    "Hanji": "大姆",
+    "en": "Wife of father's elder brother.",
+    "cn": "大伯母。稱謂。用來稱呼父親大哥的妻子。"
+  },
+  {
+    "POJ": "tōa-chí",
+    "Hanji": "大姊",
+    "en": "Eldest sister.",
+    "cn": "稱謂。用來稱呼姊妹之中年紀最大的。"
+  },
+  {
+    "POJ": "tōa-ko͘",
+    "Hanji": "大姑",
+    "en": "Father's eldest sister.",
+    "cn": "稱謂。指父親的姊妹中年紀最長的。"
+  },
+  {
+    "POJ": "tōa-î",
+    "Hanji": "大姨",
+    "en": "Mother's eldest sister.",
+    "cn": "稱謂。母親的大姊。"
+  },
+  {
+    "POJ": "tōa-niû-ko͘",
+    "Hanji": "大娘姑",
+    "en": "Husband's elder sister.",
+    "cn": "大姑子。稱謂。已婚婦女對他人稱呼自己丈夫的姊姊。"
+  },
+  {
+    "POJ": "tōa-sun",
+    "Hanji": "大孫",
+    "en": "Eldest grandson.",
+    "cn": "長孫。排行最大的孫子。"
+  },
+  {
+    "POJ": "tāi-ha̍k",
+    "Hanji": "大學",
+    "en": "University.",
+    "cn": "國家學制上最高單位，凡具備三學院者稱為大學，不足者則稱為獨立學院。"
+  },
+  {
+    "POJ": "ta-koaⁿ",
+    "Hanji": "大官",
+    "en": "Father-in-law (husband's father).",
+    "cn": "公公。指丈夫的父親，用於背稱及描述，面稱時則與丈夫一致。"
+  },
+  {
+    "POJ": "tōa-koaⁿ-hó͘",
+    "Hanji": "大官虎",
+    "en": "A corrupt and powerful official.",
+    "cn": "權臣、官僚。仗著官位權勢擺威風、魚肉百姓的人。"
+  },
+  {
+    "POJ": "ta-ke",
+    "Hanji": "大家",
+    "en": "Mother-in-law (husband's mother).",
+    "cn": "婆婆。稱謂。婦女對他人稱自己丈夫的母親。"
+  },
+  {
+    "POJ": "tōa-ke-kháu",
+    "Hanji": "大家口",
+    "en": "A large family.",
+    "cn": "大家庭、大家族。人口數眾多的家庭、家族。"
+  },
+  {
+    "POJ": "ta-ke-koaⁿ",
+    "Hanji": "大家官",
+    "en": "Parents-in-law (husband's parents).",
+    "cn": "公婆。稱謂。指丈夫的父母親。"
+  },
+  {
+    "POJ": "tōa-pù",
+    "Hanji": "大富",
+    "en": "Very wealthy.",
+    "cn": "表示非常富有的狀況。"
+  },
+  {
+    "POJ": "tōa-hù-tōa-kùi",
+    "Hanji": "大富大貴",
+    "en": "Extremely wealthy and noble.",
+    "cn": "非常富有且地位顯貴。"
+  },
+  {
+    "POJ": "tāi-hân",
+    "Hanji": "大寒",
+    "en": "Major Cold (solar term).",
+    "cn": "約當國曆一月二十或二十一日的時候，是一年之中最冷的日子。"
+  },
+  {
+    "POJ": "tōa-kôaⁿ",
+    "Hanji": "大寒",
+    "en": "Extreme cold.",
+    "cn": "極冷，嚴寒。"
+  },
+  {
+    "POJ": "tōa-kóng-hiân",
+    "Hanji": "大廣絃",
+    "en": "A type of two-stringed fiddle.",
+    "cn": "胡琴。用大椰子殼或是質地較輕的木頭(如林投木)做琴箱的胡琴，聲音比「殼仔絃」(khak-á-hiân)低沉、哀怨。"
+  },
+  {
+    "POJ": "tōa-thiaⁿ",
+    "Hanji": "大廳",
+    "en": "Living room.",
+    "cn": "客廳。"
+  },
+  {
+    "POJ": "tōa-āu--nî",
+    "Hanji": "大後年",
+    "en": "The year after next year.",
+    "cn": "後年之後的第一年。"
+  },
+  {
+    "POJ": "tōa-āu--ji̍t/tōa-āu--li̍t",
+    "Hanji": "大後日",
+    "en": "The day after tomorrow.",
+    "cn": "大後天。"
+  },
+  {
+    "POJ": "tōa-sim-khùi",
+    "Hanji": "大心氣",
+    "en": "Short of breath.",
+    "cn": "呼吸急促，喘不過氣來。"
+  },
+  {
+    "POJ": "tōa-hì",
+    "Hanji": "大戲",
+    "en": "A major form of traditional opera.",
+    "cn": "各項表演元素(如角色、情節、音樂)都較為複雜、完整的傳統戲曲，皆可稱為「大戲」。使用上多指曾流行於臺灣的歌仔戲、高甲戲、亂彈等。"
+  },
+  {
+    "POJ": "tōa-pâng",
+    "Hanji": "大房",
+    "en": "The eldest son's branch of a family.",
+    "cn": "長房。指家族中嫡長子所屬的家系。"
+  },
+  {
+    "POJ": "tōa-thoa",
+    "Hanji": "大拖",
+    "en": "A tool for gathering grain.",
+    "cn": "用來當作曬穀時集中穀子的農具。約二尺半長、一尺多寬的長型木板，上有一柄，兩邊有繩索，由兩人共同拖曳，將大量稻穀集中一處放置處理。"
+  },
+  {
+    "POJ": "tōa-piàⁿ-sàu",
+    "Hanji": "大摒掃",
+    "en": "Spring cleaning.",
+    "cn": "大掃除。也引申為對工作項目的整理。"
+  },
+  {
+    "POJ": "tāi-hong",
+    "Hanji": "大方",
+    "en": "Generous.",
+    "cn": "慷慨不小氣。"
+  },
+  {
+    "POJ": "tōa-ji̍t/tōa-li̍t",
+    "Hanji": "大日",
+    "en": "Auspicious day.",
+    "cn": "吉日。指適合婚喪嫁娶的好日子。"
+  },
+  {
+    "POJ": "tōa-cho̍h--ji̍t/tōa-cho̍h--li̍t",
+    "Hanji": "大昨日",
+    "en": "The day before yesterday.",
+    "cn": "大前天。"
+  },
+  {
+    "POJ": "tāi-sú",
+    "Hanji": "大暑",
+    "en": "Major Heat (solar term).",
+    "cn": "約當國曆七月廿三日或廿四日。是一年中天氣最熱的時候。"
+  },
+  {
+    "POJ": "tōa-goe̍h/tōa-ge̍h",
+    "Hanji": "大月",
+    "en": "A long month (31 or 30 days).",
+    "cn": "國曆三十一天或者農曆三十天的月分。"
+  },
+  {
+    "POJ": "tōa-pún",
+    "Hanji": "大本",
+    "en": "Large-sized (plant).",
+    "cn": "大號、大型的植物。"
+  },
+  {
+    "POJ": "tōa-bó͘",
+    "Hanji": "大某",
+    "en": "First wife.",
+    "cn": "正室、元配。即大老婆。"
+  },
+  {
+    "POJ": "tōa-châng",
+    "Hanji": "大欉",
+    "en": "A large plant.",
+    "cn": "大棵。形容植物長得又高又大。"
+  },
+  {
+    "POJ": "tāi-khì",
+    "Hanji": "大氣",
+    "en": "Atmosphere.",
+    "cn": "包圍在地球外層的空氣，由許多種氣體混合成的，其中以氮、氧為主要的成分。"
+  },
+  {
+    "POJ": "tōa-khùi",
+    "Hanji": "大氣",
+    "en": "To breathe heavily.",
+    "cn": "大口的呼吸。"
+  },
+  {
+    "POJ": "tōa-khùi-chhoán",
+    "Hanji": "大氣喘",
+    "en": "Asthma.",
+    "cn": "哮喘、氣喘。一種呼吸困難的症狀。"
+  },
+  {
+    "POJ": "tōa-káng",
+    "Hanji": "大港",
+    "en": "A large river.",
+    "cn": "大河。"
+  },
+  {
+    "POJ": "tōa-éng",
+    "Hanji": "大湧",
+    "en": "Large waves.",
+    "cn": "大波浪。"
+  },
+  {
+    "POJ": "tōa-hàn",
+    "Hanji": "大漢",
+    "en": "Tall and big.",
+    "cn": "身材高大。"
+  },
+  {
+    "POJ": "tōa-joa̍h/tōa-loa̍h",
+    "Hanji": "大熱",
+    "en": "Extreme heat.",
+    "cn": "酷暑。極炎熱的天氣。"
+  },
+  {
+    "POJ": "tōa-pêng",
+    "Hanji": "大爿",
+    "en": "The larger half.",
+    "cn": "東西切割或對分之後，占多數或較大的一方。"
+  },
+  {
+    "POJ": "Tāi-kah-chhio̍h",
+    "Hanji": "大甲蓆",
+    "en": "A high-quality straw mat from Dajia.",
+    "cn": "大甲地區所產的優質草蓆，為大甲藺草所編，質地柔軟不易脆裂。"
+  },
+  {
+    "POJ": "tōa-ba̍k",
+    "Hanji": "大目",
+    "en": "Big eyes (used sarcastically).",
+    "cn": "大眼睛。用來嘲諷人沒有看到近在眼前或目標明顯的東西。"
+  },
+  {
+    "POJ": "tōa-tâng",
+    "Hanji": "大筒",
+    "en": "A large tube.",
+    "cn": "大筒子。"
+  },
+  {
+    "POJ": "tōa-kho͘",
+    "Hanji": "大箍",
+    "en": "Fat.",
+    "cn": "形容人體肥胖。"
+  },
+  {
+    "POJ": "tōa-kho͘-tai",
+    "Hanji": "大箍呆",
+    "en": "A fat person (insulting).",
+    "cn": "罵身材肥胖的人，有嘲笑其反應不靈敏之意。"
+  },
+  {
+    "POJ": "tōa-pān",
+    "Hanji": "大範",
+    "en": "Poised and natural.",
+    "cn": "一個人的舉止十分大方、自然，不受拘束。"
+  },
+  {
+    "POJ": "tōa-sè/tōa-sòe",
+    "Hanji": "大細",
+    "en": "Size.",
+    "cn": "大小。指一般事物的尺寸大小。"
+  },
+  {
+    "POJ": "tōa-sè-sim/tōa-sòe-sim",
+    "Hanji": "大細心",
+    "en": "To be partial.",
+    "cn": "偏心。指人故意偏袒一方，對某一方存私心。"
+  },
+  {
+    "POJ": "tōa-sè-ba̍k/tōa-sòe-ba̍k",
+    "Hanji": "大細目",
+    "en": "To be biased.",
+    "cn": "本義為兩眼一大一小，大小眼。引申為用不公平的角度看待他人。"
+  },
+  {
+    "POJ": "tōa-hīⁿ/tōa-hī",
+    "Hanji": "大耳",
+    "en": "Gullible.",
+    "cn": "形容人不辨真假、輕信片面之詞。"
+  },
+  {
+    "POJ": "tōa-siaⁿ",
+    "Hanji": "大聲",
+    "en": "Loud.",
+    "cn": "聲音宏大、響亮。"
+  },
+  {
+    "POJ": "tōa-siaⁿ-ōe",
+    "Hanji": "大聲話",
+    "en": "Exaggeration.",
+    "cn": "誇大、吹噓的話。"
+  },
+  {
+    "POJ": "tōa-tō͘-kui",
+    "Hanji": "大肚胿",
+    "en": "Big belly.",
+    "cn": "指很大的肚子。"
+  },
+  {
+    "POJ": "tōa-tn̂g",
+    "Hanji": "大腸",
+    "en": "Large intestine.",
+    "cn": "腸的下部。上接小腸，下連肛門，較小腸粗大而短，可依次分為盲腸、結腸與直腸三部分。大腸可吸收水分和一部分養分，並主宰排泄作用。"
+  },
+  {
+    "POJ": "tōa-pak-tó͘",
+    "Hanji": "大腹肚",
+    "en": "Big belly.",
+    "cn": "大肚子。"
+  },
+  {
+    "POJ": "tōa-thúi",
+    "Hanji": "大腿",
+    "en": "Thigh.",
+    "cn": "為下肢的一部分，在臀與膝蓋之間。"
+  },
+  {
+    "POJ": "tōa-thúi-kut",
+    "Hanji": "大腿骨",
+    "en": "Femur.",
+    "cn": "股骨。大腿裡的骨頭，是全身最長的骨，約占身長的四分之一。"
+  },
+  {
+    "POJ": "tōa-táⁿ",
+    "Hanji": "大膽",
+    "en": "Bold.",
+    "cn": "形容人膽量大、不畏怯，也可用於斥責別人無禮、踰越的行為。"
+  },
+  {
+    "POJ": "tōa-kū",
+    "Hanji": "大舅",
+    "en": "Eldest maternal uncle.",
+    "cn": "稱謂。指母親的兄弟中年紀最長的。"
+  },
+  {
+    "POJ": "tōa-chi̍h",
+    "Hanji": "大舌",
+    "en": "To stutter.",
+    "cn": "口吃。講話結結巴巴、不清不楚。"
+  },
+  {
+    "POJ": "tōa-ōe",
+    "Hanji": "大話",
+    "en": "To brag.",
+    "cn": "誇口不實的話。"
+  },
+  {
+    "POJ": "tōa-bē/tōa-bōe",
+    "Hanji": "大賣",
+    "en": "Wholesale.",
+    "cn": "批發的生意，指成批買賣商品。"
+  },
+  {
+    "POJ": "tōa-kha-tâng",
+    "Hanji": "大跤胴",
+    "en": "Thick calves.",
+    "cn": "蘿蔔腿。小腿肚粗大的腿形。"
+  },
+  {
+    "POJ": "tōa-lō͘",
+    "Hanji": "大路",
+    "en": "A wide road.",
+    "cn": "寬敞開闊的道路。"
+  },
+  {
+    "POJ": "Tāi-tō-kong",
+    "Hanji": "大道公",
+    "en": "A god of medicine (Poh Seng Tai Tay).",
+    "cn": "保生大帝，為傳統民間信仰的神明，又稱吳真人。俗名為吳夲，北宋太宗年間福建泉州府同安縣人，以醫藥為業，得道後又以除瘟疫為聖行，中醫藥業常供奉為行業神。也是臺灣同安籍人士信奉的鄉土保護神。在臺灣以臺北大龍峒保安宮、蘆洲保和宮和臺南學甲慈濟宮最為著名之主祀廟宇。"
+  },
+  {
+    "POJ": "tāi-liōng",
+    "Hanji": "大量",
+    "en": "A large quantity.",
+    "cn": "數量多。"
+  },
+  {
+    "POJ": "tōa-gîn/tōa-gûn",
+    "Hanji": "大銀",
+    "en": "Large-sized spirit money.",
+    "cn": "大張的冥紙，上面貼有銀箔。"
+  },
+  {
+    "POJ": "tōa tīn",
+    "Hanji": "大陣",
+    "en": "A large group of people.",
+    "cn": "一大群人。"
+  },
+  {
+    "POJ": "tāi-soat",
+    "Hanji": "大雪",
+    "en": "Major Snow (solar term).",
+    "cn": "約當國曆十二月七日或八日。為天氣嚴寒之時，在北方已是大雪紛飛，故稱。"
+  },
+  {
+    "POJ": "tōa-bīn-sîn",
+    "Hanji": "大面神",
+    "en": "Thick-skinned.",
+    "cn": "厚臉皮。不知羞恥的樣子。"
+  },
+  {
+    "POJ": "tōa-thâu-bú",
+    "Hanji": "大頭拇",
+    "en": "Thumb.",
+    "cn": "大拇指。"
+  },
+  {
+    "POJ": "tōa-thâu-chhài",
+    "Hanji": "大頭菜",
+    "en": "Kohlrabi.",
+    "cn": "蕪菁。根莖類。根為扁球形，肉質為白色或紅色，球根及嫩葉可以食用。"
+  },
+  {
+    "POJ": "tōa-ām-kui",
+    "Hanji": "大頷胿",
+    "en": "Goiter.",
+    "cn": "指甲狀腺腫大，也就是甲狀腺內分泌系統中缺碘的一種代償性反應，若是甲狀腺機能亢進症，則不宜吃海帶、紫菜、鹽等或含碘高的食物。"
+  },
+  {
+    "POJ": "tōa-piáⁿ",
+    "Hanji": "大餅",
+    "en": "Wedding cake.",
+    "cn": "喜餅、禮餅。訂婚時女方贈給親友的餅。"
+  },
+  {
+    "POJ": "tōa-mī",
+    "Hanji": "大麵",
+    "en": "Noodles.",
+    "cn": "麵條。"
+  },
+  {
+    "POJ": "tōa-kó͘",
+    "Hanji": "大鼓",
+    "en": "A large drum.",
+    "cn": "打擊樂器名。"
+  },
+  {
+    "POJ": "tōa-phiāng",
+    "Hanji": "大龐",
+    "en": "A big person.",
+    "cn": "大塊頭。形容人的身材高大。"
+  },
+  {
+    "POJ": "thian-hā",
+    "Hanji": "天下",
+    "en": "The world.",
+    "cn": "整個世界。"
+  },
+  {
+    "POJ": "thian-kiú-pâi",
+    "Hanji": "天九牌",
+    "en": "A type of domino game.",
+    "cn": "天九、牌九。一種紙牌或骨牌的賭博遊戲。"
+  },
+  {
+    "POJ": "thiⁿ-chéⁿ/thiⁿ-chíⁿ",
+    "Hanji": "天井",
+    "en": "Skylight.",
+    "cn": "天窗。屋頂上的窗戶。"
+  },
+  {
+    "POJ": "thiⁿ-kng",
+    "Hanji": "天光",
+    "en": "Dawn.",
+    "cn": "天亮、破曉。"
+  },
+  {
+    "POJ": "Thiⁿ-kong",
+    "Hanji": "天公",
+    "en": "The Jade Emperor.",
+    "cn": "天老爺、老天爺。"
+  },
+  {
+    "POJ": "Thiⁿ-kong-seⁿ/Thiⁿ-kong-siⁿ",
+    "Hanji": "天公生",
+    "en": "The Jade Emperor's birthday.",
+    "cn": "俗稱玉皇大帝的誕辰。"
+  },
+  {
+    "POJ": "Thiⁿ-kong-chó͘",
+    "Hanji": "天公祖",
+    "en": "The Jade Emperor.",
+    "cn": "老天爺。"
+  },
+  {
+    "POJ": "Thiⁿ-kong-kim",
+    "Hanji": "天公金",
+    "en": "A type of spirit money for the Jade Emperor.",
+    "cn": "天金、大壽金。金紙的一種，專門燒給玉皇大帝的金紙，是金紙中最大張的。"
+  },
+  {
+    "POJ": "thiⁿ-hoán-tē-loān/thiⁿ-hoán-tōe-loān",
+    "Hanji": "天反地亂",
+    "en": "Great chaos.",
+    "cn": "亂世、天下大亂。形容國家或局勢動亂不安。"
+  },
+  {
+    "POJ": "thiⁿ-tē/thiⁿ-tōe",
+    "Hanji": "天地",
+    "en": "Heaven and earth.",
+    "cn": "天空和地表。"
+  },
+  {
+    "POJ": "thian-tông",
+    "Hanji": "天堂",
+    "en": "Heaven.",
+    "cn": "信仰宗教者以為人死後居住的快樂世界。"
+  },
+  {
+    "POJ": "thian-têng",
+    "Hanji": "天庭",
+    "en": "The heavenly court.",
+    "cn": "天界。神佛居住的地方。"
+  },
+  {
+    "POJ": "thiⁿ-ì",
+    "Hanji": "天意",
+    "en": "The will of heaven.",
+    "cn": "上天的旨意，非人類意志所能控制的。"
+  },
+  {
+    "POJ": "thian-châi",
+    "Hanji": "天才",
+    "en": "Genius.",
+    "cn": "指天生聰明或者具備天賦才能的人。"
+  },
+  {
+    "POJ": "thian-bûn",
+    "Hanji": "天文",
+    "en": "Astronomy.",
+    "cn": "天空中包括日、月、星辰以及風、雲、雨、雪等一切的自然現象。"
+  },
+  {
+    "POJ": "thian-sî",
+    "Hanji": "天時",
+    "en": "Opportune time.",
+    "cn": "自然有利的時機。"
+  },
+  {
+    "POJ": "thian-kiô",
+    "Hanji": "天橋",
+    "en": "Footbridge.",
+    "cn": "馬路上方便行人穿越馬路而凌空架設的橋梁。"
+  },
+  {
+    "POJ": "thiⁿ-khì",
+    "Hanji": "天氣",
+    "en": "Weather.",
+    "cn": "天候。在一定的區域和時間內的氣溫、溼度、氣壓、風向和雨量等狀況。"
+  },
+  {
+    "POJ": "thian-jiân/thian-liân",
+    "Hanji": "天然",
+    "en": "Natural.",
+    "cn": "自然形成、天生的，不是人為的。"
+  },
+  {
+    "POJ": "thian-káu-jia̍t/thian-káu-lia̍t",
+    "Hanji": "天狗熱",
+    "en": "Dengue fever.",
+    "cn": "登革熱、骨痛熱。病名。由白線斑蚊或埃及斑蚊將病原傳入人體的急性傳染病。患者會有全身疲倦、發燒、畏寒、頭痛及全身肌肉痠痛及皮膚出現紅疹等症狀。"
+  },
+  {
+    "POJ": "thian-lí",
+    "Hanji": "天理",
+    "en": "Natural law.",
+    "cn": "天道。自然、倫常的法則。"
+  },
+  {
+    "POJ": "thian-pêng",
+    "Hanji": "天秤",
+    "en": "A balance scale.",
+    "cn": "一種用來測量物體重量的工具。"
+  },
+  {
+    "POJ": "thiⁿ-thang",
+    "Hanji": "天窗",
+    "en": "Skylight.",
+    "cn": "屋頂上可透光的小窗子。"
+  },
+  {
+    "POJ": "thian-liông",
+    "Hanji": "天良",
+    "en": "Conscience.",
+    "cn": "良心。"
+  },
+  {
+    "POJ": "thiⁿ-sek",
+    "Hanji": "天色",
+    "en": "The color of the sky.",
+    "cn": "天空的顏色。"
+  },
+  {
+    "POJ": "thiⁿ-téng",
+    "Hanji": "天頂",
+    "en": "In the sky.",
+    "cn": "天上。"
+  },
+  {
+    "POJ": "thài-pó",
+    "Hanji": "太保",
+    "en": "A delinquent boy.",
+    "cn": "指不良少年。"
+  },
+  {
+    "POJ": "thài-thài",
+    "Hanji": "太太",
+    "en": "Mrs.",
+    "cn": "對已婚女子的尊稱。"
+  },
+  {
+    "POJ": "thài-mōe",
+    "Hanji": "太妹",
+    "en": "A delinquent girl.",
+    "cn": "不良少女。"
+  },
+  {
+    "POJ": "thài-pêng",
+    "Hanji": "太平",
+    "en": "Peaceful.",
+    "cn": "指天下安定無事。"
+  },
+  {
+    "POJ": "thài-ke̍k-kûn",
+    "Hanji": "太極拳",
+    "en": "Tai chi.",
+    "cn": "一種拳術，是講究以靜制動、以柔克剛、借力打力的武術運動，兼具防身與健身的效果。"
+  },
+  {
+    "POJ": "Thài-pe̍k-chheⁿ/Thài-pe̍k-chhiⁿ",
+    "Hanji": "太白星",
+    "en": "The planet Venus.",
+    "cn": "金星。星名。太陽系中最接近太陽的第二個行星。在民間信仰中也是一位神祇。"
+  },
+  {
+    "POJ": "thài-pe̍h-hún",
+    "Hanji": "太白粉",
+    "en": "Cornstarch.",
+    "cn": "將樹薯或玉米磨碎並乾燥成粉狀，於烹調時用作勾芡用。"
+  },
+  {
+    "POJ": "thài-pe̍h-chiú",
+    "Hanji": "太白酒",
+    "en": "A type of liquor.",
+    "cn": "相傳為李白所愛喝的酒，用高粱和豌豆等原料做成，主要產在四川省萬縣，臺灣的太白酒以澱粉為釀造原料，主要生產地為埔里酒廠。"
+  },
+  {
+    "POJ": "thài-kàm",
+    "Hanji": "太監",
+    "en": "Eunuch.",
+    "cn": "宦官。古時候宮廷中侍奉君王和其家族家屬的官員，由閹割後的男子來擔任。"
+  },
+  {
+    "POJ": "thài-khong",
+    "Hanji": "太空",
+    "en": "The sky.",
+    "cn": "指天空。"
+  },
+  {
+    "POJ": "hu-jîn/hu-lîn",
+    "Hanji": "夫人",
+    "en": "Lady.",
+    "cn": "古代諸侯或高官顯爵的妻子，也可用來稱現今高官的妻子。"
+  },
+  {
+    "POJ": "hu-kun",
+    "Hanji": "夫君",
+    "en": "Husband (formal).",
+    "cn": "妻子對丈夫的敬稱。"
+  },
+  {
+    "POJ": "hu-chhe",
+    "Hanji": "夫妻",
+    "en": "Husband and wife.",
+    "cn": "夫婦。"
+  },
+  {
+    "POJ": "hu-hū",
+    "Hanji": "夫婦",
+    "en": "Husband and wife.",
+    "cn": "夫妻。"
+  },
+  {
+    "POJ": "iáu-siū",
+    "Hanji": "夭壽",
+    "en": "To die young.",
+    "cn": "夭折。短命早死。"
+  },
+  {
+    "POJ": "iáu-siū-á",
+    "Hanji": "夭壽仔",
+    "en": "A curse word (short-lived).",
+    "cn": "夭壽、短命鬼。詛咒人短命的用語。"
+  },
+  {
+    "POJ": "iáu-siū-té-miā",
+    "Hanji": "夭壽短命",
+    "en": "A curse word (short-lived).",
+    "cn": "短命鬼。詛咒人短命早死的用語。"
+  },
+  {
+    "POJ": "iáu-chiat",
+    "Hanji": "夭折",
+    "en": "To die young.",
+    "cn": "短命、早死。指青少壯時死亡。"
+  },
+  {
+    "POJ": "lú-jî/lú-lî",
+    "Hanji": "女兒",
+    "en": "Daughter (formal",
+    "cn": "稱謂。父母親稱自己的女兒，此音讀通常出現在戲劇中。"
+  },
+  {
+    "POJ": "chú-kiong",
+    "Hanji": "子宮",
+    "en": "Uterus.",
+    "cn": "雌性動物生殖器的主要部分。位於小骨盤內膀胱與直腸之間，以子宮頸與陰道相連，底部兩側與輸卵管相通，為胎兒發育的場所。"
+  },
+  {
+    "POJ": "chú-tē",
+    "Hanji": "子弟",
+    "en": "Younger generation.",
+    "cn": "後生小輩。"
+  },
+  {
+    "POJ": "chú-tē-hì",
+    "Hanji": "子弟戲",
+    "en": "An amateur theatrical troupe.",
+    "cn": "由農村子弟組成演出的臺灣傳統戲曲，主要為北管，為業餘性質，在廟宇慶典中伴奏或演出。"
+  },
+  {
+    "POJ": "chú-sî",
+    "Hanji": "子時",
+    "en": "The period from 11 PM to 1 AM.",
+    "cn": "指晚上十一點到隔天凌晨一點的時間。"
+  },
+  {
+    "POJ": "khóng-bêng-chhia",
+    "Hanji": "孔明車",
+    "en": "Bicycle.",
+    "cn": "腳踏車。一種利用雙腳踩踏板前進的兩輪車。"
+  },
+  {
+    "POJ": "khóng-chhiok",
+    "Hanji": "孔雀",
+    "en": "Peacock.",
+    "cn": "禽鳥類。生產在熱帶地區，形狀略像雉，體長大約三尺多，翅膀短小，雄性長得特別壯麗，頭上有羽冠，尾巴有長形的羽毛，張開時呈現扇形，很美觀，是著名的觀賞用的鳥類。"
+  },
+  {
+    "POJ": "hân-lō͘",
+    "Hanji": "寒露",
+    "en": "Cold Dew (solar term).",
+    "cn": "約當國曆十月八日或九日。時序上進入深秋，但臺灣氣候仍然炎熱，水稻則進入黃熟期。"
+  },
+  {
+    "POJ": "chhùn-chhioh",
+    "Hanji": "寸尺",
+    "en": "Measurement.",
+    "cn": "尺寸、法度。"
+  },
+  {
+    "POJ": "siáu-thiú-á",
+    "Hanji": "小丑仔",
+    "en": "Clown.",
+    "cn": "戲劇或馬戲團中表演滑稽逗趣腳色的人。"
+  },
+  {
+    "POJ": "sió-sū",
+    "Hanji": "小事",
+    "en": "A small matter.",
+    "cn": "小事情。"
+  },
+  {
+    "POJ": "siáu-jîn/siáu-lîn",
+    "Hanji": "小人",
+    "en": "A person of low character.",
+    "cn": "品德操守低下，人格卑劣的人。"
+  },
+  {
+    "POJ": "siáu-sú",
+    "Hanji": "小使",
+    "en": "Errand boy.",
+    "cn": "小弟、跑腿的。供人差遣的人。"
+  },
+  {
+    "POJ": "sió-jî-kho/sió-lî-kho",
+    "Hanji": "小兒科",
+    "en": "Pediatrics.",
+    "cn": "專門診治兒童的醫學分科。"
+  },
+  {
+    "POJ": "sió-jî-bâ-pì/sió-lî-bâ-pì",
+    "Hanji": "小兒麻痺",
+    "en": "Polio.",
+    "cn": "急性脊髓灰白質炎。病名。由濾過性病毒所引發的急性傳染病，病毒侵入中樞神經系統，破壞脊椎前角的神經，致使肌肉麻痺萎縮。"
+  },
+  {
+    "POJ": "sió-chek",
+    "Hanji": "小叔",
+    "en": "Husband's younger brother.",
+    "cn": "稱謂。稱呼丈夫的弟弟。"
+  },
+  {
+    "POJ": "sió-kháu",
+    "Hanji": "小口",
+    "en": "Small appetite.",
+    "cn": "飯量少、食量小。"
+  },
+  {
+    "POJ": "sió-khóa-á",
+    "Hanji": "小可仔",
+    "en": "A little.",
+    "cn": "稍微、些微、少許。"
+  },
+  {
+    "POJ": "sió-miâ",
+    "Hanji": "小名",
+    "en": "Nickname.",
+    "cn": "乳名、外號。非正式的名字。"
+  },
+  {
+    "POJ": "sió-kiáⁿ",
+    "Hanji": "小囝",
+    "en": "Brat.",
+    "cn": "小子。是輕視別人的稱呼。"
+  },
+  {
+    "POJ": "sió-mōe/sió-bē",
+    "Hanji": "小妹",
+    "en": "Youngest sister.",
+    "cn": "稱謂。稱呼排行最小的妹妹或泛稱妹妹。"
+  },
+  {
+    "POJ": "sió-chiá",
+    "Hanji": "小姐",
+    "en": "Miss.",
+    "cn": "姑娘。稱呼未婚的年輕女子。"
+  },
+  {
+    "POJ": "sió-ko͘",
+    "Hanji": "小姑",
+    "en": "Husband's younger sister.",
+    "cn": "稱謂。女子稱呼丈夫的妹妹。"
+  },
+  {
+    "POJ": "sió-chím",
+    "Hanji": "小嬸",
+    "en": "Wife of a younger brother or husband's younger brother.",
+    "cn": "弟媳、小嬸子。稱謂。男子稱呼弟弟的妻子或是女子稱呼丈夫弟弟的妻子。"
+  },
+  {
+    "POJ": "sió-ha̍k",
+    "Hanji": "小學",
+    "en": "Elementary school.",
+    "cn": "實施初級教育的學校。"
+  },
+  {
+    "POJ": "siáu-hân",
+    "Hanji": "小寒",
+    "en": "Minor Cold (solar term).",
+    "cn": "約當國曆一月五日或一月六日。南方雜糧作物收割時期。"
+  },
+  {
+    "POJ": "sió-kang",
+    "Hanji": "小工",
+    "en": "Odd-job worker.",
+    "cn": "指一般打零工的人，因其工作性質、內容均不定，有時亦為副手，故稱為小工。"
+  },
+  {
+    "POJ": "sió-tī",
+    "Hanji": "小弟",
+    "en": "Youngest brother.",
+    "cn": "稱謂。稱最年幼的弟弟或泛稱弟弟。"
+  },
+  {
+    "POJ": "sió-sim",
+    "Hanji": "小心",
+    "en": "Be careful.",
+    "cn": "注意、留意。"
+  },
+  {
+    "POJ": "sió-sò͘",
+    "Hanji": "小數",
+    "en": "A small number.",
+    "cn": "少數。數額不大。"
+  },
+  {
+    "POJ": "sió-tòaⁿ",
+    "Hanji": "小旦",
+    "en": "A young female role in opera.",
+    "cn": "戲劇裡，飾演年輕貌美的女子的角色。"
+  },
+  {
+    "POJ": "siáu-sú",
+    "Hanji": "小暑",
+    "en": "Minor Heat (solar term).",
+    "cn": "約當國曆七月七日或七月八日。"
+  },
+  {
+    "POJ": "sió-goe̍h/sió-ge̍h",
+    "Hanji": "小月",
+    "en": "A short month (29 days).",
+    "cn": "農曆之中，只有二十九天的月份。"
+  },
+  {
+    "POJ": "sió-ba̍k",
+    "Hanji": "小木",
+    "en": "A carpenter who makes furniture.",
+    "cn": "做家具的木工。相反的，「大木」(tōa-ba̍k)是建築房屋的木工。"
+  },
+  {
+    "POJ": "sió-boán",
+    "Hanji": "小滿",
+    "en": "Grain Buds (solar term).",
+    "cn": "約當國曆五月廿一日或廿二日。北方一期農作漸趨成熟，南方則為梅雨季。"
+  },
+  {
+    "POJ": "sió-gio̍k-á",
+    "Hanji": "小玉仔",
+    "en": "A type of small watermelon with yellow flesh.",
+    "cn": "小玉西瓜。瓜果類。果肉為黃色的西瓜。"
+  },
+  {
+    "POJ": "sió-seng",
+    "Hanji": "小生",
+    "en": "A young male role in opera.",
+    "cn": "戲劇裡，飾演年輕男子的角色，包括文生和武生。"
+  },
+  {
+    "POJ": "sió-pe̍h-chhài",
+    "Hanji": "小白菜",
+    "en": "Bok choy.",
+    "cn": "葉菜類。形似油菜，葉柄呈白色，可食用，也可以入藥。"
+  },
+  {
+    "POJ": "sió-phiò",
+    "Hanji": "小票",
+    "en": "Small bills (money).",
+    "cn": "零鈔。小面額的紙幣。"
+  },
+  {
+    "POJ": "sió-tán",
+    "Hanji": "小等",
+    "en": "Wait a moment.",
+    "cn": "等一下、稍等。"
+  },
+  {
+    "POJ": "sió-kńg-á",
+    "Hanji": "小管仔",
+    "en": "Small squid.",
+    "cn": "軟體動物名。胴部呈圓錐形或長筒形，鰭較大，多位於後端。腕有十隻，有兩隻較長的觸腕，內有吸盤二行，觸腕穗吸盤四行。"
+  },
+  {
+    "POJ": "sió-tō͘",
+    "Hanji": "小肚",
+    "en": "Bladder.",
+    "cn": "膀胱。泌尿系統中儲存尿液的器官。為肌肉與膜質形成的囊，呈卵圓形，位在骨盤腔的前方和腹腔的下方。"
+  },
+  {
+    "POJ": "sió-tn̂g",
+    "Hanji": "小腸",
+    "en": "Small intestine.",
+    "cn": "在腸的上部，較大腸細長，上接胃部，下連大腸，有消化和吸收的功用，是人體最重要的消化器官。"
+  },
+  {
+    "POJ": "sió-soat",
+    "Hanji": "小說",
+    "en": "Novel.",
+    "cn": "描寫人物故事，有完整布局、情節發展及一貫主題的文學作品。"
+  },
+  {
+    "POJ": "sió-bē/sió-bōe",
+    "Hanji": "小賣",
+    "en": "Retailer.",
+    "cn": "零售商。將貨品零星出售給消費者的商人。相反的，「大賣」(tōa-bē)指的就是批發商。"
+  },
+  {
+    "POJ": "sió-lō͘",
+    "Hanji": "小路",
+    "en": "A small path.",
+    "cn": "小徑、小道。較狹窄的路。"
+  },
+  {
+    "POJ": "sió-gîn/sió-gûn",
+    "Hanji": "小銀",
+    "en": "Small-sized spirit money.",
+    "cn": "小張的冥紙，上面貼有銀箔。"
+  },
+  {
+    "POJ": "siáu-soat",
+    "Hanji": "小雪",
+    "en": "Minor Snow (solar term).",
+    "cn": "約當國曆十一月廿二日或廿三日。北方開始下微量的雪，南方收割水稻，或進入下期農作。"
+  },
+  {
+    "POJ": "siáu-kúi-á-khak",
+    "Hanji": "小鬼仔殼",
+    "en": "Mask.",
+    "cn": "面具。"
+  },
+  {
+    "POJ": "siàu-lí/siàu-lú",
+    "Hanji": "少女",
+    "en": "Young girl.",
+    "cn": "年輕未婚的女孩子。"
+  },
+  {
+    "POJ": "siàu-liân",
+    "Hanji": "少年",
+    "en": "Youth.",
+    "cn": "年少狀態。"
+  },
+  {
+    "POJ": "siàu-liân-ke",
+    "Hanji": "少年家",
+    "en": "Young man.",
+    "cn": "年輕力壯的小伙子。"
+  },
+  {
+    "POJ": "chió-sò͘",
+    "Hanji": "少數",
+    "en": "A small number.",
+    "cn": "數量少、不多。"
+  },
+  {
+    "POJ": "siàu-iâ",
+    "Hanji": "少爺",
+    "en": "Young master.",
+    "cn": "有錢、顯貴人家的子弟。"
+  },
+  {
+    "POJ": "chió-khoeh/chió-kheh",
+    "Hanji": "少缺",
+    "en": "Plenty.",
+    "cn": "不缺、多得很。多用在反詰口氣。"
+  },
+  {
+    "POJ": "San-phek-Eng-tâi",
+    "Hanji": "山伯英台",
+    "en": "The Butterfly Lovers (a tragic love story).",
+    "cn": "著名的民間故事及戲曲劇目人物。梁山伯與祝英台同窗三年，才知英台是女扮男裝，二人相愛欲成夫妻，祝家卻將英台許配權貴，山伯相思而死，英台跳入山伯墳塚而亡，二人化為彩蝶，比翼雙飛。後也用來比喻苦戀的悲劇人物。"
+  },
+  {
+    "POJ": "soaⁿ-sè",
+    "Hanji": "山勢",
+    "en": "The lay of the mountains.",
+    "cn": "山的形勢。"
+  },
+  {
+    "POJ": "soaⁿ-phiâⁿ",
+    "Hanji": "山坪",
+    "en": "Hillside land.",
+    "cn": "山坡地。山凹間或山麓上較平坦的地或可耕地。"
+  },
+  {
+    "POJ": "soaⁿ-bóe-liu/soaⁿ-bé-liu",
+    "Hanji": "山尾溜",
+    "en": "Mountaintop.",
+    "cn": "山頂。"
+  },
+  {
+    "POJ": "soaⁿ-khàm",
+    "Hanji": "山崁",
+    "en": "Cliff.",
+    "cn": "山崖。山陡直的側面。"
+  },
+  {
+    "POJ": "soaⁿ-lūn",
+    "Hanji": "山崙",
+    "en": "Hillock.",
+    "cn": "指地勢較一般平原為高的小山丘。"
+  },
+  {
+    "POJ": "soaⁿ-niá",
+    "Hanji": "山嶺",
+    "en": "Mountain range.",
+    "cn": "山脈。連綿的高山。"
+  },
+  {
+    "POJ": "soaⁿ-āu-chiáu",
+    "Hanji": "山後鳥",
+    "en": "Grey-faced buzzard.",
+    "cn": "灰面鵟鷹、灰面鷲。禽鳥類。每年十月初至十月底從北半球南下至東南亞一帶渡冬，於臺灣過境期間，可在恆春滿州里附近觀賞。到來年三月底至四月中旬又北返，在彰化八卦山或臺北觀音山地區可看見；因為是由南路而來，又稱為「南路鷹」。"
+  },
+  {
+    "POJ": "soaⁿ-tang-pe̍h-á",
+    "Hanji": "山東白仔",
+    "en": "Napa cabbage.",
+    "cn": "包心白菜、山東白菜。葉菜類。營養豐富，具有清熱利尿、降血壓、預防感冒、健胃整腸等功效。"
+  },
+  {
+    "POJ": "soaⁿ-tōng",
+    "Hanji": "山洞",
+    "en": "Cave.",
+    "cn": "位在山林之中，自然形成的洞穴。"
+  },
+  {
+    "POJ": "soaⁿ-kau",
+    "Hanji": "山溝",
+    "en": "Gully.",
+    "cn": "山澗、山谷。"
+  },
+  {
+    "POJ": "san-tin-hái-bī",
+    "Hanji": "山珍海味",
+    "en": "Delicacies from the mountains and seas.",
+    "cn": "山中和海中所生產的各式各樣的珍貴食品。"
+  },
+  {
+    "POJ": "san-bêng-hái-sè",
+    "Hanji": "山盟海誓",
+    "en": "A solemn pledge of love.",
+    "cn": "誓言感情如山的堅定、如海的深沉。多用來表示對愛情的真誠不變。"
+  },
+  {
+    "POJ": "soaⁿ-sòaⁿ",
+    "Hanji": "山線",
+    "en": "A mountain transport route.",
+    "cn": "穿越山區的交通路線。"
+  },
+  {
+    "POJ": "soaⁿ-io",
+    "Hanji": "山腰",
+    "en": "Halfway up a mountain.",
+    "cn": "半山腰、半山坡。半山處，介於山頂和山腳部分。"
+  },
+  {
+    "POJ": "soaⁿ-tang-o",
+    "Hanji": "山苳蒿",
+    "en": "A type of edible wild plant.",
+    "cn": "昭和草。草本植物。莖葉鮮綠柔軟，葉緣呈鋸齒狀，花為紅褐色，果實被絨毛。春季為最佳的採集季節，可以食用。遭蟲咬傷或擦傷，也可將莖葉搗碎敷於患部。"
+  },
+  {
+    "POJ": "soaⁿ-kok",
+    "Hanji": "山谷",
+    "en": "Valley.",
+    "cn": "山溝。兩山之間低窪且狹窄的地方。"
+  },
+  {
+    "POJ": "soaⁿ-ti/soaⁿ-tu",
+    "Hanji": "山豬",
+    "en": "Wild boar.",
+    "cn": "山豬、野豬。身體呈圓桶狀，皮黑又厚，長滿粗毛，鼻子長又硬，牙齒尖利，是雜食性動物，性情十分兇暴。"
+  },
+  {
+    "POJ": "soaⁿ-hô",
+    "Hanji": "山貉",
+    "en": "A type of large rodent (bamboo rat).",
+    "cn": "哺乳動物。背部暗褐色，腹部灰白色，體毛剛粗，尾部粗壯，鱗環明顯。善挖地穴居，是臺灣體型最大的鼠類，也是臺灣農作物的剋星。民間多抓來食用，一般山產店多寫作「山河肉」。"
+  },
+  {
+    "POJ": "soaⁿ-niau",
+    "Hanji": "山貓",
+    "en": "Leopard cat.",
+    "cn": "雲豹、石虎、狸貓。哺乳動物。頭部有黑色條紋，軀幹有黑褐色斑點，尾部有橫紋，性凶猛，捕食鳥、鼠、蛇、蛙等小動物。"
+  },
+  {
+    "POJ": "soaⁿ-chha̍t",
+    "Hanji": "山賊",
+    "en": "Mountain bandit.",
+    "cn": "占據山頭建立營寨或出沒山中的盜賊。"
+  },
+  {
+    "POJ": "soaⁿ-kha",
+    "Hanji": "山跤",
+    "en": "The foot of a mountain.",
+    "cn": "山腳。山下靠近平地的部分。"
+  },
+  {
+    "POJ": "soaⁿ-bông",
+    "Hanji": "山雺",
+    "en": "Mountain mist.",
+    "cn": "山嵐。山中的霧氣。"
+  },
+  {
+    "POJ": "soaⁿ-téng",
+    "Hanji": "山頂",
+    "en": "Mountaintop.",
+    "cn": "山的最高點。"
+  },
+  {
+    "POJ": "soaⁿ-thâu",
+    "Hanji": "山頭",
+    "en": "Mountaintop.",
+    "cn": "山頂。"
+  },
+  {
+    "POJ": "chhoan-chhit",
+    "Hanji": "川七",
+    "en": "Madeira-vine.",
+    "cn": "蔓生植物。可以入藥，有散血定痛的功效，常和杜仲相配合。嫩葉可以食用，是餐廳常見的野菜佳餚。"
+  },
+  {
+    "POJ": "chhoan-kiong",
+    "Hanji": "川芎",
+    "en": "A type of medicinal herb.",
+    "cn": "芎藭。草本植物。可入藥，有調經、活血、潤燥、止痛等療效。大多產於四川，所以稱為「川芎」。"
+  },
+  {
+    "POJ": "chhoan-pòe",
+    "Hanji": "川貝",
+    "en": "A type of medicinal herb (Fritillaria).",
+    "cn": "貝母、藥實。草本植物。地下鱗莖為白色，形狀像集貝子，可以入藥。主要產地在中國四川。"
+  },
+  {
+    "POJ": "kang-sū",
+    "Hanji": "工事",
+    "en": "Construction work.",
+    "cn": "工程。源自日語「工事（こうじ）」。"
+  },
+  {
+    "POJ": "kang-lâng",
+    "Hanji": "工人",
+    "en": "Worker.",
+    "cn": "工人。靠勞力工作，以換取工資的人。"
+  },
+  {
+    "POJ": "kang-á",
+    "Hanji": "工仔",
+    "en": "Worker.",
+    "cn": "工人。靠勞力工作，以換取工資的人。"
+  },
+  {
+    "POJ": "kang-chok",
+    "Hanji": "工作",
+    "en": "Work.",
+    "cn": "作事、職業。為賺取生活所需的金錢或物質，所從事的腦力或體力的活動。"
+  },
+  {
+    "POJ": "kang-tiûⁿ",
+    "Hanji": "工場",
+    "en": "Factory.",
+    "cn": "工廠。把原料製成製造品，或把半成品做成成品的製造場所。工廠裡通常有機器和工人。"
+  },
+  {
+    "POJ": "kang-hu",
+    "Hanji": "工夫",
+    "en": "Kung fu.",
+    "cn": "中國功夫。即特殊武術、工技。"
+  },
+  {
+    "POJ": "kang-liâu",
+    "Hanji": "工寮",
+    "en": "A temporary work shed.",
+    "cn": "為了工作而搭起的簡易棚子，可以當作休息或存放工具等的地方。"
+  },
+  {
+    "POJ": "kang-chhiúⁿ",
+    "Hanji": "工廠",
+    "en": "Factory.",
+    "cn": "工場。擁有生產機器及依生產流程分工的工人，並將原料或半成品製成成品的工作場所；通常包括工作、業務和管理等部門 。"
+  },
+  {
+    "POJ": "kang-hōe",
+    "Hanji": "工會",
+    "en": "Labor union.",
+    "cn": "同業工人為維護共同的權益，所聯合組織的團體。"
+  },
+  {
+    "POJ": "kang-gia̍p",
+    "Hanji": "工業",
+    "en": "Industry.",
+    "cn": "利用人力、知識、技術、機器等將自然物品加工成新產品的生產事業。"
+  },
+  {
+    "POJ": "kang-têng",
+    "Hanji": "工程",
+    "en": "Engineering project.",
+    "cn": "有關製造、建築、開礦、發電、興修水利等，有一定計畫的工作進程。"
+  },
+  {
+    "POJ": "kang-têng-su",
+    "Hanji": "工程師",
+    "en": "Engineer.",
+    "cn": "主持工事、管理機械的專門技術人員。"
+  },
+  {
+    "POJ": "kang-gē",
+    "Hanji": "工藝",
+    "en": "Pastime.",
+    "cn": "消遣。"
+  },
+  {
+    "POJ": "khang-khòe",
+    "Hanji": "工課",
+    "en": "Work.",
+    "cn": "工作、事情。"
+  },
+  {
+    "POJ": "kang-thâu",
+    "Hanji": "工頭",
+    "en": "Foreman.",
+    "cn": "領班。領導及管理工人的為首者。"
+  },
+  {
+    "POJ": "pa-kiat",
+    "Hanji": "巴結",
+    "en": "To flatter.",
+    "cn": "拍馬屁、奉承別人。"
+  },
+  {
+    "POJ": "pa-lang",
+    "Hanji": "巴郎",
+    "en": "A type of fish (mackerel).",
+    "cn": "竹筴魚、四破。魚類。為「真鰺」(竹筴魚)和「藍圓鰺」(四破)的混稱，成魚長度大約為三十公分，以小型蝦蟹類為食，棲息在海底礁石上方的水面海域，一般以外銷日本鮮售為主。"
+  },
+  {
+    "POJ": "kin-á/kun-á",
+    "Hanji": "巾仔",
+    "en": "A general term for cloths or towels.",
+    "cn": "布巾類的總稱。"
+  },
+  {
+    "POJ": "kan-hiu",
+    "Hanji": "干休",
+    "en": "To stop.",
+    "cn": "停止、罷休。"
+  },
+  {
+    "POJ": "kan-kan-á",
+    "Hanji": "干干仔",
+    "en": "Of all things.",
+    "cn": "偏偏。"
+  },
+  {
+    "POJ": "kan-lo̍k",
+    "Hanji": "干樂",
+    "en": "A spinning top.",
+    "cn": "陀螺。一種玩具，形狀像海螺，用木頭等材料製成。下面尖端有金屬釘，玩時用繩子纏繞，再用力拋出、抽繩使直立旋轉。"
+  },
+  {
+    "POJ": "kan-sia̍p",
+    "Hanji": "干涉",
+    "en": "To interfere.",
+    "cn": "插手管別人的事情。"
+  },
+  {
+    "POJ": "kan-na",
+    "Hanji": "干焦",
+    "en": "Only.",
+    "cn": "只有、僅僅。"
+  },
+  {
+    "POJ": "kan-pòe",
+    "Hanji": "干貝",
+    "en": "Dried scallop.",
+    "cn": "蚌類扇貝上的肉經乾燥製成的食品。"
+  },
+  {
+    "POJ": "jia̍p-it/lia̍p-it",
+    "Hanji": "廿一",
+    "en": "Twenty-one.",
+    "cn": "二十一。"
+  },
+  {
+    "POJ": "keng-á",
+    "Hanji": "弓仔",
+    "en": "Spring (metal).",
+    "cn": "彈簧。利用有彈性的材料所製成的零件。"
+  },
+  {
+    "POJ": "keng-chio",
+    "Hanji": "弓蕉",
+    "en": "Banana.",
+    "cn": "香蕉。瓜果類，味道香甜。因為果實長形略為彎曲，所以稱為「弓蕉」。"
+  },
+  {
+    "POJ": "keng-chio-iû",
+    "Hanji": "弓蕉油",
+    "en": "Banana oil.",
+    "cn": "香蕉油、香蕉水。用酯類、酮類、醇類、醚類和芳香族化合物製成的透明液體，容易揮發，有香蕉氣味。它的酒精溶液可以當作食品香料；混合有機溶劑之後，可以運用在製造噴漆、印刷、或降低漆的黏度等。"
+  },
+  {
+    "POJ": "keng--khui",
+    "Hanji": "弓開",
+    "en": "To stretch open.",
+    "cn": "撐開。用力使東西張開。"
+  },
+  {
+    "POJ": "ín-tō͘",
+    "Hanji": "引渡",
+    "en": "To extradite.",
+    "cn": "他國罪犯居留在本國境內時，本國政府配合將罪犯送回該國，以接受追訴或懲處。但國際法中，原則上不引渡政治犯。源自日語「引き渡す（ひきわたす）」。"
+  },
+  {
+    "POJ": "ín-iú",
+    "Hanji": "引誘",
+    "en": "To lure.",
+    "cn": "誘導、勾引。"
+  },
+  {
+    "POJ": "ín-khí",
+    "Hanji": "引起",
+    "en": "To cause.",
+    "cn": "引發、發動。"
+  },
+  {
+    "POJ": "ín-hûn",
+    "Hanji": "引魂",
+    "en": "To summon a soul.",
+    "cn": "指招回生者或死者之魂。"
+  },
+  {
+    "POJ": "sim-sū",
+    "Hanji": "心事",
+    "en": "Something on one's mind.",
+    "cn": "藏在心中所不為人知的事。"
+  },
+  {
+    "POJ": "sim-būn",
+    "Hanji": "心悶",
+    "en": "To feel down.",
+    "cn": "形容內心愁苦煩悶的狀態。"
+  },
+  {
+    "POJ": "sim-chêng",
+    "Hanji": "心情",
+    "en": "Mood.",
+    "cn": "內心的情緒。"
+  },
+  {
+    "POJ": "sim-ì",
+    "Hanji": "心意",
+    "en": "Thought.",
+    "cn": "想法、看法。"
+  },
+  {
+    "POJ": "sim-ki",
+    "Hanji": "心機",
+    "en": "Scheme.",
+    "cn": "謀略、計謀。"
+  },
+  {
+    "POJ": "sim-hóe/sim-hé",
+    "Hanji": "心火",
+    "en": "Internal heat or anger.",
+    "cn": "內心的浮躁、激動或者是怒氣。"
+  },
+  {
+    "POJ": "sim-sóng",
+    "Hanji": "心爽",
+    "en": "To feel refreshed.",
+    "cn": "心裡舒適暢快。"
+  },
+  {
+    "POJ": "sim-kông-hóe-to̍h/sim-kông-hé-to̍h",
+    "Hanji": "心狂火著",
+    "en": "To be furious.",
+    "cn": "氣急攻心、火冒三丈。"
+  },
+  {
+    "POJ": "sim-lí",
+    "Hanji": "心理",
+    "en": "Psychology.",
+    "cn": "人腦中的認知、思考、記憶等活動的總稱，也泛指人的一切內心活動。"
+  },
+  {
+    "POJ": "sim-sîn",
+    "Hanji": "心神",
+    "en": "Mind.",
+    "cn": "精神、心力。"
+  },
+  {
+    "POJ": "sim-koaⁿ",
+    "Hanji": "心肝",
+    "en": "Heart.",
+    "cn": "一個人的心地、心腸。"
+  },
+  {
+    "POJ": "sim-koaⁿ-á-kiáⁿ",
+    "Hanji": "心肝仔囝",
+    "en": "Darling child.",
+    "cn": "心肝寶貝。父母對子女的暱稱。"
+  },
+  {
+    "POJ": "sim-koaⁿ-khut-á",
+    "Hanji": "心肝窟仔",
+    "en": "The bottom of one's heart.",
+    "cn": "心窩、心坎。胸部的中央、胸口。"
+  },
+  {
+    "POJ": "sim-koaⁿ-thâu",
+    "Hanji": "心肝頭",
+    "en": "In one's heart.",
+    "cn": "心裡頭。"
+  },
+  {
+    "POJ": "sim-tn̂g",
+    "Hanji": "心腸",
+    "en": "Heart.",
+    "cn": "心地。"
+  },
+  {
+    "POJ": "sim-pak",
+    "Hanji": "心腹",
+    "en": "Confidant.",
+    "cn": "親信。十分信任的人、忠誠可靠的人。"
+  },
+  {
+    "POJ": "sim-hiat",
+    "Hanji": "心血",
+    "en": "Effort.",
+    "cn": "心力。"
+  },
+  {
+    "POJ": "sim-hēng",
+    "Hanji": "心行",
+    "en": "Heart.",
+    "cn": "心地、心腸。"
+  },
+  {
+    "POJ": "sim-sek",
+    "Hanji": "心適",
+    "en": "Interesting.",
+    "cn": "有趣。"
+  },
+  {
+    "POJ": "sim-sng",
+    "Hanji": "心酸",
+    "en": "To feel sad.",
+    "cn": "傷心、辛酸。心裡頭感到悲傷痛苦。"
+  },
+  {
+    "POJ": "hō͘-kháu",
+    "Hanji": "戶口",
+    "en": "Household registration.",
+    "cn": "計算某一地域的家庭及其人口數的計量單位。"
+  },
+  {
+    "POJ": "hō͘-kháu-miâ",
+    "Hanji": "戶口名",
+    "en": "Registered name.",
+    "cn": "正名、本名。登記在戶口名簿上的名字，有別一般偏名。"
+  },
+  {
+    "POJ": "hō͘-kháu-chhau-pún",
+    "Hanji": "戶口抄本",
+    "en": "A copy of the household registration.",
+    "cn": "戶籍謄本。戶政機關戶籍登記的抄錄本。"
+  },
+  {
+    "POJ": "hō͘-tēng",
+    "Hanji": "戶橂",
+    "en": "Threshold.",
+    "cn": "門檻。門下所設的橫木或石板等。"
+  },
+  {
+    "POJ": "chhiú-ńg",
+    "Hanji": "手䘼",
+    "en": "Sleeve.",
+    "cn": "衣袖。衣服的袖子，也就是從肩膀以下的部分。"
+  },
+  {
+    "POJ": "chhiú-hā",
+    "Hanji": "手下",
+    "en": "Subordinate.",
+    "cn": "部下、部屬。"
+  },
+  {
+    "POJ": "chhiú-sè",
+    "Hanji": "手勢",
+    "en": "Gesture.",
+    "cn": "指整個手部的肢體動作，尤其是指動作中的狀態。"
+  },
+  {
+    "POJ": "chhiú-ìn",
+    "Hanji": "手印",
+    "en": "Fingerprint.",
+    "cn": "捺在文件上的指模印。"
+  },
+  {
+    "POJ": "chhiú-bóe/chhiú-bé",
+    "Hanji": "手尾",
+    "en": "Fingertip.",
+    "cn": "指尖。手掌的指頭、指尖部分。"
+  },
+  {
+    "POJ": "chhiú-bóe-la̍t/chhiú-bé-la̍t",
+    "Hanji": "手尾力",
+    "en": "Grip strength.",
+    "cn": "手腕的力氣或手掌的握力。"
+  },
+  {
+    "POJ": "chhiú-bóe-chîⁿ/chhiú-bé-chîⁿ",
+    "Hanji": "手尾錢",
+    "en": "Money held by the deceased.",
+    "cn": "過世的人手上或身上所帶的錢。"
+  },
+  {
+    "POJ": "chhiú-kang",
+    "Hanji": "手工",
+    "en": "Handmade.",
+    "cn": "依靠雙手製造物品的工夫。"
+  },
+  {
+    "POJ": "chhiú-kin-á/chhiú-kun-á",
+    "Hanji": "手巾仔",
+    "en": "Handkerchief.",
+    "cn": "手帕。"
+  },
+  {
+    "POJ": "chhiú-té/chhiú-tóe",
+    "Hanji": "手底",
+    "en": "Palm.",
+    "cn": "手掌。"
+  },
+  {
+    "POJ": "chhiú-hōaⁿ-á",
+    "Hanji": "手扞仔",
+    "en": "Handlebar.",
+    "cn": "把手。腳踏車、機車或三輪車等的把手。"
+  },
+  {
+    "POJ": "chhiú-chí",
+    "Hanji": "手指",
+    "en": "Ring (jewelry).",
+    "cn": "戒指。套在手指頭上的環形飾物。"
+  },
+  {
+    "POJ": "chhiú-chéng-thâu-á",
+    "Hanji": "手指頭仔",
+    "en": "Finger.",
+    "cn": "手指。"
+  },
+  {
+    "POJ": "chhiú-chih-phō͘-á",
+    "Hanji": "手摺簿仔",
+    "en": "Bankbook.",
+    "cn": "存摺。金融機構發給存款人的小冊子，內容詳細記載存款人的存提記錄，可以做為憑證。"
+  },
+  {
+    "POJ": "chhiú-tòng",
+    "Hanji": "手擋",
+    "en": "Handbrake.",
+    "cn": "手剎車。"
+  },
+  {
+    "POJ": "chhiú-sò͘-liāu",
+    "Hanji": "手數料",
+    "en": "Handling fee.",
+    "cn": "處理手續所需的費用，即手續費。源自日語「手数料（てすうりょう）」。"
+  },
+  {
+    "POJ": "chhiú-khiau",
+    "Hanji": "手曲",
+    "en": "The crook of the arm.",
+    "cn": "整個手臂彎曲起來所形成的部分。"
+  },
+  {
+    "POJ": "chhiú-bô͘",
+    "Hanji": "手模",
+    "en": "The shape of a hand.",
+    "cn": "整個手掌的形狀外觀。"
+  },
+  {
+    "POJ": "chhiú-lok-á",
+    "Hanji": "手橐仔",
+    "en": "Glove.",
+    "cn": "手套。"
+  },
+  {
+    "POJ": "chhiú-ki-á",
+    "Hanji": "手機仔",
+    "en": "Mobile phone.",
+    "cn": "手機、行動電話。"
+  },
+  {
+    "POJ": "chhiú-tōaⁿ",
+    "Hanji": "手段",
+    "en": "Method.",
+    "cn": "做事情的技巧、方法。"
+  },
+  {
+    "POJ": "chhiú-sio̍h",
+    "Hanji": "手液",
+    "en": "Hand sweat.",
+    "cn": "手汗。手掌部位因體質或緊張所分泌的汗液。"
+  },
+  {
+    "POJ": "chhiú-jiáu/chhiú-niáu",
+    "Hanji": "手爪",
+    "en": "Fingers.",
+    "cn": "原意為手指，引申為「行為、習慣」的意思。"
+  },
+  {
+    "POJ": "chhiú-hûn",
+    "Hanji": "手痕",
+    "en": "Fingerprint.",
+    "cn": "指紋。"
+  },
+  {
+    "POJ": "chhiú-pôaⁿ",
+    "Hanji": "手盤",
+    "en": "The back of the hand.",
+    "cn": "手背。"
+  },
+  {
+    "POJ": "chhiú-ba̍k",
+    "Hanji": "手目",
+    "en": "Wrist bone.",
+    "cn": "手腕關節突起的骨頭。"
+  },
+  {
+    "POJ": "chhiú-óaⁿ",
+    "Hanji": "手碗",
+    "en": "Elbow joint.",
+    "cn": "手肘的關節。"
+  },
+  {
+    "POJ": "chhiú-óaⁿ-kut",
+    "Hanji": "手碗骨",
+    "en": "Elbow bone.",
+    "cn": "手肘關節的骨頭。"
+  },
+  {
+    "POJ": "chhiú-pit",
+    "Hanji": "手筆",
+    "en": "Handwriting.",
+    "cn": "筆跡、手跡。親手所寫的文字或所畫的圖畫。"
+  },
+  {
+    "POJ": "chhiú-pē",
+    "Hanji": "手耙",
+    "en": "A rake.",
+    "cn": "耙子。用來撥平耕地的農具。"
+  },
+  {
+    "POJ": "chhiú-tó͘",
+    "Hanji": "手肚",
+    "en": "Biceps.",
+    "cn": "手臂凸起的肌肉。"
+  },
+  {
+    "POJ": "chhiú-kó͘",
+    "Hanji": "手股",
+    "en": "Upper arm.",
+    "cn": "上臂。上肢的一部分，位於肩膀與下臂之間。"
+  },
+  {
+    "POJ": "chhiú-su̍t",
+    "Hanji": "手術",
+    "en": "Surgery.",
+    "cn": "開刀。醫生使用醫療器材在病患身上切割患處、縫合傷口以治療疾病的方法。"
+  },
+  {
+    "POJ": "chhiú-lō͘",
+    "Hanji": "手路",
+    "en": "Special skill.",
+    "cn": "特殊的手藝、手法。"
+  },
+  {
+    "POJ": "chhiú-lō͘-chhài",
+    "Hanji": "手路菜",
+    "en": "A signature dish.",
+    "cn": "拿手好菜。"
+  },
+  {
+    "POJ": "chhiú-chhèng",
+    "Hanji": "手銃",
+    "en": "Pistol.",
+    "cn": "手槍。"
+  },
+  {
+    "POJ": "chhiú-pió-á",
+    "Hanji": "手錶仔",
+    "en": "Wristwatch.",
+    "cn": "手錶。戴在手上的計時器。"
+  },
+  {
+    "POJ": "chhiú-tiān-á",
+    "Hanji": "手電仔",
+    "en": "Flashlight.",
+    "cn": "手電筒。"
+  },
+  {
+    "POJ": "chhiú-bīn",
+    "Hanji": "手面",
+    "en": "Palm.",
+    "cn": "手掌。"
+  },
+  {
+    "POJ": "chhiú-hong-khîm",
+    "Hanji": "手風琴",
+    "en": "Accordion.",
+    "cn": "西洋鍵盤樂器。彈奏時拉動側邊的風箱，鼓動簧管產生聲音。"
+  },
+  {
+    "POJ": "chhiú-kut",
+    "Hanji": "手骨",
+    "en": "The bones of the arm.",
+    "cn": "指人體上肢胳臂的骨頭部分。"
+  },
+  {
+    "POJ": "châi-chú",
+    "Hanji": "才子",
+    "en": "A talented scholar.",
+    "cn": "有卓越文才或學問能力的男子。"
+  },
+  {
+    "POJ": "châi-chêng",
+    "Hanji": "才情",
+    "en": "Talent.",
+    "cn": "指人的才華、本事、才能。"
+  },
+  {
+    "POJ": "chiah-sī",
+    "Hanji": "才是",
+    "en": "That's the one.",
+    "cn": "才是。"
+  },
+  {
+    "POJ": "chiah ē",
+    "Hanji": "才會",
+    "en": "Only then.",
+    "cn": "用來連結前後因果關係的詞語。"
+  },
+  {
+    "POJ": "châi-tiāu",
+    "Hanji": "才調",
+    "en": "Ability.",
+    "cn": "本事、能力。"
+  },
+  {
+    "POJ": "chi-chhut",
+    "Hanji": "支出",
+    "en": "Expenditure.",
+    "cn": "消費、支付的費用、款項。"
+  },
+  {
+    "POJ": "chi-chhî",
+    "Hanji": "支持",
+    "en": "To support.",
+    "cn": "維持、支撐。"
+  },
+  {
+    "POJ": "chi-oān",
+    "Hanji": "支援",
+    "en": "To support.",
+    "cn": "支持、援助。"
+  },
+  {
+    "POJ": "chi-phiò",
+    "Hanji": "支票",
+    "en": "Check (bank).",
+    "cn": "一種以銀行為付款人的憑票即付之匯票。"
+  },
+  {
+    "POJ": "bûn-kiāⁿ",
+    "Hanji": "文件",
+    "en": "Document.",
+    "cn": "書札、公文類的統稱。"
+  },
+  {
+    "POJ": "bûn-hòa",
+    "Hanji": "文化",
+    "en": "Culture.",
+    "cn": "一種在一個特定地區內生活的群體，依據團體價值所學習得來的行為組合。其所共享的信念、價值觀、行為模式(儀式、風俗習慣)及語言則包括了有形的生活產品(如食物、家具、建築、衣服、工具)及無形的人文概念(如教育、制度、法律)等。"
+  },
+  {
+    "POJ": "bûn-jī/bûn-lī",
+    "Hanji": "文字",
+    "en": "Writing.",
+    "cn": "人類用來表示觀念、記錄語言的符號。"
+  },
+  {
+    "POJ": "bûn-ha̍k",
+    "Hanji": "文學",
+    "en": "Literature.",
+    "cn": "廣義泛指一切思想的表現，用文字記述的著作。狹義則是指專用藝術的手法，表現思想、情感或者想像的作品。"
+  },
+  {
+    "POJ": "bûn-koaⁿ",
+    "Hanji": "文官",
+    "en": "Civil official.",
+    "cn": "受政府機關僱用，擔任文職工作的人員。不包括軍事人員及選舉人員在內。"
+  },
+  {
+    "POJ": "bûn-chhī",
+    "Hanji": "文市",
+    "en": "Retail business.",
+    "cn": "零售商行。"
+  },
+  {
+    "POJ": "bûn-pêng",
+    "Hanji": "文憑",
+    "en": "Diploma.",
+    "cn": "用來作為憑證的正式文書。"
+  },
+  {
+    "POJ": "bûn-bûn-á-chhiò",
+    "Hanji": "文文仔笑",
+    "en": "To smile gently.",
+    "cn": "微笑、淺笑。"
+  },
+  {
+    "POJ": "bûn-tàn",
+    "Hanji": "文旦",
+    "en": "Pomelo.",
+    "cn": "瓜果類。果實呈上小下大的洋梨形，果皮粗，呈淺綠色，果肉呈淡黃白色，白底透紅，紅色稍紅等幾種，柔軟多汁，氣味芳香。臺灣地區以麻豆文旦為最有名。"
+  },
+  {
+    "POJ": "bûn-bêng",
+    "Hanji": "文明",
+    "en": "Civilization.",
+    "cn": "人類社會進步開化的狀況。"
+  },
+  {
+    "POJ": "bûn-su",
+    "Hanji": "文書",
+    "en": "Clerk.",
+    "cn": "公務文件及來往書牘的泛稱，而處理這些事務的人也就被叫做「文書」。"
+  },
+  {
+    "POJ": "bûn-chiong",
+    "Hanji": "文章",
+    "en": "Article.",
+    "cn": "主題明確，詞意通順的文字作品。"
+  },
+  {
+    "POJ": "bûn-giân",
+    "Hanji": "文言",
+    "en": "Classical Chinese.",
+    "cn": "用古漢語為基礎的書面語。相對於白話。"
+  },
+  {
+    "POJ": "bûn-sin",
+    "Hanji": "文身",
+    "en": "Tattoo.",
+    "cn": "紋身、刺青。"
+  },
+  {
+    "POJ": "bûn-ngá",
+    "Hanji": "文雅",
+    "en": "Elegant.",
+    "cn": "優美、高雅。"
+  },
+  {
+    "POJ": "táu-á",
+    "Hanji": "斗仔",
+    "en": "A dipper-shaped container.",
+    "cn": "形狀像斗的容器。"
+  },
+  {
+    "POJ": "táu-kài",
+    "Hanji": "斗概",
+    "en": "A tool for leveling grain in a measure.",
+    "cn": "用來平斗的器具。以前用斗斛量東西時，用來刮平斗口高出部分的長形棒子。"
+  },
+  {
+    "POJ": "hong-piān",
+    "Hanji": "方便",
+    "en": "Convenient.",
+    "cn": "便利。"
+  },
+  {
+    "POJ": "hong-hiòng",
+    "Hanji": "方向",
+    "en": "Direction.",
+    "cn": "指東西南北上下等區別。"
+  },
+  {
+    "POJ": "hong-sek",
+    "Hanji": "方式",
+    "en": "Method.",
+    "cn": "做事或說話的方法和形式。"
+  },
+  {
+    "POJ": "hong-hoat",
+    "Hanji": "方法",
+    "en": "Method.",
+    "cn": "為了達到某種目的所採行的步驟或手段。"
+  },
+  {
+    "POJ": "hong-giân",
+    "Hanji": "方言",
+    "en": "Dialect.",
+    "cn": "同一語言的地區或社會階層變體。"
+  },
+  {
+    "POJ": "hong-bīn",
+    "Hanji": "方面",
+    "en": "Aspect.",
+    "cn": "事物的部分地位。"
+  },
+  {
+    "POJ": "ji̍t-kong-teng/li̍t-kong-teng",
+    "Hanji": "日光燈",
+    "en": "Fluorescent lamp.",
+    "cn": "照明用具。利用放電現象及光子激發的螢光作用發光的照明用具。"
+  },
+  {
+    "POJ": "ji̍t-chí/li̍t-chí",
+    "Hanji": "日子",
+    "en": "Day.",
+    "cn": "時間、期間。"
+  },
+  {
+    "POJ": "ji̍t-siông/li̍t-siông",
+    "Hanji": "日常",
+    "en": "Daily.",
+    "cn": "平常、平日。"
+  },
+  {
+    "POJ": "ji̍t-āu/li̍t-āu",
+    "Hanji": "日後",
+    "en": "In the future.",
+    "cn": "以後、將來。"
+  },
+  {
+    "POJ": "ji̍t--sî/li̍t--sî",
+    "Hanji": "日時",
+    "en": "Daytime.",
+    "cn": "白天。"
+  },
+  {
+    "POJ": "ji̍t--sî-á/li̍t--sî-á",
+    "Hanji": "日時仔",
+    "en": "Daytime.",
+    "cn": "白天。"
+  },
+  {
+    "POJ": "ji̍t-goa̍t-ham/li̍t-goa̍t-ham",
+    "Hanji": "日月蚶",
+    "en": "A type of scallop.",
+    "cn": "扇貝、帆立貝。貝類。貝扇為扁平狀，左右兩片貝扇的顏色不一樣，一片為白色，一片為紫褐色，所以叫做「日月蚶」。在海水裡行進時，白色貝扇平躺，紫褐色貝扇會揚起來像帆船揚帆前進。"
+  },
+  {
+    "POJ": "ji̍t-goa̍t-than/li̍t-goa̍t-than",
+    "Hanji": "日月蟶",
+    "en": "A type of scallop.",
+    "cn": "扇貝、帆立貝、日月蛤。貝類。貝扇為扁平狀，左右兩片貝扇的顏色不一樣，一片為白色，一片為紫褐色。在海水裡行進時，白色貝扇平躺，紫褐色貝扇會揚起來像帆船揚帆前進。"
+  },
+  {
+    "POJ": "ji̍t-kî/li̍t-kî",
+    "Hanji": "日期",
+    "en": "Date.",
+    "cn": "發生某件事的確定日子或者期間。"
+  },
+  {
+    "POJ": "ji̍t-chì/li̍t-chì",
+    "Hanji": "日誌",
+    "en": "Diary.",
+    "cn": "日記。用於每天記事情的本子。"
+  },
+  {
+    "POJ": "chhun-hun",
+    "Hanji": "春分",
+    "en": "Spring Equinox (solar term).",
+    "cn": "約當國曆三月二十一或二十二日，這一天南北半球的晝夜長短平均。"
+  },
+  {
+    "POJ": "goa̍t-hā-nó͘-jîn/goa̍t-hā-nó͘-lîn",
+    "Hanji": "月下老人",
+    "en": "The god of marriage.",
+    "cn": "指主管男女婚姻的神，也有人用以稱呼媒人。"
+  },
+  {
+    "POJ": "goe̍h-tiong/ge̍h-tiong",
+    "Hanji": "月中",
+    "en": "The middle of the month.",
+    "cn": "指每一個月的中旬。"
+  },
+  {
+    "POJ": "goe̍h-lâi-hiong/ge̍h-lâi-hiong",
+    "Hanji": "月來香",
+    "en": "Tuberose.",
+    "cn": "夜來香。花名。地下有球形的根，地上的莖高達六十多公分。秋天開白色的花，微黃。花被呈現漏斗的形狀，雄蕊有六枚，通常每二朵並生。因為在月亮出現時散發香味，所以稱做「月來香」。"
+  },
+  {
+    "POJ": "goe̍h-hōng/ge̍h-hōng",
+    "Hanji": "月俸",
+    "en": "Monthly salary.",
+    "cn": "月薪、月給。公務員或受僱者每個月所領的薪資。"
+  },
+  {
+    "POJ": "goe̍h-kng-mê/ge̍h-kng-mî",
+    "Hanji": "月光暝",
+    "en": "A moonlit night.",
+    "cn": "月夜。有月光的夜晚。"
+  },
+  {
+    "POJ": "goe̍h-lāi/ge̍h-lāi",
+    "Hanji": "月內",
+    "en": "The first month after childbirth.",
+    "cn": "月子。指婦人生產後一個月之內的時期。"
+  },
+  {
+    "POJ": "goe̍h-lāi-pâng/ge̍h-lāi-pâng",
+    "Hanji": "月內房",
+    "en": "The room for postpartum confinement.",
+    "cn": "產婦坐月子的房間。"
+  },
+  {
+    "POJ": "goe̍h-lāi-hong/ge̍h-lāi-hong",
+    "Hanji": "月內風",
+    "en": "Puerperal fever.",
+    "cn": "產褥熱。病名。產婦在生產後產道因病菌感染而引起的疾病。主要症狀為發燒、下腹疼痛、陰道流血等。最常感染的部位為子宮內膜。亦稱為「月子病」。"
+  },
+  {
+    "POJ": "goe̍h-chhe/ge̍h-chhoe",
+    "Hanji": "月初",
+    "en": "The beginning of the month.",
+    "cn": "月頭、上旬。一個月剛開始的頭幾天。"
+  },
+  {
+    "POJ": "goe̍h-pòaⁿ/ge̍h-pòaⁿ",
+    "Hanji": "月半",
+    "en": "The 15th day of the lunar month.",
+    "cn": "陰曆每月的十五日，是一個月裡，月最圓的時候。"
+  },
+  {
+    "POJ": "goe̍h-gōa-ji̍t/ge̍h-gōa-li̍t",
+    "Hanji": "月外日",
+    "en": "More than a month.",
+    "cn": "一個多月。"
+  },
+  {
+    "POJ": "goe̍h-niû/ge̍h-niû",
+    "Hanji": "月娘",
+    "en": "The moon.",
+    "cn": "月亮。"
+  },
+  {
+    "POJ": "goe̍h-bóe/ge̍h-bé",
+    "Hanji": "月尾",
+    "en": "The end of the month.",
+    "cn": "月底。指一個月的最後幾天。"
+  },
+  {
+    "POJ": "goe̍h-ji̍t/ge̍h-li̍t",
+    "Hanji": "月日",
+    "en": "A month's time.",
+    "cn": "一個月的時間。"
+  },
+  {
+    "POJ": "goe̍h-àm-mê/ge̍h-àm-mî",
+    "Hanji": "月暗暝",
+    "en": "A moonless night.",
+    "cn": "暗夜、月黑天。沒有月光的夜晚。"
+  },
+  {
+    "POJ": "ge̍h-thô",
+    "Hanji": "月桃",
+    "en": "Shell ginger.",
+    "cn": "虎子花、良薑。草本植物。高約一至三公尺，葉鞘很長，質地堅韌，可以當作繩索用，葉子可以用來包粽子。種子成分含有健胃劑，可以加工製成強胃散或口味兒仁丹。"
+  },
+  {
+    "POJ": "goe̍h-khîm/ge̍h-khîm",
+    "Hanji": "月琴",
+    "en": "A two-stringed lute (Taiwanese traditional musical instrument).",
+    "cn": "弦樂器。用木頭製成，琴身為扁圓形或八角形，有四絃或三絃，用撥子彈奏。臺灣的月琴只有兩絃，因為過去有人行乞時會彈奏月琴伴唱，故俗稱為「乞食琴」(khit-chia̍h-khîm)。"
+  },
+  {
+    "POJ": "goe̍h-bâi/ge̍h-bâi",
+    "Hanji": "月眉",
+    "en": "Crescent moon.",
+    "cn": "初三、初四所看見的弦月，由於形狀就像眉毛一樣，因此稱月初所見的月亮為「月眉」。"
+  },
+  {
+    "POJ": "goe̍h-kip/ge̍h-kip",
+    "Hanji": "月給",
+    "en": "Monthly salary.",
+    "cn": "月薪、月俸。公務員或受僱者每個月所領的總薪資。源自日語「月給（げっきゅう）」。"
+  },
+  {
+    "POJ": "goe̍h-keng/ge̍h-keng",
+    "Hanji": "月經",
+    "en": "Menstruation.",
+    "cn": "指月經來潮，生理成熟的女人每月子宮黏膜脫落，所發生的週期性陰道流血現象，通常約在十四歲到四十五歲之間。"
+  },
+  {
+    "POJ": "goe̍h-sek/ge̍h-sek",
+    "Hanji": "月色",
+    "en": "Moonlight.",
+    "cn": "月光。"
+  },
+  {
+    "POJ": "goe̍h-piáⁿ/ge̍h-piáⁿ",
+    "Hanji": "月餅",
+    "en": "Mooncake.",
+    "cn": "一種包著餡料的糕餅點心，是中秋節的應景食品。"
+  },
+  {
+    "POJ": "ba̍k-chhiūⁿ",
+    "Hanji": "木匠",
+    "en": "Carpenter.",
+    "cn": "木工師父。"
+  },
+  {
+    "POJ": "ba̍k-kia̍h",
+    "Hanji": "木屐",
+    "en": "Wooden clogs.",
+    "cn": "以木材為底，上面釘有帶子的木板拖鞋。"
+  },
+  {
+    "POJ": "ba̍k-kang",
+    "Hanji": "木工",
+    "en": "Carpentry.",
+    "cn": "從事木器製造的人。"
+  },
+  {
+    "POJ": "bo̍k-sim-pang",
+    "Hanji": "木心枋",
+    "en": "Blockboard.",
+    "cn": "木心板、三夾板。厚的三夾板，中間為集成材實心木板，另外兩面貼木紋皮，是常見的建築材料。"
+  },
+  {
+    "POJ": "bo̍k-châi",
+    "Hanji": "木材",
+    "en": "Lumber.",
+    "cn": "截斷的原木，經過初步的製材加工，成為提供建築和製作器物用的材料。"
+  },
+  {
+    "POJ": "bo̍k-mî",
+    "Hanji": "木棉",
+    "en": "Kapok tree.",
+    "cn": "木本植物。樹幹有瘤刺，枝條成輪狀向四周平伸開展。葉片平滑，花於初春開放，花朵豔麗，為橙紅色系。果子呈現橢圓形，種子上被棉毛，棉毛富有彈性，適合做枕頭、沙發等填充材料。"
+  },
+  {
+    "POJ": "bo̍k-koe",
+    "Hanji": "木瓜",
+    "en": "Papaya.",
+    "cn": "番木瓜。植物名，也稱為「木瓜」。番瓜木科番木瓜屬，草質小喬木。葉具長柄，掌狀分裂。全株有乳汁，雌雄異株，果實卵圓形或橢圓形，成熟後為黃色。供生食或製果汁，可入藥。"
+  },
+  {
+    "POJ": "bo̍k-ní",
+    "Hanji": "木耳",
+    "en": "Wood ear fungus.",
+    "cn": "蕈菇類。生長在朽腐的樹幹上，成片狀，一邊黏在腐木上，表面向上突出，菌絲體生長後，生子實體，形狀長得像人的耳朵，徑大約一公寸，內面平滑，呈現暗褐色，外面有柔軟的短毛，呈淡褐色。可以供食用。"
+  },
+  {
+    "POJ": "ba̍k-sat",
+    "Hanji": "木蝨",
+    "en": "Bedbug.",
+    "cn": "床蝨、臭蟲。身體呈橢圓且扁平，喜愛乾燥，白天大多藏在地板、牆壁或草蓆的縫隙，晚上則爬出來吸食人和牲畜的血，是一種會傳染疾病的寄生蟲。"
+  },
+  {
+    "POJ": "bo̍k-hî/bo̍k-hû",
+    "Hanji": "木魚",
+    "en": "A wooden fish (percussion instrument).",
+    "cn": "唸經時用來控制節奏的法器。"
+  },
+  {
+    "POJ": "bo̍k-môa-hông",
+    "Hanji": "木麻黃",
+    "en": "Casuarina tree.",
+    "cn": "木本植物。雌雄異株，小枝有關節，葉子退化為鞘狀，有齒裂，圍繞在小枝關節間。具有防風、防砂等用途。鄉間常常用來做行道樹，田間和海濱則用來做防風林。"
+  },
+  {
+    "POJ": "khiàm-chè",
+    "Hanji": "欠債",
+    "en": "To owe a debt.",
+    "cn": "拖欠別人財物。"
+  },
+  {
+    "POJ": "khiàm-an",
+    "Hanji": "欠安",
+    "en": "Unwell.",
+    "cn": "不平安、身體不適、生病。"
+  },
+  {
+    "POJ": "khiàm-siàu",
+    "Hanji": "欠數",
+    "en": "To owe a debt.",
+    "cn": "欠帳。"
+  },
+  {
+    "POJ": "khiàm-ēng",
+    "Hanji": "欠用",
+    "en": "To need money.",
+    "cn": "缺錢花用。"
+  },
+  {
+    "POJ": "khiàm-khoeh/khiàm-kheh",
+    "Hanji": "欠缺",
+    "en": "To lack.",
+    "cn": "因缺少而需要。"
+  },
+  {
+    "POJ": "khiàm-hoeh/khiàm-huih",
+    "Hanji": "欠血",
+    "en": "Anemia.",
+    "cn": "貧血。"
+  },
+  {
+    "POJ": "chí chhùi-ta",
+    "Hanji": "止喙焦",
+    "en": "To quench thirst.",
+    "cn": "止渴。"
+  },
+  {
+    "POJ": "chí-sàu",
+    "Hanji": "止嗽",
+    "en": "To stop coughing.",
+    "cn": "止咳。"
+  },
+  {
+    "POJ": "chí-iau",
+    "Hanji": "止枵",
+    "en": "To satisfy hunger.",
+    "cn": "充飢。吃東西解餓。"
+  },
+  {
+    "POJ": "chí-thiàⁿ",
+    "Hanji": "止疼",
+    "en": "To stop pain.",
+    "cn": "使疼痛停止。"
+  },
+  {
+    "POJ": "chí-hoeh/chí-huih",
+    "Hanji": "止血",
+    "en": "To stop bleeding.",
+    "cn": "讓血液不再由傷口流出。"
+  },
+  {
+    "POJ": "pháiⁿ-lâng",
+    "Hanji": "歹人",
+    "en": "Bad person.",
+    "cn": "壞人、惡人、歹徒。品性、行為不良的人。"
+  },
+  {
+    "POJ": "pháiⁿ-tāi",
+    "Hanji": "歹代",
+    "en": "A bad deed.",
+    "cn": "壞事、惡事。"
+  },
+  {
+    "POJ": "pháiⁿ-thì-thâu",
+    "Hanji": "歹剃頭",
+    "en": "Hard to please.",
+    "cn": "形容人難取悅，或事情難應付。"
+  },
+  {
+    "POJ": "pháiⁿ-sè",
+    "Hanji": "歹勢",
+    "en": "Sorry.",
+    "cn": "不好意思、對不起、抱歉。"
+  },
+  {
+    "POJ": "pháiⁿ-miā",
+    "Hanji": "歹命",
+    "en": "To have a hard life.",
+    "cn": "苦命、不幸。命運不好、沒有福份。"
+  },
+  {
+    "POJ": "pháiⁿ-miā-lâng",
+    "Hanji": "歹命人",
+    "en": "A person with a hard life.",
+    "cn": "命運坎坷的人。"
+  },
+  {
+    "POJ": "pháiⁿ-chhùi",
+    "Hanji": "歹喙",
+    "en": "To have a sharp tongue.",
+    "cn": "常說不得體、負面的話。"
+  },
+  {
+    "POJ": "pháiⁿ-chhùi-táu",
+    "Hanji": "歹喙斗",
+    "en": "Picky eater.",
+    "cn": "挑嘴。形容人對食物很挑剔。"
+  },
+  {
+    "POJ": "pháiⁿ-kiáⁿ",
+    "Hanji": "歹囝",
+    "en": "Bad boy.",
+    "cn": "不良少年、浪蕩子。"
+  },
+  {
+    "POJ": "pháiⁿ-thiⁿ",
+    "Hanji": "歹天",
+    "en": "Bad weather.",
+    "cn": "惡劣的天氣。"
+  },
+  {
+    "POJ": "pháiⁿ-nî-tang",
+    "Hanji": "歹年冬",
+    "en": "A year of bad harvest.",
+    "cn": "荒年、歉歲。農作物收成不好的年頭。"
+  },
+  {
+    "POJ": "pháiⁿ-sim",
+    "Hanji": "歹心",
+    "en": "Evil heart.",
+    "cn": "壞心。形容人居心不良或心腸惡毒。"
+  },
+  {
+    "POJ": "pháiⁿ-sèng-tē/pháiⁿ-sèng-tōe",
+    "Hanji": "歹性地",
+    "en": "Bad-tempered.",
+    "cn": "性情不好，容易發脾氣。"
+  },
+  {
+    "POJ": "pháiⁿ-ì",
+    "Hanji": "歹意",
+    "en": "Malice.",
+    "cn": "惡意。"
+  },
+  {
+    "POJ": "pháiⁿ-chhiú-jiáu/pháiⁿ-chhiú-niáu",
+    "Hanji": "歹手爪",
+    "en": "An injured hand.",
+    "cn": "形容手部因為受傷而行動不便。"
+  },
+  {
+    "POJ": "pháiⁿ-liú-la̍k",
+    "Hanji": "歹扭搦",
+    "en": "Hard to please.",
+    "cn": "難搞、吹毛求疵。形容人的個性難以順服他人，很難照顧，對事物的要求多，容易找他人麻煩。"
+  },
+  {
+    "POJ": "pháiⁿ-khoán",
+    "Hanji": "歹款",
+    "en": "Bad habits (especially eating).",
+    "cn": "壞習慣。不懂禮教，多指吃東西的習慣或行為不好。"
+  },
+  {
+    "POJ": "pháiⁿ-sí",
+    "Hanji": "歹死",
+    "en": "A terrible death.",
+    "cn": "形容人很兇、很壞，有詛咒人不得好死的意思。"
+  },
+  {
+    "POJ": "pháiⁿ-mi̍h/pháiⁿ-mn̍gh",
+    "Hanji": "歹物",
+    "en": "Scrap.",
+    "cn": "報廢的東西。"
+  },
+  {
+    "POJ": "pháiⁿ-chèng-thâu",
+    "Hanji": "歹症頭",
+    "en": "An incurable disease.",
+    "cn": "頑疾、不治之症。難以痊癒的惡疾。"
+  },
+  {
+    "POJ": "pháiⁿ-khòaⁿ",
+    "Hanji": "歹看",
+    "en": "Ugly.",
+    "cn": "難看的、醜陋的。"
+  },
+  {
+    "POJ": "pháiⁿ-khòaⁿ-siùⁿ",
+    "Hanji": "歹看相",
+    "en": "An ugly or embarrassing appearance.",
+    "cn": "難看、出糗的模樣。"
+  },
+  {
+    "POJ": "pháiⁿ-khùn",
+    "Hanji": "歹睏",
+    "en": "To have difficulty sleeping.",
+    "cn": "很難入睡。"
+  },
+  {
+    "POJ": "pháiⁿ-chek-tek",
+    "Hanji": "歹積德",
+    "en": "To not do good deeds.",
+    "cn": "形容人不做善事、不積陰德。"
+  },
+  {
+    "POJ": "pháiⁿ-khang",
+    "Hanji": "歹空",
+    "en": "No profit.",
+    "cn": "無利可圖、不好的事。"
+  },
+  {
+    "POJ": "pháiⁿ-io-chhī",
+    "Hanji": "歹育飼",
+    "en": "Difficult to raise (of a child).",
+    "cn": "不容易扶養，指小孩子身體不好、多病。"
+  },
+  {
+    "POJ": "pháiⁿ-pak-tó͘",
+    "Hanji": "歹腹肚",
+    "en": "Stomachache.",
+    "cn": "拉肚子、肚子痛。通常指因為飲食不潔而引起的肚痛、胃痛問題。"
+  },
+  {
+    "POJ": "pháiⁿ-ōe",
+    "Hanji": "歹話",
+    "en": "Bad words.",
+    "cn": "壞話。毀謗或攻訐他人的言論。"
+  },
+  {
+    "POJ": "pháiⁿ-lō͘",
+    "Hanji": "歹路",
+    "en": "A bad path.",
+    "cn": "指不好的途徑、方向。"
+  },
+  {
+    "POJ": "pháiⁿ-ūn",
+    "Hanji": "歹運",
+    "en": "Bad luck.",
+    "cn": "背運、倒楣。運氣不好。"
+  },
+  {
+    "POJ": "pháiⁿ-tâng-kū-siah",
+    "Hanji": "歹銅舊錫",
+    "en": "Scrap metal.",
+    "cn": "破銅爛鐵。棄置不用的金屬器物。"
+  },
+  {
+    "POJ": "pháiⁿ-chia̍h",
+    "Hanji": "歹食",
+    "en": "Not tasty.",
+    "cn": "不好吃、很難吃。"
+  },
+  {
+    "POJ": "pháiⁿ-chhōa-thâu",
+    "Hanji": "歹𤆬頭",
+    "en": "A bad example.",
+    "cn": "壞榜樣、不好的帶頭者。"
+  },
+  {
+    "POJ": "m̄-nā",
+    "Hanji": "毋但",
+    "en": "Not only.",
+    "cn": "不只、不但。"
+  },
+  {
+    "POJ": "m̄-ta̍t",
+    "Hanji": "毋值",
+    "en": "Not worth it.",
+    "cn": "不值得。"
+  },
+  {
+    "POJ": "m̄-bián",
+    "Hanji": "毋免",
+    "en": "No need to.",
+    "cn": "不必、不用、不需要。"
+  },
+  {
+    "POJ": "m̄-chún",
+    "Hanji": "毋准",
+    "en": "Not allowed.",
+    "cn": "不允許、不答應。"
+  },
+  {
+    "POJ": "m̄ hó",
+    "Hanji": "毋好",
+    "en": "Not good.",
+    "cn": "不好、糟糕。"
+  },
+  {
+    "POJ": "m̄ hó-sè",
+    "Hanji": "毋好勢",
+    "en": "Inconvenient.",
+    "cn": "不方便、不湊巧。"
+  },
+  {
+    "POJ": "m̄-chêng-goān",
+    "Hanji": "毋情願",
+    "en": "Unwilling.",
+    "cn": "不情不願。"
+  },
+  {
+    "POJ": "m̄-chiâⁿ",
+    "Hanji": "毋成",
+    "en": "Not amount to much.",
+    "cn": "不成、算不上。"
+  },
+  {
+    "POJ": "m̄-chiâⁿ-lâng",
+    "Hanji": "毋成人",
+    "en": "A good-for-nothing.",
+    "cn": "不肖之徒。罵人不像樣。"
+  },
+  {
+    "POJ": "m̄-chiâⁿ-kiáⁿ",
+    "Hanji": "毋成囝",
+    "en": "Delinquent.",
+    "cn": "不良少年、小混混。"
+  },
+  {
+    "POJ": "m̄-chiâⁿ-iūⁿ",
+    "Hanji": "毋成樣",
+    "en": "Unseemly.",
+    "cn": "不像話、不像樣。"
+  },
+  {
+    "POJ": "m̄-chiâⁿ-mi̍h/m̄-chiâⁿ-mn̍gh",
+    "Hanji": "毋成物",
+    "en": "A trivial thing.",
+    "cn": "指微不足道或者無關緊要的事物，有時候是一種客套的用法。"
+  },
+  {
+    "POJ": "m̄-chiâⁿ-kâu",
+    "Hanji": "毋成猴",
+    "en": "Not up to snuff.",
+    "cn": "不像樣。形容人不像人，猴子不像猴子。語氣上比「毋成人」(m̄-chiâⁿ-lâng)戲謔。"
+  },
+  {
+    "POJ": "m̄-chiah",
+    "Hanji": "毋才",
+    "en": "Only then.",
+    "cn": "……才……。"
+  },
+  {
+    "POJ": "m̄-tú-hó",
+    "Hanji": "毋拄好",
+    "en": "Unfortunately.",
+    "cn": "搞不好、不湊巧。"
+  },
+  {
+    "POJ": "m̄-ti̍h",
+    "Hanji": "毋挃",
+    "en": "Don't want.",
+    "cn": "不要。"
+  },
+  {
+    "POJ": "m̄ bat",
+    "Hanji": "毋捌",
+    "en": "Never.",
+    "cn": "不曾。"
+  },
+  {
+    "POJ": "m̄ káⁿ",
+    "Hanji": "毋敢",
+    "en": "Not dare to.",
+    "cn": "不敢。心中怯懦，以致於不能付諸行動。"
+  },
+  {
+    "POJ": "m̄ sī",
+    "Hanji": "毋是",
+    "en": "Is not.",
+    "cn": "不是。"
+  },
+  {
+    "POJ": "m̄-sī-sè",
+    "Hanji": "毋是勢",
+    "en": "Something is wrong.",
+    "cn": "不對勁。"
+  },
+  {
+    "POJ": "m̄-kam",
+    "Hanji": "毋甘",
+    "en": "To be reluctant to part with.",
+    "cn": "捨不得。"
+  },
+  {
+    "POJ": "m̄-kam hiâm",
+    "Hanji": "毋甘嫌",
+    "en": "Don't mind (polite).",
+    "cn": "不嫌棄。通常是在受到稱讚後的謙虛用語。"
+  },
+  {
+    "POJ": "m̄ kam-goān",
+    "Hanji": "毋甘願",
+    "en": "Unwilling.",
+    "cn": "不甘心、不甘願。"
+  },
+  {
+    "POJ": "m̄ chai",
+    "Hanji": "毋知",
+    "en": "Don't know.",
+    "cn": "不知、不知道。"
+  },
+  {
+    "POJ": "m̄-chai-lâng",
+    "Hanji": "毋知人",
+    "en": "Unconscious.",
+    "cn": "昏迷不醒人事。"
+  },
+  {
+    "POJ": "m̄ chai-iáⁿ",
+    "Hanji": "毋知影",
+    "en": "Don't know.",
+    "cn": "不知、不知道。"
+  },
+  {
+    "POJ": "m̄-chai-sí",
+    "Hanji": "毋知死",
+    "en": "Reckless.",
+    "cn": "不知死活。指不知事情輕重或利害程度，而冒昧行事。"
+  },
+  {
+    "POJ": "m̄-koán",
+    "Hanji": "毋管",
+    "en": "No matter.",
+    "cn": "不論、無論。"
+  },
+  {
+    "POJ": "m̄-tio̍h",
+    "Hanji": "毋著",
+    "en": "Wrong.",
+    "cn": "不對。"
+  },
+  {
+    "POJ": "m̄-thang",
+    "Hanji": "毋通",
+    "en": "Should not.",
+    "cn": "不可以、不要。是一種語氣較委婉的勸說或請求。"
+  },
+  {
+    "POJ": "m̄-koh",
+    "Hanji": "毋過",
+    "en": "But.",
+    "cn": "不過、但是。"
+  },
+  {
+    "POJ": "pí-phēng",
+    "Hanji": "比並",
+    "en": "To compare.",
+    "cn": "比較。"
+  },
+  {
+    "POJ": "pí-jū/pí-lū",
+    "Hanji": "比喻",
+    "en": "Metaphor.",
+    "cn": "譬喻、比方。藉用事物的相同點，說明解釋。"
+  },
+  {
+    "POJ": "pí-bú",
+    "Hanji": "比武",
+    "en": "To compete in martial arts.",
+    "cn": "較量武藝或武藝比賽。"
+  },
+  {
+    "POJ": "pí-lūn",
+    "Hanji": "比論",
+    "en": "For example.",
+    "cn": "打比方、比如。"
+  },
+  {
+    "POJ": "pí-kàu",
+    "Hanji": "比較",
+    "en": "To compare.",
+    "cn": "取兩個以上的事物互相評比他們的高下、輕重、好壞等。"
+  },
+  {
+    "POJ": "mô͘-ho͘ⁿ",
+    "Hanji": "毛呼",
+    "en": "A type of steamed cake for offerings.",
+    "cn": "農曆七月盂蘭盆會祭鬼用的一種沒包餡料的糕點。"
+  },
+  {
+    "POJ": "mn̂g-bóe-á/mn̂g-bé-á",
+    "Hanji": "毛尾仔",
+    "en": "Pigtail.",
+    "cn": "辮子、馬尾。將頭髮束起或分股交叉編成長條狀。"
+  },
+  {
+    "POJ": "mô͘-thán",
+    "Hanji": "毛毯",
+    "en": "Woolen blanket.",
+    "cn": "用毛料製成的毯子。"
+  },
+  {
+    "POJ": "mô͘-pēⁿ/mô͘-pīⁿ",
+    "Hanji": "毛病",
+    "en": "Fault.",
+    "cn": "指人或事有不正常的現象。"
+  },
+  {
+    "POJ": "mn̂g-kńg/mô͘-kńg",
+    "Hanji": "毛管",
+    "en": "Pore.",
+    "cn": "毛孔。汗腺在皮膚表面上的細孔。"
+  },
+  {
+    "POJ": "mn̂g-kha",
+    "Hanji": "毛跤",
+    "en": "Hairline.",
+    "cn": "毛髮的邊際。"
+  },
+  {
+    "POJ": "chúi-chéⁿ/chúi-chíⁿ",
+    "Hanji": "水井",
+    "en": "Water well.",
+    "cn": "從地面往下鑿打而成，可以取水的深洞。"
+  },
+  {
+    "POJ": "chúi-sian",
+    "Hanji": "水仙",
+    "en": "Narcissus.",
+    "cn": "草本植物。全株有毒，底部的鱗莖略呈倒卵，下端有白色鬚根，冬末春初開白色花，有香味。通常生長在暖地的河邊，或栽植於庭園。"
+  },
+  {
+    "POJ": "chúi-thó͘",
+    "Hanji": "水土",
+    "en": "Natural environment.",
+    "cn": "一個地方的氣候、水質與土性等自然環境。"
+  },
+  {
+    "POJ": "chúi-chùn",
+    "Hanji": "水圳",
+    "en": "Irrigation canal.",
+    "cn": "專門用來灌溉的人工水路。"
+  },
+  {
+    "POJ": "chúi-khò͘",
+    "Hanji": "水庫",
+    "en": "Reservoir.",
+    "cn": "用來儲存大量地面水的人工或半天然建築物。具有廣大的蓄水區域，並有調節水流、灌溉、觀光、發電、飲用水等功能。"
+  },
+  {
+    "POJ": "chúi-hia̍p-á",
+    "Hanji": "水拹仔",
+    "en": "A hand-operated water pump.",
+    "cn": "用手上下搖的抽水機。"
+  },
+  {
+    "POJ": "chúi-chiⁿ",
+    "Hanji": "水晶",
+    "en": "Crystal.",
+    "cn": "透明的石英晶體，可以製成玻璃、鏡片和美術工藝材料。"
+  },
+  {
+    "POJ": "chúi-kó",
+    "Hanji": "水果",
+    "en": "Fruit.",
+    "cn": "含有漿液可以生吃的果實。"
+  },
+  {
+    "POJ": "chúi-lâi-á",
+    "Hanji": "水梨仔",
+    "en": "A type of pear.",
+    "cn": "水梨。木本植物，葉子互生，呈卵形或長橢圓形。開白花。果實呈球形，汁多，為一高級水果。"
+  },
+  {
+    "POJ": "chúi-chô",
+    "Hanji": "水槽",
+    "en": "Sink.",
+    "cn": "盛水的容器。"
+  },
+  {
+    "POJ": "chúi-bó",
+    "Hanji": "水母",
+    "en": "Jellyfish.",
+    "cn": "刺絲胞動物（腔腸動物）。體色為膠質透明，形狀像傘蓋，浮游在海上，夜間能放出燐光。大型水母又叫做「海䖳」(hái-thē)，可經人工脫水、處理後成為食材。"
+  },
+  {
+    "POJ": "chúi-khì",
+    "Hanji": "水氣",
+    "en": "Moisture.",
+    "cn": "水分、溼氣。"
+  },
+  {
+    "POJ": "chúi-chôaⁿ",
+    "Hanji": "水泉",
+    "en": "Spring (water source).",
+    "cn": "水的源頭、泉水。"
+  },
+  {
+    "POJ": "chúi-goân-thâu",
+    "Hanji": "水源頭",
+    "en": "The source of a river.",
+    "cn": "水的發源地。"
+  },
+  {
+    "POJ": "chúi-chún",
+    "Hanji": "水準",
+    "en": "Standard.",
+    "cn": "水平。標準、程度。"
+  },
+  {
+    "POJ": "chúi-kau",
+    "Hanji": "水溝",
+    "en": "Ditch.",
+    "cn": "疏通流水的溝道。"
+  },
+  {
+    "POJ": "chúi-chai",
+    "Hanji": "水災",
+    "en": "Flood.",
+    "cn": "因為雨量過多或河水氾濫所造成的災害。"
+  },
+  {
+    "POJ": "chúi-teng",
+    "Hanji": "水燈",
+    "en": "A water lantern for ghosts.",
+    "cn": "普渡的時候放在水中的燈籠，用來指引無主孤魂上岸享用祭品。"
+  },
+  {
+    "POJ": "chúi-gû",
+    "Hanji": "水牛",
+    "en": "Water buffalo.",
+    "cn": "哺乳動物。體型大，毛色灰黑，擅長耕田。原產於中國南方及印度，荷蘭統治臺灣時自閩南地區引進。"
+  },
+  {
+    "POJ": "chúi-chu",
+    "Hanji": "水珠",
+    "en": "Chickenpox.",
+    "cn": "病名。由濾過性病毒引發的急性傳染病。通常經由接觸或飛沫傳染，潛伏期約二至三週，症狀為出疱疹、發燒、全身無力、食慾不振等。流行季節約在初春，以二至六歲的幼童較易感染，病癒後具有終生免疫力。"
+  },
+  {
+    "POJ": "chúi-sán",
+    "Hanji": "水產",
+    "en": "Aquatic products.",
+    "cn": "水裡所出產的動物、植物、礦物等具有經濟價值的東西。"
+  },
+  {
+    "POJ": "chúi-chhân",
+    "Hanji": "水田",
+    "en": "Paddy field.",
+    "cn": "種植水稻的田，有蓄水保溫以保護稻苗的功用。"
+  },
+  {
+    "POJ": "chúi-phā",
+    "Hanji": "水疱",
+    "en": "Blister.",
+    "cn": "水泡。潦漿泡、潦泡。皮膚表皮因為受傷而形成的淋巴液泡。"
+  },
+  {
+    "POJ": "chúi-pit-á",
+    "Hanji": "水筆仔",
+    "en": "Kandelia (a mangrove plant).",
+    "cn": "水生植物。花白色，果實為圓椎形，成熟尚未脫離母體，種子便發芽生出細長的根，掉落泥中便成為一株小樹。多分布在熱帶和亞熱帶的河口、沼澤地，沿海地區亦有生長。"
+  },
+  {
+    "POJ": "chúi-kóng",
+    "Hanji": "水管",
+    "en": "Water pipe.",
+    "cn": "水流通的管子。"
+  },
+  {
+    "POJ": "chúi-âng-á-sek",
+    "Hanji": "水紅仔色",
+    "en": "Light red.",
+    "cn": "淺紅色，由紅和白混合成的顏色。"
+  },
+  {
+    "POJ": "chúi-ō͘-á",
+    "Hanji": "水芋仔",
+    "en": "Water hyacinth.",
+    "cn": "布袋蓮。水生植物。浮生在水面，葉子倒卵形，根垂生水中，可做鴨子的飼料。"
+  },
+  {
+    "POJ": "chúi-bi̍t-thô",
+    "Hanji": "水蜜桃",
+    "en": "A type of peach.",
+    "cn": "瓜果類。桃子的一種，多出產於臺灣東部及梨山等地。味道甜美，是高經濟收益的水果。"
+  },
+  {
+    "POJ": "chúi-hòe/chúi-hè",
+    "Hanji": "水貨",
+    "en": "Smuggled goods.",
+    "cn": "從海外以不合法的途徑所夾帶進來販售的貨物。"
+  },
+  {
+    "POJ": "chúi-chhia",
+    "Hanji": "水車",
+    "en": "A waterwheel.",
+    "cn": "利用流水的力量，帶動輪葉迴轉，用來灌溉或推動其他器具的機器裝置。"
+  },
+  {
+    "POJ": "chúi-tō",
+    "Hanji": "水道",
+    "en": "Waterway.",
+    "cn": "航道、溝渠。天然或人工的通水路線。源自日語「水道（すいどう）」。"
+  },
+  {
+    "POJ": "chúi-tō-chúi",
+    "Hanji": "水道水",
+    "en": "Tap water.",
+    "cn": "自來水。"
+  },
+  {
+    "POJ": "chúi-tō-thâu",
+    "Hanji": "水道頭",
+    "en": "Faucet.",
+    "cn": "水龍頭。控制自來水管出水的控制閥。"
+  },
+  {
+    "POJ": "chúi-gîn/chúi-gûn",
+    "Hanji": "水銀",
+    "en": "Mercury.",
+    "cn": "汞。金屬名稱。在常溫下唯一的液態金屬，顏色為銀色，可以像水一樣流動，所以叫做「水銀」。容易揮發，蒸氣有劇毒，可以作成溫度計、醫藥用品等。"
+  },
+  {
+    "POJ": "chúi-mn̂g",
+    "Hanji": "水門",
+    "en": "Sluice gate.",
+    "cn": "用以調節水位，控制水流流量的閘門。"
+  },
+  {
+    "POJ": "chúi-cha̍h",
+    "Hanji": "水閘",
+    "en": "Sluice gate.",
+    "cn": "用以調節水位，控制水流流量的閘門。"
+  },
+  {
+    "POJ": "chúi-tiān",
+    "Hanji": "水電",
+    "en": "Plumbing and electricity.",
+    "cn": "指有關水管、電線管路配線的工作。"
+  },
+  {
+    "POJ": "chúi-kiáu",
+    "Hanji": "水餃",
+    "en": "Dumpling.",
+    "cn": "餃子。以薄麵皮包餡，用水煮熟食用的傳統食品。"
+  },
+  {
+    "POJ": "chheng-bêng/chhiⁿ-miâ",
+    "Hanji": "清明",
+    "en": "Clear and Bright (solar term).",
+    "cn": "約當國曆四月四日或五日，民眾通常會在這一天掃墓。"
+  },
+  {
+    "POJ": "pe̍h-lō͘",
+    "Hanji": "白露",
+    "en": "White Dew (solar term).",
+    "cn": "約當國曆九月八日前後。"
+  },
+  {
+    "POJ": "chhiu-hun",
+    "Hanji": "秋分",
+    "en": "Autumn Equinox (solar term).",
+    "cn": "約當國曆九月二十二、二十三或二十四日，這一天南北半球的晝夜長短平均。"
+  },
+  {
+    "POJ": "kok-ú",
+    "Hanji": "穀雨",
+    "en": "Grain Rain (solar term).",
+    "cn": "約當國曆四月廿日或廿一日。此時約進入梅雨季，農事上非常需要雨水。"
+  },
+  {
+    "POJ": "li̍p-tang",
+    "Hanji": "立冬",
+    "en": "Start of Winter (solar term).",
+    "cn": "約當國曆十一月七日或八日。這一天是冬季的開始，民間常藉機進補。"
+  },
+  {
+    "POJ": "li̍p-hē",
+    "Hanji": "立夏",
+    "en": "Start of Summer (solar term).",
+    "cn": "約當國曆五月六日或七日。這一天是夏季的開始。"
+  },
+  {
+    "POJ": "li̍p-chhun",
+    "Hanji": "立春",
+    "en": "Start of Spring (solar term).",
+    "cn": "約當國曆二月四日或五日，這一天是春季的開始。"
+  },
+  {
+    "POJ": "li̍p-chhiu",
+    "Hanji": "立秋",
+    "en": "Start of Autumn (solar term).",
+    "cn": "約當國曆八月七日、八日或九日。這一天是秋季的開始。"
+  },
+  {
+    "POJ": "bông-chéng",
+    "Hanji": "芒種",
+    "en": "Grain in Ear (solar term).",
+    "cn": "約當國曆六月六日或六月七日。因為在這個時節穀物會開出芒花，所以稱為「芒種」。"
+  },
+  {
+    "POJ": "chhù-sú",
+    "Hanji": "處暑",
+    "en": "End of Heat (solar term).",
+    "cn": "約當國曆八月廿三或廿四日。時序上雖已入秋，但天氣仍十分炎熱，且仍屬颱風季節。"
+  },
+  {
+    "POJ": "kì-tî",
+    "Hanji": "記持",
+    "en": "Memory.",
+    "cn": "記憶、記性。"
+  },
+  {
+    "POJ": "ú-súi",
+    "Hanji": "雨水",
+    "en": "Rain Water (solar term).",
+    "cn": "約當國曆二月十九或二十日。從這天開始，氣溫開始回暖，空氣中溼度也提高，下雨的機率自然也就大大地增加。"
+  },
+  {
+    "POJ": "sng-kàng",
+    "Hanji": "霜降",
+    "en": "Frost's Descent (solar term).",
+    "cn": "約當國曆十月二十三或二十四日。"
+  },
+  {
+    "POJ": "keⁿ-ti̍t",
+    "Hanji": "驚蟄",
+    "en": "Awakening of Insects (solar term).",
+    "cn": "約當國曆三月五日或六日。乃春雷響，驚動冬眠動物的時候。"
+  },
+  {
+    "POJ": "Tâi-oân",
+    "Hanji": "台灣",
+    "en": "Taiwan",
+    "cn": "臺灣本島，文化與地理身份"
+  },
+  {
+    "POJ": "Tâi-oân-lâng",
+    "Hanji": "台灣人",
+    "en": "Taiwanese person",
+    "cn": "臺灣居民，具文化或政治認同"
+  },
+  {
+    "POJ": "Tâi-gí",
+    "Hanji": "台語",
+    "en": "Taiwanese language",
+    "cn": "臺語"
+  },
+  {
+    "POJ": "Tâi-oân-ōe",
+    "Hanji": "台灣話",
+    "en": "Taiwanese speech",
+    "cn": "台灣話，一般指台語。"
+  },
+  {
+    "POJ": "chhàng-chúi-lām",
+    "Hanji": "藏水艦",
+    "en": "Submarine",
+    "cn": "潛水艇，現代軍事裝備"
+  },
+  {
+    "POJ": "Gio̍k-san",
+    "Hanji": "玉山",
+    "en": "Jade Mountain",
+    "cn": "臺灣最高峰，海拔3952公尺"
+  },
+  {
+    "POJ": "Lô-chúi-khe",
+    "Hanji": "濁水溪",
+    "en": "Lochui River",
+    "cn": "臺灣最長的河流"
+  },
+  {
+    "POJ": "Tām-suí-hô",
+    "Hanji": "淡水河",
+    "en": "Tamsui River",
+    "cn": "流經臺北的重要河川，歷史貿易路線"
+  },
+  {
+    "POJ": "ná...ná...",
+    "Hanji": "那…那…",
+    "en": "while… (at the same time)….",
+    "cn": ""
+  },
+  {
+    "POJ": "Pe̍h-ōe-jī",
+    "Hanji": "白話字",
+    "en": "Taiwanese Vernacular Script",
+    "cn": "白話字"
+  },
+  {
+    "POJ": "gâu chá",
+    "Hanji": "gâu早",
+    "en": "Good morning",
+    "cn": "早安"
+  },
+  {
+    "POJ": "chia̍h-pá-bē/chia̍h-pá--bōe",
+    "Hanji": "食飽未",
+    "en": "How are you?",
+    "cn": "你好嗎？(通常不是真的問吃飽了沒)"
+  },
+  {
+    "POJ": "sià-sì-sià-chèng",
+    "Hanji": "缷世缷衆",
+    "en": "disgraceful",
+    "cn": "卸世卸眾"
+  }
+]
