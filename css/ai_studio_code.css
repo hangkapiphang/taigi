@@ -1,0 +1,282 @@
+/* css/shadow.css */
+
+/* --- 1. FONTS & RESET --- */
+@font-face { 
+    font-family: 'Taigi Font'; 
+    src: url('../font/Charis-Regular.woff2') format('woff2'); 
+}
+
+:root {
+    --bg-app: #fdfbf7;           /* Warm paper background */
+    --bg-card: #ffffff;
+    --text-main: #2c3e50;
+    --text-sub: #7f8c8d;
+    --accent-primary: #e67e22;   /* Orange */
+    --accent-secondary: #3498db; /* Blue */
+    --safe-top: env(safe-area-inset-top, 20px);
+    --safe-bottom: env(safe-area-inset-bottom, 20px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+}
+
+* { box-sizing: border-box; }
+
+body { 
+    margin: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    background: var(--bg-app); 
+    color: var(--text-main); 
+    height: 100dvh; /* Dynamic height for mobile browsers */
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* --- 2. BASE LAYOUT (Mobile Portrait Default) --- */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* --- 3. VIDEO SECTION --- */
+#video-section { 
+    background: #000; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 2;
+    height: 35%; /* Default Mobile Height */
+    flex-shrink: 0;
+}
+
+#player { width: 100%; height: 100%; }
+
+#mask-bar { 
+    position: absolute; 
+    background: rgba(0,0,0,0.95); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 10; 
+    transition: all 0.3s ease;
+}
+
+/* --- 4. TEXT SECTION --- */
+#text-section {
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    background: var(--bg-app); 
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Padding handles Safe Areas (Notch) */
+    padding: 20px calc(20px + var(--safe-right)) 10px calc(20px + var(--safe-left));
+}
+
+#current-text { 
+    font-family: 'Taigi Font', serif; 
+    font-size: clamp(24px, 5vw, 32px); 
+    line-height: 1.4; 
+    margin: 10px 0 20px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.nav-controls { 
+    display: flex; gap: 15px; align-items: center; 
+    background: #fff; padding: 6px 15px; 
+    border-radius: 30px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    margin-bottom: 20px; flex-shrink: 0;
+}
+.nav-btn { background: none; border: none; color: var(--text-sub); font-weight: bold; cursor: pointer; font-size: 14px; }
+#progress { font-family: monospace; color: #bdc3c7; font-size: 12px; }
+
+/* Vocab */
+#vocab-display { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: 100%; padding-bottom: 20px; }
+.vocab-card {
+    background: var(--bg-card);
+    border: 1px solid #eaeaea;
+    border-left: 3px solid var(--accent-primary);
+    border-radius: 8px; padding: 8px 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    text-align: left;
+}
+.v-word { color: var(--text-main); font-weight: bold; font-family: 'Taigi Font'; font-size: 18px; }
+.v-def { color: var(--text-sub); font-size: 13px; }
+
+/* --- 5. RECORDING SECTION --- */
+#rec-section { 
+    flex-shrink: 0; 
+    background: #fff; 
+    border-top: 1px solid #f0f0f0;
+    display: flex; flex-direction: column; 
+    align-items: center; justify-content: center;
+    /* Height includes safe area for iPhone Home Bar */
+    padding-bottom: var(--safe-bottom);
+    height: calc(130px + var(--safe-bottom)); 
+    z-index: 10;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
+}
+
+.control-row { display: flex; gap: 25px; align-items: center; }
+.btn-large { 
+    width: 58px; height: 58px; 
+    border-radius: 50%; border: none; font-size: 22px; 
+    cursor: pointer; color: white; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.1s;
+}
+.btn-large:active { transform: scale(0.95); }
+#btn-mic { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+#btn-mic.recording { background: #e74c3c; animation: pulse 1.5s infinite; }
+#btn-play-ref { background: linear-gradient(135deg, #f6d365, #fda085); }
+#btn-play-user { background: linear-gradient(135deg, #4facfe, #00f2fe); display: none; }
+.label { font-size: 10px; font-weight: 700; color: #95a5a6; margin-top: 5px; text-transform: uppercase; }
+
+/* Back Link */
+.back-link { 
+    position: absolute; 
+    top: max(10px, var(--safe-top)); 
+    left: max(10px, var(--safe-left)); 
+    background: rgba(255,255,255,0.75); 
+    backdrop-filter: blur(4px);
+    color: #333; text-decoration: none; 
+    padding: 6px 12px; border-radius: 20px; 
+    font-size: 13px; font-weight: bold; z-index: 100;
+}
+
+/* ========================================================= */
+/*               SCENARIO 1: iPHONE LANDSCAPE                */
+/*      Short vertical height? Switch to split-screen Grid   */
+/* ========================================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 50% Video, 50% Interaction */
+        grid-template-rows: 1fr 80px;   /* Top: Text, Bottom: Controls */
+        grid-template-areas: 
+            "video text"
+            "video controls";
+    }
+
+    #video-section {
+        grid-area: video;
+        height: 100%; width: 100%;
+        border-right: 1px solid #ddd;
+    }
+
+    #text-section {
+        grid-area: text;
+        padding: 10px;
+        align-items: center; /* Center text vertically */
+        justify-content: center;
+    }
+    
+    #current-text { font-size: 20px; margin: 5px 0; }
+    .nav-controls { margin-bottom: 5px; scale: 0.9; }
+
+    #rec-section {
+        grid-area: controls;
+        height: 100%; width: 100%;
+        flex-direction: row; /* Horizontal buttons */
+        padding-bottom: 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .btn-large { width: 45px; height: 45px; font-size: 18px; }
+    .control-row { gap: 20px; }
+    .back-link { top: 10px; left: 10px; }
+}
+
+/* ========================================================= */
+/*               SCENARIO 2: iPAD PORTRAIT                   */
+/*     Wider screen, but still vertical. Book Reader feel.   */
+/* ========================================================= */
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+    #video-section {
+        height: 40%;
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    #text-section { padding: 30px 60px; }
+    #current-text { font-size: 36px; margin: 30px 0; }
+}
+
+/* ========================================================= */
+/*         SCENARIO 3: PC BROWSER & iPAD LANDSCAPE           */
+/*     Full Dashboard Layout with centered card design       */
+/* ========================================================= */
+@media (min-width: 900px) {
+    body {
+        background: #ecf0f1; /* Grey background outside the app */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-layout {
+        width: 95%;
+        max-width: 1400px;
+        height: 90vh; /* Floating Card */
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        overflow: hidden;
+        
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr; /* Video gets more space */
+        grid-template-rows: 1fr 120px;      /* Text Area / Control Bar */
+        grid-template-areas: 
+            "video text"
+            "controls controls";
+    }
+
+    #video-section {
+        grid-area: video;
+        height: 100%; width: 100%;
+        border-right: 1px solid #eee;
+    }
+
+    #text-section {
+        grid-area: text;
+        height: 100%;
+        padding: 40px;
+        align-items: flex-start; /* Align text left for reading */
+        background: #fdfbf7;
+    }
+
+    #current-text { text-align: left; font-size: 36px; margin-bottom: 40px; }
+    #vocab-display { justify-content: flex-start; }
+
+    #rec-section {
+        grid-area: controls;
+        height: 100%; width: 100%;
+        flex-direction: row;
+        background: #fff;
+        padding-bottom: 0;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    .btn-large { width: 70px; height: 70px; font-size: 26px; }
+    .control-row { gap: 50px; }
+    
+    /* Move back button to be less intrusive */
+    .back-link {
+        top: 25px; left: 25px;
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+}
+
+@keyframes pulse { 
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.6); } 
+    70% { box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); } 
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); } 
+}
