@@ -1,0 +1,263 @@
+/* --- FONTS (Assumes fonts are in ../font/ relative to css/) --- */
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+
+body { 
+    margin: 0; 
+    background-color: #111; 
+    font-family: 'Taigi Font', serif;  
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden; 
+}
+
+/* --- LAYOUT 1: Default with Vocab List --- */
+#main-container { display: flex; flex-grow: 1; height: 100%; width: 100%; }
+
+#video-section { 
+    flex: 1; 
+    position: relative; 
+    background: black; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+#video-wrapper { 
+    width: 100%; 
+    height: 100%; 
+    position: relative; 
+}
+
+#player { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+}
+
+/* Cinematic Mask (controlled by JS via mask data) */
+#cinematic-mask { 
+    position: absolute; 
+    pointer-events: none; 
+    z-index: 10; 
+    background: black; 
+    opacity: 1; 
+    height: 0; 
+    width: 0; 
+    bottom: 0; 
+    left: 0; 
+}
+
+/* Subtitle Overlay (controlled by JS via settings data) */
+#subtitle-overlay { 
+    position: absolute; 
+    /* Fix: Allow width > 50% by removing left:50% transform constraint */
+    left: 0; 
+    right: 0; 
+    margin: 0 auto; 
+    width: fit-content; 
+    max-width: 94%;
+    
+    z-index: 20; 
+    text-align: center; 
+    pointer-events: none; 
+    font-family: 'Taigi Font', serif; 
+    font-size: 24px;
+    line-height: 1.5; 
+    white-space: pre-wrap; 
+    transition: opacity 0.2s; 
+    padding: 4px 12px; 
+    border-radius: 4px; 
+    text-shadow: 1px 1px 2px black;
+}
+
+/* --- Vocab Section --- */
+#vocab-section { 
+    width: 320px; 
+    background: #1a1a1a; 
+    border-left: 1px solid #333; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh;
+}
+
+#vocab-header { 
+    padding: 15px; 
+    background: #222; 
+    color: #fff; 
+    font-weight: bold; 
+    border-bottom: 1px solid #444; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+#vocab-list { 
+    flex-grow: 1; 
+    overflow-y: auto; 
+    padding: 10px; 
+}
+
+.vocab-item { 
+    background: #2a2a2a; 
+    color: #ccc; 
+    padding: 12px; 
+    margin-bottom: 8px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    border-left: 4px solid transparent; 
+    transition: background 0.2s, transform 0.1s;
+    display: flex;
+    gap: 10px;
+}
+
+.vocab-item:hover { background: #333; }
+
+/* Active State: Highlighted border matches the word color */
+.vocab-item.active { 
+    border-left-color: #ffeb3b; /* Light Yellow */
+    background: #383838; 
+    color: white; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.v-time {
+    font-size: 12px;
+    color: #666;
+    min-width: 35px;
+    padding-top: 4px;
+}
+
+.v-content { flex: 1; }
+
+.v-word { 
+    font-family: 'Taigi Font', serif; 
+    font-size: 18px; 
+    color: #ffeb3b; /* Light Yellow */
+    font-weight: bold; 
+    margin-bottom: 4px;
+}
+
+.v-def { 
+    font-size: 14px; 
+    color: #aaa;
+    line-height: 1.4;
+}
+
+/* --- LAYOUT 2: Fullscreen Cinema --- */
+#video-container-fs { 
+    display: none; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100%; 
+    background: black;
+}
+
+#video-wrapper-fs { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    max-width: 177.78vh; 
+    max-height: 56.25vw; 
+    margin: auto; 
+    background-color: #000; 
+}
+
+#player-fs { width: 100%; height: 100%; border: none; }
+
+#subtitle-fs { 
+    position: absolute; 
+    bottom: 10%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%; 
+    text-align: center; 
+    pointer-events: none; 
+    z-index: 100; 
+}
+
+#subtitle-fs span { 
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #fff; 
+    font-family: 'Taigi Font', serif; 
+    font-size: clamp(24px, 4vw, 48px); 
+    line-height: 1.6; 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    text-shadow: 2px 2px 3px #000; 
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+#fs-btn { 
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 101; 
+    background: rgba(255,255,255,0.1); 
+    border: 1px solid rgba(255,255,255,0.3); 
+    border-radius: 4px; 
+    color: white; 
+    padding: 8px 12px; 
+    cursor: pointer; 
+    font-size: 14px; 
+    transition: background 0.2s;
+}
+
+#fs-btn:hover { background: rgba(255,255,255,0.3); }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Lock the main window to prevent whole-page scrolling on iOS */
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #main-container { 
+        flex-direction: column; 
+        height: 100%; 
+        width: 100%;
+    }
+
+    /* Video takes top portion (approx 35-40%) */
+    #video-section { 
+        height: 38vh; 
+        flex: none; 
+        width: 100%;
+        background: black;
+    }
+
+    /* Vocab takes remaining space */
+    #vocab-section { 
+        width: 100%; 
+        flex: 1; 
+        height: auto; 
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Prevent container itself from scrolling */
+    }
+
+    /* Header stays fixed at top of list */
+    #vocab-header {
+        flex: none;
+    }
+
+    /* The list handles the internal scrolling */
+    #vocab-list { 
+        flex: 1;
+        overflow-y: auto; 
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+        padding-bottom: 50px; /* Extra padding so last item isn't stuck at very bottom */
+    }
+    
+    #subtitle-overlay {
+        font-size: 16px;
+        /* Width is now handled by max-width: 94% in main block, no override needed unless specific adjustment desired */
+        bottom: 5px !important;
+    }
+}
