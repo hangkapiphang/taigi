@@ -19,5 +19,162 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "La-la-tūi (拉拉隊)",
+      "def": "Cheerleading squad"
+    },
+    {
+      "time": 2,
+      "word": "Ióng-sêng (養成)",
+      "def": "To train; to cultivate (talent)"
+    },
+    {
+      "time": 2,
+      "word": "Si̍t-kéng chiat-bo̍k (實景節目)",
+      "def": "Reality show"
+    },
+    {
+      "time": 4,
+      "word": "Chham-sài-chiá (參賽者)",
+      "def": "Contestant; participant"
+    },
+    {
+      "time": 4,
+      "word": "Phà thong-koan (phà 通關)",
+      "def": "To pass through rounds/levels (often in a competition or game)"
+    },
+    {
+      "time": 6,
+      "word": "Chhài-chiáu-á (菜鳥仔)",
+      "def": "Rookie; novice"
+    },
+    {
+      "time": 8,
+      "word": "O̍h (學)",
+      "def": "To learn"
+    },
+    {
+      "time": 8,
+      "word": "Thiàu-bú (跳舞)",
+      "def": "To dance"
+    },
+    {
+      "time": 9,
+      "word": "Pāng-kiû-tiûⁿ (棒球場)",
+      "def": "Baseball stadium"
+    },
+    {
+      "time": 9,
+      "word": "O͘-en (o͘-en)",
+      "def": "To cheer; support (from Japanese 'ouen')"
+    },
+    {
+      "time": 11,
+      "word": "Gōng-táⁿ (戇膽)",
+      "def": "Reckless courage; foolhardy bravery"
+    },
+    {
+      "time": 14,
+      "word": "Bāng-sióng (夢想)",
+      "def": "Dream"
+    },
+    {
+      "time": 15,
+      "word": "Sè-hàn (細漢)",
+      "def": "Childhood; when young"
+    },
+    {
+      "time": 18,
+      "word": "Phah-piàⁿ (拍拚)",
+      "def": "To work hard; to strive"
+    },
+    {
+      "time": 20,
+      "word": "Liān-si̍p-seng (練習生)",
+      "def": "Trainee"
+    },
+    {
+      "time": 21,
+      "word": "Chū-thâu (自頭)",
+      "def": "From the beginning; from scratch"
+    },
+    {
+      "time": 25,
+      "word": "Kiâm-sng khó͘-siap (鹹酸苦澀)",
+      "def": "Ups and downs; hardships (lit. salty, sour, bitter, astringent)"
+    },
+    {
+      "time": 26,
+      "word": "Nōa (爛)",
+      "def": "Bad; poor quality (slang)"
+    },
+    {
+      "time": 28,
+      "word": "Ha̍p-iok (合約)",
+      "def": "Contract"
+    },
+    {
+      "time": 33,
+      "word": "Séng-chîⁿ (省錢)",
+      "def": "To save money"
+    },
+    {
+      "time": 34,
+      "word": "Sêng-kun (成軍)",
+      "def": "To form an army/team"
+    },
+    {
+      "time": 38,
+      "word": "A-má (阿媽)",
+      "def": "Grandmother"
+    },
+    {
+      "time": 42,
+      "word": "Kiû-oân (球員)",
+      "def": "Player (ball sports)"
+    },
+    {
+      "time": 45,
+      "word": "Ùn-tāu-iû (搵豆油)",
+      "def": "To dabble; to participate superficially (lit. dip in soy sauce)"
+    },
+    {
+      "time": 46,
+      "word": "Lī-pō͘-chhit (二步七)",
+      "def": "Skill; capability (often used in negative or questioning context, here means real skill)"
+    },
+    {
+      "time": 47,
+      "word": "Phìn-chhiáⁿ (聘請)",
+      "def": "To hire; to invite (for a job)"
+    },
+    {
+      "time": 48,
+      "word": "Chiân-pòe (前輩)",
+      "def": "Senior; mentor"
+    },
+    {
+      "time": 51,
+      "word": "Phiat-pō͘ (撇步)",
+      "def": "Tip; trick; technique"
+    },
+    {
+      "time": 54,
+      "word": "Khó-chhì (考試)",
+      "def": "Exam; test"
+    },
+    {
+      "time": 61,
+      "word": "Tàu-tīn (鬥陣)",
+      "def": "Together"
+    },
+    {
+      "time": 62,
+      "word": "Ka-iû (加油)",
+      "def": "To cheer on; Go!"
+    }
+  ]
 }
