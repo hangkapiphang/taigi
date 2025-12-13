@@ -19,5 +19,127 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "Kong-pò͘ (公布)",
+      "def": "To announce; to publicize"
+    },
+    {
+      "time": 2.966,
+      "word": "Nî-tō͘ (年度)",
+      "def": "Annual; year's"
+    },
+    {
+      "time": 2.966,
+      "word": "Hong-hûn jîn-bu̍t (風雲人物)",
+      "def": "Person of the year; influential figure"
+    },
+    {
+      "time": 5.4,
+      "word": "Chip-hêng-tiúⁿ (執行長)",
+      "def": "CEO (Chief Executive Officer)"
+    },
+    {
+      "time": 9.833,
+      "word": "Kái-piàn (改變)",
+      "def": "To change; to transform"
+    },
+    {
+      "time": 13.6,
+      "word": "Hong-bīn (封面)",
+      "def": "Cover (of a publication)"
+    },
+    {
+      "time": 13.6,
+      "word": "Siòng-phìⁿ (相片)",
+      "def": "Photograph"
+    },
+    {
+      "time": 16.633,
+      "word": "Chhut-miâ (出名)",
+      "def": "Famous; well-known"
+    },
+    {
+      "time": 20.333,
+      "word": "Jîn-kang Tì-hūi (人工智慧)",
+      "def": "Artificial Intelligence (AI)"
+    },
+    {
+      "time": 22.8,
+      "word": "Keng-tián (經典)",
+      "def": "Classic"
+    },
+    {
+      "time": 26.2,
+      "word": "Tiong-tàu-tǹg (中晝頓)",
+      "def": "Lunch"
+    },
+    {
+      "time": 29.2,
+      "word": "Kang-lâng (工人)",
+      "def": "Worker"
+    },
+    {
+      "time": 31.433,
+      "word": "Léng-he̍k (領域)",
+      "def": "Field; domain"
+    },
+    {
+      "time": 46.933,
+      "word": "Khí-chō (起造)",
+      "def": "To build; to construct"
+    },
+    {
+      "time": 52.433,
+      "word": "Ki-su̍t (技術)",
+      "def": "Technology; technique"
+    },
+    {
+      "time": 62.166,
+      "word": "O-ló (歐樂)",
+      "def": "To praise; to admire"
+    },
+    {
+      "time": 62.166,
+      "word": "Hoân-ló (煩惱)",
+      "def": "To worry; worries"
+    },
+    {
+      "time": 72.233,
+      "word": "Éng-hióng (影響)",
+      "def": "Influence; impact"
+    },
+    {
+      "time": 79.266,
+      "word": "Lī-hāi (厲害)",
+      "def": "Impressive; powerful; terrible (in a strong sense)"
+    },
+    {
+      "time": 81.433,
+      "word": "Siau (痟)",
+      "def": "Crazy; mad (here meaning obsessed/crazy about)"
+    },
+    {
+      "time": 90.566,
+      "word": "Choan-hóng (專訪)",
+      "def": "Exclusive interview"
+    },
+    {
+      "time": 122.133,
+      "word": "Chheng-siàu-liân (青少年)",
+      "def": "Teenager; adolescent"
+    },
+    {
+      "time": 124.366,
+      "word": "Chū-sat (自殺)",
+      "def": "Suicide"
+    },
+    {
+      "time": 134.733,
+      "word": "An-choân (安全)",
+      "def": "Safety; safe"
+    }
+  ]
 }
