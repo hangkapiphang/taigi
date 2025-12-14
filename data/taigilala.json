@@ -67,17 +67,7 @@
       "def": "Baseball stadium"
     },
     {
-      "time": 9,
-      "word": "O͘-en (o͘-en)",
-      "def": "To cheer; support (from Japanese 'ouen')"
-    },
-    {
-      "time": 11,
-      "word": "Gōng-táⁿ (戇膽)",
-      "def": "Reckless courage; foolhardy bravery"
-    },
-    {
-      "time": 14,
+      "time": 15,
       "word": "Bāng-sióng (夢想)",
       "def": "Dream"
     },
@@ -87,34 +77,14 @@
       "def": "Childhood; when young"
     },
     {
-      "time": 18,
-      "word": "Phah-piàⁿ (拍拚)",
-      "def": "To work hard; to strive"
+      "time": 18.8,
+      "word": "O͘-en (o͘-en)",
+      "def": "To cheer; support (from Japanese 'ouen')"
     },
     {
-      "time": 20,
-      "word": "Liān-si̍p-seng (練習生)",
-      "def": "Trainee"
-    },
-    {
-      "time": 21,
-      "word": "Chū-thâu (自頭)",
-      "def": "From the beginning; from scratch"
-    },
-    {
-      "time": 25,
-      "word": "Kiâm-sng khó͘-siap (鹹酸苦澀)",
-      "def": "Ups and downs; hardships (lit. salty, sour, bitter, astringent)"
-    },
-    {
-      "time": 26,
-      "word": "Nōa (爛)",
-      "def": "Bad; poor quality (slang)"
-    },
-    {
-      "time": 28,
-      "word": "Ha̍p-iok (合約)",
-      "def": "Contract"
+      "time": 28.8,
+      "word": "Gōng-táⁿ (戇膽)",
+      "def": "Reckless courage; foolhardy bravery"
     },
     {
       "time": 33,
@@ -127,52 +97,82 @@
       "def": "To form an army/team"
     },
     {
-      "time": 38,
-      "word": "A-má (阿媽)",
-      "def": "Grandmother"
+      "time": 43.275,
+      "word": "Phah-piàⁿ (拍拚)",
+      "def": "To work hard; to strive"
     },
     {
-      "time": 42,
-      "word": "Kiû-oân (球員)",
-      "def": "Player (ball sports)"
-    },
-    {
-      "time": 45,
-      "word": "Ùn-tāu-iû (搵豆油)",
-      "def": "To dabble; to participate superficially (lit. dip in soy sauce)"
-    },
-    {
-      "time": 46,
-      "word": "Lī-pō͘-chhit (二步七)",
-      "def": "Skill; capability (often used in negative or questioning context, here means real skill)"
-    },
-    {
-      "time": 47,
+      "time": 47.1,
       "word": "Phìn-chhiáⁿ (聘請)",
       "def": "To hire; to invite (for a job)"
     },
     {
-      "time": 48,
+      "time": 48.1,
       "word": "Chiân-pòe (前輩)",
       "def": "Senior; mentor"
     },
     {
-      "time": 51,
+      "time": 49.716,
+      "word": "Chū-thâu (自頭)",
+      "def": "From the beginning; from scratch"
+    },
+    {
+      "time": 50,
       "word": "Phiat-pō͘ (撇步)",
       "def": "Tip; trick; technique"
     },
     {
-      "time": 54,
+      "time": 54.693,
+      "word": "Kiâm-sng khó͘-siap (鹹酸苦澀)",
+      "def": "Ups and downs; hardships (lit. salty, sour, bitter, astringent)"
+    },
+    {
+      "time": 57.917,
+      "word": "Nōa (爛)",
+      "def": "Bad; poor quality (slang)"
+    },
+    {
+      "time": 58.788,
+      "word": "Ha̍p-iok (合約)",
+      "def": "Contract"
+    },
+    {
+      "time": 59.167,
+      "word": "Liān-si̍p-seng (練習生)",
+      "def": "Trainee"
+    },
+    {
+      "time": 86.861,
+      "word": "Kiû-oân (球員)",
+      "def": "Player (ball sports)"
+    },
+    {
+      "time": 89.04,
+      "word": "A-má (阿媽)",
+      "def": "Grandmother"
+    },
+    {
+      "time": 91.288,
+      "word": "Ùn-tāu-iû (搵豆油)",
+      "def": "To dabble; to participate superficially (lit. dip in soy sauce)"
+    },
+    {
+      "time": 93.228,
+      "word": "Lī-pō͘-chhit (二步七)",
+      "def": "Skill; capability (often used in negative or questioning context, here means real skill)"
+    },
+    {
+      "time": 111.181,
       "word": "Khó-chhì (考試)",
       "def": "Exam; test"
     },
     {
-      "time": 61,
+      "time": 126.122,
       "word": "Tàu-tīn (鬥陣)",
       "def": "Together"
     },
     {
-      "time": 62,
+      "time": 127.966,
       "word": "Ka-iû (加油)",
       "def": "To cheer on; Go!"
     }
