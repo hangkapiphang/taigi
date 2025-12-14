@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Editor - Subtitles</title>
+    <link rel="stylesheet" href="../../css/subtitle_editor.css">
+    <!-- Font for preview -->
+    <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="subtitle_editor.html" class="active">📝 Subtitles</a>
+        <a href="vocab_editor.html">📖 Vocabulary</a>
+        <a href="visual_editor.html">🎨 Visuals</a>
+        <button onclick="toggleSettings()" class="config-btn">⚙️ Config</button>
+    </nav>
+
+    <div id="workspace">
+        <div id="left-panel">
+            <div id="video-container">
+                <div id="player"></div>
+                <div id="preview-overlay"></div>
+            </div>
+            
+            <div id="global-controls">
+                
+                <!-- GITHUB CONFIGURATION -->
+                <div class="control-group">
+                    <div class="group-title">GitHub Configuration</div>
+                    <div style="display:flex; gap:5px; margin-bottom:5px;">
+                        <input id="ghUser" placeholder="User" style="flex:1; padding:6px; border:1px solid #ddd; border-radius:3px;" value="hangkapiphang">
+                        <input id="ghRepo" placeholder="Repo" style="flex:1; padding:6px; border:1px solid #ddd; border-radius:3px;" value="taigi">
+                        <input id="ghBranch" placeholder="Branch" style="width:70px; padding:6px; border:1px solid #ddd; border-radius:3px;" value="main">
+                    </div>
+                    <input type="password" id="ghToken" placeholder="GitHub Token (Required for Private Repos / Saving)" style="width:100%; box-sizing:border-box; padding:6px; border:1px solid #ddd; border-radius:3px;">
+                </div>
+
+                <!-- FILE LOADER -->
+                <div class="control-group load-group">
+                    <div class="group-title blue-text">📂 Load File</div>
+                    
+                    <div style="display:flex; gap:5px; margin-bottom:8px;">
+                        <button class="btn btn-orange" onclick="fetchFileList()">🔄 Get List</button>
+                        <select id="fileSelectDropdown" style="flex-grow:1; max-width:180px;" onchange="selectFileFromList(this.value)">
+                            <option value="">(Click Get List)</option>
+                        </select>
+                    </div>
+
+                    <div style="display:flex; gap:5px;">
+                        <input id="targetFilename" type="text" style="flex-grow:1; padding:6px; border:1px solid #ddd; border-radius:3px;" placeholder="Filename (e.g. suntiunn)">
+                        <button class="btn btn-blue" onclick="fetchFromGithub()">⬇ Fetch</button>
+                    </div>
+                    
+                    <div style="text-align:center; margin:8px 0; font-size:11px; color:#666;">- OR -</div>
+                    
+                    <button class="btn btn-grey" style="width:100%;" onclick="document.getElementById('hidden-file').click()">📂 Open Local File</button>
+                    <input type="file" id="hidden-file" accept=".json" style="display:none" onchange="loadLocalJson(this)">
+                </div>
+
+                <!-- VIDEO URL -->
+                <div class="control-group">
+                    <div class="group-title">📺 Video Source</div>
+                    <input type="text" id="videoUrl" style="width:100%; box-sizing:border-box; padding:6px; border:1px solid #ddd; border-radius:3px;" placeholder="YouTube URL" onchange="loadVideo(this.value)">
+                </div>
+
+                <!-- SAVE ACTIONS -->
+                <div class="control-group">
+                    <div class="group-title">💾 Save Actions</div>
+                    <div style="display:flex; gap:5px; margin-bottom:5px;">
+                        <button class="btn btn-green" style="flex:1;" onclick="downloadJson()">💾 JSON</button>
+                        <button class="btn btn-teal" style="flex:1;" onclick="downloadSrt()">📄 SRT</button>
+                    </div>
+                    <button class="btn btn-dark" style="width:100%;" onclick="uploadToGithub()">☁ Update GitHub</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="right-panel">
+            <div id="toolbar">
+                <button class="btn btn-blue" style="width:100%" onclick="addSubtitleLine()">+ Add New Line</button>
+            </div>
+            <div id="rows-area">
+                <!-- Subtitle Cards Injected Here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- External JS -->
+    <script src="../../js/subtitle_editor.js"></script>
+</body>
+</html>
