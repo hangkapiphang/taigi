@@ -19,5 +19,162 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "La-la-tūi",
+      "def": "Cheerleading squad"
+    },
+    {
+      "time": 2,
+      "word": "Ióng-sêng",
+      "def": "To train; to cultivate (talent)"
+    },
+    {
+      "time": 2.7,
+      "word": "Si̍t-kéng chiat-bo̍k",
+      "def": "Reality show"
+    },
+    {
+      "time": 4,
+      "word": "Chham-sài-chiá",
+      "def": "Contestant; participant"
+    },
+    {
+      "time": 4,
+      "word": "Phà thong-koan",
+      "def": "To pass through rounds/levels (often in a competition or game)"
+    },
+    {
+      "time": 6,
+      "word": "Chhài-chiáu-á",
+      "def": "Rookie; novice"
+    },
+    {
+      "time": 8,
+      "word": "O̍h",
+      "def": "To learn"
+    },
+    {
+      "time": 8,
+      "word": "Thiàu-bú",
+      "def": "To dance"
+    },
+    {
+      "time": 15,
+      "word": "Sè-hàn",
+      "def": "Childhood; when young"
+    },
+    {
+      "time": 18.225,
+      "word": "Pāng-kiû-tiûⁿ",
+      "def": "Baseball stadium"
+    },
+    {
+      "time": 18.8,
+      "word": "O͘-en",
+      "def": "To cheer; support (from Japanese 'ouen')"
+    },
+    {
+      "time": 28.9,
+      "word": "Gōng-táⁿ",
+      "def": "Reckless courage; foolhardy bravery"
+    },
+    {
+      "time": 34.606,
+      "word": "Bāng-sióng",
+      "def": "Dream"
+    },
+    {
+      "time": 42.77,
+      "word": "Phah-piàⁿ",
+      "def": "To work hard; to strive"
+    },
+    {
+      "time": 48.1,
+      "word": "Chiân-pòe",
+      "def": "Senior; mentor"
+    },
+    {
+      "time": 49.82,
+      "word": "Chū-thâu",
+      "def": "From the beginning; from scratch"
+    },
+    {
+      "time": 50,
+      "word": "Phiat-pō͘",
+      "def": "Tip; trick; technique"
+    },
+    {
+      "time": 54.69,
+      "word": "Kiâm-sng khó͘-siap",
+      "def": "Ups and downs; hardships (lit. salty, sour, bitter, astringent)"
+    },
+    {
+      "time": 57.82,
+      "word": "Nōa",
+      "def": "Bad; poor quality (slang)"
+    },
+    {
+      "time": 59.17,
+      "word": "Liān-si̍p-seng",
+      "def": "Trainee"
+    },
+    {
+      "time": 60.983,
+      "word": "Ha̍p-iok",
+      "def": "Contract"
+    },
+    {
+      "time": 79.729,
+      "word": "Séng-chîⁿ",
+      "def": "To save money"
+    },
+    {
+      "time": 86.86,
+      "word": "Kiû-oân",
+      "def": "Player (ball sports)"
+    },
+    {
+      "time": 89.054,
+      "word": "A-má",
+      "def": "Grandmother"
+    },
+    {
+      "time": 91.29,
+      "word": "Ùn-tāu-iû",
+      "def": "To dabble; to participate superficially (lit. dip in soy sauce)"
+    },
+    {
+      "time": 93.23,
+      "word": "Lī-pō͘-chhit",
+      "def": "Skill; capability"
+    },
+    {
+      "time": 94.94,
+      "word": "Phìn-chhiáⁿ",
+      "def": "To hire; to invite (for a job)"
+    },
+    {
+      "time": 111.06,
+      "word": "Khó-chhì",
+      "def": "Exam; test"
+    },
+    {
+      "time": 117.898,
+      "word": "Sêng-kun",
+      "def": "To form an army/team"
+    },
+    {
+      "time": 126.22,
+      "word": "Tàu-tīn",
+      "def": "Together"
+    },
+    {
+      "time": 127.97,
+      "word": "Ka-iû",
+      "def": "To cheer on; Go!"
+    }
+  ]
 }
