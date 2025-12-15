@@ -10,9 +10,10 @@
     "o": 1
   },
   "settings": {
-    "anchor": "top",
-    "offset": "5",
+    "fontFamily": "'Taigi Font', serif",
     "scale": 1,
+    "anchor": "bottom",
+    "offset": "5",
     "color": "#ffffff",
     "boxColor": "#000000",
     "boxOp": 0.4,
