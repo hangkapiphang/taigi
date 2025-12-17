@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Rush: Teacher Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <style>
+        :root { --primary: #2c3e50; --accent: #3498db; --success: #2ecc71; --danger: #e74c3c; --bg: #ecf0f1; }
+        body { margin: 0; background: var(--bg); font-family: 'Roboto', sans-serif; height: 100vh; overflow: hidden; }
+        
+        /* SECURITY */
+        #login-gate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #2c3e50; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; }
+        .login-box { text-align: center; background: rgba(0,0,0,0.2); padding: 40px; border-radius: 20px; }
+        .pass-input { font-size: 2rem; padding: 10px; border-radius: 10px; border: none; text-align: center; width: 150px; letter-spacing: 5px; }
+        .btn-unlock { margin-top: 20px; padding: 10px 30px; font-family: 'Bangers'; font-size: 1.5rem; background: #f1c40f; border: none; border-radius: 5px; cursor: pointer; }
+
+        /* LAYOUT */
+        #dashboard-content { display: none; grid-template-columns: 340px 1fr; height: 100%; }
+        .sidebar { background: white; border-right: 1px solid #ccc; padding: 20px; display: flex; flex-direction: column; overflow-y: auto; }
+        .main { padding: 20px; display: flex; flex-direction: column; align-items: center; overflow-y: auto; }
+
+        /* SIDEBAR ITEMS */
+        .mode-switch { display: flex; background: #eee; padding: 5px; border-radius: 8px; margin-bottom: 20px; }
+        .mode-btn { flex: 1; border: none; padding: 10px; cursor: pointer; font-weight: bold; border-radius: 6px; transition: 0.2s; }
+        .mode-btn.active { background: var(--primary); color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+        .list-section { margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
+        .deck-item { padding: 10px; margin-bottom: 8px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
+        .deck-item:hover { border-color: var(--accent); background: #ebf5fb; }
+        .deck-info { flex: 1; cursor: pointer; font-weight: bold; color: #333; }
+        .btn-icon { border: none; background: #eee; border-radius: 4px; cursor: pointer; padding: 5px 8px; font-size: 1rem; }
+        .btn-play-deck { background: var(--success); color: white; }
+
+        /* MAIN PANEL UI */
+        .status-bar { width: 100%; max-width: 800px; background: #fff; padding: 15px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .room-code { font-family: 'Bangers'; font-size: 2.5rem; color: var(--accent); letter-spacing: 2px; }
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; max-width: 600px; margin-bottom: 20px; }
+        .control-card { grid-column: 1 / -1; background: white; padding: 20px; border-radius: 12px; text-align: center; border: 2px solid #333; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 150px; }
+        .current-icon { font-size: 4rem; }
+        .current-text { font-size: 2rem; font-weight: bold; color: #333; }
+        .btn-action { padding: 25px; border: none; border-radius: 12px; font-family: 'Bangers'; font-size: 2rem; color: white; cursor: pointer; border-bottom: 6px solid rgba(0,0,0,0.2); }
+        .btn-action:active { transform: translateY(4px); border-bottom: 2px solid rgba(0,0,0,0.2); }
+        .btn-correct { background: var(--success); }
+        .btn-wrong { background: var(--danger); }
+        .btn-start { background: #f1c40f; color: #333; grid-column: 1 / -1; }
+        .panel { background: white; padding: 20px; border-radius: 10px; width: 100%; max-width: 600px; margin-bottom: 15px; }
+        .round-btn { padding: 10px; flex: 1; border: 1px solid #ccc; cursor: pointer; font-weight: bold; background: #f9f9f9; border-radius: 5px; }
+        .round-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* EDITOR & EMOJI */
+        #editor-modal, #emoji-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 5000; display: none; align-items: center; justify-content: center; }
+        .editor-box, .emoji-box { background: white; width: 90%; max-width: 500px; max-height: 90vh; border-radius: 15px; display: flex; flex-direction: column; padding: 20px; box-sizing: border-box; }
+        .editor-list, .emoji-grid { flex: 1; overflow-y: auto; margin: 10px 0; border: 1px solid #eee; padding: 5px; }
+        .editor-item { display: flex; gap: 10px; padding: 8px; border-bottom: 1px solid #f0f0f0; align-items: center; }
+        .inp-icon { width: 50px; text-align: center; font-size: 1.5rem; background: #f9f9f9; border: 1px solid #ccc; cursor: pointer; }
+        .new-card-row { display: flex; gap: 10px; background: #f9f9f9; padding: 10px; border-radius: 8px; }
+        .emoji-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 5px; }
+        .emoji-cat { grid-column: 1/-1; font-weight:bold; margin-top:10px; border-bottom:1px solid #eee; color:#777; }
+        .emoji-btn { font-size: 2rem; background: #f4f4f4; border: none; border-radius: 5px; cursor: pointer; padding: 5px; }
+
+        /* CLOUD BUTTON */
+        .btn-cloud { width:100%; padding:10px; background:#34495e; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold; display:flex; align-items:center; justify-content:center; gap:10px; }
+        .btn-cloud:hover { background:#2c3e50; }
+        .btn-cloud.connected { background: #27ae60; }
+
+        @media (max-width: 768px) { #dashboard-content { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <!-- 🔒 SECURITY -->
+    <div id="login-gate">
+        <div class="login-box">
+            <h1 style="font-family:'Bangers'; margin-top:0;">Teacher Access</h1>
+            <input type="password" id="pass-input" class="pass-input" placeholder="****" maxlength="4">
+            <br>
+            <button class="btn-unlock" onclick="checkPass()">Unlock</button>
+            <p style="margin-top:10px; font-size:0.8rem; color:#aaa; cursor:pointer;" onclick="goHome()">Cancel</p>
+        </div>
+    </div>
+
+    <!-- 🦁 EMOJI PICKER -->
+    <div id="emoji-modal" onclick="closeEmojiPicker(event)">
+        <div class="emoji-box">
+            <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                <h3 style="margin:0">Pick an Emoji</h3>
+                <button onclick="document.getElementById('emoji-modal').style.display='none'" style="border:none; background:none; font-size:1.5rem; cursor:pointer;">✖</button>
+            </div>
+            <div id="emoji-content" class="emoji-grid"></div>
+        </div>
+    </div>
+
+    <!-- 📝 EDITOR -->
+    <div id="editor-modal">
+        <div class="editor-box">
+            <h3 style="margin:0;">Editing: <span id="editor-title">...</span></h3>
+            <div class="editor-list" id="editor-list-container"></div>
+            <div class="new-card-row">
+                <input type="text" id="new-card-icon" class="inp-icon" placeholder="😀" readonly onclick="openEmojiPicker()">
+                <input type="text" id="new-card-name" placeholder="Name" style="flex:1; padding:5px;">
+                <button onclick="addCardToEditor()" style="background:var(--accent); color:white; border:none; width:40px; cursor:pointer;">+</button>
+            </div>
+            <button onclick="saveDeckChanges()" style="background:var(--success); color:white; padding:10px; border:none; width:100%; margin-top:10px; font-weight:bold; cursor:pointer;">💾 SAVE CHANGES</button>
+            <button onclick="deleteCurrentDeck()" style="background:none; color:red; border:none; margin-top:10px; cursor:pointer; text-decoration:underline;">Delete Deck</button>
+            <button onclick="closeEditor()" style="margin-top:10px; cursor:pointer;">Cancel</button>
+        </div>
+    </div>
+
+    <!-- 🎛️ DASHBOARD -->
+    <div id="dashboard-content">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <!-- MODE -->
+            <div class="mode-switch">
+                <button id="btn-mode-ind" class="mode-btn active" onclick="setGameMode('individual')">👤 Solo</button>
+                <button id="btn-mode-team" class="mode-btn" onclick="setGameMode('team')">👥 Team</button>
+            </div>
+
+            <!-- LIBRARY -->
+            <div class="list-section">
+                <h2 style="display:flex; justify-content:space-between;">
+                    📚 Library 
+                    <button onclick="createNewDeck()" style="font-size:1rem; background:var(--accent); color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">+ NEW</button>
+                </h2>
+                
+                <!-- SMART CLOUD BUTTON -->
+                <button id="btn-cloud-sync" class="btn-cloud" onclick="handleSync()">
+                    <span>☁️ Sync to GitHub</span>
+                </button>
+                <div id="cloud-status" style="text-align:center; font-size:0.8rem; color:#777; margin:5px 0 15px 0;">(Mode: File Download)</div>
+
+                <div style="display:flex; gap:5px; margin-bottom:10px;">
+                    <button onclick="triggerImport()" style="flex:1; cursor:pointer; padding:5px;">📂 Load File</button>
+                </div>
+                
+                <div id="library-list"></div>
+            </div>
+
+            <!-- LEADERBOARD -->
+            <div>
+                <h2 style="color:var(--primary)">🏆 Hall of Fame</h2>
+                <button onclick="clearLeaderboard()" style="font-size:0.8rem; margin-bottom:5px; cursor:pointer;">Clear History</button>
+                <div id="leaderboard-list"></div>
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+            <div class="status-bar">
+                <div><div style="font-size:0.9rem; color:#777;">ROOM CODE</div><div class="room-code" id="room-code">...</div></div>
+                <div style="text-align:right;">
+                    <div id="connection-status" style="font-weight:bold; color:orange;">Waiting...</div>
+                    <div id="player-name-display" style="color:#555;">No Player</div>
+                    <button onclick="enableAudio()" style="background:#2c3e50; color:white; padding:5px 10px; border-radius:5px; border:none; margin-top:5px; cursor:pointer;">🔊 Audio</button>
+                </div>
+            </div>
+
+            <div class="panel" id="deck-panel">
+                <h3>Active Deck: <span id="active-deck-name" style="color:var(--accent)">None</span></h3>
+                <div style="display:flex; gap:10px;">
+                    <button onclick="loadRandomDeck()" style="padding:10px; cursor:pointer;">🎲 Random</button>
+                    <button onclick="setRound(0)" class="round-btn active">R1 (80s)</button>
+                    <button onclick="setRound(1)" class="round-btn">R2 (56s)</button>
+                    <button onclick="setRound(2)" class="round-btn">R3 (32s)</button>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <div class="control-card">
+                    <div style="color:#999; font-size:0.9rem; margin-bottom:5px;">CURRENT TARGET</div>
+                    <div class="current-icon" id="target-icon">❓</div>
+                    <div class="current-text" id="target-text">Waiting...</div>
+                </div>
+                <button class="btn-action btn-correct" onclick="sendAction('correct')">✅ CORRECT</button>
+                <button class="btn-action btn-wrong" onclick="sendAction('wrong')">❌ WRONG</button>
+                <button class="btn-action btn-start" onclick="sendAction('start')">⏰ START TIMER</button>
+            </div>
+
+            <div class="panel" style="display:flex; justify-content:space-between; align-items:center;">
+                <h3>Score: <span id="score-display" style="color:var(--accent); font-size:2rem;">0</span></h3>
+                <button onclick="saveCurrentScore()" style="background:var(--success); color:white; border:none; padding:10px 20px; font-size:1.2rem; border-radius:5px; font-family:'Bangers'; cursor:pointer;">💾 SAVE SCORE</button>
+            </div>
+            
+            <audio id="remote-audio" autoplay></audio>
+            <input type="file" id="file-input" style="display:none" onchange="importData(this)">
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIG ---
+        const PASSWORD = "1234";
+        const KEY_LIB = 'vr_lib_final_v15';
+        const KEY_LB = 'vr_lb_final_v15';
+        const GH_BRANCH = 'main'; // Change to 'gh-pages' if required
+        const GH_FILE = 'class_data.json';
+        
+        let deckLibrary = {}, leaderboards = { individual: [], team: [] };
+        let currentDeck = [], currentRoundTime = 80, gameMode = 'individual';
+        let peer, conn, currentPlayerName = "Unknown", currentScore = 0;
+        let editingDeckName = "", tempEditorCards = [];
+
+        // EMOJI LIBRARY
+        const emojis = {
+            "Animals": ["🦁","🐯","🐆","🦓","🦒","🐘","🦏","🦛","🐻","🐼","🐨","🦊","🐗","🐊","🐅","🦍"],
+            "Food": ["🍎","🍌","🍇","🍉","🍓","🍒","🍍","🥭","🍔","🍕","🌭","🥪","🍦","🍩","🍪","🎂"],
+            "Objects": ["🚗","🚀","🎸","🎈","🎁","👑","💎","⏰","📱","💻","✏️","📚","🧢","👟","🕶️"]
+        };
+
+        // --- INIT ---
+        function checkPass() {
+            if(document.getElementById('pass-input').value === PASSWORD) {
+                document.getElementById('login-gate').style.display = 'none';
+                document.getElementById('dashboard-content').style.display = 'grid';
+                init();
+            } else { alert("Wrong Password!"); window.location.href = 'index.html'; }
+        }
+
+        function init() {
+            if(localStorage.getItem(KEY_LIB)) deckLibrary = JSON.parse(localStorage.getItem(KEY_LIB));
+            if(localStorage.getItem(KEY_LB)) leaderboards = JSON.parse(localStorage.getItem(KEY_LB));
+            
+            checkCloudStatus();
+            renderLibrary();
+            renderLeaderboard();
+            initEmojiPicker();
+
+            const code = Math.random().toString(36).substring(2,6).toUpperCase();
+            document.getElementById('room-code').innerText = code;
+            peer = new Peer("vr-host-" + code);
+            peer.on('connection', c => { 
+                conn = c; 
+                document.getElementById('connection-status').innerText = "✅ Connected!";
+                document.getElementById('connection-status').style.color = "#2ecc71";
+                conn.on('data', d => {
+                    if(d.type==='join') { currentPlayerName = d.name; document.getElementById('player-name-display').innerText = "👤 " + d.name; }
+                    if(d.type==='score_update') { currentScore = d.score; document.getElementById('score-display').innerText = d.score; }
+                });
+            });
+            peer.on('call', call => {
+                call.answer();
+                call.on('stream', s => document.getElementById('remote-audio').srcObject = s);
+            });
+        }
+
+        // --- SMART CLOUD LOGIC ---
+        function checkCloudStatus() {
+            const user = localStorage.getItem('gh_user');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+            const btn = document.getElementById('btn-cloud-sync');
+            const stat = document.getElementById('cloud-status');
+
+            if(user && repo && token) {
+                btn.classList.add('connected');
+                btn.innerText = "☁️ Direct Cloud Save";
+                stat.innerText = "(Mode: Connected to " + repo + ")";
+            } else {
+                btn.classList.remove('connected');
+                btn.innerText = "⬇️ Download for GitHub";
+                stat.innerHTML = `(Mode: File Download. <a href='generator.html' target='_blank'>Setup Cloud</a>)`;
+            }
+        }
+
+        async function handleSync() {
+            const user = localStorage.getItem('gh_user');
+            const repo = localStorage.getItem('gh_repo');
+            const token = localStorage.getItem('gh_token');
+
+            if(user && repo && token) {
+                // DIRECT SAVE
+                const btn = document.getElementById('btn-cloud-sync');
+                btn.innerText = "⏳ Saving...";
+                try {
+                    // 1. Get SHA
+                    let sha = null;
+                    const checkReq = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${GH_FILE}?ref=${GH_BRANCH}`, { headers: { Authorization: `token ${token}` } });
+                    if(checkReq.ok) { sha = (await checkReq.json()).sha; }
+
+                    // 2. Upload
+                    const content = btoa(unescape(encodeURIComponent(JSON.stringify(deckLibrary, null, 2))));
+                    const body = { message: "Dashboard Update", content: content, branch: GH_BRANCH };
+                    if(sha) body.sha = sha;
+
+                    const upReq = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${GH_FILE}`, {
+                        method: 'PUT',
+                        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify(body)
+                    });
+
+                    if(upReq.ok) { alert("✅ Saved to GitHub Cloud!"); }
+                    else { throw new Error("GitHub Error " + upReq.status); }
+                } catch(e) { alert("Save Failed: " + e.message); }
+                btn.innerText = "☁️ Direct Cloud Save";
+            } else {
+                // DOWNLOAD FILE
+                const s = JSON.stringify(deckLibrary, null, 2);
+                const blob = new Blob([s],{type:"application/json;charset=utf-8"});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a'); a.href=url; a.download="class_data.json"; a.click();
+                setTimeout(() => {
+                    const r = prompt("Enter GitHub Repo (user/repo) to open upload page:");
+                    if(r) window.open(`https://github.com/${r}/upload/main`, '_blank');
+                }, 1000);
+            }
+        }
+
+        // --- EDITOR & LIBRARY ---
+        function renderLibrary() {
+            const list = document.getElementById('library-list');
+            list.innerHTML = "";
+            Object.keys(deckLibrary).forEach(key => {
+                const d = document.createElement('div');
+                d.className = 'deck-item';
+                d.innerHTML = `
+                    <div class="deck-info" onclick="selectDeck('${key}')">${key} (${deckLibrary[key].length})</div>
+                    <div style="display:flex; gap:5px;">
+                        <button class="btn-icon" onclick="openEditor('${key}')">✏️</button>
+                        <button class="btn-icon btn-play-deck" onclick="selectDeck('${key}')">▶</button>
+                    </div>
+                `;
+                list.appendChild(d);
+            });
+        }
+
+        function createNewDeck() {
+            const name = prompt("Name for new deck:");
+            if(name) { deckLibrary[name] = []; saveLib(); openEditor(name); }
+        }
+
+        function openEditor(key) {
+            editingDeckName = key;
+            tempEditorCards = JSON.parse(JSON.stringify(deckLibrary[key]));
+            document.getElementById('editor-title').innerText = key;
+            document.getElementById('editor-modal').style.display = 'flex';
+            renderEditorList();
+        }
+
+        function renderEditorList() {
+            const container = document.getElementById('editor-list-container');
+            container.innerHTML = "";
+            tempEditorCards.forEach((card, index) => {
+                const div = document.createElement('div');
+                div.className = 'editor-item';
+                div.innerHTML = `
+                    <div class="inp-icon">${card.icon}</div>
+                    <input type="text" value="${card.name}" onchange="tempEditorCards[${index}].name = this.value" style="flex:1; padding:5px;">
+                    <button class="btn-del-item" onclick="removeCardFromEditor(${index})">✖</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function addCardToEditor() {
+            const icon = document.getElementById('new-card-icon').value || "❓";
+            const name = document.getElementById('new-card-name').value || "New Card";
+            tempEditorCards.push({ id: Date.now(), icon, name });
+            document.getElementById('new-card-icon').value = "";
+            document.getElementById('new-card-name').value = "";
+            renderEditorList();
+        }
+
+        function removeCardFromEditor(index) { tempEditorCards.splice(index, 1); renderEditorList(); }
+        function saveDeckChanges() { deckLibrary[editingDeckName] = tempEditorCards; saveLib(); closeEditor(); renderLibrary(); }
+        function deleteCurrentDeck() { if(confirm("Delete deck?")) { delete deckLibrary[editingDeckName]; saveLib(); closeEditor(); renderLibrary(); } }
+        function closeEditor() { document.getElementById('editor-modal').style.display = 'none'; }
+        
+        // --- GAME CONTROLS ---
+        function selectDeck(key) {
+            currentDeck = deckLibrary[key];
+            if(currentDeck.length===0) return alert("Empty Deck!");
+            document.getElementById('active-deck-name').innerText = key;
+            if(conn) conn.send({ type: 'PRELOAD_DECK', cards: currentDeck });
+        }
+
+        function sendAction(action) {
+            if(!conn) return alert("No Gamer Connected");
+            if(action === 'start') {
+                if(currentDeck.length < 1) return alert("Select a deck first!");
+                const gameCards = currentDeck.sort(()=>0.5-Math.random()).slice(0,8);
+                document.getElementById('target-icon').innerText = gameCards[0].icon;
+                document.getElementById('target-text').innerText = gameCards[0].name;
+                conn.send({ type: 'START_ROUND', cards: gameCards, time: currentRoundTime });
+            } else if(action === 'correct' || action === 'wrong') {
+                conn.send({ type: 'JUDGE', result: action });
+            }
+        }
+
+        function setRound(idx) {
+            currentRoundTime = [80,56,32][idx];
+            document.querySelectorAll('.round-btn').forEach((b,i) => b.className = i===idx ? 'round-btn active' : 'round-btn');
+            if(conn) conn.send({type: 'SET_ROUND_INFO', label: `Round ${idx+1}`});
+        }
+
+        // --- UTILS ---
+        function setGameMode(mode) {
+            gameMode = mode;
+            document.getElementById('btn-mode-ind').className = mode==='individual' ? 'mode-btn active' : 'mode-btn';
+            document.getElementById('btn-mode-team').className = mode==='team' ? 'mode-btn active' : 'mode-btn';
+            renderLeaderboard();
+        }
+
+        function renderLeaderboard() {
+            const list = document.getElementById('leaderboard-list');
+            list.innerHTML = "";
+            const data = leaderboards[gameMode] || [];
+            data.sort((a,b) => b.score - a.score);
+            data.forEach((item, i) => {
+                list.innerHTML += `<div class="deck-item"><span style="margin-right:10px;">${i+1}.</span><span class="info-text">${item.name}</span><span style="font-weight:bold; color:var(--accent)">${item.score}</span></div>`;
+            });
+        }
+
+        function saveCurrentScore() {
+            leaderboards[gameMode].push({ name: currentPlayerName, score: currentScore, date: new Date().toISOString() });
+            localStorage.setItem(KEY_LB, JSON.stringify(leaderboards));
+            renderLeaderboard();
+            alert("Saved!");
+        }
+
+        function clearLeaderboard() {
+            if(confirm("Clear history?")) { leaderboards[gameMode] = []; localStorage.setItem(KEY_LB, JSON.stringify(leaderboards)); renderLeaderboard(); }
+        }
+
+        function initEmojiPicker(){ 
+            const c = document.getElementById('emoji-content'); 
+            let h = ''; 
+            for(const [k,l] of Object.entries(emojis)){ 
+                h+=`<div class="emoji-cat">${k}</div><div class="emoji-grid">`; 
+                l.forEach(x => h+=`<button class="emoji-btn" onclick="selectEmoji('${x}')">${x}</button>`); 
+                h+='</div>'; 
+            } 
+            c.innerHTML = h; 
+        }
+        function openEmojiPicker(){ document.getElementById('emoji-modal').style.display='flex'; }
+        function closeEmojiPicker(e){ if(e.target.id==='emoji-modal') document.getElementById('emoji-modal').style.display='none'; }
+        function selectEmoji(c){ document.getElementById('new-card-icon').value = c; document.getElementById('emoji-modal').style.display='none'; }
+
+        function saveLib() { localStorage.setItem(KEY_LIB, JSON.stringify(deckLibrary)); }
+        
+        function triggerImport() { document.getElementById('file-input').click(); }
+        function importData(input) {
+            const reader = new FileReader();
+            reader.onload = e => {
+                try {
+                    const json = JSON.parse(e.target.result);
+                    Object.assign(deckLibrary, json);
+                    saveLib(); renderLibrary();
+                    alert("Imported!");
+                } catch(err) { alert("Invalid JSON"); }
+            };
+            reader.readAsText(input.files[0], "UTF-8");
+        }
+
+        function enableAudio() { document.getElementById('remote-audio').play(); }
+    </script>
+</body>
+</html>
