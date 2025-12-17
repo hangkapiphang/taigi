@@ -1,0 +1,11 @@
+{
+  "Week 1: Zoo": [
+    {"id": 1, "name": "lion", "icon": "🦁", "trigger": "lion"},
+    {"id": 2, "name": "tiger", "icon": "🐅", "trigger": "tiger"},
+    {"id": 3, "name": "elephant", "icon": "🐘", "trigger": "elephant"}
+  ],
+  "Week 2: Food": [
+    {"id": 4, "name": "apple", "icon": "🍎", "trigger": "apple"},
+    {"id": 5, "name": "pizza", "icon": "🍕", "trigger": "pizza"}
+  ]
+}
