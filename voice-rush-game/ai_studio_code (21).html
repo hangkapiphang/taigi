@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Rush: Select Role</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 0px #fff;
+        }
+        .container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            width: 300px;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 4px solid transparent;
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        .icon { font-size: 5rem; margin-bottom: 20px; }
+        .title { font-family: 'Bangers'; font-size: 2rem; margin-bottom: 10px; }
+        .desc { color: #666; line-height: 1.5; }
+
+        /* Specific Styles */
+        .teacher { border-color: #3498db; }
+        .teacher .title { color: #3498db; }
+        
+        .student { border-color: #e67e22; }
+        .student .title { color: #e67e22; }
+
+        @media (max-width: 700px) {
+            .container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🦁 Voice Rush</h1>
+
+    <div class="container">
+        <!-- TEACHER LINK -->
+        <a href="dashboard.html" class="card teacher">
+            <div class="icon">👨‍🏫</div>
+            <div class="title">TEACHER</div>
+            <div class="desc">
+                Open the Dashboard.<br>
+                Control the game, manage decks, and view scores.
+            </div>
+        </a>
+
+        <!-- STUDENT LINK -->
+        <a href="gamer.html" class="card student">
+            <div class="icon">🎮</div>
+            <div class="title">STUDENT</div>
+            <div class="desc">
+                Join the Arcade.<br>
+                Enter the room code to see cards and play!
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>
