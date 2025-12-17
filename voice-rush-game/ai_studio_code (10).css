@@ -1,0 +1,101 @@
+:root {
+    --bg-color: #f0f2f5;
+    --primary: #3498db;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+    --card-border: 3px solid #333;
+}
+
+body {
+    margin: 0; padding: 0;
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+    height: 100vh; overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1 { font-family: 'Bangers', cursive; margin: 10px 0; letter-spacing: 1px; }
+
+/* SCREEN LAYOUT */
+.screen { width: 100%; height: 100%; display: none; flex-direction: column; align-items: center; position: absolute; top: 0; left: 0; background: var(--bg-color); }
+.screen.active { display: flex; }
+
+/* SETUP & LISTS */
+.scroll-area { flex: 1; width: 100%; overflow-y: auto; display: flex; flex-direction: column; align-items: center; padding-bottom: 140px; }
+.section-title { width: 90%; max-width: 500px; font-weight: bold; margin: 15px 0 5px 0; color: #555; text-transform: uppercase; font-size: 0.9rem; border-bottom: 2px solid #ddd; }
+.creator-box { background: white; padding: 10px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 90%; max-width: 500px; display: flex; gap: 10px; margin-bottom: 10px; }
+input { padding: 10px; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem; outline: none; }
+#new-emoji { width: 50px; text-align: center; cursor: pointer; background-color: #f9f9f9; font-size: 1.5rem; padding: 5px; }
+
+.animal-list { width: 95%; max-width: 500px; }
+.animal-item { background: white; margin-bottom: 8px; padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 5px solid #ccc; }
+.animal-item.trained { border-left-color: var(--success); }
+.animal-info { display: flex; align-items: center; gap: 10px; }
+.animal-icon { font-size: 2rem; }
+.animal-name { font-weight: bold; font-size: 1.1rem; text-transform: capitalize; }
+.animal-trigger { font-size: 0.8rem; color: #666; font-style: italic; }
+
+.library-list { width: 95%; max-width: 500px; margin-top: 5px; }
+.library-item { background: #fff3cd; border: 1px solid #ffeeba; padding: 10px; border-radius: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+.lib-name { font-weight: bold; color: #856404; }
+.lib-count { font-size: 0.8rem; color: #856404; }
+
+/* BUTTONS */
+.btn-add { background: var(--primary); color: white; border: none; font-weight: bold; padding: 0 20px; border-radius: 5px; cursor: pointer; }
+.btn-rec { background: #333; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; font-weight: bold; }
+.btn-rec.recording { background: var(--danger); animation: pulse 1s infinite; }
+.btn-del { background: transparent; color: #999; border: 1px solid #ddd; padding: 5px; border-radius: 5px; cursor: pointer; }
+.btn-load { background: #28a745; color: white; border:none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-right: 5px; font-weight: bold; }
+.btn-trash { background: #dc3545; color: white; border:none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+
+/* FOOTER */
+.setup-footer { position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px; background: white; border-top: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; gap: 10px; box-sizing: border-box; z-index: 50; }
+.footer-tools { display: flex; gap: 10px; width: 100%; max-width: 500px; }
+.btn-tool { flex: 1; padding: 8px; border: 1px solid #ccc; background: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: bold; color: #555; }
+.btn-play { background: var(--success); color: white; font-family: 'Bangers'; font-size: 2rem; padding: 10px 50px; border: 3px solid #333; border-radius: 10px; box-shadow: 0 4px 0 #333; cursor: pointer; width: 100%; max-width: 400px; }
+.btn-play:active { transform: translateY(3px); box-shadow: 0 1px 0 #333; }
+
+/* GAME SCREEN */
+.header { width: 100%; display: flex; justify-content: space-between; padding: 10px 20px; box-sizing: border-box; font-family: 'Bangers'; font-size: 2rem; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); gap: 8px; width: 95%; max-width: 600px; aspect-ratio: 2/1; margin-top: 20px; }
+
+.card { background: white; border: var(--card-border); border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; position: relative; transition: transform 0.1s; }
+.card.active { border-color: var(--success); box-shadow: 0 0 25px var(--success); transform: scale(1.05); z-index: 100; }
+.card.done { opacity: 0.3; filter: grayscale(100%); }
+.card.practice-success { background-color: #dff9fb; border-color: #2ecc71; transform: scale(0.95); }
+
+.timer-container { width: 90%; height: 12px; background: #ddd; border: 2px solid #333; border-radius: 10px; overflow: hidden; }
+.timer-bar { width: 100%; height: 100%; background: #f1c40f; transform-origin: left; transition: transform 0.1s linear; }
+
+/* MIC STATUS & START BUTTON */
+.status-container { display:flex; width: 90%; justify-content:center; align-items:center; gap: 10px; margin-top: 10px; }
+.status-text { font-weight: bold; font-size: 1.1rem; color: #555; }
+.mic-indicator { width: 15px; height: 15px; border-radius: 50%; background: #ccc; border: 2px solid #555; }
+.mic-indicator.on { background: #2ecc71; box-shadow: 0 0 8px #2ecc71; border-color: transparent; }
+
+.start-round-btn { background-color: #e67e22; color: white; font-family: 'Bangers'; font-size: 2rem; padding: 10px 40px; border: 4px solid #333; border-radius: 50px; cursor: pointer; margin-top: 15px; box-shadow: 0 5px 0 #333; animation: pulseBtn 1.5s infinite; display: none; }
+.start-round-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #333; }
+
+.back-link { margin-top: auto; margin-bottom: 20px; color: #666; text-decoration: underline; cursor: pointer; }
+
+/* OVERLAYS */
+#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.98); z-index: 200; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.score-board { background: #fff; border: 3px solid #333; border-radius: 10px; width: 80%; max-width: 400px; padding: 15px; margin-bottom: 20px; box-shadow: 5px 5px 0px rgba(0,0,0,0.1); max-height: 50vh; overflow-y: auto; }
+.score-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 1.2rem; font-family: 'Roboto', sans-serif; }
+.score-row.header-row { font-weight: bold; border-bottom: 2px solid #333; }
+.intermission-btn { background: #e67e22; color: white; padding: 15px 40px; font-size: 1.5rem; border: 3px solid #333; border-radius: 10px; cursor: pointer; font-family: 'Bangers'; margin-top: 20px; }
+
+/* EMOJI PICKER */
+#emoji-modal { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 300; display: none; justify-content: center; align-items: flex-end; }
+.emoji-drawer { background: white; width: 100%; max-width: 600px; height: 70vh; border-radius: 20px 20px 0 0; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; animation: slideUp 0.3s ease-out; }
+.drawer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.emoji-grid-container { overflow-y: auto; flex: 1; }
+.category-title { font-weight: bold; color: #888; margin: 15px 0 5px 0; font-size: 0.9rem; text-transform: uppercase;}
+.emoji-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 10px; }
+.emoji-btn { font-size: 2.5rem; background: #f4f4f4; border: none; border-radius: 8px; cursor: pointer; padding: 5px; }
+
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+@keyframes pulseBtn { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
