@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Rush: Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 { font-family: 'Bangers'; margin-top: 0; color: #2c3e50; font-size: 2.5rem; }
+        p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+        
+        label { display: block; text-align: left; font-weight: bold; margin-top: 15px; color: #333; }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        input:focus { border-color: #3498db; outline: none; }
+
+        .btn-save {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 25px;
+            cursor: pointer;
+            font-family: 'Bangers';
+            letter-spacing: 1px;
+        }
+        .btn-clear {
+            background: none;
+            border: none;
+            color: #c0392b;
+            text-decoration: underline;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .status { margin-top: 15px; font-weight: bold; min-height: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>⚙️ Settings</h1>
+        <p>Enter your GitHub details to enable Cloud Editing.</p>
+
+        <label>GitHub Username</label>
+        <input type="text" id="gh_user" placeholder="e.g. hangkapiphang">
+
+        <label>Repository Name</label>
+        <input type="text" id="gh_repo" placeholder="e.g. Voice-Rush-Arcade">
+
+        <label>Personal Access Token (PAT)</label>
+        <input type="password" id="gh_token" placeholder="ghp_xxxxxxxxxxxx">
+        <div style="text-align:left; font-size:0.75rem; color:#888; margin-top:5px;">
+            Required for the Deck Editor to save files. 
+            <a href="https://github.com/settings/tokens" target="_blank">Generate here</a> (Select 'repo' scope).
+        </div>
+
+        <button class="btn-save" onclick="saveCreds()">💾 SAVE SETTINGS</button>
+        <div id="status" class="status"></div>
+        
+        <button class="btn-clear" onclick="clearCreds()">Clear Data</button>
+        <br><br>
+        <a href="index.html" style="color:#3498db; text-decoration:none;">← Back to Menu</a>
+    </div>
+
+    <script>
+        // Load existing
+        window.onload = () => {
+            if(localStorage.getItem('gh_user')) document.getElementById('gh_user').value = localStorage.getItem('gh_user');
+            if(localStorage.getItem('gh_repo')) document.getElementById('gh_repo').value = localStorage.getItem('gh_repo');
+            if(localStorage.getItem('gh_token')) document.getElementById('gh_token').value = localStorage.getItem('gh_token');
+        };
+
+        function saveCreds() {
+            const u = document.getElementById('gh_user').value.trim();
+            const r = document.getElementById('gh_repo').value.trim();
+            const t = document.getElementById('gh_token').value.trim();
+
+            if(!u || !r || !t) {
+                showStatus("❌ Please fill all fields", "red");
+                return;
+            }
+
+            localStorage.setItem('gh_user', u);
+            localStorage.setItem('gh_repo', r);
+            localStorage.setItem('gh_token', t);
+            
+            showStatus("✅ Saved! You can now use the Editor.", "#27ae60");
+        }
+
+        function clearCreds() {
+            localStorage.removeItem('gh_user');
+            localStorage.removeItem('gh_repo');
+            localStorage.removeItem('gh_token');
+            document.getElementById('gh_user').value = "";
+            document.getElementById('gh_repo').value = "";
+            document.getElementById('gh_token').value = "";
+            showStatus("🗑️ Data cleared.", "#c0392b");
+        }
+
+        function showStatus(msg, color) {
+            const el = document.getElementById('status');
+            el.innerText = msg;
+            el.style.color = color;
+        }
+    </script>
+
+</body>
+</html>
