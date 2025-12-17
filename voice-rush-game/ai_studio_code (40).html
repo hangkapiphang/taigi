@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Voice Rush: Arcade</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+    <!-- === SCREEN 1: LOBBY === -->
+    <div id="screen-lobby" class="screen active">
+        <h1>🦁 Voice Rush</h1>
+        <div class="lobby-buttons">
+            <button class="role-btn big-blue" onclick="startHost()">📺 CLASS SCREEN<br><span>(Host)</span></button>
+            <button class="role-btn big-green" onclick="showJoinMenu()">📱 TEACHER REMOTE<br><span>(Control)</span></button>
+        </div>
+        <div id="join-menu" style="display:none; text-align:center; margin-top:20px;">
+            <input type="text" id="room-code-input" placeholder="CODE" class="code-input">
+            <br><button class="btn-play" onclick="connectToHost()">CONNECT</button>
+        </div>
+        <button onclick="goToSetup()" style="margin-top:20px; border:none; background:none; text-decoration:underline;">Edit Cards</button>
+    </div>
+
+    <!-- === SCREEN 2: SETUP (HOST) === -->
+    <div id="screen-setup" class="screen">
+        <h1>🛠️ Setup</h1>
+        <div class="connection-box">
+            <div>Code: <span id="my-room-code" class="code-display">...</span></div>
+            <div id="connection-status" style="color:orange;">Waiting...</div>
+        </div>
+
+        <div class="scroll-area">
+            <div class="mode-selector">
+                <div class="section-title">Select Mode</div>
+                <div class="mode-btns">
+                    <button class="mode-btn active" id="mode-ind" onclick="setGameMode('individual')">👤 Solo Sprint</button>
+                    <button class="mode-btn" id="mode-team" onclick="setGameMode('team')">👥 Team Relay</button>
+                </div>
+            </div>
+
+            <div class="lang-toggle-container">
+                <span class="lang-label">Audio:</span>
+                <div class="lang-switch">
+                    <button id="btn-lang-en" class="lang-btn active" onclick="setLanguage('en')">🇺🇸 Eng</button>
+                    <button id="btn-lang-tw" class="lang-btn" onclick="setLanguage('tw')">🇹🇼 Taigi</button>
+                </div>
+            </div>
+
+            <div class="section-title">Active Deck</div>
+            <div class="creator-box">
+                <input type="text" id="new-emoji" placeholder="😀" readonly onclick="openEmojiPicker()">
+                <input type="text" id="new-name" placeholder="Name" style="flex:1;">
+                <button class="btn-add" onclick="addNewAnimal()">+</button>
+            </div>
+            <div class="animal-list" id="list-container"></div>
+            
+            <div class="section-title">Saved Decks</div>
+            <div class="library-list" id="library-container"></div>
+        </div>
+
+        <div class="setup-footer">
+            <div class="footer-tools">
+                <button class="btn-tool" onclick="saveCurrentDeck()">💾 Save Deck</button>
+                <button class="btn-tool" onclick="exportData()">⬇️ JSON</button>
+                <button class="btn-tool" onclick="triggerImport()">📂 Load</button>
+                <input type="file" id="file-input" accept=".json" style="display:none" onchange="importData(this)">
+            </div>
+            <button class="btn-play" onclick="prepareGame()">PLAY ▶</button>
+        </div>
+    </div>
+
+    <!-- === SCREEN 3: TEACHER REMOTE === -->
+    <div id="screen-remote" class="screen">
+        <div class="header">
+            <div>📱 REMOTE</div>
+            <div id="remote-score-display" style="font-weight:bold; color:#f1c40f;">0</div>
+        </div>
+        <audio id="remote-audio" autoplay playsinline></audio>
+        <div style="font-size:0.8rem; color:#ccc; text-align:center;">🎧 Earbuds Required</div>
+        
+        <div class="remote-card-display">
+            <div id="remote-target-icon" style="font-size: 4rem;">❓</div>
+            <div id="remote-target-name" style="font-size: 1.5rem; font-weight: bold;">...</div>
+        </div>
+
+        <div class="remote-controls">
+            <button class="remote-btn btn-correct" onclick="sendCmd('correct')">✅ CORRECT</button>
+            <div class="remote-row">
+                <button class="remote-btn btn-wrong" onclick="sendCmd('wrong')">❌ WRONG</button>
+                <button class="remote-btn btn-start" onclick="sendCmd('start_timer')">⏰ START</button>
+            </div>
+            <button class="remote-btn btn-next-student" onclick="sendCmd('next_round')">🎓 NEXT ROUND</button>
+        </div>
+    </div>
+
+    <!-- === SCREEN 4: GAME === -->
+    <div id="screen-game" class="screen">
+        <div class="header">
+            <div><span id="round-display">Round 1</span></div>
+            <div><span id="player-display">Player</span></div>
+        </div>
+        <div class="timer-container"><div class="timer-bar" id="timer-bar"></div></div>
+        <div class="grid" id="grid"></div>
+        <div class="status-container">
+            <div class="mic-indicator" id="live-mic-dot"></div>
+            <div class="status-text" id="status-text">Waiting...</div>
+        </div>
+        <button id="btn-start-round" class="start-round-btn" onclick="beginRankedRound()">⏰ START TIMER</button>
+        <div class="back-link" onclick="goToSetup()">Quit</div>
+    </div>
+
+    <!-- === SCREEN 5: LEADERBOARD === -->
+    <div id="screen-leaderboard" class="screen">
+        <h1>🏆 Hall of Fame</h1>
+        <div class="leaderboard-tabs">
+            <button class="tab-btn active" onclick="renderLeaderboard('individual')">Solo</button>
+            <button class="tab-btn" onclick="renderLeaderboard('team')">Team</button>
+        </div>
+        
+        <div class="leaderboard-list" id="leaderboard-content"></div>
+        
+        <!-- EXPORT BUTTONS -->
+        <div class="setup-footer">
+            <div style="display:flex; gap:10px; width:100%; max-width:400px; margin-bottom:10px;">
+                <button class="btn-tool" onclick="exportLeaderboard()">⬇️ Save Records</button>
+                <button class="btn-tool" style="background:#ffdddd; color:#c0392b; border-color:#e74c3c;" onclick="clearLeaderboard()">🗑️ Reset</button>
+            </div>
+            <button class="btn-play" onclick="prepareGame()">NEW GAME</button>
+        </div>
+    </div>
+
+    <!-- === OVERLAYS === -->
+    <div id="emoji-modal" onclick="closeEmojiPicker(event)"><div class="emoji-drawer"><div class="emoji-grid-container" id="emoji-content"></div></div></div>
+    
+    <div id="overlay-name" class="overlay">
+        <div class="modal-box">
+            <h2 id="name-prompt">Who is playing?</h2>
+            <input type="text" id="player-name-input" placeholder="Enter Name..." class="big-input">
+            <button class="btn-play" onclick="confirmName()">GO!</button>
+        </div>
+    </div>
+
+    <div id="overlay-intermission" class="overlay" style="display:none;">
+        <h1 id="inter-title">ROUND 1</h1>
+        <p id="inter-sub">Get Ready</p>
+        <div class="score-board" id="round-scores" style="display:none;"></div>
+        <button id="inter-btn" class="intermission-btn" onclick="startPractice()">READY!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
