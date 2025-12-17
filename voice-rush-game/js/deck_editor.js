@@ -2,7 +2,7 @@
 const user = localStorage.getItem('gh_user');
 const repo = localStorage.getItem('gh_repo');
 const token = localStorage.getItem('gh_token');
-const BRANCH = 'main'; // Usually 'main' for Voice Rush, change to 'gh-pages' if needed
+const BRANCH = 'gh-pages'; // Usually 'main' for Voice Rush, change to 'gh-pages' if needed
 const FILE = 'class_data.json';
 
 let fullData = {}; // Stores { "Week 1": [...], "Week 2": [...] }
