@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Rush: Cloud Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/deck_editor.css">
+</head>
+<body>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+        <div>
+            <span id="repo-status">🔴 Not Connected</span>
+            <span id="file-info" style="font-size:0.8rem; color:#aaa; margin-left:10px;">Target: class_data.json</span>
+        </div>
+        <div>
+            <button onclick="saveToGitHub()" class="btn btn-save">☁️ Save to GitHub</button>
+            <a href="../generator.html" class="link-small">Settings</a>
+        </div>
+    </div>
+
+    <div id="logs"></div>
+
+    <!-- MAIN EDITOR -->
+    <div class="container">
+        
+        <!-- SIDEBAR: DECKS -->
+        <div class="sidebar">
+            <div class="section-header">
+                <h3>📚 Decks</h3>
+                <button onclick="addNewDeck()" class="btn-icon">+</button>
+            </div>
+            <div id="deck-list"></div>
+        </div>
+
+        <!-- MAIN: CARDS -->
+        <div class="main-area">
+            <div class="section-header">
+                <h3 id="current-deck-title">Select a Deck</h3>
+                <button onclick="addCard()" id="btn-add-card" class="btn-icon" style="display:none;">+ Card</button>
+            </div>
+            <div id="card-list"></div>
+            <div id="empty-msg">Select a deck from the left to edit.</div>
+        </div>
+
+    </div>
+
+    <script src="../js/deck_editor.js"></script>
+</body>
+</html>
