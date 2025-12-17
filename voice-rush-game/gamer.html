@@ -1,48 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- CRITICAL FOR FIXING WEIRD CHARACTERS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Voice Rush: Player</title>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
     <style>
-        body { margin: 0; background-color: #2c3e50; font-family: 'Roboto', sans-serif; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; overflow: hidden; touch-action: none; }
+        /* BASE RESET */
+        * { box-sizing: border-box; }
+        body { margin: 0; background-color: #2c3e50; font-family: 'Roboto', sans-serif; height: 100vh; display: flex; flex-direction: column; color: white; overflow: hidden; touch-action: none; }
         
         /* LOGIN SCREEN */
-        #login-screen { text-align: center; width: 90%; max-width: 400px; }
-        h1 { font-family: 'Bangers'; font-size: 4rem; margin: 0 0 20px 0; color: #f1c40f; text-shadow: 3px 3px 0 #000; }
+        #login-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 90%; max-width: 400px; margin: 0 auto; text-align: center; }
+        h1 { font-family: 'Bangers'; font-size: 4rem; margin: 0 0 20px 0; color: #f1c40f; text-shadow: 3px 3px 0 #000; letter-spacing: 2px; }
         
-        input { width: 100%; padding: 15px; font-size: 1.5rem; text-align: center; border-radius: 10px; border: none; margin-bottom: 15px; box-sizing: border-box; font-family: 'Bangers'; text-transform: uppercase; }
+        input { width: 100%; padding: 15px; font-size: 1.5rem; text-align: center; border-radius: 10px; border: none; margin-bottom: 15px; font-family: 'Bangers'; text-transform: uppercase; letter-spacing: 1px; }
+        input::placeholder { color: #ccc; font-family: sans-serif; letter-spacing: 0; }
         
         .btn-join { width: 100%; padding: 15px; background: #27ae60; color: white; font-size: 2rem; font-family: 'Bangers'; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 5px 0 #1e8449; transition: 0.1s; }
         .btn-join:active { transform: translateY(5px); box-shadow: none; }
 
         /* GAME UI */
-        #game-screen { display: none; width: 100%; height: 100%; flex-direction: column; align-items: center; position: relative; }
+        #game-screen { display: none; width: 100%; height: 100%; flex-direction: column; }
         
-        .header { width: 100%; padding: 10px 20px; display: flex; justify-content: space-between; font-family: 'Bangers'; font-size: 2rem; box-sizing: border-box; background: rgba(0,0,0,0.2); }
+        .header { width: 100%; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Bangers'; font-size: 2rem; background: rgba(0,0,0,0.3); box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 10; }
         
-        .timer-bar { width: 100%; height: 15px; background: #34495e; }
+        /* TIMER BAR */
+        .timer-container { width: 100%; height: 12px; background: #34495e; position: relative; }
         .timer-fill { width: 100%; height: 100%; background: #f1c40f; transform-origin: left; transition: transform 0.1s linear; }
 
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; width: 95%; max-width: 900px; flex: 1; padding: 10px; box-sizing: border-box; }
+        /* CARD GRID - FIXED LAYOUT */
+        .grid-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; overflow: hidden; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            grid-template-rows: repeat(2, 1fr); 
+            gap: 12px; 
+            width: 100%; 
+            max-width: 1000px;
+            /* Force aspect ratio to prevent squashing */
+            aspect-ratio: 2 / 1; 
+            max-height: 100%;
+        }
         
-        .card { background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; position: relative; transition: transform 0.2s; border: 4px solid #34495e; color: #333; }
+        .card { 
+            background: white; 
+            border-radius: 12px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            position: relative; 
+            transition: transform 0.2s; 
+            border: 4px solid #34495e; 
+            color: #333; 
+            overflow: hidden; /* Key fix for large content */
+            user-select: none;
+        }
         
+        /* CARD CONTENT HANDLING */
+        .card-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem; /* Default for Emojis */
+        }
+        
+        .card img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain; /* Keeps images proportioned */
+        }
+
         /* STATES */
-        .card.active { border-color: #f1c40f; box-shadow: 0 0 40px #f1c40f; transform: scale(1.05); z-index: 100; }
+        .card.active { border-color: #f1c40f; box-shadow: 0 0 30px #f1c40f; transform: scale(1.05); z-index: 100; background: #fff; }
         .card.correct { background: #dff9fb; border-color: #2ecc71; opacity: 0.6; filter: grayscale(50%); transform: scale(0.95); }
         .card.wrong { background: #fadbd8; border-color: #e74c3c; animation: shake 0.4s; }
 
-        #status-msg { position: absolute; bottom: 20%; font-family: 'Bangers'; font-size: 3rem; text-shadow: 2px 2px 0 #000; display: none; }
+        #status-msg { position: absolute; bottom: 50%; width: 100%; text-align: center; font-family: 'Bangers'; font-size: 4rem; text-shadow: 4px 4px 0 #000; display: none; z-index: 200; pointer-events: none; }
 
         @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-10px); } 50% { transform: translateX(10px); } 75% { transform: translateX(-10px); } 100% { transform: translateX(0); } }
         
-        /* Mobile Layout */
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); }
-            .card { font-size: 3rem; }
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            .grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                grid-template-rows: repeat(4, 1fr); 
+                aspect-ratio: 1 / 2;
+            }
+            .card-content { font-size: 3rem; }
+            .header { font-size: 1.5rem; padding: 10px; }
         }
     </style>
 </head>
@@ -54,7 +103,7 @@
         <input type="text" id="code-input" placeholder="ROOM CODE" maxlength="4">
         <input type="text" id="name-input" placeholder="YOUR NAME">
         <button class="btn-join" onclick="joinGame()">JOIN GAME</button>
-        <p id="error-msg" style="color:#e74c3c; font-weight:bold;"></p>
+        <p id="error-msg" style="color:#e74c3c; font-weight:bold; margin-top:10px;"></p>
     </div>
 
     <!-- 2. GAME -->
@@ -63,9 +112,12 @@
             <span id="round-label">Waiting...</span>
             <span id="score-label">0 Pts</span>
         </div>
-        <div class="timer-bar"><div class="timer-fill" id="timer-fill"></div></div>
+        <div class="timer-container"><div class="timer-fill" id="timer-fill"></div></div>
         
-        <div class="grid" id="grid"></div>
+        <div class="grid-container">
+            <div class="grid" id="grid"></div>
+        </div>
+        
         <div id="status-msg">ROUND COMPLETE!</div>
     </div>
 
@@ -74,6 +126,7 @@
         let activeIndex = 0;
         let currentCards = [];
         let timerInt;
+        let currentLang = 'en';
         
         function joinGame() {
             const code = document.getElementById('code-input').value.trim().toUpperCase();
@@ -89,45 +142,32 @@
             btn.innerText = "CONNECTING...";
             btn.disabled = true;
 
-            // 1. Initialize Peer
             peer = new Peer();
 
             peer.on('open', myId => {
-                // 2. Connect to Dashboard Host
                 conn = peer.connect("vr-host-" + code);
 
                 conn.on('open', () => {
-                    // Success!
                     document.getElementById('login-screen').style.display = 'none';
                     document.getElementById('game-screen').style.display = 'flex';
                     
-                    // Send Join Data
                     conn.send({ type: 'join', name: name });
                     
-                    // 3. Start Audio Stream (Microphone)
+                    // Audio Stream
                     navigator.mediaDevices.getUserMedia({ audio: true })
-                        .then(stream => {
-                            peer.call(conn.peer, stream); // Call the teacher
-                        })
-                        .catch(e => {
-                            alert("Microphone blocked! Teacher won't hear you.");
-                        });
+                        .then(stream => { peer.call(conn.peer, stream); })
+                        .catch(e => { alert("Mic blocked! Teacher can't hear you."); });
 
-                    // 4. Setup Listener for Data from Dashboard
                     setupDataListener();
                 });
 
-                conn.on('close', () => {
-                    alert("Disconnected from Teacher.");
-                    location.reload();
-                });
+                conn.on('close', () => { alert("Disconnected."); location.reload(); });
 
-                // Error Handling (Room not found)
                 setTimeout(() => {
                     if(!conn.open) {
                         btn.innerText = "JOIN GAME";
                         btn.disabled = false;
-                        err.innerText = "Room not found. Check code.";
+                        err.innerText = "Room not found or Connection Failed.";
                     }
                 }, 3000);
             });
@@ -135,34 +175,32 @@
             peer.on('error', e => {
                 btn.innerText = "JOIN GAME";
                 btn.disabled = false;
-                err.innerText = "Connection Error.";
+                err.innerText = "Network Error.";
             });
         }
 
         function setupDataListener() {
             conn.on('data', data => {
-                // COMMAND: Update Round Info (e.g. "Round 1")
                 if(data.type === 'SET_ROUND_INFO') {
                     document.getElementById('round-label').innerText = data.label;
                 }
-                
-                // COMMAND: Preload or Start Game
                 if(data.type === 'START_ROUND') {
-                    startRound(data.cards, data.time);
+                    startRound(data.cards, data.time, data.lang);
                 }
-                
-                // COMMAND: Teacher Clicked Correct/Wrong
                 if(data.type === 'JUDGE') {
                     handleJudge(data.result);
+                }
+                if(data.type === 'PLAY_AUDIO') {
+                    playCardAudio(activeIndex);
                 }
             });
         }
 
-        function startRound(cards, totalTime) {
+        function startRound(cards, totalTime, lang) {
             currentCards = cards;
+            currentLang = lang;
             activeIndex = 0;
             
-            // Build Grid
             const grid = document.getElementById('grid');
             grid.innerHTML = "";
             document.getElementById('status-msg').style.display = 'none';
@@ -171,14 +209,28 @@
                 const div = document.createElement('div');
                 div.className = 'card';
                 div.id = `card-${i}`;
-                div.innerHTML = card.icon;
+                
+                // --- FIXED RENDERING LOGIC ---
+                // 1. Get the content (Icon or Name fallback)
+                let content = card.icon || card.name || "❓";
+                
+                // 2. Check if it's an Image Path or Emoji
+                let htmlContent = "";
+                if(content.includes('/') || content.includes('.png') || content.includes('.jpg')) {
+                    // It is an Image
+                    htmlContent = `<img src="${content}" alt="${card.name}">`;
+                } else {
+                    // It is text/emoji
+                    htmlContent = content;
+                }
+
+                div.innerHTML = `<div class="card-content">${htmlContent}</div>`;
                 grid.appendChild(div);
             });
 
-            // Highlight First Card
             highlightCard(0);
 
-            // Start Visual Timer
+            // Timer Logic
             const startTime = Date.now();
             if(timerInt) clearInterval(timerInt);
             
@@ -201,29 +253,37 @@
                 card.classList.add('correct');
             } else {
                 card.classList.add('wrong');
-                // The dashboard logic implies "wrong" also moves to next
             }
 
             activeIndex++;
 
-            // Check if game over
             if(activeIndex < currentCards.length) {
                 highlightCard(activeIndex);
             } else {
-                // End of Round
                 clearInterval(timerInt);
                 document.getElementById('status-msg').style.display = 'block';
             }
         }
 
         function highlightCard(index) {
-            // Remove active from all
             document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
-            // Add to current
             const c = document.getElementById(`card-${index}`);
             if(c) c.classList.add('active');
         }
 
+        // Hybrid Audio Engine
+        function playCardAudio(index) {
+            if(index >= currentCards.length) return;
+            const card = currentCards[index];
+
+            if(currentLang === 'en') {
+                const u = new SpeechSynthesisUtterance(card.name);
+                u.lang = 'en-US';
+                window.speechSynthesis.speak(u);
+            } else if (currentLang === 'tw' && card.audio) {
+                new Audio(card.audio).play();
+            }
+        }
     </script>
 </body>
 </html>
