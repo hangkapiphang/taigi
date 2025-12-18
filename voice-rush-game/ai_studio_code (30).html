@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- CRITICAL: Fixes the weird characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Voice Rush: Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <style>
+        /* RESET & BASE */
+        * { box-sizing: border-box; }
+        body { margin: 0; background-color: #2c3e50; font-family: 'Roboto', sans-serif; height: 100vh; display: flex; flex-direction: column; color: white; overflow: hidden; touch-action: none; }
+        
+        /* LOGIN SCREEN */
+        #login-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 90%; max-width: 400px; margin: 0 auto; text-align: center; }
+        h1 { font-family: 'Bangers'; font-size: 4rem; margin: 0 0 20px 0; color: #f1c40f; text-shadow: 3px 3px 0 #000; letter-spacing: 2px; }
+        
+        input { width: 100%; padding: 15px; font-size: 1.5rem; text-align: center; border-radius: 10px; border: none; margin-bottom: 15px; font-family: 'Bangers'; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-join { width: 100%; padding: 15px; background: #27ae60; color: white; font-size: 2rem; font-family: 'Bangers'; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 5px 0 #1e8449; transition: 0.1s; }
+        .btn-join:active { transform: translateY(5px); box-shadow: none; }
+
+        /* GAME UI */
+        #game-screen { display: none; width: 100%; height: 100%; flex-direction: column; }
+        
+        .header { width: 100%; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Bangers'; font-size: 2rem; background: rgba(0,0,0,0.3); z-index: 10; }
+        
+        /* TIMER */
+        .timer-container { width: 100%; height: 12px; background: #34495e; }
+        .timer-fill { width: 100%; height: 100%; background: #f1c40f; transform-origin: left; transition: transform 0.1s linear; }
+
+        /* GRID SYSTEM (Fixed Layout) */
+        .grid-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; overflow: hidden; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            grid-template-rows: repeat(2, 1fr); 
+            gap: 10px; 
+            width: 100%; 
+            max-width: 1000px;
+            aspect-ratio: 2 / 1; /* Forces rectangle shape to prevent squashing */
+            max-height: 100%;
+        }
+        
+        .card { 
+            background: white; 
+            border-radius: 12px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            position: relative; 
+            transition: transform 0.2s; 
+            border: 4px solid #34495e; 
+            color: #333; 
+            overflow: hidden; 
+            user-select: none;
+        }
+        
+        /* CONTENT SCALING */
+        .card-content { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 4rem; }
+        .card img { width: 90%; height: 90%; object-fit: contain; }
+
+        /* ACTIVE STATES */
+        .card.active { border-color: #f1c40f; box-shadow: 0 0 30px #f1c40f; transform: scale(1.05); z-index: 100; background: #fff; }
+        .card.correct { background: #dff9fb; border-color: #2ecc71; opacity: 0.6; filter: grayscale(50%); transform: scale(0.95); }
+        .card.wrong { background: #fadbd8; border-color: #e74c3c; animation: shake 0.4s; }
+
+        #status-msg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; font-family: 'Bangers'; font-size: 4rem; text-shadow: 4px 4px 0 #000; display: none; z-index: 200; pointer-events: none; }
+
+        @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } 100% { transform: translateX(0); } }
+        
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); aspect-ratio: 1 / 2; }
+            .card-content { font-size: 3rem; }
+            .header { font-size: 1.5rem; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <div id="login-screen">
+        <h1>🦁 Voice Rush</h1>
+        <input type="text" id="code-input" placeholder="ROOM CODE" maxlength="4">
+        <input type="text" id="name-input" placeholder="YOUR NAME">
+        <button class="btn-join" onclick="joinGame()">JOIN GAME</button>
+        <p id="error-msg" style="color:#e74c3c; font-weight:bold; margin-top:10px;"></p>
+    </div>
+
+    <!-- GAME BOARD -->
+    <div id="game-screen">
+        <div class="header">
+            <span id="round-label">Waiting...</span>
+            <span id="score-label">0 Pts</span>
+        </div>
+        <div class="timer-container"><div class="timer-fill" id="timer-fill"></div></div>
+        
+        <div class="grid-container">
+            <div class="grid" id="grid"></div>
+        </div>
+        
+        <div id="status-msg">ROUND COMPLETE!</div>
+    </div>
+
+    <script>
+        let peer, conn, activeIndex=0, currentCards=[], timerInt, currentLang='en';
+
+        function joinGame() {
+            const code = document.getElementById('code-input').value.trim().toUpperCase();
+            const name = document.getElementById('name-input').value.trim();
+            const btn = document.querySelector('.btn-join');
+            const err = document.getElementById('error-msg');
+
+            if(code.length !== 4 || !name) {
+                err.innerText = "Please enter Code (4 chars) and Name.";
+                return;
+            }
+
+            btn.innerText = "CONNECTING...";
+            btn.disabled = true;
+
+            peer = new Peer();
+
+            peer.on('open', myId => {
+                conn = peer.connect("vr-host-" + code);
+
+                conn.on('open', () => {
+                    document.getElementById('login-screen').style.display = 'none';
+                    document.getElementById('game-screen').style.display = 'flex';
+                    
+                    conn.send({ type: 'join', name: name });
+                    
+                    // Audio Stream (Microphone)
+                    navigator.mediaDevices.getUserMedia({ audio: true })
+                        .then(stream => { peer.call(conn.peer, stream); })
+                        .catch(e => { console.log("Mic blocked"); });
+
+                    setupDataListener();
+                });
+
+                conn.on('close', () => { alert("Disconnected."); location.reload(); });
+
+                // Connection Timeout
+                setTimeout(() => {
+                    if(!conn.open) {
+                        btn.innerText = "JOIN GAME";
+                        btn.disabled = false;
+                        err.innerText = "Room not found or Connection Failed.";
+                    }
+                }, 3000);
+            });
+            
+            peer.on('error', e => {
+                btn.innerText = "JOIN GAME";
+                btn.disabled = false;
+                err.innerText = "Network Error.";
+            });
+        }
+
+        function setupDataListener() {
+            conn.on('data', data => {
+                if(data.type === 'SET_ROUND_INFO') {
+                    document.getElementById('round-label').innerText = data.label;
+                }
+                if(data.type === 'START_ROUND') {
+                    startRound(data.cards, data.time, data.lang);
+                }
+                if(data.type === 'JUDGE') {
+                    handleJudge(data.result);
+                }
+                if(data.type === 'PLAY_AUDIO') {
+                    playCardAudio(activeIndex);
+                }
+            });
+        }
+
+        function startRound(cards, totalTime, lang) {
+            // 1. Reset State
+            if(timerInt) clearInterval(timerInt);
+            document.getElementById('status-msg').style.display = 'none';
+            document.getElementById('timer-fill').style.width = "100%";
+            currentCards = cards;
+            currentLang = lang;
+            activeIndex = 0;
+            
+            // 2. Render Grid (With Image Support)
+            const grid = document.getElementById('grid');
+            grid.innerHTML = "";
+            
+            cards.forEach((card, i) => {
+                const div = document.createElement('div');
+                div.className = 'card';
+                div.id = `card-${i}`;
+                
+                // DATA SAFETY: Check if icon exists, fallback to '?'
+                let content = card.icon;
+                if(!content || content === "undefined") content = "❓";
+                
+                let html = "";
+                // IMAGE DETECTION: Looks for files like .png, .jpg or paths
+                if(content.includes('/') || content.includes('.') || content.includes('assets')) {
+                    html = `<img src="${content}" onerror="this.style.display='none';this.parentNode.innerText='❌'">`;
+                } else {
+                    html = content; // Emojis
+                }
+
+                div.innerHTML = `<div class="card-content">${html}</div>`;
+                grid.appendChild(div);
+            });
+
+            highlightCard(0);
+
+            // 3. Start Timer
+            const startTime = Date.now();
+            timerInt = setInterval(() => {
+                const elapsed = (Date.now() - startTime) / 1000;
+                const pct = Math.max(0, 1 - (elapsed / totalTime));
+                document.getElementById('timer-fill').style.transform = `scaleX(${pct})`;
+                
+                if(pct <= 0) {
+                    clearInterval(timerInt);
+                    // Timer ends, but we wait for teacher's final click
+                }
+            }, 50);
+        }
+
+        function handleJudge(result) {
+            const card = document.getElementById(`card-${activeIndex}`);
+            if(!card) return;
+
+            card.classList.remove('active');
+
+            if(result === 'correct') {
+                card.classList.add('correct');
+            } else {
+                card.classList.add('wrong');
+            }
+
+            activeIndex++;
+
+            if(activeIndex < currentCards.length) {
+                highlightCard(activeIndex);
+            } else {
+                clearInterval(timerInt);
+                document.getElementById('status-msg').style.display = 'block';
+            }
+        }
+
+        function highlightCard(index) {
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+            const c = document.getElementById(`card-${index}`);
+            if(c) c.classList.add('active');
+        }
+
+        function playCardAudio(index) {
+            if(index >= currentCards.length) return;
+            const card = currentCards[index];
+
+            if(currentLang === 'en') {
+                const u = new SpeechSynthesisUtterance(card.name);
+                u.lang = 'en-US';
+                window.speechSynthesis.speak(u);
+            } else if (currentLang === 'tw' && card.audio) {
+                new Audio(card.audio).play();
+            }
+        }
+    </script>
+</body>
+</html>
