@@ -1,0 +1,204 @@
+﻿{
+  "📂 Custom: Bo-im": [
+“assets/icons/bo-im/a.png”,    
+"assets/icons/bo-im/e.png",
+"assets/icons/bo-im/i.png",
+"assets/icons/bo-im/o.png",
+"assets/icons/bo-im/oo.png",
+"assets/icons/bo-im/u.png"
+  ],
+  "📂 Custom: Chu-im": [
+"assets/icons/chu-im/b.png",
+"assets/icons/chu-im/ch.png",
+"assets/icons/chu-im/chh.png",
+"assets/icons/chu-im/g.png",
+"assets/icons/chu-im/h.png",
+"assets/icons/chu-im/j.png",
+"assets/icons/chu-im/k.png",
+"assets/icons/chu-im/kh.png",
+"assets/icons/chu-im/l.png",
+"assets/icons/chu-im/m.png",
+"assets/icons/chu-im/n.png",
+"assets/icons/chu-im/ng.png",
+"assets/icons/chu-im/p.png",
+"assets/icons/chu-im/ph.png",
+"assets/icons/chu-im/s.png",
+"assets/icons/chu-im/t.png",
+"assets/icons/chu-im/th.png"
+ ],
+  "📂 Custom: Hok-bo-im": [
+    "assets/icons/hok-bo-im/ai.png",
+"assets/icons/hok-bo-im/au.png",
+"assets/icons/hok-bo-im/ia.png",
+"assets/icons/hok-bo-im/iau.png",
+"assets/icons/hok-bo-im/io.png",
+"assets/icons/hok-bo-im/ioo.png",
+"assets/icons/hok-bo-im/iu.png",
+"assets/icons/hok-bo-im/oa.png",
+"assets/icons/hok-bo-im/oai.png",
+"assets/icons/hok-bo-im/oe.png",
+"assets/icons/hok-bo-im/ui.png"
+  ],
+"📂 Custom: Phinn-bo-im": [
+"assets/icons/phinn-bo-im/ainn.png",
+"assets/icons/phinn-bo-im/ann.png",
+"assets/icons/phinn-bo-im/aunn.png",
+"assets/icons/phinn-bo-im/enn.png",
+"assets/icons/phinn-bo-im/iann.png",
+"assets/icons/phinn-bo-im/iaunn.png",
+"assets/icons/phinn-bo-im/inn.png",
+"assets/icons/phinn-bo-im/iunn.png",
+"assets/icons/phinn-bo-im/oainn.png",
+"assets/icons/phinn-bo-im/oann.png",
+"assets/icons/phinn-bo-im/onn.png",
+"assets/icons/phinn-bo-im/uinn.png"
+ ],
+"📂 Custom: Phinn-chu-im": [
+"assets/icons/phinn-chu-im/am.png",
+"assets/icons/phinn-chu-im/an.png",
+"assets/icons/phinn-chu-im/ang.png",
+"assets/icons/phinn-chu-im/eng.png",
+"assets/icons/phinn-chu-im/iam.png",
+"assets/icons/phinn-chu-im/ian.png",
+"assets/icons/phinn-chu-im/iang.png",
+"assets/icons/phinn-chu-im/im.png",
+"assets/icons/phinn-chu-im/in.png",
+"assets/icons/phinn-chu-im/iong.png",
+"assets/icons/phinn-chu-im/oan.png",
+"assets/icons/phinn-chu-im/oang.png",
+"assets/icons/phinn-chu-im/om.png",
+"assets/icons/phinn-chu-im/ong.png",
+"assets/icons/phinn-chu-im/un.png"
+ ],
+"📂 Custom: Siann-tiau": [
+"assets/icons/siann-tiau/a.png",
+"assets/icons/siann-tiau/a2.png",
+"assets/icons/siann-tiau/a2_2.png",
+"assets/icons/siann-tiau/a3.png",
+"assets/icons/siann-tiau/a5.png",
+"assets/icons/siann-tiau/a7.png",
+"assets/icons/siann-tiau/a9.png",
+"assets/icons/siann-tiau/ah4.png",
+"assets/icons/siann-tiau/ah8.png",
+"assets/icons/siann-tiau/ak4.png",
+"assets/icons/siann-tiau/ak8.png",
+"assets/icons/siann-tiau/ap4.png",
+"assets/icons/siann-tiau/ap8.png",
+"assets/icons/siann-tiau/at4.png",
+"assets/icons/siann-tiau/at8.png",
+"assets/icons/siann-tiau/chang9.png",
+"assets/icons/siann-tiau/chau2.png",
+"assets/icons/siann-tiau/chhiunn7.png",
+"assets/icons/siann-tiau/e2.png",
+"assets/icons/siann-tiau/hoo2.png",
+"assets/icons/siann-tiau/iunn5.png",
+"assets/icons/siann-tiau/jiok.png",
+"assets/icons/siann-tiau/kau2.png",
+"assets/icons/siann-tiau/kau5.png",
+"assets/icons/siann-tiau/khoah.png",
+"assets/icons/siann-tiau/khoo3.png",
+"assets/icons/siann-tiau/ku.png",
+"assets/icons/siann-tiau/kun.png",
+"assets/icons/siann-tiau/kun2.png",
+"assets/icons/siann-tiau/kun2_2.png",
+"assets/icons/siann-tiau/kun3.png",
+"assets/icons/siann-tiau/kun5.png",
+"assets/icons/siann-tiau/kun7.png",
+"assets/icons/siann-tiau/kut4.png",
+"assets/icons/siann-tiau/kut8.png",
+"assets/icons/siann-tiau/lang5.png",
+"assets/icons/siann-tiau/loh8.png",
+"assets/icons/siann-tiau/lok8.png",
+"assets/icons/siann-tiau/pa3.png",
+"assets/icons/siann-tiau/phinn7.png",
+"assets/icons/siann-tiau/pih.png",
+"assets/icons/siann-tiau/sai.png",
+"assets/icons/siann-tiau/sann.png",
+"assets/icons/siann-tiau/siam2.png",
+"assets/icons/siann-tiau/tau7.png",
+"assets/icons/siann-tiau/te2.png",
+"assets/icons/siann-tiau/thoo2.png",
+"assets/icons/siann-tiau/tit8.png"
+  ],
+"📂 Custom: Sports": [
+    "assets/icons/sports/soccer.png",
+    "assets/icons/sports/basketball.png"
+  ],
+
+
+  "🦁 Animals (Land)": [
+    "🦁", "🐯", "🐻", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐨", 
+    "🐼", "🐷", "🐮", "🐵", "🐔", "🐧", "🐦", "🐤", "🐺", "🐗", 
+    "🐴", "🦄", "🐝", "🐛", "🐌", "🐞", "🐜", "🕷️", "🦂"
+  ],
+  "🐙 Animals (Sea)": [
+    "🐙", "🐬", "🐳", "🦈", "🦀", "🦞", "🦐", "🦑", "🐠", "🐟", 
+    "🐡", "🐢", "🐊", "🐋", "🐚"
+  ],
+  "🍎 Fruits & Veggies": [
+    "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🍈", "🍒", 
+    "🍑", "🥭", "🍍", "🥥", "🥝", "🍅", "🥑", "🍆", "🥔", "🥕", 
+    "🌽", "🌶️", "🥒", "🥬", "🥦", "🧄", "🧅", "🍄", "🥜", "🌰"
+  ],
+  "🍔 Food & Drink": [
+    "🍞", "🥐", "🥨", "🧀", "🥚", "🍳", "🥞", "🥓", "🥩", "🍗", 
+    "🍔", "🍟", "🍕", "🌭", "🥪", "🌮", "🌯", "🥗", "🥘", "🍝", 
+    "🍜", "🍣", "🍱", "🍛", "🍙", "🍚", "🥟", "🍢", "🍧", "🍦", 
+    "🍩", "🍪", "🎂", "🍫", "🍬", "🍭", "🍮", "🍯", "🍼", "☕", 
+    "🍵", "🧃", "🥤", "🍺"
+  ],
+  "🏠 Places": [
+    "🏠", "🏡", "🏥", "🏫", "🏦", "🏪", "🏨", "🏩", "⛪", "🕌", 
+    "🕍", "🛕", "🏯", "🏰", "⛺", "🏭", "🏟️", "🏬", "🏣", "🏤", 
+    "🏗️", "🏛️", "🛖", "🎪", "🎢", "🎡"
+  ],
+  "🛋️ Household": [
+    "🛏️", "🛋️", "🪑", "🚽", "🚿", "🛁", "🧼", "🪥", "🪒", "🧹", 
+    "🧺", "🍳", "🔪", "🥄", "🍴", "🍽️", "🥢", "📺", "🕯️", "💡", 
+    "🚪", "🔑", "🗑️", "🪞", "🧴", "🧻", "🧸"
+  ],
+  "😀 Emotions": [
+    "😀", "😃", "😄", "😆", "😅", "🤣", "😂", "🙂", "🙃", "😉", 
+    "😊", "😇", "😍", "🤩", "😘", "😋", "😛", "😜", "🤪", "🤨", 
+    "🧐", "🤓", "😎", "🥳", "😏", "😒", "😞", "😔", "😟", "😕", 
+    "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", 
+    "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😱", "😨", "😰", 
+    "😥", "😓", "🤗", "🤔", "🤭", "🤫", "🤥", "😶", "😐", "😑", 
+    "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "🥱", "😴", "🤤", 
+    "😪", "😵", "🤐", "🥴", "🤢", "🤮", "🤧", "😷", "🤒", "🤕"
+  ],
+  "⚽ Sports": [
+    "⚽", "🏀", "🏈", "⚾", "🎾", "🏐", "🏉", "🎱", "🏓", "🏸", 
+    "🥅", "🥊", "🥋", "🥇", "🏆", "🎮", "🎳", "🎣", "🤿", "🥌", 
+    "🏂", "⛷️", "🏋️", "🤸", "🤺"
+  ],
+  "🚗 Transport": [
+    "🚗", "🚕", "🚙", "🚌", "🚎", "🏎️", "🚓", "🚑", "🚒", "🚐", 
+    "🚚", "🚛", "🚜", "🏍️", "🛵", "🚲", "🛴", "🚨", "✈️", "🚀", 
+    "🛸", "🚁", "🛶", "⛵", "🚤", "🛳️", "⛴️", "🚂", "🚄", "🚅", 
+    "🚇"
+  ],
+  "🎒 School": [
+    "🎒", "📚", "📓", "✏️", "🖊️", "🖌️", "🖍️", "📝", "✂️", "📎", 
+    "📏", "📐", "🗑️", "🔬", "🔭", "💻", "📱", "☎️", "⏰", "⌚", 
+    "💡", "🔦", "🔋", "🔌", "💰", "💵", "💳", "💎", "🔑", "🎁", 
+    "🎈"
+  ],
+  "👕 Clothing": [
+    "👓", "🕶️", "👔", "👕", "👖", "🧣", "🧤", "🧥", "🧦", "👗", 
+    "👘", "👙", "👚", "👛", "👜", "👝", "🎒", "👞", "👟", "🥾", 
+    "🥿", "👠", "👡", "👢", "👑", "👒", "🎩", "🧢", "⛑️"
+  ],
+  "🌳 Nature": [
+    "☀️", "🌤️", "☁️", "🌧️", "⛈️", "🌩️", "🌨️", "❄️", "☃️", "💨", 
+    "🌪️", "🌫️", "🌈", "☔", "⚡", "⭐", "🌙", "🌍", "🌊", "🔥", 
+    "🌋", "🌲", "🌳", "🌴", "🌵", "🌾", "🌿", "☘️", "🍀", "🍁", 
+    "🍂", "🍃", "🌷", "🌹", "🌻", "🌼"
+  ],
+  "👨‍🚀 People": [
+    "👮", "👷", "💂", "🕵️", "🧑‍⚕️", "🧑‍🌾", "👩‍🍳", "👨‍🎤", "👩‍🏫", "👨‍🏭", 
+    "👨‍💻", "👨‍🚀", "🚒", "🧛", "🧜", "🧚", "🧞", "👻", "👽", "🤖", 
+    "💀", "👀", "👁️", "👂", "👃", "👄", "👅", "🦷", "💪", "🦵", 
+    "🦶"
+  ]
+}
