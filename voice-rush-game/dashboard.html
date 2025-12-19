@@ -130,7 +130,33 @@
     
     <!-- EXISTING BUTTONS -->
     <button id="btn-cloud-sync" class="btn-cloud" onclick="handleSync()">☁️ Sync to GitHub</button>
+
+    // --- EXPORT SINGLE DECK ---
+function exportCurrentDeck() {
+    // 1. Check if a deck is selected
+    if(!currentDeck || currentDeck.length === 0 || !activeDeckName) {
+        return alert("Please select a deck from the list first!");
+    }
+
+    // 2. Create the Single Deck Object
+    // We wrap it in a container so it imports correctly later
+    const exportObj = {};
+    exportObj[activeDeckName] = currentDeck;
+
+    // 3. Convert to JSON
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj, null, 2));
     
+    // 4. Download it
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    
+    // Use the deck name for the file name (e.g., "Week 1.json")
+    downloadAnchorNode.setAttribute("download", activeDeckName + ".json");
+    
+    document.body.appendChild(downloadAnchorNode); // Required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+}          
     <!-- NEW: EXPORT BUTTON -->
     <div style="display:flex; gap:5px; margin-top:5px;">
         <button onclick="triggerImport()" style="flex:1; cursor:pointer; padding:5px;">📂 Load</button>
