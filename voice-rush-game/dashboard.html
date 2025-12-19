@@ -125,13 +125,20 @@
                 <button id="btn-mode-ind" class="toggle-btn active" onclick="setGameMode('individual')">👤 Solo</button>
                 <button id="btn-mode-team" class="toggle-btn" onclick="setGameMode('team')">👥 Team</button>
             </div>
-            <div class="list-section">
-                <h3 style="margin-top:0">📚 Library <button onclick="createNewDeck()" style="float:right; font-size:0.8rem; cursor:pointer;">+ NEW</button></h3>
-                <button id="btn-cloud-sync" class="btn-cloud" onclick="handleSync()">☁️ Sync to GitHub</button>
-                <button onclick="triggerImport()" style="width:100%; margin-top:5px; padding:5px; cursor:pointer;">📂 Load File</button>
-                <div id="library-list" style="margin-top:10px;"></div>
-            </div>
-            <div>
+          <div class="list-section">
+    <h3 style="margin-top:0">📚 Library <button onclick="createNewDeck()" style="float:right; font-size:0.8rem; cursor:pointer;">+ NEW</button></h3>
+    
+    <!-- EXISTING BUTTONS -->
+    <button id="btn-cloud-sync" class="btn-cloud" onclick="handleSync()">☁️ Sync to GitHub</button>
+    
+    <!-- NEW: EXPORT BUTTON -->
+    <div style="display:flex; gap:5px; margin-top:5px;">
+        <button onclick="triggerImport()" style="flex:1; cursor:pointer; padding:5px;">📂 Load</button>
+        <button onclick="exportCurrentDeck()" style="flex:1; cursor:pointer; padding:5px; background:#e67e22; color:white; border:none; border-radius:4px;">⬇️ Export</button>
+    </div>
+    <div id="library-list" style="margin-top:10px;"></div>
+</div>
+        <div>
                 <h3 style="color:var(--primary)">🏆 Hall of Fame</h3>
                 <button onclick="clearLeaderboard()" style="font-size:0.8rem; margin-bottom:5px; cursor:pointer;">Clear</button>
                 <div id="leaderboard-list"></div>
