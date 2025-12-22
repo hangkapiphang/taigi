@@ -1,0 +1,82 @@
+[
+  {
+    "id": "motherhen",
+    "title": "Ke-bó hām Ke-nn̄g lāi-té ê ke'á kiáⁿ kóng-ōe",
+    "yt": "q9Ui3EFFV-g",
+    "cat": "speech",
+    "tag": "Vlog",
+    "level": "B1",
+    "desc": "This Mother Hen Talks To Her Eggs – And They Chirp Back! | Secret Life of Farm Animals | BBC Earth",
+    "date": "2025-12-15"
+  },
+  {
+    "id": "2025Taigiforum",
+    "title": "臺灣台語政策論壇",
+    "yt": "lX3a442l6Y0",
+    "cat": "speech",
+    "tag": "Lecture",
+    "level": "C2",
+    "desc": "第一場 台南成功大學 (Policy Forum at NCKU)",
+    "date": "2025-12-13"
+  },
+  {
+    "id": "timepoy2025",
+    "title": "Person of Year 2025",
+    "yt": "Dty3Sh5v53Y",
+    "cat": "speech",
+    "tag": "News",
+    "level": "C1",
+    "desc": "Time Magazine. 2025 AI coverage.",
+    "date": "2025-12-12"
+  },
+  {
+    "id": "taigilala",
+    "title": "Taigi Cheerup Squad",
+    "yt": "EEbYwPY0IQU",
+    "cat": "speech",
+    "tag": "Vlog",
+    "level": "A2",
+    "desc": "The first Taigi Cheerup Squad event.",
+    "date": "2025-12-12"
+  },
+  {
+    "id": "LahjihL1",
+    "title": "Lahjih老師台語第一課",
+    "yt": "hM9KbU3l3IA",
+    "cat": "speech",
+    "tag": "Lecture",
+    "level": "A1",
+    "desc": "蕭平治老師台灣字教學 (Intro to Taigi Characters)",
+    "date": "2025-12-10"
+  },
+  {
+    "id": "worldcalm",
+    "title": "When The World Calm Down",
+    "yt": "rZJG9yjW6O0",
+    "cat": "song",
+    "tag": "Indie Folk",
+    "level": "B1",
+    "desc": "A soothing melody for difficult times.",
+    "date": "2025-12-09"
+  },
+  {
+    "id": "Tabong",
+    "title": "大濛 (The Great Mist)",
+    "yt": "518Ohuh6CJE",
+    "cat": "song",
+    "tag": "Ballad",
+    "level": "B1",
+    "desc": "A sad song about 228 history.",
+    "date": "2025-12-08"
+  },
+  {
+    "id": "suntiunn",
+    "title": "夜官巡場 (Night Officer Patrol)",
+    "yt": "oIxzTwt6sZg",
+    "cat": "song",
+    "tag": "Indie Folk",
+    "level": "B2",
+    "desc": "A haunting melody exploring history and memory.",
+    "date": "2025-12-07"
+  }
+]
