@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/library_editor.css">
+    <style>
+        .hint-wrapper { margin-bottom: 25px; border: 1px solid rgba(168, 200, 52, 0.4); background: #fff; border-radius: 8px; overflow: hidden; }
+        details summary { padding: 12px 20px; cursor: pointer; font-weight: bold; color: #556B2F; background: rgba(168, 200, 52, 0.1); list-style: none; display: flex; align-items: center; gap: 10px; }
+        details summary:hover { background: rgba(168, 200, 52, 0.2); }
+        .hint-content { padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; font-size: 0.85rem; line-height: 1.5; color: #545454; }
+        .tag-name { font-weight: bold; color: #556B2F; background: rgba(168, 200, 52, 0.1); padding: 1px 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="ledger-container">
+        <header class="ledger-header">
+            <h2><i class="fas fa-feather-alt"></i> Archives</h2>
+            <a href="../index.html" class="btn-text">View Gallery</a>
+        </header>
+        <div class="toolbar">
+            <button class="btn btn-primary" onclick="addItem()">New Entry</button>
+            <button class="btn btn-purple" onclick="saveToGitHub()">Save</button>
+        </div>
+
+        <!-- HINT BOX -->
+        <div class="hint-wrapper">
+            <details>
+                <summary><i class="fas fa-tags"></i> Tag Reference Guide</summary>
+                <div class="hint-content">
+                    <div><h4>🎵 Song</h4><ul><li><span class="tag-name">Indie Folk</span></li><li><span class="tag-name">Ballad</span></li><li><span class="tag-name">Rock</span></li></ul></div>
+                    <div><h4>🎤 Speech</h4><ul><li><span class="tag-name">Lecture</span></li><li><span class="tag-name">Vlog</span></li><li><span class="tag-name">News</span></li></ul></div>
+                    <div><h4>🧸 Cartoon</h4><ul><li><span class="tag-name">Folklore</span></li><li><span class="tag-name">Modern</span></li><li><span class="tag-name">Kids</span></li></ul></div>
+                </div>
+            </details>
+        </div>
+
+        <div id="list-area" class="card-stack"></div>
+    </div>
+    
+    <datalist id="tag-suggestions">
+        <option value="Indie Folk"><option value="Ballad"><option value="Rock"><option value="Lecture"><option value="Vlog">
+    </datalist>
+
+    <script src="../../js/library_editor.js"></script>
+</body>
+</html>
