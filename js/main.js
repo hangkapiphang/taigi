@@ -49,11 +49,17 @@ function render(data) {
                     <p class="card-desc">${item.desc}</p>
                     <div class="action-row">
                         <a href="cinema.html?id=${item.id}" class="action-btn btn-watch">Watch Clip</a>
-                        <a href="#" class="action-btn btn-shadow">Shadowing</a>
-                        <a href="cards.html?id=${item.id}" class="action-btn btn-vocab">Vocab Cards</a>
-                    </div>
+                        <!-- 2. Shadowing (FIXED LINK HERE) -->
+                    <a href="shadow.html?id=${item.id}" class="action-btn btn-shadow">Shadowing</a>
+                    
+                    <!-- 3. Vocab -->
+                    <a href="cards.html?id=${item.id}" class="action-btn btn-vocab">Vocab Cards</a>
+                    
+                    <!-- 4. Quiz -->
+                    <a href="arcade.html?id=${item.id}" class="action-btn btn-quiz">Take Quiz</a>
                 </div>
-            </div>`;
+            </div>
+        </div>`;
         gallery.insertAdjacentHTML('beforeend', html);
     });
 }
