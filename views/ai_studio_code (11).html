@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadowing Lab | ReelTaigi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/shadow.css">
+</head>
+<body>
+
+    <!-- Wrapper for Responsive Layout -->
+    <div class="main-layout">
+        
+        <!-- Header / Nav -->
+        <nav class="shadow-nav">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Library</a>
+            <span class="page-title">Shadowing Practice</span>
+        </nav>
+
+        <!-- 1. Video Player Section -->
+        <div id="video-section">
+            <div id="player"></div>
+            <!-- Glassmorphism Mask overlay -->
+            <div id="mask-bar"></div>
+        </div>
+
+        <!-- 2. Text & Vocabulary Section -->
+        <div id="text-section">
+            
+            <div class="nav-controls">
+                <button class="nav-btn" onclick="prevLine()"><i class="fas fa-chevron-left"></i></button>
+                <span id="progress">0 / 0</span>
+                <button class="nav-btn" onclick="nextLine()"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div id="current-text-container">
+                <div id="current-text">Loading script...</div>
+            </div>
+
+            <div id="vocab-area">
+                <span class="vocab-label">Key Words:</span>
+                <div id="vocab-display">
+                    <!-- Vocabulary cards injected via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Recording Controls Section -->
+        <div id="rec-section">
+            <div class="control-row">
+                <div class="ctrl-group">
+                    <button id="btn-play-ref" class="btn-circle" onclick="playRef()">
+                        <i class="fas fa-ear-listen"></i>
+                    </button>
+                    <div class="label">Listen</div>
+                </div>
+
+                <div class="ctrl-group">
+                    <button id="btn-mic" class="btn-circle main-action" onclick="toggleRecord()">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <div class="label" id="mic-label">Record</div>
+                </div>
+
+                <div class="ctrl-group">
+                    <button id="btn-play-user" class="btn-circle" onclick="playUser()">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="label" id="play-label" style="opacity:0.5">Replay</div>
+                </div>
+            </div>
+            <audio id="user-audio"></audio>
+        </div>
+        
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/shadow.js"></script>
+</body>
+</html>
