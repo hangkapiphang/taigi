@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelTaigi | Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- DECORATIVE BACKGROUND -->
+    <div style="position: fixed; top: -50px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(168,200,52,0.1) 0%, rgba(255,255,255,0) 70%); z-index: -1; pointer-events: none;"></div>
+    
+    <header>
+        <h1>Tâi-gí Reel</h1>
+        <p>Curated immersion for the visual learner.</p>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search title, topic, or level (e.g. A1)...">
+        </div>
+    </header>
+
+    <nav id="nav-bar">
+        <button class="filter-btn active" onclick="filterData('all')">All Works</button>
+        <button class="filter-btn" onclick="filterData('song')">Songs</button>
+        <button class="filter-btn" onclick="filterData('cartoon')">Animation</button>
+        <button class="filter-btn" onclick="filterData('speech')">Speech</button>
+        <button class="filter-btn" onclick="filterData('drama')">Drama</button>
+        
+        <div style="flex-grow:1; min-width: 20px;"></div>
+        <!-- Quick Link to Library Editor (Optional, can be removed if you only want the footer link) -->
+        <a href="admin/library_editor.html" class="filter-btn req-btn"><i class="fas fa-book"></i> Librarian</a>
+    </nav>
+
+    <main id="gallery">
+        <div style="text-align:center; padding:50px; color:#BFA66F; font-style:italic;">
+            Opening Library Archives...
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taigi Learning Project. Designed with <i class="fas fa-leaf" style="color:#A8C834"></i></p>
+        
+        <!-- NEW: Link to Backstage Dashboard -->
+        <div style="margin-top: 15px;">
+            <a href="admin/index.html" style="font-size: 0.85rem; color: var(--accent-purple); text-decoration: none; border-bottom: 1px dotted var(--accent-purple); transition: 0.3s;">
+                <i class="fas fa-user-shield"></i> Teacher Backstage
+            </a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
