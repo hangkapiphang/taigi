@@ -1,0 +1,68 @@
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+
+:root {
+    --bg-paper: #FFFDF5; 
+    --primary-lime: #A8C834; 
+    --text-header: #556B2F; 
+    --accent-purple: #7E7CB0;
+    --correct: #27ae60;
+    --wrong: #e74c3c;
+}
+
+body {
+    margin: 0; font-family: 'Taigi Font', serif; /* UPDATED FONT */
+    background-color: var(--bg-paper); color: #545454;
+    height: 100vh; display: flex; flex-direction: column;
+}
+
+header {
+    flex-shrink: 0; background: rgba(255,253,245,0.95); padding: 15px 30px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid var(--primary-lime);
+}
+
+.header-center { text-align: center; }
+.exam-title { display: block; font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-purple); font-weight: bold; }
+.sub-title { font-weight: bold; color: var(--text-header); }
+.score-box { font-weight: bold; font-family: monospace; font-size: 1.2rem; background: #fff; padding: 5px 15px; border-radius: 20px; border: 1px solid #ddd; }
+.back-btn { text-decoration: none; color: var(--accent-purple); font-weight: bold; }
+
+#game-container {
+    flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 20px; max-width: 600px; margin: 0 auto; width: 100%;
+}
+
+.progress-track { width: 100%; height: 6px; background: #e0e0e0; border-radius: 3px; margin-bottom: 30px; overflow: hidden; }
+#progress-fill { height: 100%; background: var(--primary-lime); transition: width 0.3s; }
+
+#question-card, #result-card {
+    background: white; padding: 40px; border-radius: 12px; width: 100%; box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--accent-purple); text-align: center;
+}
+
+.q-label { font-size: 0.9rem; color: #999; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+#question-text { color: var(--text-header); font-size: 2rem; margin: 0 0 30px 0; font-family: 'Taigi Font', serif; }
+
+#options-grid { display: grid; gap: 15px; }
+
+.option-btn {
+    background: white; border: 2px solid #eee; padding: 15px; border-radius: 8px;
+    cursor: pointer; font-size: 1.1rem; color: #555; font-family: 'Taigi Font', serif; transition: 0.2s;
+}
+.option-btn:hover { border-color: var(--accent-purple); background: #f9f9ff; }
+.option-btn.correct { background: var(--correct); color: white; border-color: var(--correct); }
+.option-btn.wrong { background: var(--wrong); color: white; border-color: var(--wrong); opacity: 0.6; }
+.option-btn.disabled { pointer-events: none; }
+
+#feedback-msg { height: 20px; margin: 15px 0; font-weight: bold; }
+
+#next-btn {
+    background: var(--text-header); color: white; border: none; padding: 12px 30px; 
+    border-radius: 25px; font-size: 1rem; cursor: pointer; margin-top: 10px; font-family: 'Taigi Font', serif;
+}
+
+.final-score { font-size: 4rem; color: var(--primary-lime); font-weight: bold; margin: 20px 0; }
+.btn { padding: 10px 20px; border-radius: 20px; cursor: pointer; text-decoration: none; font-weight: bold; border: none; font-family: 'Taigi Font', serif;}
+.btn-primary { background: var(--primary-lime); color: white; }
+.btn-outline { border: 1px solid #ccc; color: #777; margin-right: 10px; }
