@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport-fit=cover and user-scalable=no are CRITICAL for the "App" feel on iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Vocabulary Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+
+    <!-- 1. Fixed Header (Never Scrolls) -->
+    <header>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> <span>Gallery</span>
+        </a>
+        <div class="title" id="video-title">Loading Deck...</div>
+    </header>
+
+    <!-- 2. Main App Split-Pane (Fixed Height) -->
+    <div id="app-shell">
+        
+        <!-- Pane A: Video Player -->
+        <div id="pane-video">
+            <div id="player-wrapper">
+                <div id="player"></div>
+            </div>
+        </div>
+
+        <!-- Pane B: Scrollable Cards -->
+        <div id="pane-cards">
+            <div id="cards-grid">
+                <div class="loading">
+                    <i class="fas fa-circle-notch fa-spin"></i> Loading data...
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/cards.js"></script>
+</body>
+</html>
