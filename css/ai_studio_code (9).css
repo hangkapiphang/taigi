@@ -1,0 +1,176 @@
+/* css/cards.css */
+
+/* --- 1. SETUP & VARS --- */
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+
+:root { 
+    --bg-paper: #FFFDF5; 
+    --bg-sidebar: #f4f1e4; 
+    --primary-lime: #A8C834; 
+    --primary-dark: #768d18;
+    --text-header: #556B2F; 
+    --text-body: #545454;
+    --accent-purple: #7E7CB0; 
+    
+    --card-min-width: 150px;
+    --gap-size: 15px;
+}
+
+* { box-sizing: border-box; }
+
+body { 
+    margin: 0; 
+    font-family: 'Taigi Font', serif; 
+    background: var(--bg-paper); 
+    color: var(--text-body); 
+    /* App Shell Mode: Fixed height, internal scrolling */
+    height: 100vh; height: 100dvh; 
+    display: flex; flex-direction: column; overflow: hidden; 
+}
+
+/* --- 2. HEADER --- */
+header { 
+    flex-shrink: 0; 
+    background: rgba(255,253,245, 0.98); 
+    padding: 12px 20px; 
+    /* Safe Area for iPhones with notches */
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(168,200,52,0.3); 
+    z-index: 50;
+}
+
+.back-btn { text-decoration: none; color: var(--accent-purple); font-weight: bold; display: flex; align-items: center; gap: 6px; }
+.title { font-weight: bold; color: var(--text-header); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 50%; }
+
+/* --- 3. MAIN LAYOUT --- */
+#main-container { 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; /* Default: Mobile Portrait (Stack) */
+    overflow: hidden; 
+    position: relative;
+}
+
+/* --- 4. VIDEO SECTION --- */
+#video-section { 
+    flex-shrink: 0; 
+    background: #000; 
+    z-index: 10; 
+    width: 100%; 
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#player-wrapper {
+    width: 100%; position: relative; aspect-ratio: 16/9;
+}
+
+#player { width: 100%; height: 100%; display: block; }
+
+/* --- 5. CARDS CONTAINER --- */
+#cards-container { 
+    flex-grow: 1;
+    overflow-y: auto; /* This area scrolls, video stays fixed */
+    -webkit-overflow-scrolling: touch; 
+    padding: 20px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom));
+    
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr)); 
+    gap: var(--gap-size); 
+    align-content: start;
+    scroll-behavior: smooth;
+    background: var(--bg-paper);
+}
+
+/* --- 6. CARD STYLING --- */
+.card { 
+    background: white; 
+    border-radius: 12px; 
+    padding: 16px; 
+    cursor: pointer; 
+    border: 1px solid #eee;
+    border-top: 4px solid var(--accent-purple); 
+    box-shadow: 0 3px 5px rgba(0,0,0,0.02); 
+    transition: all 0.2s ease;
+    display: flex; flex-direction: column;
+}
+
+/* Active State (Playing) */
+.card.active { 
+    background: #F8FDF0; 
+    border-top-color: var(--primary-lime); 
+    border-bottom: 2px solid var(--primary-lime);
+    box-shadow: 0 0 0 2px rgba(168,200,52,0.3); 
+    transform: scale(1.02);
+}
+
+.card-word { font-size: 1.5rem; font-weight: 700; color: var(--text-header); margin-bottom: 8px; }
+.card-def { font-size: 1rem; color: var(--text-body); font-style: italic; flex-grow: 1; opacity: 0.9; }
+.timestamp { font-size: 0.8rem; color: #999; margin-top: 10px; text-align: right; font-family: monospace; }
+.card.active .timestamp { color: var(--primary-dark); font-weight: bold; }
+
+/* --- RESPONSIVE LAYOUTS --- */
+
+/* SCENARIO A: iPad Portrait / Tablets (600px - 900px) */
+/* Keeps vertical stack, but restricts video size so it doesn't look huge */
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+    #video-section { padding: 20px; background: var(--bg-sidebar); }
+    #player-wrapper {
+        width: 100%; max-width: 85%; /* Don't stretch video full width */
+        border-radius: 12px; overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    #cards-container { padding: 30px; --card-min-width: 180px; }
+}
+
+/* SCENARIO B: Desktop & iPad Landscape (> 900px) */
+/* Side-by-Side Layout */
+@media (min-width: 900px) {
+    #main-container { flex-direction: row; }
+    
+    #video-section { 
+        width: 45%; height: 100%; 
+        border-right: 1px solid rgba(168,200,52,0.2); 
+        padding: 40px; 
+        background: radial-gradient(circle, #fff 0%, var(--bg-sidebar) 100%);
+    }
+    
+    #player-wrapper { border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+    
+    #cards-container { 
+        width: 55%; 
+        padding: 40px; 
+        --card-min-width: 200px; --gap-size: 25px;
+    }
+}
+
+/* SCENARIO C: iPhone Landscape (< 500px Height) */
+/* Forces Side-by-Side so video doesn't eat vertical space */
+@media (max-height: 500px) and (orientation: landscape) {
+    header { padding: 5px 20px; font-size: 0.9rem; }
+    
+    #main-container { flex-direction: row; }
+    
+    #video-section { 
+        width: 40%; /* Video smaller on left */
+        height: 100%; 
+        padding: 10px; 
+        border-right: 1px solid #ddd;
+    }
+    
+    #player { border-radius: 6px; }
+    
+    #cards-container { 
+        width: 60%; 
+        padding: 15px; 
+        --card-min-width: 140px; --gap-size: 10px;
+    }
+    
+    .card { padding: 10px; }
+    .card-word { font-size: 1.1rem; }
+}
