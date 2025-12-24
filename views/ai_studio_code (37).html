@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Library</a>
+        <div class="title" id="video-title">Loading...</div>
+    </header>
+
+    <!-- Main Content -->
+    <div id="main-container">
+        
+        <!-- Video Player -->
+        <div id="video-section">
+            <div id="player"></div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="cards-container">
+            <div class="loading">Loading deck...</div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/cards.js"></script>
+</body>
+</html>
