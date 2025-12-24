@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport settings for "App-like" behavior on iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Vocabulary Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> <span>Gallery</span>
+        </a>
+        <div class="title" id="video-title">Loading...</div>
+    </header>
+
+    <!-- App Split Layout -->
+    <div id="app-shell">
+        
+        <!-- Pane 1: Video -->
+        <div id="pane-video">
+            <div id="player-wrapper">
+                <div id="player"></div>
+            </div>
+        </div>
+
+        <!-- Pane 2: Cards -->
+        <div id="pane-cards">
+            <div id="cards-grid">
+                <div class="loading">
+                    <i class="fas fa-circle-notch fa-spin"></i> Loading...
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/cards.js"></script>
+</body>
+</html>
