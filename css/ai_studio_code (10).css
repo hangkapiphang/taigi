@@ -1,0 +1,160 @@
+/* css/cards.css */
+
+/* --- FONTS & VARS --- */
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; }
+
+:root { 
+    --bg-app: #f4f1e4;
+    --bg-cards: #FFFDF5;
+    --primary: #A8C834; 
+    --accent: #7E7CB0; 
+    --text-main: #556B2F; 
+    --text-sub: #545454;
+    --card-min-width: 150px;
+}
+
+* { box-sizing: border-box; }
+
+/* --- APP SHELL SETUP (Crucial for "PC Feel" on Mobile) --- */
+body { 
+    margin: 0; padding: 0;
+    font-family: 'Taigi Font', serif;
+    background: var(--bg-app);
+    color: var(--text-sub);
+    /* Locks the viewport height. 'dvh' handles iOS URL bar expansion/contraction */
+    height: 100vh; height: 100dvh; 
+    width: 100vw;
+    overflow: hidden; /* Prevents whole-page scrolling */
+    display: flex; flex-direction: column;
+}
+
+/* --- HEADER --- */
+header { 
+    flex: 0 0 50px; /* Fixed height 50px */
+    background: rgba(255,253,245, 0.98);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 15px;
+    padding-top: env(safe-area-inset-top); /* Notch safety */
+    z-index: 50;
+}
+.back-btn { text-decoration: none; color: var(--accent); font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
+.title { font-weight: bold; color: var(--text-main); font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
+
+/* --- SPLIT PANE CONTAINER --- */
+#app-shell { 
+    flex: 1; /* Takes all remaining vertical space */
+    display: flex; 
+    overflow: hidden; 
+    position: relative;
+}
+
+/* --- VIDEO PANE --- */
+#pane-video {
+    background: #000;
+    z-index: 20;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+#player-wrapper {
+    width: 100%; position: relative; aspect-ratio: 16/9;
+}
+
+/* --- CARDS PANE --- */
+#pane-cards {
+    background: var(--bg-cards);
+    /* Only this part scrolls */
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; /* Smooth iOS scroll */
+    padding: 20px;
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+}
+
+#cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+    gap: 15px;
+}
+
+/* --- CARD DESIGN --- */
+.card { 
+    background: white; border-radius: 10px; padding: 12px;
+    border: 1px solid #e5e5e5; border-top: 3px solid var(--accent);
+    cursor: pointer; position: relative;
+    display: flex; flex-direction: column;
+    transition: transform 0.1s;
+}
+.card:active { transform: scale(0.97); } /* Tactile feedback */
+
+.card.active { 
+    background: #F8FDF0; 
+    border-color: var(--primary); 
+    box-shadow: 0 0 0 2px rgba(168,200,52,0.5);
+}
+
+.card-word { font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin-bottom: 5px; line-height: 1.1; }
+.card-def { font-size: 0.95rem; font-style: italic; line-height: 1.35; margin-bottom: 8px; flex-grow: 1; }
+.timestamp { font-size: 0.75rem; color: #999; text-align: right; font-family: monospace; margin-top: auto; }
+.card.active .timestamp { color: var(--primary); font-weight: bold; }
+
+/* ================================================= */
+/*             DEVICE SPECIFIC LAYOUTS               */
+/* ================================================= */
+
+/* 1. PORTRAIT (Phones & iPad Vertical) */
+@media (orientation: portrait) {
+    #app-shell { flex-direction: column; }
+    
+    #pane-video { 
+        flex: 0 0 auto; /* Height adapts to content */
+        width: 100%; 
+    }
+    
+    #pane-cards { flex: 1; } /* Fills rest of screen */
+    
+    /* Tablet Portrait specific tweaking */
+    @media (min-width: 600px) {
+        #pane-video { padding: 10px 0; background: var(--bg-app); }
+        #player-wrapper { width: 80%; border-radius: 8px; overflow: hidden; }
+        --card-min-width: 180px;
+    }
+}
+
+/* 2. LANDSCAPE (PC, iPad Landscape, iPhone Landscape) */
+@media (orientation: landscape) {
+    #app-shell { flex-direction: row; }
+    
+    /* Standard Desktop/iPad Landscape */
+    #pane-video { 
+        width: 45%; 
+        height: 100%;
+        border-right: 1px solid #ccc;
+    }
+    
+    #pane-cards { width: 55%; padding: 30px; }
+    --card-min-width: 200px;
+}
+
+/* 3. IPHONE LANDSCAPE OVERRIDE (< 500px height) */
+/* Forces strict split screen on small landscape devices */
+@media (max-height: 500px) and (orientation: landscape) {
+    header { height: 40px; }
+    .title { font-size: 0.9rem; }
+    
+    #pane-video { 
+        width: 40%; /* Slightly smaller video to give text room */
+        background: #000; /* Black bars preferred on small screens */
+    }
+    
+    #player-wrapper { width: 100%; } /* Maximize video size in pane */
+    
+    #pane-cards { 
+        width: 60%; 
+        padding: 15px; 
+    }
+    
+    --card-min-width: 130px; 
+    .card-word { font-size: 1.1rem; }
+}
