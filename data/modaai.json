@@ -19,5 +19,182 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "Kin-á-ji̍t (今仔日)",
+      "def": "Today"
+    },
+    {
+      "time": 2.3,
+      "word": "Hùn-liān (訓練)",
+      "def": "To train / Training"
+    },
+    {
+      "time": 4.5,
+      "word": "Lāi-té (內底)",
+      "def": "Inside"
+    },
+    {
+      "time": 4.5,
+      "word": "Chu-liāu (資料)",
+      "def": "Data / Information"
+    },
+    {
+      "time": 6.8,
+      "word": "Chèng-hú (政府)",
+      "def": "Government"
+    },
+    {
+      "time": 9.2,
+      "word": "Bûn-hòa (文化)",
+      "def": "Culture"
+    },
+    {
+      "time": 9.2,
+      "word": "Te̍k-sek (特色)",
+      "def": "Characteristic / Feature"
+    },
+    {
+      "time": 12,
+      "word": "Thê-kiong (提供)",
+      "def": "To provide"
+    },
+    {
+      "time": 13.8,
+      "word": "Bô-kāng (無仝)",
+      "def": "Different"
+    },
+    {
+      "time": 13.8,
+      "word": "Pún-thó͘ (本土)",
+      "def": "Native / Local"
+    },
+    {
+      "time": 13.8,
+      "word": "Kang-têng-su (工程師)",
+      "def": "Engineer"
+    },
+    {
+      "time": 16.2,
+      "word": "Hi-bāng (希望)",
+      "def": "To hope"
+    },
+    {
+      "time": 18.5,
+      "word": "Óa-kīn (倚近)",
+      "def": "Close to / Near"
+    },
+    {
+      "time": 18.5,
+      "word": "Siā-hōe (社會)",
+      "def": "Society"
+    },
+    {
+      "time": 22.8,
+      "word": "Bāng-lō͘ (網路)",
+      "def": "Internet"
+    },
+    {
+      "time": 24.5,
+      "word": "O͘-pe̍h (烏白)",
+      "def": "Recklessly / Randomly / Disorderly"
+    },
+    {
+      "time": 26.5,
+      "word": "Tah (貼)",
+      "def": "To paste / To stick"
+    },
+    {
+      "time": 27.8,
+      "word": "Téng-bīn (頂面)",
+      "def": "Top / Above / On"
+    },
+    {
+      "time": 31,
+      "word": "Ín-khí (引起)",
+      "def": "To trigger / To cause"
+    },
+    {
+      "time": 32.8,
+      "word": "Phoe-phêng (批評)",
+      "def": "Criticism / To criticize"
+    },
+    {
+      "time": 34.2,
+      "word": "Siàu-liân (少年)",
+      "def": "Young / Teenager"
+    },
+    {
+      "time": 37.2,
+      "word": "Éng-hióng (影響)",
+      "def": "Influence"
+    },
+    {
+      "time": 39,
+      "word": "Seng-oa̍h (生活)",
+      "def": "Life / Livelihood"
+    },
+    {
+      "time": 41.5,
+      "word": "Sî-kiâⁿ (時行)",
+      "def": "Trending / Popular / Fashionable"
+    },
+    {
+      "time": 43.2,
+      "word": "Thiau-chiàn (挑戰)",
+      "def": "Challenge"
+    },
+    {
+      "time": 58.5,
+      "word": "Hoân-ló (煩惱)",
+      "def": "To worry"
+    },
+    {
+      "time": 60.5,
+      "word": "Jīn-tông (認同)",
+      "def": "To identify with / To approve"
+    },
+    {
+      "time": 63.5,
+      "word": "Kè-ta̍t-koan (價值觀)",
+      "def": "Values"
+    },
+    {
+      "time": 87.5,
+      "word": "Pang-chō͘ (幫助)",
+      "def": "To help / To assist"
+    },
+    {
+      "time": 92.8,
+      "word": "Chéng-lí (整理)",
+      "def": "To organize / To sort out"
+    },
+    {
+      "time": 107.8,
+      "word": "Iau-chhiaⁿ (邀請)",
+      "def": "To invite"
+    },
+    {
+      "time": 107.8,
+      "word": "Tē-hng (地方)",
+      "def": "Local / Place"
+    },
+    {
+      "time": 114.5,
+      "word": "Lī-hāi (利害)",
+      "def": "Impressive / Formidable / Sharp"
+    },
+    {
+      "time": 114.5,
+      "word": "Khiuⁿ-kháu (腔口)",
+      "def": "Accent"
+    },
+    {
+      "time": 117.5,
+      "word": "Thui-tōng (推動)",
+      "def": "To promote / To push forward"
+    }
+  ]
 }
