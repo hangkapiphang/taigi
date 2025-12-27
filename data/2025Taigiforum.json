@@ -19,5 +19,252 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "Bûn-hoà-pō͘ (文化部)",
+      "def": "Ministry of Culture"
+    },
+    {
+      "time": 0,
+      "word": "Àn-sǹg (按算)",
+      "def": "To plan / To intend"
+    },
+    {
+      "time": 3.1,
+      "word": "Ki-pān (舉辦) / Pān (辦)",
+      "def": "To hold (an event) / To organize"
+    },
+    {
+      "time": 5.26,
+      "word": "Hoē-gī (會議)",
+      "def": "Conference / Meeting"
+    },
+    {
+      "time": 7.36,
+      "word": "Siu-chi̍p (收集)",
+      "def": "To collect / To gather"
+    },
+    {
+      "time": 9.16,
+      "word": "Lūn-toâⁿ (論壇)",
+      "def": "Forum"
+    },
+    {
+      "time": 9.16,
+      "word": "Chèng-chhek (政策)",
+      "def": "Policy"
+    },
+    {
+      "time": 16.73,
+      "word": "Ǹg-bāng (向望)",
+      "def": "To hope / To expect"
+    },
+    {
+      "time": 16.73,
+      "word": "Chè-tō͘ (制度)",
+      "def": "System"
+    },
+    {
+      "time": 18.93,
+      "word": "Hoat-lēng (法令)",
+      "def": "Laws and decrees"
+    },
+    {
+      "time": 20.93,
+      "word": "Thia̍t-té (徹底)",
+      "def": "Thoroughly"
+    },
+    {
+      "time": 20.93,
+      "word": "Chhoē (揣)",
+      "def": "To find / To search"
+    },
+    {
+      "time": 20.93,
+      "word": "Tò-tńg--lâi (倒轉來)",
+      "def": "To return / To come back"
+    },
+    {
+      "time": 25.33,
+      "word": "Chhui-sak (推捒)",
+      "def": "To promote / To push"
+    },
+    {
+      "time": 25.33,
+      "word": "Kiat-kó (結果)",
+      "def": "Result"
+    },
+    {
+      "time": 28.46,
+      "word": "Jīm-tēng (認定)",
+      "def": "To determine / To assert"
+    },
+    {
+      "time": 30.9,
+      "word": "Chheⁿ-mê-gû (青盲牛)",
+      "def": "Illiterate person (Lit. Blind cow)"
+    },
+    {
+      "time": 30.9,
+      "word": "Piau-chún (標準)",
+      "def": "Standard"
+    },
+    {
+      "time": 37.73,
+      "word": "Bat (Bat)",
+      "def": "To know / To recognize"
+    },
+    {
+      "time": 46.8,
+      "word": "Sio-soà (相紲)",
+      "def": "Consecutively / One after another"
+    },
+    {
+      "time": 53.4,
+      "word": "Im-piau (音標)",
+      "def": "Phonetic symbols"
+    },
+    {
+      "time": 58.8,
+      "word": "Sû-luī (詞彙)",
+      "def": "Vocabulary"
+    },
+    {
+      "time": 61.9,
+      "word": "Jīn-bat (認bat)",
+      "def": "To recognize / To identify"
+    },
+    {
+      "time": 63.63,
+      "word": "Kū-thé (具體)",
+      "def": "Concrete / Specific"
+    },
+    {
+      "time": 66,
+      "word": "Hoat-tō͘ (法度)",
+      "def": "Way / Method (often implies ability)"
+    },
+    {
+      "time": 66,
+      "word": "Lêng-le̍k (能力)",
+      "def": "Ability"
+    },
+    {
+      "time": 68.23,
+      "word": "Ta̍uh-ta̍uh-á (沓沓仔)",
+      "def": "Gradually / Step by step"
+    },
+    {
+      "time": 68.23,
+      "word": "Poê-ióng (培養)",
+      "def": "To cultivate / To train"
+    },
+    {
+      "time": 73.36,
+      "word": "Khiàm (欠)",
+      "def": "To lack / To owe"
+    },
+    {
+      "time": 76.36,
+      "word": "Khoân-kéng (環境)",
+      "def": "Environment"
+    },
+    {
+      "time": 84.7,
+      "word": "Hō͘-siong (互相)",
+      "def": "Mutually / Each other"
+    },
+    {
+      "time": 84.7,
+      "word": "Kau-liû (交流)",
+      "def": "To exchange / Communication"
+    },
+    {
+      "time": 87.9,
+      "word": "Bó-gí (母語)",
+      "def": "Mother tongue"
+    },
+    {
+      "time": 95.53,
+      "word": "Kiàn-li̍p (建立)",
+      "def": "To establish"
+    },
+    {
+      "time": 95.53,
+      "word": "Ho̍k-chín (復振)",
+      "def": "Revitalization"
+    },
+    {
+      "time": 95.53,
+      "word": "Chu-goân (資源)",
+      "def": "Resources"
+    },
+    {
+      "time": 102.26,
+      "word": "Kám-chêng (感情)",
+      "def": "Sentiment / Emotion"
+    },
+    {
+      "time": 104.53,
+      "word": "Chi-chhî (支持)",
+      "def": "Support"
+    },
+    {
+      "time": 109.03,
+      "word": "Lâu chhuì-noā (流喙瀾)",
+      "def": "To drool (Metaphor: To envy in vain)"
+    },
+    {
+      "time": 115.73,
+      "word": "Ke-liáu (加了)",
+      "def": "Wasteful / Unnecessary loss"
+    },
+    {
+      "time": 118.4,
+      "word": "Lāu (漏)",
+      "def": "To leak"
+    },
+    {
+      "time": 118.4,
+      "word": "Pó (補)",
+      "def": "To patch / To mend"
+    },
+    {
+      "time": 120.8,
+      "word": "Thiⁿ (添)",
+      "def": "To add (liquid/ingredients)"
+    },
+    {
+      "time": 122.4,
+      "word": "Lō͘-iōng (路用)",
+      "def": "Usefulness / Utility"
+    },
+    {
+      "time": 127.33,
+      "word": "Ē-hiáu (會曉)",
+      "def": "To know how to"
+    },
+    {
+      "time": 127.33,
+      "word": "Chhun (賰)",
+      "def": "To remain / To be left"
+    },
+    {
+      "time": 129.83,
+      "word": "Têng-taⁿ (重耽)",
+      "def": "Error / Delay / Mistake"
+    },
+    {
+      "time": 129.83,
+      "word": "Kái-chèng (改正)",
+      "def": "To correct"
+    },
+    {
+      "time": 135.63,
+      "word": "Chiâⁿ-chò (成做)",
+      "def": "To become"
+    }
+  ]
 }
