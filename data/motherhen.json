@@ -19,5 +19,187 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 8,
+      "word": "Ú-mô (羽毛)",
+      "def": "Feather"
+    },
+    {
+      "time": 12,
+      "word": "É-kha-ke (矮跤雞)",
+      "def": "Bantam chicken (lit. short-legged chicken)"
+    },
+    {
+      "time": 17,
+      "word": "Ke-bó (雞母)",
+      "def": "Hen"
+    },
+    {
+      "time": 17,
+      "word": "Jīm-bū (任務)",
+      "def": "Mission / Task"
+    },
+    {
+      "time": 20,
+      "word": "Choân-sim-choân-ì (全心全意)",
+      "def": "Wholeheartedly / Totally focused"
+    },
+    {
+      "time": 20,
+      "word": "Kò͘ (顧)",
+      "def": "To look after / To guard"
+    },
+    {
+      "time": 29,
+      "word": "Pū-nn̄g (抱卵)",
+      "def": "To brood / To hatch eggs"
+    },
+    {
+      "time": 34,
+      "word": "Siau-sán (消瘦)",
+      "def": "To lose weight / Emaciated"
+    },
+    {
+      "time": 34,
+      "word": "Iàu-kín (要緊)",
+      "def": "Important"
+    },
+    {
+      "time": 40,
+      "word": "Khak-sìn (確信)",
+      "def": "To ensure / To believe firmly"
+    },
+    {
+      "time": 40,
+      "word": "Pó-chhî (保持)",
+      "def": "To maintain"
+    },
+    {
+      "time": 47,
+      "word": "Ke-á-kiáⁿ (雞仔囝)",
+      "def": "Chick"
+    },
+    {
+      "time": 47,
+      "word": "Phòa-khak (破殼)",
+      "def": "To hatch / Break the shell"
+    },
+    {
+      "time": 55,
+      "word": "Kiaⁿ-chi̍t-tiô (驚一跳)",
+      "def": "Astonished / Startled"
+    },
+    {
+      "time": 55,
+      "word": "Chhut-sì (出世)",
+      "def": "To be born"
+    },
+    {
+      "time": 55,
+      "word": "Sûn-khoân (循環)",
+      "def": "Cycle"
+    },
+    {
+      "time": 63,
+      "word": "Kiò-siaⁿ (叫聲)",
+      "def": "Call / Cry (sound)"
+    },
+    {
+      "time": 69,
+      "word": "Hāu-kó (效果)",
+      "def": "Effect"
+    },
+    {
+      "time": 73,
+      "word": "Bô-gōa-kú (無外久)",
+      "def": "Not long after / Moments later"
+    },
+    {
+      "time": 76,
+      "word": "Tùi-ōe (對話)",
+      "def": "Conversation / Dialogue"
+    },
+    {
+      "time": 79,
+      "word": "Chhi-chhí-chhu̍h-chhu̍h",
+      "def": "To chirp / Rustling sound (Onomatopoeia)"
+    },
+    {
+      "time": 83,
+      "word": "Ī-kò (預告)",
+      "def": "To herald / To announce"
+    },
+    {
+      "time": 94,
+      "word": "Pit-sûn (裂痕)",
+      "def": "Crack / Fissure"
+    },
+    {
+      "time": 111,
+      "word": "Ka-iû (加油)",
+      "def": "To cheer on / Keep it up"
+    },
+    {
+      "time": 118,
+      "word": "Chhùi-bóe (喙尾)",
+      "def": "Beak"
+    },
+    {
+      "time": 118,
+      "word": "Tok (啄)",
+      "def": "To peck"
+    },
+    {
+      "time": 154,
+      "word": "Ko-thong (溝通)",
+      "def": "To communicate"
+    },
+    {
+      "time": 154,
+      "word": "Kó͘-lē (鼓勵)",
+      "def": "To encourage"
+    },
+    {
+      "time": 154,
+      "word": "Kóaⁿ-kín (趕緊)",
+      "def": "Hurry / Quickly"
+    },
+    {
+      "time": 167,
+      "word": "Chhut-la̍t (出力)",
+      "def": "To exert effort / Strenuous"
+    },
+    {
+      "time": 179,
+      "word": "Kui-siū (歸岫)",
+      "def": "Whole nest / Whole clutch"
+    },
+    {
+      "time": 179,
+      "word": "Chhit-thô (𨑨迌)",
+      "def": "To play / To hang out"
+    },
+    {
+      "time": 191,
+      "word": "Si̍t-bu̍t (食物)",
+      "def": "Food"
+    },
+    {
+      "time": 200,
+      "word": "Thiám (忝)",
+      "def": "Tired / Weary"
+    },
+    {
+      "time": 200,
+      "word": "Koâⁿ (寒)",
+      "def": "Cold"
+    },
+    {
+      "time": 207,
+      "word": "Pó-hō͘ (保護)",
+      "def": "To protect"
+    }
+  ]
 }
