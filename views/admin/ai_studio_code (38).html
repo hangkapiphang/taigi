@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Path up 2 levels to css folder -->
+    <link rel="stylesheet" href="../../css/library_editor.css">
+</head>
+<body>
+
+    <div class="ledger-container">
+        <header class="ledger-header">
+            <h2><i class="fas fa-feather-alt"></i> Archives</h2>
+            <!-- Link to vocab editor or gallery -->
+            <div style="font-size: 0.9rem;">
+                <a href="vocab_editor.html" class="btn-text" style="margin-right:15px;">Vocab Editor</a>
+                <a href="../../index.html" class="btn-text">View Gallery</a>
+            </div>
+        </header>
+
+        <!-- 1. DIAGNOSTIC PANEL (From 1222 logic) -->
+        <div class="status-box">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h4 style="margin:0; color:#556B2F;">🚀 Connection Status</h4>
+                <button class="btn-outline" onclick="resetCreds()" style="font-size:0.7rem; padding:4px 8px;">Logout</button>
+            </div>
+            <div id="logs"></div>
+            <button id="btn-create-branch" class="fix-btn" onclick="createBranch()">🛠 Branch 'gh-pages' Missing! Create it</button>
+        </div>
+
+        <!-- 2. EDITOR UI (Hidden until loaded) -->
+        <div id="editor-ui">
+            
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <button class="btn btn-primary" onclick="addItem()"><i class="fas fa-plus-circle"></i> New Entry</button>
+                <button class="btn btn-purple" onclick="saveToGitHub()"><i class="fas fa-save"></i> Commit Changes</button>
+            </div>
+
+            <!-- Hint Box -->
+            <div class="hint-wrapper">
+                <details>
+                    <summary><i class="fas fa-tags"></i> Tag Reference Guide</summary>
+                    <div class="hint-content">
+                        <div><h4>🎵 Song</h4><ul><li><span class="tag-name">Indie Folk</span></li><li><span class="tag-name">Ballad</span></li><li><span class="tag-name">Rock</span></li></ul></div>
+                        <div><h4>🎤 Speech</h4><ul><li><span class="tag-name">Lecture</span></li><li><span class="tag-name">Vlog</span></li><li><span class="tag-name">News</span></li></ul></div>
+                        <div><h4>🧸 Cartoon</h4><ul><li><span class="tag-name">Folklore</span></li><li><span class="tag-name">Modern</span></li><li><span class="tag-name">Kids</span></li></ul></div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- List Area -->
+            <div id="list-area" class="card-stack"></div>
+        </div>
+    </div>
+    
+    <!-- Autocomplete suggestions -->
+    <datalist id="tag-suggestions">
+        <option value="Indie Folk"><option value="Ballad"><option value="Rock"><option value="Lecture"><option value="Vlog">
+        <option value="Folklore"><option value="Modern"><option value="Kids">
+    </datalist>
+
+    <!-- Path up 2 levels to js folder -->
+    <script src="../../js/library_editor.js"></script>
+</body>
+</html>
