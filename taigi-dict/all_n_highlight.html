@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8"><!--
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+         <link rel="manifest" href="manifest.json"> -->
+    <title>台語辭典Fuzzy 查詢 all_n2</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> 
+    -->
+    <link href="./output.css" rel="stylesheet">
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png">
+-->
+
+</head>
+<body class="bg-gray-50 min-h-screen safe-area-padding">
+    <div id="installContainer" class="flex justify-between items-center px-4 py-3">
+        <span class="text-sm">Install this app for better experience</span>
+        <button id="installBtn" class="px-3 py-1 bg-white text-indigo-600 rounded-md font-medium">Install</button>
+    </div>
+     <div class="text-center text-gray-900 py-6">
+        <p class="mt-1 text-sm">請上傳CSV檔案後進行查詢</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <!-- path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" / -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M10 16c2 1 4 0 5 -1
+                                M9 10h.01
+                                M15 10h.01
+                                M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                
+            </div> 
+        
+    <div class="container mx-auto px-4 py-4">
+     <!--   <header class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-indigo-700 mb-1">臺譯 小川尚義臺日大辭典</h1>
+            <p class="text-sm text-gray-600"></p>
+        </header>
+    -->
+        <div class="bg-white rounded-lg shadow-lg p-4 mb-4">
+            <div class="grid grid-cols-1 gap-4 mb-4 ">
+                <!-- File upload with camera option -->
+                <div>
+                    <label for="csvFile" class="block text-sm font-medium text-gray-700 mb-1 hover:bg-indigo-200">上傳辭典CSV 預設 ctg.csv</label>
+                    <div class="flex space-x-2">
+                        <input type="file" id="csvFile" accept=".csv" class="block flex-1 text-sm text-gray-500
+                            file:mr-4 file:py-2 file:px-4
+                            file:rounded-md file:border-0
+                            file:text-sm file:font-semibold
+                            file:bg-indigo-50 file:text-indigo-400
+                            hover:file:bg-indigo-100">                            
+                        <button id="takePhotoBtn" class="px-3 py-2 bg-indigo-500 text-indigo-100 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        </button>
+                   </div>
+
+                </div>
+
+ <!-- Accordion for advanced options -->
+            
+            <div class="mb-4">
+                <button id="advancedOptionsBtn" class="flex items-center justify-between-full py-2 text-sm font-medium text-left text-green-300 bg-gray-400 rounded-md px-3">
+                    <span>進階選項</span>
+                    <svg class="w-5 h-5 transform transition-transform duration-200" id="advancedOptionsArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>    
+
+                <div id="advancedOptions" class="flex justify-start hidden grid-cols-1 sm:grid-cols-2 gap-3 pt-3">
+                    <div>
+                        <label for="matchType" class="block text-sm font-medium text-gray-700 mb-1 bg-green-300">查詢方式</label>
+                        <select id="matchType" class="w-50 px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-base">
+                            <option value="smart">smart查詢</option>
+                            <option value="fuzzy">模糊查詢</option>
+                            <option value="exact">精確符合</option>
+                            <option value="startsWith">開頭符合</option>
+                            <option value="endsWith">結尾符合</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="searchField" class="block text-sm font-medium text-gray-700 mb-1  bg-indigo-200">查詢欄位</label>
+                        <select id="searchField" class="w-30 px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-base">
+                            <option value="PojInput">預設羅馬字數字輸入</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sortBy" class="block text-sm font-medium text-gray-700 mb-1">排序方式</label>
+                        <select id="sortBy" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-base">
+                            <option value="relevance">相關度</option>
+                            <option value="wordAsc">A-Z 順序</option>
+                            <option value="wordDesc">Z-A 倒序</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="resultsLimit" class="block text-sm font-medium text-gray-700 mb-1">結果數量</label>
+                        <select id="resultsLimit" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-base">
+                            <option value="10">10 筆</option>
+                            <option value="25">25 筆</option>
+                            <option value="50">50 筆</option>
+                            <option value="100">100 筆</option>
+                            <option value="0" selected>全部顯示</option>
+                        </select>
+                    </div>
+                <!-- New: Multiple Search Fields Section -->
+                <div class="mt-4 p-3 bg-gray-100 rounded-md">
+                    <h3 class="text-md font-semibold text-gray-800 mb-2">多欄位查詢</h3>
+                    <div id="multipleSearchFieldsContainer">
+                        <!-- Dynamic search fields will be added here -->
+                    </div>
+                    <button id="addSearchFieldBtn" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">
+                        + 新增查詢欄位
+                    </button>
+                </div>
+                <!-- End New: Multiple Search Fields Section -->
+
+                </div>     
+            </div>
+   
+                
+                <div>
+                    <label for="searchTerm" class="block text-sm font-medium text-gray-900 mb-1">Key in (wildcard * or ? available)</label>
+                    <div class="relative">
+                        <input type="text" id="searchTerm" placeholder="type in..." 
+                            class="w3 px-4 py-2 border border-gray-500 rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-base">
+                        <button id="clearSearchBtn" class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>           
+            <div class="flex justify-between items-center mb-4">
+                <button id="searchBtn" class="px-4 py-2 bg-indigo-600 text-white font-sm rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors text-base">
+                    開始查辭典
+                </button>
+                <button id="fieldSelectorBtn" class="px-3 py-2 bg-orange-600 text-gray-200 font-medium rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors text-sm">
+                    poj x bl (click twice)
+                </button>
+                <div id="searchHistory" class="text-xs text-gray-600 px-2 mb-4">
+                    <strong>查詢紀錄：</strong>
+                    <button id="clearHistoryBtn" class="bg-blue-200 text-red-500 hover:underline text-xs">清除查詢紀錄</button>
+                <ul id="historyList" class="list-disc pl-4"></ul>
+                </div>
+                                    <button id="exportCsvBtn" class="px-3 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors text-sm">
+                        匯出CSV </button>
+                    <button id="shareBtn" class="ml-2 px-3 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors text-sm">
+                        分享結果  </button>
+
+            </div>
+ 
+            <!-- Field selector modal -->
+            <div id="fieldSelectorModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-20">
+                <div class="relative top-4 mx-auto p-4 border shadow-lg rounded-md bg-white max-w-xs w-full">
+                    <div class="mt-0 text-center">
+                        <h3 class="text-lg leading-6 bg-cyan-200 font-medium text-gray-900 mb-3">選擇顯示欄位</h3>
+                        <div class="field-selector px-2 py-2 border rounded-md bg-white">
+                            <!-- Field checkboxes will be inserted here -->
+                        </div>
+                        <div class="flex justify-center mt-3 space-x-2">
+                            <button id="blFieldsBtn" class="px-3 py-2 bg-indigo-600 text-white text-base font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                bân-lô
+                            </button>
+                            <button id="pojFieldSelectionBtn" class="px-3 py-2 bg-gray-200 text-gray-700 text-base font-medium rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                pe̍h-ōe-jī
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="stats" class="text-center bg-opacity-50 text-xs text-gray-800 mb-4"></div>
+            
+           
+            
+            <div class="flex justify-start mt-3">
+              
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="table-container bg-white rounded-lg shadow overflow-hidden mb-4">
+            <!-- Results will be displayed here -->
+            
+        </div>
+       
+        
+        <!-- Good Citizen Footer -->
+        <div class="text-center text-xs text-gray-400 mt-4">
+            <p>長按「分享結果」可將查詢結果儲存至相簿</p>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let dictionaryData = [];
+        let currentResults = [];
+        let headers = [];
+        let deferredPrompt = null;
+        let currentPage = 1;
+        let searchHistory = []; 
+        let poj = true;
+        const pageSize = 10; // 每頁顯示
+        const maxHistory = 10;
+        let multipleSearchFields = []; // New: Array to store multiple search field configurations
+        
+        // DOM elements
+
+        const csvFileInput = document.getElementById('csvFile');
+        const takePhotoBtn = document.getElementById('takePhotoBtn');
+        const searchTermInput = document.getElementById('searchTerm');
+        const clearSearchBtn = document.getElementById('clearSearchBtn');
+        const searchFieldSelect = document.getElementById('searchField');
+        const matchTypeSelect = document.getElementById('matchType');
+        const sortBySelect = document.getElementById('sortBy');
+        const resultsLimitSelect = document.getElementById('resultsLimit');
+        const searchBtn = document.getElementById('searchBtn');
+        const fieldSelectorBtn = document.getElementById('fieldSelectorBtn');
+        const fieldSelectorModal = document.getElementById('fieldSelectorModal');
+        const fieldSelectorContainer = document.querySelector('.field-selector');
+        const blFieldsBtn = document.getElementById('blFieldsBtn');
+        const pojFieldSelectionBtn = document.getElementById('pojFieldSelectionBtn');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const statsElement = document.getElementById('stats');
+        const exportCsvBtn = document.getElementById('exportCsvBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const installContainer = document.getElementById('installContainer');
+        const installBtn = document.getElementById('installBtn');
+        const advancedOptionsBtn = document.getElementById('advancedOptionsBtn');
+        const advancedOptions = document.getElementById('advancedOptions');
+        const advancedOptionsArrow = document.getElementById('advancedOptionsArrow');
+
+        // New DOM elements for multiple search fields
+        const multipleSearchFieldsContainer = document.getElementById('multipleSearchFieldsContainer');
+        const addSearchFieldBtn = document.getElementById('addSearchFieldBtn');
+
+
+        // Event listeners
+        csvFileInput.addEventListener('change', handleFileUpload);
+        takePhotoBtn.addEventListener('click', handleTakePhoto);
+        searchBtn.addEventListener('click', performSearch);
+        searchTermInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+        clearSearchBtn.addEventListener('click', () => {
+            searchTermInput.value = '';
+            searchTermInput.focus();
+        });
+        fieldSelectorBtn.addEventListener('click', showFieldSelector);
+        blFieldsBtn.addEventListener('click', blFieldselection);
+        pojFieldSelectionBtn.addEventListener('click', pojFieldSelection);
+        exportCsvBtn.addEventListener('click', exportResultsToCSV);
+        shareBtn.addEventListener('click', shareResults);
+        installBtn.addEventListener('click', installApp);
+        advancedOptionsBtn.addEventListener('click', toggleAdvancedOptions);
+
+        // New event listener for multiple search fields
+        addSearchFieldBtn.addEventListener('click', addMultipleSearchFieldRow);
+
+        // Handle window beforeinstallprompt event for PWA
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installContainer.style.display = 'flex';
+        });
+
+        // Install PWA
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(choiceResult => {
+                    if (choiceResult.outcome === 'accepted') {
+                        installContainer.style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        }
+
+        // Toggle advanced options
+        function toggleAdvancedOptions() {
+            advancedOptions.classList.toggle('hidden');
+            advancedOptionsArrow.classList.toggle('rotate-180');
+        }
+
+        // Handle taking photo for OCR (placeholder for future implementation)
+        function handleTakePhoto() {
+            alert("Coming soon: Take a photo of text to search");
+            // This would use the MediaDevices API to access camera
+            // navigator.mediaDevices.getUserMedia({ video: true })
+            // Then process the image with OCR
+        }
+
+        // Handle CSV file upload
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const csvData = e.target.result;
+                parseCSV(csvData);
+            };
+            reader.readAsText(file);
+        }
+
+        // Parse CSV data into dictionary array
+        function parseCSV(csvData) {
+            const lines = csvData.split('\n');
+            headers = lines[0].split(',').map(h => h.trim());
+            let fields_number = headers.length;
+            dictionaryData = [];
+            
+            let i = 1;
+            while (i < lines.length) {
+                if (!lines[i].trim()) {
+                    i++;
+                    continue;
+                }
+
+                let values = lines[i].split(',');
+                const entry = {};
+                new_line = lines[i];
+                while (values.length < fields_number && i + 1 < lines.length) {
+                    i++;
+                    new_line = new_line + lines[i];
+                    values = new_line.split(',');
+                }
+                
+                for (let j = 0; j < fields_number; j++) {
+                    entry[headers[j]] = values[j] ? values[j].trim() : '';
+                }
+
+                dictionaryData.push(entry);
+                i++;
+            }
+
+            populateSearchFields();
+            // Also populate fields for multiple search inputs
+            populateMultipleSearchFieldDropdowns(); 
+            selectedFields = [...headers];
+           // updateStats(`已載入 ${dictionaryData.length} 筆辭典資料`);
+        }
+
+        // Populate search fields dropdown with headers
+        function populateSearchFields() {  // 輸入的欄位
+            searchFieldSelect.innerHTML = '<option value="PojInput">PojInput</option>'; //預設
+            headers_ = headers.filter(header => header.includes('Input') || header.includes('Poj') || header == 'PageNumber' || header == "DictWordID");  //輸入欄位
+            headers_.forEach(header => {
+                const option = document.createElement('option');
+                option.value = header;
+                option.textContent = header;
+                searchFieldSelect.appendChild(option);
+            });
+        }
+
+        // New: Populate dropdowns for multiple search fields
+        function populateMultipleSearchFieldDropdowns() {
+            const fieldSelects = multipleSearchFieldsContainer.querySelectorAll('.multiple-search-field-select');
+            fieldSelects.forEach(select => {
+                // Clear existing options except the default
+                select.innerHTML = ''; 
+                // Re-populate with all headers
+                headers.forEach(header => {
+                    const option = document.createElement('option');
+                    option.value = header;
+                    option.textContent = header;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        // New: Add a new row for multiple search fields
+        function addMultipleSearchFieldRow() {
+            const rowId = `multi-search-row-${Date.now()}`;
+            const rowDiv = document.createElement('div');
+            rowDiv.id = rowId;
+            rowDiv.className = 'flex flex-wrap items-center gap-2 mb-2';
+
+            const fieldSelect = document.createElement('select');
+            fieldSelect.className = 'multiple-search-field-select px-2 py-1 border border-gray-300 rounded-md text-sm';
+            
+            // Filter headers to prioritize Poj and DictWordID
+            const pojAndDictHeaders = headers.filter(header => header.includes('Poj') || header === 'DictWordID');
+            const otherHeaders = headers.filter(header => !header.includes('Poj') && header !== 'DictWordID');
+            const sortedHeaders = [...pojAndDictHeaders, ...otherHeaders];
+
+            let defaultSelectedField = '';
+            if (headers.includes('PojInput')) {
+                defaultSelectedField = 'PojInput';
+            } else if (headers.includes('DictWordID')) {
+                defaultSelectedField = 'DictWordID';
+            } else if (pojAndDictHeaders.length > 0) {
+                defaultSelectedField = pojAndDictHeaders[0];
+            } else if (headers.length > 0) {
+                defaultSelectedField = headers[0];
+            }
+
+            sortedHeaders.forEach(header => {
+                const option = document.createElement('option');
+                option.value = header;
+                option.textContent = header;
+                if (header === defaultSelectedField) {
+                    option.selected = true;
+                }
+                fieldSelect.appendChild(option);
+            });
+
+            const termInput = document.createElement('input');
+            termInput.type = 'text';
+            termInput.placeholder = '查詢詞';
+            termInput.className = 'multiple-search-term-input flex-1 px-2 py-1 border border-gray-300 rounded-md text-sm';
+
+            const matchTypeSelect = document.createElement('select');
+            matchTypeSelect.className = 'multiple-match-type-select px-2 py-1 border border-gray-300 rounded-md text-sm';
+            const matchTypes = [
+                { value: 'smart', text: 'smart查詢' },
+                { value: 'fuzzy', text: '模糊查詢' },
+                { value: 'exact', text: '精確符合' },
+                { value: 'startsWith', text: '開頭符合' },
+                { value: 'endsWith', text: '結尾符合' }
+            ];
+            matchTypes.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type.value;
+                option.textContent = type.text;
+                matchTypeSelect.appendChild(option);
+            });
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '移除';
+            removeBtn.className = 'px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-sm';
+            removeBtn.addEventListener('click', () => {
+                rowDiv.remove();
+                // Remove from multipleSearchFields array if it was stored
+                multipleSearchFields = multipleSearchFields.filter(field => field.id !== rowId);
+            });
+
+            rowDiv.appendChild(fieldSelect);
+            rowDiv.appendChild(termInput);
+            rowDiv.appendChild(matchTypeSelect);
+            rowDiv.appendChild(removeBtn);
+            multipleSearchFieldsContainer.appendChild(rowDiv);
+
+            // Add to our tracking array (optional, but useful for managing state)
+            multipleSearchFields.push({
+                id: rowId,
+                fieldSelect: fieldSelect,
+                termInput: termInput,
+                matchTypeSelect: matchTypeSelect
+            });
+        }
+
+
+        // Show field selector modal
+        function showFieldSelector() {   // 顯示的欄位
+            if (headers.length === 0) {
+                alert("請先上傳CSV檔案");
+                return;
+            }
+
+            // Clear previous checkboxes
+            fieldSelectorContainer.innerHTML = '';
+            let displayHeaders;
+            console.log(poj.toString())        // Filter headers to show only relevant fields (excluding KIP fields)let displayHeaders;
+            if (poj) {
+                displayHeaders = headers.filter(header => !header.includes('Kip'));
+            } else {
+                displayHeaders = headers.filter(header => !header.includes('Poj'));
+            }           // Create checkboxes for each field
+              // headers.forEach(header => { 
+            selectedFields = displayHeaders;
+            displayHeaders.forEach(header => {             
+                const div = document.createElement('div');
+                div.className = 'flex items-center mb-2';
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `field-${header}`;
+                checkbox.value = header;
+                checkbox.className = 'h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded mr-2';
+                checkbox.checked = selectedFields.includes(header);
+                const label = document.createElement('label');
+                label.htmlFor = `field-${header}`;
+                label.className = 'text-sm text-gray-700';
+                label.textContent = header;
+                div.appendChild(checkbox);
+                div.appendChild(label);
+                fieldSelectorContainer.appendChild(div);
+            });
+ 
+            fieldSelectorModal.classList.remove('hidden');
+            // Add click outside to close functionality
+            setTimeout(() => {
+                fieldSelectorModal.addEventListener('click', (e) => {
+                    if (e.target === fieldSelectorModal) {
+                        hideFieldSelector();                        
+                    }
+                });
+            }, 0);
+        
+        }
+
+        // Hide field selector modal
+        function hideFieldSelector() {
+            fieldSelectorModal.classList.add('hidden');
+           
+        }
+
+        function pojFieldSelection() {
+            poj = true;
+            const checkboxes = fieldSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            selectedFields = [];
+            // showFieldSelector();
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedFields.push(checkbox.value);
+                }
+            });
+            if (selectedFields.length === 0) {
+                alert("請至少選擇一個顯示欄位");
+                return;
+            }
+
+            hideFieldSelector();
+
+            if (currentResults.length > 0) {
+                displayResults(currentResults);
+            }
+        }
+        // Apply field selection
+        function blFieldselection() {
+            poj = false;
+            const checkboxes = fieldSelectorContainer.querySelectorAll('input[type="checkbox"]');
+            selectedFields = [];
+            // showFieldSelector();
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedFields.push(checkbox.value);
+                }
+            });
+
+            if (selectedFields.length === 0) {
+                alert("請至少選擇一個顯示欄位");
+                return;
+            }
+
+            hideFieldSelector();
+            
+            if (currentResults.length > 0) {
+                displayResults(currentResults);
+            }
+        }
+
+        // Perform search based on user inputs
+        function performSearch() {
+            if (dictionaryData.length === 0) {
+                updateStats("請先上傳CSV檔案");
+                return;
+            }
+            
+            const searchTerm = searchTermInput.value.trim().toLowerCase();
+            const searchField = searchFieldSelect.value;
+            const matchType = matchTypeSelect.value;
+            const sortBy = sortBySelect.value;
+            const resultsLimit = parseInt(resultsLimitSelect.value);
+
+            let filteredResults = [...dictionaryData]; // Start with all data
+
+            // Process the main search field
+            if (searchTerm) {
+                filteredResults = filteredResults.filter(entry => {
+                    if (matchType === 'smart') {
+                        return smartSearch(entry, searchTerm, searchField);
+                    } else if (searchField === 'all') {
+                        return Object.values(entry).some(value => 
+                            matchString(value.toLowerCase(), searchTerm, matchType)
+                        );
+                    } else {
+                        return entry[searchField] && 
+                            matchString(entry[searchField].toLowerCase(), searchTerm, matchType);
+                    }
+                });
+            } else if (!searchTerm && multipleSearchFieldsContainer.children.length === 0) {
+                // If no main search term and no multiple search fields, show all or limited
+                currentResults = dictionaryData.slice(0, resultsLimit || dictionaryData.length);
+                displayResults(currentResults);
+                updateStats(`顯示全部 ${currentResults.length} 筆資料`);
+                return;
+            }
+
+            // New: Process multiple search fields
+            const activeMultipleSearchFields = Array.from(multipleSearchFieldsContainer.children).map(rowDiv => {
+                const fieldSelect = rowDiv.querySelector('.multiple-search-field-select');
+                const termInput = rowDiv.querySelector('.multiple-search-term-input');
+                const matchTypeSelect = rowDiv.querySelector('.multiple-match-type-select');
+                return {
+                    field: fieldSelect.value,
+                    term: termInput.value.trim().toLowerCase(),
+                    matchType: matchTypeSelect.value
+                };
+            }).filter(config => config.term); // Only consider fields with a search term
+
+            activeMultipleSearchFields.forEach(multiField => {
+                filteredResults = filteredResults.filter(entry => {
+                    if (multiField.matchType === 'smart') {
+                        return smartSearch(entry, multiField.term, multiField.field);
+                    } else {
+                        return entry[multiField.field] && 
+                            matchString(entry[multiField.field].toLowerCase(), multiField.term, multiField.matchType);
+                    }
+                });
+            });
+
+            currentResults = filteredResults;
+
+            if (sortBy === 'relevance') {
+                currentResults.sort((a, b) => {
+                    // For relevance, consider all active search terms
+                    let aScore = calculateRelevance(a, searchTerm, searchField);
+                    let bScore = calculateRelevance(b, searchTerm, searchField);
+                    activeMultipleSearchFields.forEach(multiField => {
+                        aScore += calculateRelevance(a, multiField.term, multiField.field);
+                        bScore += calculateRelevance(b, multiField.term, multiField.field);
+                    });
+                    return bScore - aScore;
+                });
+            } else if (sortBy === 'wordAsc') {
+                currentResults.sort((a, b) => a.word?.localeCompare(b.word));
+            } else if (sortBy === 'wordDesc') {
+                currentResults.sort((a, b) => b.word?.localeCompare(a.word));
+            }
+
+            if (resultsLimit > 0) {
+                currentResults = currentResults.slice(0, resultsLimit);
+            }
+                
+            updateStats(`Àn ${dictionaryData.length} tiâu chhhōe tio̍h ${currentResults.length} tiâu`);
+            addSearchHistory(searchTerm, searchField, matchType); // This history only captures the main search. Consider extending for multiple fields.
+            displayResults(currentResults); // Call displayResults after updating stats and history
+       }
+
+        // Match string based on match type
+        function matchString(text, searchTerm, matchType) {
+            switch (matchType) {
+                case 'exact':
+                    return text === searchTerm;
+                case 'startsWith':
+                    return text.startsWith(searchTerm);
+                case 'endsWith':
+                    return text.endsWith(searchTerm);
+                case 'fuzzy':
+                default:
+                    return text.includes(searchTerm);
+            }
+        }
+
+        // Calculate relevance score for sorting
+     
+        function calculateRelevance(entry, searchTerm, searchField) {
+            let score = 0;
+            const searchTermLength = searchTerm.length;
+            
+            const fieldWeights = {
+                'PojInput': 1.5,
+                'PojUnicode': 1.5,
+                'HanLoInput': 1.3,
+                'HanLoUnicode': 1.3,
+                'KipUnicode': 1.2,
+                'KaisoehHanLoPoj': 1.1,
+                'LekuHanLoPoj': 1.1,
+                'PageNumber': 0.8,
+                'DictWordID': 0.5,
+                'PojUnicodeOthers': 1.0
+            };
+
+            if (searchField === 'all') {
+                for (const [field, value] of Object.entries(entry)) {
+                    const fieldWeight = fieldWeights[field] || 1.0;
+                    const val = value?.toString().toLowerCase() || '';
+                    
+                    if (val.includes(searchTerm)) {
+                        score += 10 * fieldWeight;
+                        
+                        if (val === searchTerm) {
+                            score += 100 * fieldWeight;
+                        }
+                        
+                        const pos = val.indexOf(searchTerm);
+                        const positionRatio = 1 - (pos / Math.max(1, val.length));
+                        score += positionRatio * 20 * fieldWeight;
+                        
+                        score += searchTermLength * 3 * fieldWeight;
+                        
+                        const matches = val.split(searchTerm).length - 1;
+                        score += matches * 5 * fieldWeight;
+                    }
+                }
+            } else {
+                const value = entry[searchField]?.toString().toLowerCase() || '';
+                
+                if (value.includes(searchTerm)) {
+                    score += 50;
+                    
+                    if (value === searchTerm) {
+                        score += 200;
+                    }
+                    
+                    const pos = value.indexOf(searchTerm);
+                    const positionRatio = 1 - (pos / Math.max(1, value.length));
+                    score += positionRatio * 50;
+                    
+                    score += searchTermLength * 5;
+                    
+                    const matches = value.split(searchTerm).length - 1;
+                    score += matches * 15;
+                    
+                    if (searchField.includes('Poj') || searchField.includes('HanLo')) {
+                        score += 30;
+                    }
+                }
+            }
+
+            const contentLength = JSON.stringify(entry).length;
+            if (contentLength > 500) {
+                score -= Math.min(50, contentLength / 100);
+            }
+            
+            return Math.max(0, score);
+        }
+
+        function smartSearch(entry, searchTerm, searchField) {
+            if (searchTerm.includes('*') || searchTerm.includes('?')) {
+                return wildcardSearch(entry, searchTerm, searchField);
+            }
+            
+            if (/^[a-z0-9]+$/i.test(searchTerm)) {   // 
+                if (searchField === 'all') {
+                    return Object.values(entry).some(value => 
+                        value.toLowerCase() === searchTerm.toLowerCase()
+                    );
+                } else {
+                    return entry[searchField] && 
+                        entry[searchField].toLowerCase() === searchTerm.toLowerCase();
+                }
+            }
+            
+            if (searchField === 'all') {
+                return Object.values(entry).some(value => 
+                    value.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+            } else {
+                return entry[searchField] && 
+                    entry[searchField].toLowerCase().includes(searchTerm.toLowerCase());
+            }
+        }
+
+function wildcardSearch(entry, searchTerm, searchField) {
+    // Escape 正規表達式特殊符號（除了 * 和 ?）
+    const escaped = searchTerm.replace(/[-/\\^$+.()|[\]{}]/g, '\\$&');
+    // 將 * 和 ? 轉換成正規表示法
+    const regexTerm = escaped.replace(/\*/g, '.*').replace(/\?/g, '.'); // ? matches any single character
+    const regex = new RegExp(`^${regexTerm}$`, 'i');
+
+    if (searchField === 'all') {
+        return Object.values(entry).some(value => 
+            regex.test(value.toString())
+        );
+    } else {
+        return entry[searchField] &&
+            regex.test(entry[searchField].toString());
+    }
+}
+
+        // Display results in the UI with mobile optimization
+function displayResults(results) {
+    const searchTerm = searchTermInput.value.trim().toLowerCase();
+    const totalPages = Math.ceil(results.length / pageSize);
+    
+    // Clamp currentPage
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    // 計算目前頁面的資料範圍
+        const start = (currentPage - 1) * pageSize;
+        const end = start + pageSize;
+        const pagedResults = results.slice(start, end);
+
+        if (results.length === 0) {
+         resultsContainer.innerHTML = `<div class="text-center text-gray-500 py-6">
+               <p class="mt-1 text-sm">沒有找到符合條件的結果</p>
+            </div>`;
+            return;
+        }
+
+        let html = `
+            <div class="relative overflow-auto">
+                <table class="w-full divide-y divide-gray-200">
+                    <thead class="table-header bg-gray-50">
+                        <tr>`;
+            selectedFields.forEach(field => {
+            html += `<th class="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">${field}</th>`;
+        });
+        html += `</tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
+        pagedResults.forEach(entry => {
+            html += `<tr class="table-row fade-in">`;
+        selectedFields.forEach(field => {
+            html += `<td class="px-2 py-1 field-cell">`;
+            const value = entry[field] || '';
+            if (field === 'PageNumber' && value) {
+                let url = '';
+                if (value.startsWith('A')) {
+                    const num = parseInt(value.substring(1));
+                    const adjustedNum = num + 58;
+                    const paddedNum = adjustedNum.toString().padStart(4, '0');
+                    url = `https://taigi.fhl.net/dict/gm.php?fn=A/A${paddedNum}.png`;
+                } else {
+                    const num = parseInt(value.substring(1));
+                    const adjustedNum = num + 46;
+                    const paddedNum = adjustedNum.toString().padStart(4, '0');
+                    url = `https://taigi.fhl.net/dict/gm.php?fn=B/B${paddedNum}.png`;
+                }
+                html += `<a href="${url}" target="_blank" class="text-blue-600 underline">${value}</a>`;
+            } 
+            else if (value) { // Only highlight if there's a value
+                // Highlight based on main search term and all active multiple search terms
+                let highlightedValue = value;
+                const allSearchTerms = [];
+                if (searchTerm) allSearchTerms.push(searchTerm); // Add main search term if present
+
+                Array.from(multipleSearchFieldsContainer.children).forEach(rowDiv => {
+                    const termInput = rowDiv.querySelector('.multiple-search-term-input');
+                    const term = termInput.value.trim().toLowerCase();
+                    if (term) allSearchTerms.push(term);
+                });
+
+                // Apply highlighting for each term
+                allSearchTerms.forEach(term => {
+                    highlightedValue = highlightText(highlightedValue, term);
+                });
+                html += highlightedValue;
+
+            } else {
+                html += value || 'N/A';
+            }
+
+            html += `</td>`;
+        });
+        html += `</tr>`;
+    });
+
+    html += `</tbody></table></div>`;
+
+    // ➕ 分頁導覽區塊
+    html += renderPaginationControls(totalPages);
+
+    resultsContainer.innerHTML = html;
+}
+function changePage(newPage) {
+    currentPage = newPage;
+    displayResults(currentResults);
+}
+
+        // Highlight matching text in results
+function highlightText(text, searchTerm) {
+    if (!searchTerm || !text) return text;
+
+    // Handle wildcard characters for highlighting
+    const escapedSearchTerm = searchTerm.replace(/[-/\\^$+.()|[\]{}]/g, '\\$&');
+    const regexPattern = escapedSearchTerm.replace(/\*/g, '.*').replace(/\?/g, '.');
+    let new_Pattern = regexPattern;
+    if (!poj) {
+        new_Pattern =new_Pattern.replace(/ch/g,'ts').replace(/oa/g,'ua').replace(/oe/g,'ue').replace(/eng/g,'ing').replace(/ek/g,'ik');
+    } else{
+        new_Pattern =new_Pattern.replace(/ts/g,'ch').replace(/ua/g,'oa').replace(/ue/g,'oe').replace(/ing/g,'eng').replace(/ik/g,'ek');
+    }
+    
+    try {
+        const regex = new RegExp(`(${new_Pattern})`, 'gi');
+        return text.replace(regex, match => `<span class="highlight">${match}</span>`);
+    } catch (e) {
+        console.error("Invalid regex for highlighting:", e);
+        return text; // Return original text if regex is invalid
+    }
+}
+function renderPaginationControls(totalPages) {
+    if (totalPages <= 1) return '';
+
+    const hasPrev10 = currentPage > 10;
+    const hasNext10 = currentPage + 10 <= totalPages;
+
+    let html = `
+        <div class="flex justify-center items-center mt-4 space-x-2 text-sm flex-wrap">
+            ${hasPrev10 ? `
+                <button onclick="changePage(currentPage - 10)" 
+                    class="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
+                    ⏪ -10 頁
+                </button>
+            ` : ''}
+            <button onclick="changePage(currentPage - 1)" 
+                class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                ${currentPage === 1 ? 'disabled' : ''}>上一頁</button>
+
+            <span class="px-2">頁 ${currentPage} / ${totalPages}</span>
+
+            <button onclick="changePage(currentPage + 1)" 
+                class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                ${currentPage === totalPages ? 'disabled' : ''}>下一頁</button>
+
+            ${hasNext10 ? `
+                <button onclick="changePage(currentPage + 10)" 
+                    class="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
+                    +10 頁 ⏩
+                </button>
+            ` : ''}
+        </div>
+    `;
+    return html;
+}
+
+        // Update statistics display
+function updateStats(message) {
+            statsElement.textContent = message;
+        }
+    
+    
+   
+function addSearchHistory(term, field, matchType) {
+    // This function currently only captures the main search term.
+    // To capture multiple search fields, you'd need to modify the 'entry' structure
+    // and how it's displayed in renderSearchHistory.
+    if (!term && multipleSearchFieldsContainer.children.length === 0) return; // Only add if there's at least one search term
+
+    let historyTerm = term;
+    let historyField = field;
+    let historyMatchType = matchType;
+
+    const activeMultipleSearchFields = Array.from(multipleSearchFieldsContainer.children).map(rowDiv => {
+        const fieldSelect = rowDiv.querySelector('.multiple-search-field-select');
+        const termInput = rowDiv.querySelector('.multiple-search-term-input');
+        const matchTypeSelect = rowDiv.querySelector('.multiple-match-type-select');
+        return {
+            field: fieldSelect.value,
+            term: termInput.value.trim(),
+            matchType: matchTypeSelect.value
+        };
+    }).filter(config => config.term);
+
+    if (activeMultipleSearchFields.length > 0) {
+        historyTerm = `主: "${term}"`;
+        historyField = `${field}`;
+        historyMatchType = `${matchType}`;
+        activeMultipleSearchFields.forEach((multiField, index) => {
+            historyTerm += ` | 多${index+1}: "${multiField.term}"`;
+            historyField += `, ${multiField.field}`;
+            historyMatchType += `, ${multiField.matchType}`;
+        });
+    }
+
+
+    const resultCount = currentResults.length;
+    const entry = { term: historyTerm, field: historyField, matchType: historyMatchType, resultCount };
+    // Avoid duplicate consecutive entries
+    if (searchHistory.length > 0 && JSON.stringify(searchHistory[0]) === JSON.stringify(entry)) return;
+
+    // Add to beginning of array
+    searchHistory.unshift(entry);
+    if (searchHistory.length > maxHistory)  searchHistory.pop();
+
+    // Save to localStorage
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+    renderSearchHistory();
+}
+
+function renderSearchHistory() {
+    const list = document.getElementById('historyList');
+    list.innerHTML = '';
+    searchHistory.forEach(({ term, field, matchType, resultCount }) => {        
+        const li = document.createElement('li');
+        li.className = 'cursor-pointer hover:underline';
+        li.textContent = `${term} @${matchType}  tī ${field} chhōe-tio̍h ${resultCount} tiâu) `;
+        li.addEventListener('click', () => {
+            // Re-applying complex multiple search history would require more sophisticated state management
+            // For simplicity, this click will only re-apply the main search term.
+            // A full implementation would need to store and restore the multipleSearchFields array.
+            const mainTermMatch = term.match(/^主: "([^"]*)"/);
+            if (mainTermMatch) {
+                searchTermInput.value = mainTermMatch[1];
+            } else {
+                searchTermInput.value = term; // Fallback for older history entries
+            }
+            
+            const fieldMatch = field.match(/^([^,]*)/);
+            if (fieldMatch) {
+                searchFieldSelect.value = fieldMatch[1];
+            } else {
+                searchFieldSelect.value = field;
+            }
+
+            const matchTypeMatch = matchType.match(/^([^,]*)/);
+            if (matchTypeMatch) {
+                matchTypeSelect.value = matchTypeMatch[1];
+            } else {
+                matchTypeSelect.value = matchType;
+            }
+
+            // Clear existing multiple search fields for simplicity when restoring history
+            multipleSearchFieldsContainer.innerHTML = '';
+            multipleSearchFields = [];
+
+            performSearch();
+        });
+        list.appendChild(li);
+    });
+}
+function clearSearchHistory() {
+   // if (confirm("確定要清除查詢紀錄？")) {
+        searchHistory = [];
+        localStorage.removeItem('searchHistory');
+        renderSearchHistory();
+        html ='';
+        resultsContainer.innerHTML = html;
+        currentResults =[];
+        updateStats(`Àn ${dictionaryData.length} tiâu chhhōe tio̍h ${currentResults.length} tiâu`);
+    //}
+}   
+        // Export results to CSV
+function exportResultsToCSV() {
+        if (currentResults.length === 0) {
+            alert("沒有資料可匯出。請先查詢。");
+            return;
+        }
+
+        const csvHeaders = selectedFields.join(',');
+        const csvRows = currentResults.map(entry =>
+            selectedFields.map(field =>
+                `"${(entry[field] || '').replace(/"/g, '""')}"`
+            ).join(',')
+        );
+
+        const csvContent = [csvHeaders, ...csvRows].join('\n');
+            
+        const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+            
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', '台語辭典查詢結果.csv');
+        link.style.display = 'none';
+            
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+            
+        setTimeout(() => URL.revokeObjectURL(url), 100);
+    }
+
+        // Share results
+        function shareResults() {
+            if (currentResults.length === 0) {
+                alert("沒有資料可分享。請先查詢。");
+                return;
+            }
+
+            try {
+                // Create a simplified text version of the results
+                let shareText = `台語辭典查詢結果 (${currentResults.length} 筆)\n\n`;
+                
+                currentResults.slice(0, 10).forEach((entry, index) => {
+                    shareText += `${index + 1}. `;
+                    selectedFields.forEach(field => {
+                        shareText += `${field}: ${entry[field] || 'N/A'}\n`;
+                    });
+                    shareText += '\n';
+                });
+                
+                if (currentResults.length > 10) {
+                    shareText += `...還有 ${currentResults.length - 10} 筆結果`;
+                }
+                
+                // Use Web Share API if available
+                if (navigator.share) {
+                    navigator.share({
+                        title: '台語辭典查詢結果',
+                        text: shareText,
+                        url: window.location.href
+                    }).catch(err => {
+                        console.log('Error sharing:', err);
+                        fallbackShare(shareText);
+                    });
+                } else {
+                    fallbackShare(shareText);
+                }
+            } catch (err) {
+                console.error('Share error:', err);
+                alert("無法分享結果，請嘗試匯出CSV");
+            }
+        }
+
+        // Fallback share method
+        function fallbackShare(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert("結果已複製到剪貼簿");
+        }
+
+        // Initialize
+document.addEventListener('DOMContentLoaded', () => {
+fetch('ctg.csv')
+    .then(response => {
+        if (!response.ok) throw new Error('無法載入 ctg.csv');
+        return response.text();
+    })
+    .then(csvText => {
+        parseCSV(csvText);
+    })
+    .catch(error => {
+        console.warn('讀取預設檔案錯誤：', error);
+        updateStats("⚠ 未找到預設檔案 ctg.csv，請手動上傳辭典 CSV 檔案");
+        
+        // 聚焦到上傳欄位並高亮提示
+        csvFileInput.focus();
+        csvFileInput.classList.add('ring-2', 'ring-red-500');
+        
+        // 可選：過幾秒自動移除紅框
+        setTimeout(() => {
+            csvFileInput.classList.remove('ring-2', 'ring-red-500');
+        }, 3000);
+    });
+
+    // Load selected fields
+    const savedFields = localStorage.getItem('selectedFields');
+    if (savedFields) {
+        selectedFields = JSON.parse(savedFields);
+    }
+
+    // Load search history
+    const savedHistory = localStorage.getItem('searchHistory');
+    if (savedHistory) {
+        searchHistory = JSON.parse(savedHistory);
+        renderSearchHistory();
+    }
+
+    // Check if standalone (PWA) mode
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        installContainer.style.display = 'none';
+    }
+
+    // Check for iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) {
+        document.body.classList.add('ios');
+    }
+});
+    const clearBtn = document.getElementById('clearHistoryBtn');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', clearSearchHistory);
+    }
+
+
+
+    </script>
+</body>
+</html>
