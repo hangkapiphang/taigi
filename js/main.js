@@ -7,7 +7,10 @@ async function loadLibrary() {
         const response = await fetch(`../data/library.json?t=${Date.now()}`);
         if (!response.ok) throw new Error("Missing File");
         fullLibrary = await response.json();
-        fullLibrary.reverse();
+     //   fullLibrary.reverse();
+        // This ensures the newest "date" always comes first
+fullLibrary.sort((a, b) => new Date(b.date) - new Date(a.date));
+        
         render(fullLibrary);
     } catch (error) {
         gallery.innerHTML = `<div style="text-align:center; padding:40px; color:#BFA66F;">Library File (data/library.json) Not Found.</div>`;
