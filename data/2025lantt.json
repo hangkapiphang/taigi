@@ -18,5 +18,192 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0,
+      "word": "Chèng-chhek",
+      "def": "Policy"
+    },
+    {
+      "time": 2.5,
+      "word": "Kí-pān",
+      "def": "To hold (an event); to organize"
+    },
+    {
+      "time": 5,
+      "word": "Thó-lūn",
+      "def": "To discuss"
+    },
+    {
+      "time": 7.5,
+      "word": "Si̍t-hiān",
+      "def": "To realize; to achieve"
+    },
+    {
+      "time": 10.2,
+      "word": "Tâi-kha",
+      "def": "The audience; below the stage"
+    },
+    {
+      "time": 10.2,
+      "word": "Moá-moá",
+      "def": "Full; packed"
+    },
+    {
+      "time": 12.8,
+      "word": "Koan-sim",
+      "def": "To care about; concern"
+    },
+    {
+      "time": 24.5,
+      "word": "Kiàn-li̍p",
+      "def": "To establish; to build"
+    },
+    {
+      "time": 28.5,
+      "word": "Chú-jīm",
+      "def": "Director; head of department"
+    },
+    {
+      "time": 32,
+      "word": "Gí-liāu-khò͘",
+      "def": "Corpus (linguistics database)"
+    },
+    {
+      "time": 35,
+      "word": "Kui-ōe",
+      "def": "Planning; to plan"
+    },
+    {
+      "time": 43,
+      "word": "Sok-tō͘",
+      "def": "Speed"
+    },
+    {
+      "time": 43,
+      "word": "Bān",
+      "def": "Slow"
+    },
+    {
+      "time": 48.5,
+      "word": "Chho͘-phoe",
+      "def": "Preliminary draft; embryo"
+    },
+    {
+      "time": 54.5,
+      "word": "Tn̄g-sû",
+      "def": "Word segmentation"
+    },
+    {
+      "time": 63.5,
+      "word": "Gián-kiù",
+      "def": "Research"
+    },
+    {
+      "time": 66,
+      "word": "Sêng-li̍p",
+      "def": "To set up; to found"
+    },
+    {
+      "time": 69,
+      "word": "Khui-chhùi",
+      "def": "To start speaking; to open one's mouth"
+    },
+    {
+      "time": 71.5,
+      "word": "Siⁿ-thòaⁿ",
+      "def": "To reproduce; to spread; to multiply"
+    },
+    {
+      "time": 71.5,
+      "word": "Thoân-sêng",
+      "def": "To inherit; to pass on"
+    },
+    {
+      "time": 74.5,
+      "word": "Jīn-chin",
+      "def": "Serious; diligent; hard-working"
+    },
+    {
+      "time": 81,
+      "word": "Sio-chiap",
+      "def": "Connected; joined together"
+    },
+    {
+      "time": 86.5,
+      "word": "Ho̍k-chín",
+      "def": "Revitalization"
+    },
+    {
+      "time": 89.5,
+      "word": "Kah-ì",
+      "def": "To like; to be pleased with"
+    },
+    {
+      "time": 92,
+      "word": "Siâⁿ",
+      "def": "To coax; to lure; to amuse (children)"
+    },
+    {
+      "time": 92,
+      "word": "Phiat-pō͘",
+      "def": "Knack; trick; method"
+    },
+    {
+      "time": 94.5,
+      "word": "Bàng-gà",
+      "def": "Comics; Manga"
+    },
+    {
+      "time": 96.5,
+      "word": "Chhù-bī",
+      "def": "Interesting; fun"
+    },
+    {
+      "time": 102.5,
+      "word": "Thui-tōng",
+      "def": "Promotion; to push forward"
+    },
+    {
+      "time": 105,
+      "word": "Pó-chûn",
+      "def": "Preservation"
+    },
+    {
+      "time": 107.5,
+      "word": "Khan-sia̍p",
+      "def": "To involve; to implicate"
+    },
+    {
+      "time": 107.5,
+      "word": "Chu-goân",
+      "def": "Resources"
+    },
+    {
+      "time": 110,
+      "word": "Khoân-kéng",
+      "def": "Environment"
+    },
+    {
+      "time": 112.5,
+      "word": "Hòng-jīm",
+      "def": "To indulge; to leave alone; laissez-faire"
+    },
+    {
+      "time": 112.5,
+      "word": "Kēng-cheng",
+      "def": "Competition"
+    },
+    {
+      "time": 115.2,
+      "word": "Kàu-gia̍h",
+      "def": "Sufficient; enough quantity"
+    },
+    {
+      "time": 117.5,
+      "word": "Mí-pó͘",
+      "def": "To make up for; to remedy"
+    }
+  ]
 }
