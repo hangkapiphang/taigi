@@ -1,5 +1,15 @@
 [
   {
+    "id": "auldlang",
+    "title": "Auld Lang Syne",
+    "yt": "AQjRr-bf5M0",
+    "cat": "song",
+    "tag": "Ballad",
+    "level": "A2",
+    "desc": "Auld Lang Syne by Sissel",
+    "date": "2026-01-01"
+  },
+  {
     "id": "2025lantt",
     "title": "台灣台語全國政策中部論壇",
     "yt": "kJ6WjgnJFlk",
