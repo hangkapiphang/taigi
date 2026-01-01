@@ -18,5 +18,72 @@
     "boxOp": 0.22,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 16,
+      "word": "lāu-pêng-iú",
+      "def": "gamla vänner, old friend"
+    },
+    {
+      "time": 16,
+      "word": "pàng-bē-kì-tit",
+      "def": "kan inte glömma, cannot forget"
+    },
+    {
+      "time": 23,
+      "word": "kū-nî",
+      "def": "det gångna året, last year"
+    },
+    {
+      "time": 23,
+      "word": "ji̍t-chí",
+      "def": "dagar, days"
+    },
+    {
+      "time": 44,
+      "word": "kau-pôe",
+      "def": "bekantskap, acquaintance"
+    },
+    {
+      "time": 57,
+      "word": "sio-chio",
+      "def": "bjuda in varandra, to invite each other"
+    },
+    {
+      "time": 57,
+      "word": "lim",
+      "def": "dricka, to drink"
+    },
+    {
+      "time": 76,
+      "word": "khan",
+      "def": "hålla (handen), to hold (hands)"
+    },
+    {
+      "time": 76,
+      "word": "tiâu-tiâu",
+      "def": "fast, firmly"
+    },
+    {
+      "time": 83,
+      "word": "kám-chêng",
+      "def": "känslor, feelings"
+    },
+    {
+      "time": 83,
+      "word": "pàng-bē-khui",
+      "def": "kan inte släppa taget, cannot let go"
+    },
+    {
+      "time": 89,
+      "word": "e-àm",
+      "def": "ikväll, tonight"
+    },
+    {
+      "time": 89,
+      "word": "chò-hóe",
+      "def": "tillsammans, together"
+    }
+  ]
 }
