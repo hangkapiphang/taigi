@@ -1,0 +1,22 @@
+{
+  "video": "https://youtu.be/pvGgYvaMalE",
+  "subtitle": "1\n00:00:00,500 --> 00:00:07,000\nReel Tâi-gí siāu-kài, ēng iáⁿ-phìⁿ o̍h Tâi-oân Lô-má-jī, kiam o̍h Eng-bûn.\nReel Taigi Intro: Learn Taiwan Romanization via video, plus English.\n\n\n2\n00:00:08,000 --> 00:00:12,500\nBāng-chām liân-kiat khǹg tī chia, lí ē-tàng sàu chit-ê QR Code.\nThe website link is here; you can scan this QR Code.\n\n\n3\n00:00:13,000 --> 00:00:16,000\nSī chin--ê, m̄-sī ké--ê.\nIt’s real, not fake.\n\n\n4\n00:00:18,000 --> 00:00:20,000\nTâi-gí ū liàn-tńg iah bô?\nIs your Taigi fluent or not?\n\n\n5\n00:00:20,000 --> 00:00:22,500\nLâi chit-ê bāng-chām to̍h tio̍h--ah.\nComing to this website is the right move.\n\n\n6\n00:00:23,500 --> 00:00:26,000\nTī chia ē-tàng hō͘ lí chhiau-chhōe--o͘.\nHere, it lets you search.\n\n\n7\n00:00:27,000 --> 00:00:31,500\nĒ-tàng thiaⁿ-koa, khòaⁿ bàng-gà, thiaⁿ sin-bûn, ia̍h-sī thiaⁿ ián-káng.\nYou can listen to songs, read comics, listen to news, or speeches.\n\n\n8\n00:00:32,000 --> 00:00:35,500\nChhī \"Play\" tō ē-tàng khòaⁿ kap thiaⁿ.\nPress \"Play\" to watch and listen.\n\n\n9\n00:00:36,000 --> 00:00:41,500\nTa̍k-tè phìⁿ lóng ū Tâi-gí sû-lūi kap Eng-bûn kái-soeh.\nEvery clip has Taigi vocabulary and English explanations.\n\n\n10\n00:00:43,000 --> 00:00:46,500\nPut-koán sī tiān-náu, pêⁿ-pán, chhiú-ki-á;\nWhether it's a computer, tablet, or mobile phone;\n\n\n11\n00:00:47,000 --> 00:00:49,000\nChhāi-ti̍t--ê, ia̍h-sī chhāi-hoâiⁿ--ê.\nHeld vertically, or held horizontally.\n\n\n12\n00:00:49,000 --> 00:00:54,000\nTaigi Reel, góa pún-lâng Chông-úi, sàng hō͘ ta̍k-ke.\nTaigi Reel: From me, Chông-úi, to everyone.",
+  "mask": {
+    "h": "0",
+    "w": "100",
+    "b": "0",
+    "l": "0",
+    "c": "#000000",
+    "o": 1
+  },
+  "settings": {
+    "anchor": "bottom",
+    "offset": "5",
+    "scale": 1,
+    "color": "#ffffff",
+    "boxColor": "#000000",
+    "boxOp": 0.4,
+    "shadow": "3",
+    "shadowColor": "#444444"
+  }
+}
