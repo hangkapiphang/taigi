@@ -18,5 +18,132 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 0.5,
+      "word": "siāu-kài",
+      "def": "Introduction"
+    },
+    {
+      "time": 0.5,
+      "word": "iáⁿ-phìⁿ",
+      "def": "Video / Film"
+    },
+    {
+      "time": 0.5,
+      "word": "o̍h",
+      "def": "To learn"
+    },
+    {
+      "time": 8,
+      "word": "bāng-chām",
+      "def": "Website"
+    },
+    {
+      "time": 8,
+      "word": "liân-kiat",
+      "def": "Link / Connection"
+    },
+    {
+      "time": 8,
+      "word": "khǹg",
+      "def": "To put / To place"
+    },
+    {
+      "time": 8,
+      "word": "sàu",
+      "def": "To scan (QR code) / To sweep"
+    },
+    {
+      "time": 13,
+      "word": "chin",
+      "def": "Real / True"
+    },
+    {
+      "time": 13,
+      "word": "ké",
+      "def": "Fake / False"
+    },
+    {
+      "time": 18,
+      "word": "liàn-tńg",
+      "def": "Fluent"
+    },
+    {
+      "time": 23.5,
+      "word": "chhiau-chhōe",
+      "def": "To search / To seek"
+    },
+    {
+      "time": 27,
+      "word": "thiaⁿ",
+      "def": "To listen"
+    },
+    {
+      "time": 27,
+      "word": "khòaⁿ",
+      "def": "To watch / To read"
+    },
+    {
+      "time": 27,
+      "word": "bàng-gà",
+      "def": "Comics / Manga"
+    },
+    {
+      "time": 27,
+      "word": "sin-bûn",
+      "def": "News"
+    },
+    {
+      "time": 27,
+      "word": "ián-káng",
+      "def": "Speech / Lecture"
+    },
+    {
+      "time": 32,
+      "word": "chhī",
+      "def": "To press / To click"
+    },
+    {
+      "time": 36,
+      "word": "sû-lūi",
+      "def": "Vocabulary"
+    },
+    {
+      "time": 36,
+      "word": "kái-soeh",
+      "def": "Explanation"
+    },
+    {
+      "time": 43,
+      "word": "tiān-náu",
+      "def": "Computer"
+    },
+    {
+      "time": 43,
+      "word": "pêng-pán",
+      "def": "Tablet"
+    },
+    {
+      "time": 43,
+      "word": "chhiú-ki-á",
+      "def": "Mobile phone"
+    },
+    {
+      "time": 47,
+      "word": "chhāi-ti̍t",
+      "def": "Placed vertically"
+    },
+    {
+      "time": 47,
+      "word": "chhāi-hoâiⁿ",
+      "def": "Placed horizontally"
+    },
+    {
+      "time": 49,
+      "word": "sàng",
+      "def": "To give / To gift"
+    }
+  ]
 }
