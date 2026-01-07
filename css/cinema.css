@@ -88,7 +88,9 @@ html, body {
     background-size: cover;
     
     z-index: 100; display: none; 
-    align-items: center; justify-content: center; flex-direction: column;
+    align-items: center; justify-content: flex-end; flex-direction: column;
+    padding-bottom: 6%; /* Space from the bottom edge */
+    box-sizing: border-box;
 }
 
 .end-content {
@@ -96,29 +98,38 @@ html, body {
     font-family: 'Taigi Font', serif;
     display: flex; flex-direction: column; gap: 10px;
     width: 90%;
+    /* Ensure text doesn't touch edges */
+    max-width: 1000px;
 }
 
 .text-row { width: 100%; display: flex; justify-content: center; }
 
-/* Dark Cyan Text Box */
+/* UPDATED COLOR: Black Background + Yellow Text (matches image) */
 .text-bg {
-    background-color: rgba(0, 139, 139, 0.9);
-    color: white;
-    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.85); /* Deep black transparent */
+    color: #FFEB3B; /* Bright Yellow */
+    padding: 6px 16px;
+    border-radius: 4px;
     box-decoration-break: clone; -webkit-box-decoration-break: clone;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    letter-spacing: 0.5px;
 }
 
-.end-title { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: bold; }
+.end-title { font-size: clamp(1.2rem, 3vw, 2rem); font-weight: bold; }
 
 #dynamic-link {
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
+    color: white; /* Start white for contrast on black box */
     word-break: break-all;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
 }
-#dynamic-link:hover { background-color: white; color: darkcyan; }
-
+#dynamic-link:hover { 
+    background-color: transparent; 
+    color: var(--primary-lime); 
+    border-bottom-color: var(--primary-lime);
+}
 /* --- RIGHT: VOCAB PAD --- */
 #vocab-pad {
     flex: 1; background: white; border-radius: 8px 16px 16px 8px; border-left: 6px solid var(--accent-purple);
