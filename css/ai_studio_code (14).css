@@ -1,0 +1,159 @@
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Taigi Font'; src: url('../font/Charis-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+
+:root {
+    --bg-paper: #FFFDF5; 
+    --primary-lime: #A8C834;
+    --text-header: #556B2F; 
+    --text-body: #545454; 
+    --accent-purple: #7E7CB0;
+}
+
+html, body {
+    margin: 0; padding: 0;
+    background-color: var(--bg-paper); 
+    font-family: 'Taigi Font', serif; 
+    color: var(--text-body);
+    height: 100vh; height: 100dvh; 
+    width: 100vw;
+    display: flex; flex-direction: column; overflow: hidden;
+}
+
+/* --- NAVIGATION --- */
+.cinema-nav {
+    flex-shrink: 0; 
+    padding: 12px 20px;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-top: max(12px, env(safe-area-inset-top));
+    display: flex; align-items: center; gap: 15px;
+    border-bottom: 1px solid rgba(168, 200, 52, 0.3); 
+    background: rgba(255,253,245, 0.98);
+    z-index: 50;
+}
+.back-btn { text-decoration: none; color: var(--accent-purple); font-weight: bold; display: flex; align-items: center; gap: 6px; font-size: 0.9rem;}
+.back-btn:hover { color: var(--primary-lime); }
+#video-title-display { font-weight: bold; color: var(--text-header); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1rem; }
+
+/* --- MAIN LAYOUT --- */
+#study-desk { 
+    flex: 1; display: flex; 
+    padding: 20px; 
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    gap: 20px; 
+    max-width: 1600px; margin: 0 auto; width: 100%; box-sizing: border-box;
+    overflow: hidden; 
+}
+
+/* --- LEFT: VIDEO FRAME --- */
+#video-frame { 
+    flex: 2; display: flex; align-items: center; justify-content: center;
+    background: black; border-radius: 12px; overflow: hidden; 
+    box-shadow: 0 10px 40px rgba(85, 107, 47, 0.2); 
+    position: relative;
+}
+#video-wrapper { width: 100%; aspect-ratio: 16/9; position: relative; }
+#player { width: 100%; height: 100%; }
+
+#cinematic-mask {
+    position: absolute; pointer-events: none; z-index: 10;
+    background: black; opacity: 1; height: 0; width: 0; bottom: 0; left: 0;
+}
+
+#subtitle-box {
+    position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
+    width: 90%; text-align: center; pointer-events: none; z-index: 20; display: none;
+}
+#subtitle-box span {
+    background: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    padding: 8px 20px; border-radius: 6px; 
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+    font-weight: 700;
+    display: inline-block; min-width: 20%; 
+    line-height: 1.4; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    box-decoration-break: clone; -webkit-box-decoration-break: clone; 
+}
+
+/* --- END SLIDE OVERLAY --- */
+#end-slide {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    
+    /* Background Image */
+    background: url('../img/end_slide.jpg') no-repeat center center;
+    background-size: cover;
+    
+    z-index: 100; display: none; 
+    align-items: center; justify-content: center; flex-direction: column;
+}
+
+.end-content {
+    text-align: center;
+    font-family: 'Taigi Font', serif;
+    display: flex; flex-direction: column; gap: 10px;
+    width: 90%;
+}
+
+.text-row { width: 100%; display: flex; justify-content: center; }
+
+/* Dark Cyan Text Box */
+.text-bg {
+    background-color: rgba(0, 139, 139, 0.9);
+    color: white;
+    padding: 8px 16px;
+    box-decoration-break: clone; -webkit-box-decoration-break: clone;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.end-title { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: bold; }
+
+#dynamic-link {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-weight: bold;
+    text-decoration: underline;
+    word-break: break-all;
+}
+#dynamic-link:hover { background-color: white; color: darkcyan; }
+
+/* --- RIGHT: VOCAB PAD --- */
+#vocab-pad {
+    flex: 1; background: white; border-radius: 8px 16px 16px 8px; border-left: 6px solid var(--accent-purple);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+    display: flex; flex-direction: column; height: 100%; overflow: hidden; 
+}
+.pad-header { 
+    padding: 12px 15px; border-bottom: 1px dashed #ddd; flex-shrink: 0; 
+    display: flex; justify-content: space-between; align-items: center; background: #fff;
+}
+.pad-header h3 { margin:0; color: var(--text-header); font-size: 1rem; }
+.icon-link { color: var(--accent-purple); font-size: 1.2rem; }
+
+#vocab-list { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 0; scroll-behavior: smooth; }
+.vocab-item { padding: 12px 15px; border-bottom: 1px solid #eee; cursor: pointer; transition: 0.2s; display: flex; gap: 10px; }
+.vocab-item:hover { background-color: #fafafa; }
+.vocab-item.active { background-color: rgba(168, 200, 52, 0.2); border-left: 4px solid var(--primary-lime); padding-left: 11px; }
+.v-time { font-size: 0.75rem; color: #999; min-width: 40px; padding-top: 3px; font-family: monospace; }
+.v-word { display: block; font-weight: 700; color: var(--text-header); font-size: 1.1rem; margin-bottom: 2px;}
+.v-def { font-size: 0.9rem; color: #666; line-height: 1.3; }
+
+@media (max-width: 900px) and (orientation: portrait) { 
+    #study-desk { flex-direction: column; padding: 10px; gap: 10px; } 
+    #video-frame { width: 100%; flex: 0 0 auto; aspect-ratio: 16/9; }
+    #video-wrapper { height: 100%; }
+    #vocab-pad { width: 100%; flex: 1; min-height: 0; }
+    #subtitle-box span { font-size: clamp(1rem, 3.5vw, 1.5rem); padding: 6px 12px; }
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px),
+       screen and (orientation: landscape) and (hover: none) and (max-width: 1366px) {
+    .cinema-nav, #vocab-pad { display: none !important; }
+    #study-desk { width: 100vw; height: 100vh; padding: 0 !important; margin: 0 !important; max-width: none; border: none; }
+    #video-frame { width: 100%; height: 100%; flex: 1; border-radius: 0; box-shadow: none; aspect-ratio: auto; }
+    #video-wrapper { width: 100%; height: 100%; }
+    #subtitle-box { bottom: 8%; width: 85%; }
+    #subtitle-box span { font-size: clamp(1.2rem, 3vw, 2.4rem); background: rgba(0, 0, 0, 0.6); text-shadow: 1px 1px 3px black; }
+}
