@@ -167,4 +167,6 @@ html, body {
     #video-wrapper { width: 100%; height: 100%; }
     #subtitle-box { bottom: 8%; width: 85%; }
     #subtitle-box span { font-size: clamp(1.2rem, 3vw, 2.4rem); background: rgba(0, 0, 0, 0.6); text-shadow: 1px 1px 3px black; }
+ /* Ensure end-slide padding looks good on mobile landscape */
+    #end-slide { padding-bottom: 12%; }          
 }
