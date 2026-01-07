@@ -115,11 +115,11 @@ html, body {
     letter-spacing: 0.5px;
 }
 
-.end-title { font-size: clamp(1.2rem, 3vw, 2rem); font-weight: bold; }
+.end-title { font-size: clamp(1.2rem, 3vw, 2rem); font-weight: normal; }
 
 #dynamic-link {
     font-size: clamp(0.9rem, 2.5vw, 1.5rem);
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
     color: white; /* Start white for contrast on black box */
     word-break: break-all;
