@@ -80,7 +80,6 @@ html, body {
 }
 /* --- END SLIDE OVERLAY --- */
 #end-slide {
-    /* FIX 1: Use top: 0 to cover the full video player without gaps */
     position: absolute; 
     top: 0; 
     left: 0; 
@@ -101,54 +100,57 @@ html, body {
 .end-content {
     text-align: center;
     font-family: 'Taigi Font', serif;
+    
     display: flex; 
     flex-direction: column; 
     
-    /* FIX 2: Use 'space-between' to push text to Top/Bottom 
-       so it doesn't overlap the middle words in the photo */
-    justify-content: space-between; 
+    /* Push text to bottom */
+    justify-content: flex-end; 
     
-    /* Give it some height so they spread out */
-    height: 70%; 
+    gap: 8px;
     width: 90%;
-    padding: 20px 0;
+    height: 100%;
+    padding-bottom: 5%; 
 }
 
 .text-row { width: 100%; display: flex; justify-content: center; }
 
-/* Transparent Text Box */
+/* MODIFIED: Chalkboard Style (Dark Box + Yellow Text) */
 .text-bg {
-    /* Your requested transparent background */
-    background-color: rgba(0, 0, 0, 0); 
-    color: white;
-    padding: 8px 16px;
+    /* Dark Grey/Black transparent box to match the chalkboard */
+    background-color: rgba(20, 20, 20, 0.85); 
+    
+    /* Yellow text to match the handwriting in the photo */
+    color: #ffeb3b; 
+    
+    padding: 6px 16px;
+    border-radius: 6px;
     box-decoration-break: clone; -webkit-box-decoration-break: clone;
     
-    /* FIX 3: Use text-shadow instead of box-shadow for transparent backgrounds */
-    text-shadow: 0 2px 4px rgba(0,0,0, 0.9);
+    /* Subtle border to define the box against the dark background */
+    border: 1px solid rgba(255, 235, 59, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0, 0.6);
 }
 
 .end-title { 
     font-size: clamp(1.5rem, 3vw, 2.5rem); 
-    font-weight: normal; /* Your requested weight */
+    font-weight: bold; /* Bold looks closer to the thick handwriting */
+    margin-bottom: 5px;
 }
 
 #dynamic-link {
     font-size: clamp(1rem, 2.5vw, 2rem);
-    font-weight: normal; /* Your requested weight */
+    font-weight: bold;
     text-decoration: underline;
     word-break: break-all;
 }
-
+/* Hover Effect: Switch to Yellow Box with Black Text */
 #dynamic-link:hover { 
-    /* Your requested hover effect */
-    background-color: white; 
-    color: darkcyan; 
-    text-shadow: none; /* Remove shadow on hover for clean look */
-    border-radius: 4px;
+    background-color: #ffeb3b; 
+    color: black; 
+    text-shadow: none; 
+    border-color: transparent;
 }
-
-
 
 /* --- RIGHT: VOCAB PAD --- */
 #vocab-pad {
