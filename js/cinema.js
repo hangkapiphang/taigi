@@ -9,19 +9,59 @@ let lastActiveIndex = -1;
 let visualSettings = {};
 
 document.addEventListener('DOMContentLoaded', async () => {
-    if (!videoId) return;
+    const titleDisplay = document.getElementById('video-title-display');
+    const vocabList = document.getElementById('vocab-list');
+
+    if (!videoId) {
+        titleDisplay.innerText = "No Video ID provided";
+        return;
+    }
 
     try {
-        // Fetch from ../data/library.json
+        // 1. Try to load Library info
         const libReq = await fetch(`../data/library.json?t=${Date.now()}`);
+        if (!libReq.ok) throw new Error("File not found: library.json");
+        
         const library = await libReq.json();
         videoMeta = library.find(v => v.id === videoId);
 
-        if (videoMeta) {
-            document.getElementById('video-title-display').innerText = videoMeta.title;
-            const cardLink = document.getElementById('link-to-cards');
-            if(cardLink) cardLink.href = `cards.html?id=${videoId}`;
+        if (!videoMeta) {
+            throw new Error(`ID "${videoId}" not found in library.json`);
         }
+
+        // Success: Show title
+        titleDisplay.innerText = videoMeta.title;
+        const cardLink = document.getElementById('link-to-cards');
+        if(cardLink) cardLink.href = `cards.html?id=${videoId}`;
+
+        // 2. Try to load Video Details
+        const detailReq = await fetch(`../data/${videoId}.json?t=${Date.now()}`);
+        if (!detailReq.ok) throw new Error(`File not found: ${videoId}.json`);
+        
+        const data = await detailReq.json();
+        
+        vocabData = data.vocab || [];
+        if (data.subtitle) subtitleData = parseSRT(data.subtitle);
+        else if (data.hiddenSub) subtitleData = parseSRT(decrypt(data.hiddenSub));
+
+        applyVisuals(data.mask, data.settings);
+        renderVocab();
+
+    } catch (err) { 
+        console.error(err);
+        // Display the error to the user
+        titleDisplay.innerText = "Error Loading";
+        vocabList.innerHTML = `
+            <div style="padding:20px; color:#d9534f; font-weight:bold;">
+                <i class="fas fa-exclamation-triangle"></i> Load Failed<br>
+                <span style="font-weight:normal; font-size:0.9rem;">${err.message}</span>
+                <p style="color:#666; font-size:0.8rem; font-weight:normal; margin-top:10px;">
+                    Check: Are the filenames in the "data" folder exactly "library.json" and "${videoId}.json"?
+                </p>
+            </div>`;
+    }
+});
+
 
         // Fetch from ../data/{videoId}.json
         const detailReq = await fetch(`../data/${videoId}.json?t=${Date.now()}`);
