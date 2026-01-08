@@ -18,5 +18,97 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 13.2,
+      "word": "Lô-siaⁿ",
+      "def": "Gong sound"
+    },
+    {
+      "time": 18.5,
+      "word": "Hiaⁿ-tī",
+      "def": "Brothers"
+    },
+    {
+      "time": 26.9,
+      "word": "Piàⁿ-sìⁿ-miā",
+      "def": "To risk one's life / To work desperately"
+    },
+    {
+      "time": 33.8,
+      "word": "Kang-ô͘",
+      "def": "Jianghu (The world of martial artists and travelers)"
+    },
+    {
+      "time": 33.8,
+      "word": "Kang-hu",
+      "def": "Kung Fu / Skill"
+    },
+    {
+      "time": 56.8,
+      "word": "Sio̍k-gú",
+      "def": "Proverb / Common saying"
+    },
+    {
+      "time": 60.5,
+      "word": "Chhài-koe",
+      "def": "Loofah / Sponge gourd"
+    },
+    {
+      "time": 60.5,
+      "word": "Khó͘-koe",
+      "def": "Bitter melon"
+    },
+    {
+      "time": 64.8,
+      "word": "Lāng-lâu",
+      "def": "Traditional street acrobatics"
+    },
+    {
+      "time": 64.8,
+      "word": "Kûn-thâu",
+      "def": "Fist / Martial arts"
+    },
+    {
+      "time": 70.2,
+      "word": "Bián-kiaⁿ",
+      "def": "Do not fear / No need to be afraid"
+    },
+    {
+      "time": 84.2,
+      "word": "Tōa-kho͘",
+      "def": "Fat person / Large build"
+    },
+    {
+      "time": 92.8,
+      "word": "Pak-tó͘",
+      "def": "Stomach / Belly"
+    },
+    {
+      "time": 92.8,
+      "word": "Iau",
+      "def": "Hungry"
+    },
+    {
+      "time": 101.8,
+      "word": "Môa-chî",
+      "def": "Mochi / Glutinous rice cake"
+    },
+    {
+      "time": 115.2,
+      "word": "Bîn-chhn̂g",
+      "def": "Bed"
+    },
+    {
+      "time": 125.5,
+      "word": "Phiàn-chia̍h",
+      "def": "To hustle for a living / To scrape by (lit. cheat-eat)"
+    },
+    {
+      "time": 127.5,
+      "word": "Chí-kàu",
+      "def": "Guidance / Advice"
+    }
+  ]
 }
