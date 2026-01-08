@@ -147,6 +147,40 @@ function updateSubtitle(time) {
     if (currentLine) {
         let styles = [];
         const s = visualSettings;
+// 1. Force the Taigi Font and Normal Weight
+        styles.push("font-family: 'Taigi Font', serif");
+        styles.push("font-weight: 400"); 
+// 2. Keep the Dynamic Scale (This is the Cinema feature you want to keep)
+        if (s.scale) {
+            styles.push(`font-size: calc(clamp(1.1rem, 2.5vw, 1.7rem) * ${s.scale})`);
+        }
+
+        if (s.color) styles.push(`color: ${s.color}`);
+        
+        if (s.boxColor) {
+            const rgb = hexToRgb(s.boxColor);
+            const op = s.boxOp !== undefined ? s.boxOp : 0.6; // Slightly darker for thin fonts
+            if(rgb) styles.push(`background-color: rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${op})`);
+        }
+
+        if (s.shadow && s.shadow > 0) {
+            const sc = s.shadowColor || "#000000";
+            styles.push(`text-shadow: 0 1px 3px ${sc}`); // Sharper shadow for Serif
+        }
+        
+        const styleStr = styles.length > 0 ? `style="${styles.join('; ')}"` : '';
+        const html = `<span ${styleStr}>${currentLine.text}</span>`;
+        
+        if (box.innerHTML !== html) {
+            box.innerHTML = html;
+            box.style.display = 'block';
+        }
+    } else {
+        box.style.display = 'none';
+    }
+}
+
+        
         if (s.color) styles.push(`color: ${s.color}`);
         if (s.scale) styles.push(`font-size: calc(clamp(1.2rem, 2.5vw, 1.8rem) * ${s.scale})`);
         if (s.boxColor) {
