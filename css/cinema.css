@@ -88,8 +88,12 @@ html, body {
     background-size: cover;
     
     z-index: 100; display: none; 
-    align-items: center; justify-content: flex-end; flex-direction: column;
-    padding-bottom: 6%; /* Space from the bottom edge */
+    align-items: center; justify-content: flex-start; flex-direction: column;
+    /* CHANGE THIS: Add space at the top instead of bottom */
+    padding-top: 6%; /* Space from the top edge */
+    padding-bottom: 0;
+    /* Handle Phone Notches */
+    padding-top: max(6%, env(safe-area-inset-top)); 
     box-sizing: border-box;
 }
 
@@ -168,5 +172,5 @@ html, body {
     #subtitle-box { bottom: 8%; width: 85%; }
     #subtitle-box span { font-size: clamp(1.2rem, 3vw, 2.4rem); background: rgba(0, 0, 0, 0.6); text-shadow: 1px 1px 3px black; }
  /* Ensure end-slide padding looks good on mobile landscape */
-    #end-slide { padding-bottom: 12%; }          
+    #end-slide { padding-top: 12%; padding-bottom: 0; }          
 }
