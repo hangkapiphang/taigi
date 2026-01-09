@@ -20,5 +20,156 @@
     "shadow": "3",
     "shadowColor": "#444444"
   },
-  "vocab": []
+  "vocab": [
+    {
+      "time": 13.2,
+      "word": "Lô-siaⁿ",
+      "def": "Sound of a gong (B1)"
+    },
+    {
+      "time": 13.2,
+      "word": "Kó͘-siaⁿ",
+      "def": "Sound of a drum (B1)"
+    },
+    {
+      "time": 18.5,
+      "word": "Hiaⁿ-tī",
+      "def": "Brothers (A1)"
+    },
+    {
+      "time": 27.3,
+      "word": "Miâ-siaⁿ",
+      "def": "Reputation / Fame (B1)"
+    },
+    {
+      "time": 27.3,
+      "word": "Piàⁿ-sìⁿ-miā",
+      "def": "To risk one's life (C1)"
+    },
+    {
+      "time": 32.1,
+      "word": "Kín",
+      "def": "Quickly (A1)"
+    },
+    {
+      "time": 37.8,
+      "word": "Liû-lōng",
+      "def": "To wander (B2)"
+    },
+    {
+      "time": 37.8,
+      "word": "Kang-hu",
+      "def": "Skill / Kung Fu (B1)"
+    },
+    {
+      "time": 54.3,
+      "word": "Sio̍k-gú",
+      "def": "Proverb (B2)"
+    },
+    {
+      "time": 60.1,
+      "word": "Chhài-koe",
+      "def": "Loofah (A2)"
+    },
+    {
+      "time": 60.1,
+      "word": "Khó͘-koe",
+      "def": "Bitter melon (A2)"
+    },
+    {
+      "time": 64.8,
+      "word": "Kûn-thâu",
+      "def": "Fist fighting / Martial arts (B2)"
+    },
+    {
+      "time": 69.5,
+      "word": "Bián-kiaⁿ",
+      "def": "Don't be afraid (A2)"
+    },
+    {
+      "time": 71.8,
+      "word": "Jiû-tō",
+      "def": "Judo (B1)"
+    },
+    {
+      "time": 75.1,
+      "word": "Phīⁿ-á",
+      "def": "Nose (A1)"
+    },
+    {
+      "time": 75.1,
+      "word": "Ba̍k-chiu",
+      "def": "Eyes (A1)"
+    },
+    {
+      "time": 84,
+      "word": "Tōa-kho͘",
+      "def": "Fat person (A2)"
+    },
+    {
+      "time": 89.7,
+      "word": "Put-châi",
+      "def": "Untalented (B2)"
+    },
+    {
+      "time": 91.7,
+      "word": "Pak-tó͘",
+      "def": "Belly / Stomach (A1)"
+    },
+    {
+      "time": 91.7,
+      "word": "Pō͘-sò͘",
+      "def": "Strategies / Tricks (C1)"
+    },
+    {
+      "time": 93.9,
+      "word": "Pá",
+      "def": "Full (after eating) (A1)"
+    },
+    {
+      "time": 93.9,
+      "word": "Bô-pòaⁿ-pō͘",
+      "def": "Helpless / Out of ideas (C1)"
+    },
+    {
+      "time": 101.7,
+      "word": "Môa-chî",
+      "def": "Mochi / Sticky rice cake (A2)"
+    },
+    {
+      "time": 104.5,
+      "word": "Kha-chhiú",
+      "def": "Dexterity / Skill (B1)"
+    },
+    {
+      "time": 114.1,
+      "word": "Bîn-chhn̂g",
+      "def": "Bed (A1)"
+    },
+    {
+      "time": 121.1,
+      "word": "Pún-tó",
+      "def": "This island / Domestic (B1)"
+    },
+    {
+      "time": 124.6,
+      "word": "Phiàn-chia̍h",
+      "def": "To make a living / To scam a meal (B2)"
+    },
+    {
+      "time": 127.2,
+      "word": "Chí-kàu",
+      "def": "To give advice / Guidance (B2)"
+    },
+    {
+      "time": 137.7,
+      "word": "Siong-hông",
+      "def": "To meet / To encounter (B2)"
+    },
+    {
+      "time": 147.9,
+      "word": "Thih-ki",
+      "def": "Iron bar (A2)"
+    }
+  ]
 }
