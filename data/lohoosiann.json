@@ -18,5 +18,217 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 30.1,
+      "word": "lo̍h-hō͘",
+      "def": "To rain (A1)"
+    },
+    {
+      "time": 32.8,
+      "word": "koa",
+      "def": "Song (A1)"
+    },
+    {
+      "time": 32.8,
+      "word": "ná-chhin-chhiūⁿ",
+      "def": "To seem like; as if (B1)"
+    },
+    {
+      "time": 36.1,
+      "word": "chai-iáⁿ",
+      "def": "To know (A1)"
+    },
+    {
+      "time": 38.5,
+      "word": "oa̍t-thâu",
+      "def": "To turn one's head (A2)"
+    },
+    {
+      "time": 38.5,
+      "word": "m̄-káⁿ",
+      "def": "Dare not (A2)"
+    },
+    {
+      "time": 45.9,
+      "word": "ī-hiong",
+      "def": "Foreign land; place away from home (B2)"
+    },
+    {
+      "time": 48.3,
+      "word": "ùi-kôaⁿ",
+      "def": "To feel cold; to fear the cold (A2)"
+    },
+    {
+      "time": 51.2,
+      "word": "siok-bo̍k",
+      "def": "Lonely; lonesome (B2)"
+    },
+    {
+      "time": 54.8,
+      "word": "tûi",
+      "def": "To pound; to beat (B1)"
+    },
+    {
+      "time": 54.8,
+      "word": "sim-koaⁿ",
+      "def": "Heart (figurative); beloved (A2)"
+    },
+    {
+      "time": 59.8,
+      "word": "ko͘-toaⁿ",
+      "def": "Solitary; lonely (B1)"
+    },
+    {
+      "time": 62.1,
+      "word": "chiáu-chiah",
+      "def": "Bird (A1)"
+    },
+    {
+      "time": 62.1,
+      "word": "tn̄g",
+      "def": "To break; broken (A2)"
+    },
+    {
+      "time": 65.6,
+      "word": "poe",
+      "def": "To fly (A1)"
+    },
+    {
+      "time": 68.1,
+      "word": "kám-kóng",
+      "def": "Could it be that...? (B1)"
+    },
+    {
+      "time": 68.1,
+      "word": "miā",
+      "def": "Fate; life (A2)"
+    },
+    {
+      "time": 72,
+      "word": "kò͘-hiong",
+      "def": "Hometown (A2)"
+    },
+    {
+      "time": 74.3,
+      "word": "khiā",
+      "def": "To stand (A1)"
+    },
+    {
+      "time": 77.9,
+      "word": "sim-chiâⁿ",
+      "def": "True feelings; sincerity (B1)"
+    },
+    {
+      "time": 88.4,
+      "word": "hái-hōaⁿ",
+      "def": "Seashore; coast (A2)"
+    },
+    {
+      "time": 92.6,
+      "word": "kéng-sek",
+      "def": "Scenery; landscape (A2)"
+    },
+    {
+      "time": 92.6,
+      "word": "iu-goân",
+      "def": "Still; as before (B1)"
+    },
+    {
+      "time": 100.7,
+      "word": "lī-khui",
+      "def": "To leave; to depart (A1)"
+    },
+    {
+      "time": 105.1,
+      "word": "mn̄g",
+      "def": "To ask (A1)"
+    },
+    {
+      "time": 105.1,
+      "word": "thiàⁿ",
+      "def": "To ache; to love dearly (A1)"
+    },
+    {
+      "time": 115.9,
+      "word": "iú-hàu",
+      "def": "Filial; filial piety (B1)"
+    },
+    {
+      "time": 115.9,
+      "word": "sī-tōa",
+      "def": "Elders; parents (B1)"
+    },
+    {
+      "time": 115.9,
+      "word": "hó-gia̍h",
+      "def": "Wealthy; rich (A2)"
+    },
+    {
+      "time": 121.6,
+      "word": "sè-kan",
+      "def": "The world; society (B1)"
+    },
+    {
+      "time": 121.6,
+      "word": "sioh",
+      "def": "To cherish; to love (A2)"
+    },
+    {
+      "time": 121.6,
+      "word": "gín-á",
+      "def": "Child (A1)"
+    },
+    {
+      "time": 121.6,
+      "word": "hó-miā",
+      "def": "Fortunate; having a good life (A2)"
+    },
+    {
+      "time": 127.6,
+      "word": "sêng-kong",
+      "def": "Success; to succeed (A2)"
+    },
+    {
+      "time": 127.6,
+      "word": "chiap",
+      "def": "To pick up (someone); to receive (A2)"
+    },
+    {
+      "time": 127.6,
+      "word": "tòa",
+      "def": "To live; to reside (A1)"
+    },
+    {
+      "time": 237.1,
+      "word": "chhut-siā-hōe",
+      "def": "To enter society (start working) (B1)"
+    },
+    {
+      "time": 237.1,
+      "word": "cháu-chông",
+      "def": "To hustle; to run around busily (B2)"
+    },
+    {
+      "time": 237.1,
+      "word": "piàⁿ-su-iâⁿ",
+      "def": "To struggle/compete for success (win or lose) (B2)"
+    },
+    {
+      "time": 243.6,
+      "word": "ka-kī",
+      "def": "Oneself (A1)"
+    },
+    {
+      "time": 280.1,
+      "word": "khàu",
+      "def": "To cry (A1)"
+    },
+    {
+      "time": 280.1,
+      "word": "sioh-miā-miā",
+      "def": "To cherish dearly (as one's own life) (B2)"
+    }
+  ]
 }
