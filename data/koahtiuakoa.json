@@ -18,5 +18,157 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 13,
+      "word": "ji̍t-thâu",
+      "def": "The sun (A2)"
+    },
+    {
+      "time": 16.5,
+      "word": "khòaⁿ",
+      "def": "To look (A1)"
+    },
+    {
+      "time": 16.5,
+      "word": "chin",
+      "def": "Very (A1)"
+    },
+    {
+      "time": 20.5,
+      "word": "chhân-hn̂g",
+      "def": "Farmland; fields (B1)"
+    },
+    {
+      "time": 25,
+      "word": "kui-phiàn",
+      "def": "The whole area (B1)"
+    },
+    {
+      "time": 30,
+      "word": "ta̍k-ke",
+      "def": "Everyone (A1)"
+    },
+    {
+      "time": 30,
+      "word": "sio-chio",
+      "def": "To invite each other (B1)"
+    },
+    {
+      "time": 34,
+      "word": "khoài-lo̍k",
+      "def": "Happy (A2)"
+    },
+    {
+      "time": 34,
+      "word": "koah",
+      "def": "To cut/harvest (B1)"
+    },
+    {
+      "time": 38,
+      "word": "kiâⁿ",
+      "def": "To walk (A1)"
+    },
+    {
+      "time": 42,
+      "word": "siak",
+      "def": "To thresh/beat (B2)"
+    },
+    {
+      "time": 51,
+      "word": "phōaⁿ",
+      "def": "To accompany (B1)"
+    },
+    {
+      "time": 51,
+      "word": "koa-si",
+      "def": "Lyrics; songs (B2)"
+    },
+    {
+      "time": 59,
+      "word": "tiū-chháu",
+      "def": "Rice straw (B2)"
+    },
+    {
+      "time": 64,
+      "word": "khioh",
+      "def": "To pick up (A2)"
+    },
+    {
+      "time": 72,
+      "word": "phah-piàⁿ",
+      "def": "To work hard (B1)"
+    },
+    {
+      "time": 72,
+      "word": "lâu-kōaⁿ",
+      "def": "To sweat (A2)"
+    },
+    {
+      "time": 81,
+      "word": "la̍k-ge̍h",
+      "def": "June (A1)"
+    },
+    {
+      "time": 81,
+      "word": "tng joa̍h",
+      "def": "Peak heat (B1)"
+    },
+    {
+      "time": 106,
+      "word": "tōa-niû",
+      "def": "Eldest lady/aunt (B2)"
+    },
+    {
+      "time": 106,
+      "word": "tiám-sim-tǹg",
+      "def": "Snack meal (B2)"
+    },
+    {
+      "time": 115,
+      "word": "hioh-khùn",
+      "def": "To rest (A2)"
+    },
+    {
+      "time": 127,
+      "word": "chhù-bī",
+      "def": "Interesting; fun (A2)"
+    },
+    {
+      "time": 161,
+      "word": "kin-nî",
+      "def": "This year (A1)"
+    },
+    {
+      "time": 161,
+      "word": "hó-nî-tang",
+      "def": "Good harvest (B2)"
+    },
+    {
+      "time": 166,
+      "word": "sng",
+      "def": "Sore; aching (A2)"
+    },
+    {
+      "time": 170,
+      "word": "hông-hun",
+      "def": "Dusk (B1)"
+    },
+    {
+      "time": 175,
+      "word": "tńg-khì",
+      "def": "To return (A1)"
+    },
+    {
+      "time": 175,
+      "word": "sé",
+      "def": "To wash (A1)"
+    },
+    {
+      "time": 183,
+      "word": "thiⁿ kng",
+      "def": "Dawn (B1)"
+    }
+  ]
 }
