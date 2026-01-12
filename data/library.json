@@ -1,10 +1,20 @@
 [
   {
+    "id": "lovefortaiwan",
+    "title": "Taiwan",
+    "yt": "VpWuJkBVoR4",
+    "cat": "song",
+    "tag": "Folklore",
+    "level": "B1",
+    "desc": "By Ông Bêng-tiak",
+    "date": "2026-01-12"
+  },
+  {
     "id": "koahtiuakoa",
     "title": "Song for Rice Harvest",
     "yt": "WHEedKbjL_w",
     "cat": "song",
-    "tag": "",
+    "tag": "Folklore",
     "level": "B1",
     "desc": "Singer: N̂g Sam-goân",
     "date": "2026-01-11"
