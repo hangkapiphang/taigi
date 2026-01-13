@@ -18,5 +18,77 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 3,
+      "word": "Tâi-oân-jī",
+      "def": "Taiwanese characters (B2)"
+    },
+    {
+      "time": 3,
+      "word": "siaⁿ-ūn",
+      "def": "phonology; rhyme scheme (C2)"
+    },
+    {
+      "time": 10,
+      "word": "lóng-chóng",
+      "def": "in total; all together (A2)"
+    },
+    {
+      "time": 10,
+      "word": "hun",
+      "def": "to divide; to separate (A2)"
+    },
+    {
+      "time": 13,
+      "word": "siaⁿ-bó",
+      "def": "initial consonant (C1)"
+    },
+    {
+      "time": 13,
+      "word": "ūn-bó",
+      "def": "final; rhyme (C1)"
+    },
+    {
+      "time": 19,
+      "word": "hong-bīn",
+      "def": "aspect; side (B1)"
+    },
+    {
+      "time": 19,
+      "word": "ki-pún",
+      "def": "basic; fundamental (B1)"
+    },
+    {
+      "time": 19,
+      "word": "bó-im",
+      "def": "vowel (C1)"
+    },
+    {
+      "time": 23,
+      "word": "phīⁿ-hòa",
+      "def": "nasalization; nasalized (C2)"
+    },
+    {
+      "time": 25,
+      "word": "ūn-bóe",
+      "def": "rhyme ending; coda (C2)"
+    },
+    {
+      "time": 28,
+      "word": "âu-sat-im",
+      "def": "glottal stop (C2)"
+    },
+    {
+      "time": 32,
+      "word": "pō͘-hūn",
+      "def": "part; section (B1)"
+    },
+    {
+      "time": 34,
+      "word": "sūn-sī",
+      "def": "order; sequence (B1)"
+    }
+  ]
 }
