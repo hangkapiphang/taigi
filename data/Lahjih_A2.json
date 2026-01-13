@@ -1,0 +1,22 @@
+{
+  "video": "https://youtu.be/jq4VipAxJKE",
+  "subtitle": "1\n00:00:03,000 --> 00:00:09,500\nTâi-oân-jī kap Tâi-gí siaⁿ-ūn siōng-chi̍p\nTaiwanese Characters and Phonology: Part 1\n\n2\n00:00:10,000 --> 00:00:12,800\nLóng-chóng hun nn̄g chi̍p\nIt is divided into two parts in total\n\n3\n00:00:13,000 --> 00:00:18,500\nSiōng-chi̍p beh kóng--ê sī siaⁿ-bó kap ūn-bó\nPart 1 covers Initials and Finals\n\n4\n00:00:19,000 --> 00:00:22,500\nŪn-bó hong-bīn ū ki-pún bó-im\nRegarding finals, there are basic vowels,\n\n5\n00:00:23,000 --> 00:00:24,800\nPhīⁿ-hòa bó-im\nnasalized vowels,\n\n6\n00:00:25,000 --> 00:00:27,500\nPhīⁿ-im ūn-bóe ūn-bó\nnasal-ending finals,\n\n7\n00:00:28,000 --> 00:00:29,800\nÂu-sat-im\nglottal stops,\n\n8\n00:00:30,000 --> 00:00:32,000\nHàn-gí ji̍p-im\nand Sinitic entering tones.\n\n9\n00:00:32,000 --> 00:00:33,800\nChit kúi pō͘-hūn\nThese sections\n\n10\n00:00:34,000 --> 00:00:36,500\nChiàu sūn-sī lâi kóng\nwill be discussed in order\n",
+  "mask": {
+    "h": "0",
+    "w": "100",
+    "b": "0",
+    "l": "0",
+    "c": "#000000",
+    "o": 1
+  },
+  "settings": {
+    "anchor": "bottom",
+    "offset": "5",
+    "scale": 1,
+    "color": "#ffffff",
+    "boxColor": "#000000",
+    "boxOp": 0.4,
+    "shadow": "3",
+    "shadowColor": "#444444"
+  }
+}
