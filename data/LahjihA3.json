@@ -21,64 +21,49 @@
   },
   "vocab": [
     {
-      "time": 0,
+      "time": 1.83,
       "word": "tē-it",
       "def": "first (A1)"
     },
     {
-      "time": 0,
+      "time": 2.5,
       "word": "khò",
       "def": "lesson; class (B1)"
     },
     {
-      "time": 0,
+      "time": 3.62,
       "word": "siaⁿ-bó",
       "def": "initial consonant (C1)"
     },
     {
-      "time": 4.9,
+      "time": 11.646,
       "word": "thán-hoâiⁿ",
       "def": "horizontal (B2)"
     },
     {
-      "time": 4.9,
+      "time": 12.7,
       "word": "tòe",
       "def": "to follow (A1)"
     },
     {
-      "time": 4.9,
+      "time": 12.901,
       "word": "liām",
       "def": "to read aloud; to recite (A2)"
     },
     {
-      "time": 35.5,
+      "time": 51.5,
       "word": "lêng-siaⁿ-bó",
       "def": "zero initial (C1)"
     },
     {
-      "time": 38.5,
+      "time": 54.5,
       "word": "ì-sù",
       "def": "meaning (B1)"
     },
     {
-      "time": 44.5,
+      "time": 57.69,
       "word": "hun-sek",
       "def": "analysis (B2)"
-    },
-    {
-      "time": 44.5,
-      "word": "pō͘-hūn",
-      "def": "part; section (B1)"
-    },
-    {
-      "time": 50,
-      "word": "sàng-khùi",
-      "def": "aspiration (phonetics) (C1)"
-    },
-    {
-      "time": 50,
-      "word": "hun-pia̍t",
-      "def": "distinction; difference (B1)"
     },
     {
       "time": 63.5,
@@ -86,9 +71,14 @@
       "def": "left side (A2)"
     },
     {
-      "time": 72.5,
-      "word": "āu-piah",
-      "def": "behind; back (A2)"
+      "time": 63.628,
+      "word": "pō͘-hūn",
+      "def": "part; section (B1)"
+    },
+    {
+      "time": 68.533,
+      "word": "sàng-khùi",
+      "def": "aspiration (phonetics) (C1)"
     },
     {
       "time": 72.5,
@@ -96,72 +86,82 @@
       "def": "to add (A2)"
     },
     {
-      "time": 79.2,
+      "time": 88.464,
+      "word": "āu-piah",
+      "def": "behind; back (A2)"
+    },
+    {
+      "time": 93.266,
       "word": "choā",
       "def": "row; line (classifier) (B2)"
     },
     {
-      "time": 88.5,
+      "time": 105.898,
       "word": "chò-hóe",
       "def": "together (B1)"
     },
     {
-      "time": 122.5,
+      "time": 109.31,
+      "word": "hun-pia̍t",
+      "def": "distinction; difference (B1)"
+    },
+    {
+      "time": 139.861,
       "word": "phīⁿ-im",
       "def": "nasal sound (C1)"
     },
     {
-      "time": 122.5,
+      "time": 141.686,
       "word": "hoat",
       "def": "to emit; to pronounce (B1)"
     },
     {
-      "time": 134,
+      "time": 147.124,
       "word": "phīⁿ-khang",
       "def": "nostril; nose (A2)"
     },
     {
-      "time": 184.5,
+      "time": 194.214,
       "word": "chhun",
       "def": "to remain; leftover (B1)"
     },
     {
-      "time": 190.5,
+      "time": 203.208,
       "word": "khàu-tiāu",
       "def": "to subtract; to deduct (B2)"
     },
     {
-      "time": 210,
+      "time": 214.301,
       "word": "pháiⁿ",
       "def": "difficult; bad (A2)"
     },
     {
-      "time": 210,
+      "time": 215.56,
       "word": "ūn-bó",
       "def": "vowel; final (C1)"
     },
     {
-      "time": 210,
+      "time": 216.1,
       "word": "hoat-siaⁿ",
       "def": "to vocalize (B1)"
     },
     {
-      "time": 216,
+      "time": 224.958,
       "word": "thàn-ti̍t",
       "def": "vertical; following the straight line (B2)"
     },
     {
-      "time": 220,
-      "word": "sūn-sū",
+      "time": 229.855,
+      "word": "sūn-sī",
       "def": "order; sequence (B1)"
     },
     {
-      "time": 427,
+      "time": 421.8,
       "word": "chiàⁿ-chhiú-pêng",
       "def": "right-hand side (A2)"
     },
     {
-      "time": 427,
+      "time": 422.956,
       "word": "bīn-téng",
       "def": "on top; above (A2)"
     }
