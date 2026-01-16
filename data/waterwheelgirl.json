@@ -18,5 +18,212 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 25.3,
+      "word": "pa--pah",
+      "def": "Papa / Father (A1)"
+    },
+    {
+      "time": 25.3,
+      "word": "chúi-gû",
+      "def": "Water buffalo (A2)"
+    },
+    {
+      "time": 29,
+      "word": "kiâⁿ",
+      "def": "To walk (A1)"
+    },
+    {
+      "time": 29,
+      "word": "chhân-hōaⁿ",
+      "def": "Field ridge / Bank (B1)"
+    },
+    {
+      "time": 33,
+      "word": "siūⁿ",
+      "def": "To think (A1)"
+    },
+    {
+      "time": 35,
+      "word": "oa̍t-thâu",
+      "def": "To turn one's head back (B2)"
+    },
+    {
+      "time": 35,
+      "word": "gún",
+      "def": "I / Me / Us (A1)"
+    },
+    {
+      "time": 37.2,
+      "word": "chhiò",
+      "def": "To smile / laugh (A1)"
+    },
+    {
+      "time": 37.2,
+      "word": "chhùi",
+      "def": "Mouth (A1)"
+    },
+    {
+      "time": 46.5,
+      "word": "lông-ka",
+      "def": "Farming family (B2)"
+    },
+    {
+      "time": 50,
+      "word": "múi-ji̍t",
+      "def": "Every day (A2)"
+    },
+    {
+      "time": 50,
+      "word": "ta̍h",
+      "def": "To tread / pedal (A2)"
+    },
+    {
+      "time": 50,
+      "word": "chúi-chhia",
+      "def": "Waterwheel (B1)"
+    },
+    {
+      "time": 54,
+      "word": "iu-goân",
+      "def": "Still / As before (B2)"
+    },
+    {
+      "time": 54,
+      "word": "chhiùⁿ",
+      "def": "To sing (A2)"
+    },
+    {
+      "time": 63,
+      "word": "an-ùi",
+      "def": "To comfort / console (B1)"
+    },
+    {
+      "time": 63,
+      "word": "sim",
+      "def": "Heart (A1)"
+    },
+    {
+      "time": 63,
+      "word": "khang-hi",
+      "def": "Empty / Hollow (B2)"
+    },
+    {
+      "time": 87.5,
+      "word": "lâi",
+      "def": "To come (A1)"
+    },
+    {
+      "time": 87.5,
+      "word": "khì",
+      "def": "To go (A1)"
+    },
+    {
+      "time": 91,
+      "word": "chi̍t-tùi",
+      "def": "A pair (A2)"
+    },
+    {
+      "time": 91,
+      "word": "pe̍h-lēng-si",
+      "def": "Egret (B1)"
+    },
+    {
+      "time": 95,
+      "word": "su-liām",
+      "def": "To miss / long for (B1)"
+    },
+    {
+      "time": 97.2,
+      "word": "sim-ài",
+      "def": "Beloved (B1)"
+    },
+    {
+      "time": 99.4,
+      "word": "chêng-bī",
+      "def": "Sentiment / Flavor of love (C1)"
+    },
+    {
+      "time": 108,
+      "word": "pang-bâng",
+      "def": "To help (A2)"
+    },
+    {
+      "time": 108,
+      "word": "nî-lāu",
+      "def": "Elderly / Aged (B2)"
+    },
+    {
+      "time": 116,
+      "word": "sim-goān",
+      "def": "Wish / Desire (B1)"
+    },
+    {
+      "time": 125,
+      "word": "tán",
+      "def": "To wait (A1)"
+    },
+    {
+      "time": 140.5,
+      "word": "ha̍k-gia̍p",
+      "def": "Studies / Academic work (B1)"
+    },
+    {
+      "time": 144,
+      "word": "siâⁿ-chhī",
+      "def": "City (A2)"
+    },
+    {
+      "time": 148,
+      "word": "phoe-sìn",
+      "def": "Letter / Mail (A2)"
+    },
+    {
+      "time": 152,
+      "word": "jím-nāi",
+      "def": "To endure / patience (B1)"
+    },
+    {
+      "time": 152,
+      "word": "hi-bî",
+      "def": "Lonely / Desolate / Faint (B2)"
+    },
+    {
+      "time": 161,
+      "word": "kî-thāi",
+      "def": "To look forward to (B1)"
+    },
+    {
+      "time": 161,
+      "word": "khoài-lo̍k",
+      "def": "Happy (A2)"
+    },
+    {
+      "time": 161,
+      "word": "chhun-thiⁿ",
+      "def": "Spring (A2)"
+    },
+    {
+      "time": 169,
+      "word": "o͘-chhiu",
+      "def": "Black Drongo (B2)"
+    },
+    {
+      "time": 169,
+      "word": "kiò-thî",
+      "def": "To call / cry (of birds) (C1)"
+    },
+    {
+      "time": 178,
+      "word": "tōa-khùi",
+      "def": "Heavy sigh / Deep breath (C1)"
+    },
+    {
+      "time": 178,
+      "word": "thò͘ bōe-lī",
+      "def": "Can't stop sighing (C2)"
+    }
+  ]
 }
