@@ -18,5 +18,192 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 17,
+      "word": "gōng",
+      "def": "foolish (B1)"
+    },
+    {
+      "time": 17,
+      "word": "cha-bó͘-gín-á",
+      "def": "girl / daughter (A2)"
+    },
+    {
+      "time": 23,
+      "word": "chhián-thoa",
+      "def": "slippers / flip-flops (B1)"
+    },
+    {
+      "time": 24.5,
+      "word": "chi̍t-pòaⁿ",
+      "def": "one half (A2)"
+    },
+    {
+      "time": 33.5,
+      "word": "óa-khò",
+      "def": "reliance / support (B2)"
+    },
+    {
+      "time": 35,
+      "word": "sap-bûn-pho",
+      "def": "soap bubbles (B2)"
+    },
+    {
+      "time": 39,
+      "word": "chêng-hūn",
+      "def": "sentiment / emotional bond (B2)"
+    },
+    {
+      "time": 47,
+      "word": "thâu-mn̂g",
+      "def": "hair (A1)"
+    },
+    {
+      "time": 47,
+      "word": "iù",
+      "def": "fine / delicate (B1)"
+    },
+    {
+      "time": 49,
+      "word": "miā",
+      "def": "fate / life (B1)"
+    },
+    {
+      "time": 53,
+      "word": "chhit-thô",
+      "def": "to play / hang out (A2)"
+    },
+    {
+      "time": 55,
+      "word": "seng-oa̍h",
+      "def": "life / livelihood (B1)"
+    },
+    {
+      "time": 55,
+      "word": "piàⁿ",
+      "def": "to struggle / fight for (B1)"
+    },
+    {
+      "time": 55,
+      "word": "tām-po̍h",
+      "def": "a little bit / slight (B1)"
+    },
+    {
+      "time": 60,
+      "word": "ak-hō͘",
+      "def": "to get rained on (B1)"
+    },
+    {
+      "time": 63,
+      "word": "kam-goān",
+      "def": "willing (B2)"
+    },
+    {
+      "time": 63,
+      "word": "khó͘",
+      "def": "bitter / suffering (B1)"
+    },
+    {
+      "time": 66,
+      "word": "chhiò-bīn",
+      "def": "smiling face (A2)"
+    },
+    {
+      "time": 69,
+      "word": "ku̍t-kiông",
+      "def": "stubborn (B2)"
+    },
+    {
+      "time": 74.5,
+      "word": "thâu-chang",
+      "def": "hair / mane (A2)"
+    },
+    {
+      "time": 78,
+      "word": "chián",
+      "def": "to cut (A2)"
+    },
+    {
+      "time": 78,
+      "word": "té",
+      "def": "short (A1)"
+    },
+    {
+      "time": 81,
+      "word": "cha-bó͘-lâng",
+      "def": "woman (A2)"
+    },
+    {
+      "time": 84,
+      "word": "siong-hûn",
+      "def": "scar / wound (B2)"
+    },
+    {
+      "time": 89.5,
+      "word": "siàu-liân",
+      "def": "young / youth (A2)"
+    },
+    {
+      "time": 93,
+      "word": "bāng",
+      "def": "dream (A2)"
+    },
+    {
+      "time": 96,
+      "word": "siong-sìn",
+      "def": "to believe (A2)"
+    },
+    {
+      "time": 98.5,
+      "word": "chiù-chōa",
+      "def": "vows / oaths (B2)"
+    },
+    {
+      "time": 105,
+      "word": "ní",
+      "def": "to dye (B1)"
+    },
+    {
+      "time": 105,
+      "word": "o͘",
+      "def": "black (A1)"
+    },
+    {
+      "time": 111,
+      "word": "hi-bāng",
+      "def": "hope (B1)"
+    },
+    {
+      "time": 115.5,
+      "word": "tú-tio̍h",
+      "def": "to meet / encounter (A2)"
+    },
+    {
+      "time": 119,
+      "word": "iân-hūn",
+      "def": "fate / affinity (B2)"
+    },
+    {
+      "time": 119,
+      "word": "chù-tiāⁿ",
+      "def": "destined (B2)"
+    },
+    {
+      "time": 128,
+      "word": "sin-niû-saⁿ",
+      "def": "wedding dress (B1)"
+    },
+    {
+      "time": 248.5,
+      "word": "tōa-lâng",
+      "def": "adult (A2)"
+    },
+    {
+      "time": 255,
+      "word": "m̄-kam",
+      "def": "reluctant / to cherish (B2)"
+    }
+  ]
 }
