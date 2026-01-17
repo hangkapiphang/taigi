@@ -18,5 +18,162 @@
     "boxOp": 0.4,
     "shadow": "3",
     "shadowColor": "#444444"
-  }
+  },
+  "vocab": [
+    {
+      "time": 22.4,
+      "word": "sè-hàn",
+      "def": "childhood / when little (A2)"
+    },
+    {
+      "time": 22.4,
+      "word": "sî-chūn",
+      "def": "time / when... (A2)"
+    },
+    {
+      "time": 24.3,
+      "word": "a-bú",
+      "def": "mother (A1)"
+    },
+    {
+      "time": 24.3,
+      "word": "chhōa",
+      "def": "to lead / to take someone somewhere (A2)"
+    },
+    {
+      "time": 26.6,
+      "word": "chheⁿ-so͘",
+      "def": "unfamiliar / rusty (B2)"
+    },
+    {
+      "time": 26.6,
+      "word": "Hôa-gí",
+      "def": "Mandarin Chinese (B1)"
+    },
+    {
+      "time": 29.4,
+      "word": "khiuⁿ-kháu",
+      "def": "accent / tone of voice (B2)"
+    },
+    {
+      "time": 32.1,
+      "word": "sim-lāi",
+      "def": "inside the heart (B1)"
+    },
+    {
+      "time": 32.1,
+      "word": "pháiⁿ-sè",
+      "def": "embarrassed / sorry (A2)"
+    },
+    {
+      "time": 44.7,
+      "word": "chit-má",
+      "def": "now (A2)"
+    },
+    {
+      "time": 47.1,
+      "word": "a-má",
+      "def": "grandmother (A1)"
+    },
+    {
+      "time": 49.7,
+      "word": "mn̄g",
+      "def": "to ask (A2)"
+    },
+    {
+      "time": 51.7,
+      "word": "tau",
+      "def": "home / house (A2)"
+    },
+    {
+      "time": 51.7,
+      "word": "sio-kâng",
+      "def": "same / identical (A2)"
+    },
+    {
+      "time": 66.8,
+      "word": "gín-á",
+      "def": "child (A1)"
+    },
+    {
+      "time": 66.8,
+      "word": "a-chó͘",
+      "def": "great-grandparent (B2)"
+    },
+    {
+      "time": 72.3,
+      "word": "a-pa",
+      "def": "father (A1)"
+    },
+    {
+      "time": 77.6,
+      "word": "súi",
+      "def": "beautiful (A2)"
+    },
+    {
+      "time": 77.6,
+      "word": "gí-giân",
+      "def": "language (B1)"
+    },
+    {
+      "time": 81.2,
+      "word": "chai-iáⁿ",
+      "def": "to know (A2)"
+    },
+    {
+      "time": 81.2,
+      "word": "tó-ūi",
+      "def": "where (A2)"
+    },
+    {
+      "time": 88.7,
+      "word": "un-loán",
+      "def": "warm (B1)"
+    },
+    {
+      "time": 132.5,
+      "word": "ba̍k-sái",
+      "def": "tears (B1)"
+    },
+    {
+      "time": 132.5,
+      "word": "póe-bōe-lī",
+      "def": "cannot wipe away / unceasing (B2)"
+    },
+    {
+      "time": 137.9,
+      "word": "koah-tn̄g",
+      "def": "to sever / to cut off (B2)"
+    },
+    {
+      "time": 137.9,
+      "word": "chhùi-chi̍h",
+      "def": "tongue (B2)"
+    },
+    {
+      "time": 252.3,
+      "word": "khǹg",
+      "def": "to put / to place (B2)"
+    },
+    {
+      "time": 252.3,
+      "word": "sim-koaⁿ",
+      "def": "heart (metaphorical) (B2)"
+    },
+    {
+      "time": 252.3,
+      "word": "puh-gê",
+      "def": "to sprout (B2)"
+    },
+    {
+      "time": 258.1,
+      "word": "thèng-hāu",
+      "def": "to wait for (B2)"
+    },
+    {
+      "time": 258.1,
+      "word": "khui-hoe",
+      "def": "to blossom (B1)"
+    }
+  ]
 }
